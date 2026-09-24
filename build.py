@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild and validate the V0.7.2 release HTML."""
+"""Rebuild and validate the V0.7.3.1 player movement hotfix release HTML."""
 import argparse
 from pathlib import Path
 import re
@@ -25,9 +25,9 @@ required = set(re.findall(r"\$\('([^']+)'\)", html))
 missing = required - set(ids)
 if missing:
     raise RuntimeError('Missing DOM elements: ' + ', '.join(sorted(missing)))
-if ('crash-delivery-mp071-1' not in html or 'V0.7.2 ONLINE' not in html
+if ('crash-delivery-mp0731-1' not in html or 'V0.7.3.1 ONLINE' not in html
         or 'cleanIceUrls' not in html):
-    raise RuntimeError('Release snapshot is not V0.7.2')
+    raise RuntimeError('Release snapshot is not V0.7.3.1')
 if shutil.which('node'):
     with tempfile.TemporaryDirectory() as directory:
         for index, script in enumerate(re.findall(r'<script>(.*?)</script>', html, re.S)):
@@ -37,5 +37,5 @@ if shutil.which('node'):
 
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text(html, encoding='utf-8')
-print(f'Built V0.7.2 {args.output}: {len(html.encode("utf-8")):,} bytes; '
+print(f'Built V0.7.3.1 {args.output}: {len(html.encode("utf-8")):,} bytes; '
       f'{len(ids)} unique DOM IDs; all direct refs valid.')

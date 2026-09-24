@@ -1,0 +1,366 @@
+{
+  "transport": "ordered, deterministic in-page bridge with configured one-way delay, jitter, and replaceable-packet loss; not real WebRTC/ICE",
+  "scenarios_ms": [
+    0,
+    80,
+    150,
+    250,
+    400
+  ],
+  "passed": 32,
+  "total": 32,
+  "results": [
+    {
+      "test": "0ms immediate guest input and local prediction armed",
+      "passed": true,
+      "details": {
+        "same_event_turn_position_m": 0.0,
+        "key_present_before_next_frame": true,
+        "RTT_applied_ms": 0
+      }
+    },
+    {
+      "test": "0ms guest and host converge after release",
+      "passed": true,
+      "details": {
+        "position_gap_m": 0.0,
+        "guest_error_m": 0
+      }
+    },
+    {
+      "test": "0ms long drive remains finite and bounded",
+      "passed": true,
+      "details": {
+        "host": [
+          3.2,
+          0.12,
+          72
+        ],
+        "guest": [
+          3.2,
+          0.12,
+          72
+        ],
+        "peak_sample_error_m": 0
+      }
+    },
+    {
+      "test": "0ms stale input sequence rejected",
+      "passed": true,
+      "details": {
+        "accepted_seq": 68,
+        "stale_seq": 67
+      }
+    },
+    {
+      "test": "0ms simulated jitter/loss exercised",
+      "passed": true,
+      "details": {
+        "jitter_ms": 0,
+        "configured_loss": 0.01,
+        "dropped": 1,
+        "sent": 167
+      }
+    },
+    {
+      "test": "0ms no Chromium runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "80ms immediate guest input and local prediction armed",
+      "passed": true,
+      "details": {
+        "same_event_turn_position_m": 0.0,
+        "key_present_before_next_frame": true,
+        "RTT_applied_ms": 80
+      }
+    },
+    {
+      "test": "80ms guest and host converge after release",
+      "passed": true,
+      "details": {
+        "position_gap_m": 0.0,
+        "guest_error_m": 0
+      }
+    },
+    {
+      "test": "80ms long drive remains finite and bounded",
+      "passed": true,
+      "details": {
+        "host": [
+          3.2,
+          0.12,
+          72
+        ],
+        "guest": [
+          3.2,
+          0.12,
+          72
+        ],
+        "peak_sample_error_m": 0
+      }
+    },
+    {
+      "test": "80ms stale input sequence rejected",
+      "passed": true,
+      "details": {
+        "accepted_seq": 71,
+        "stale_seq": 70
+      }
+    },
+    {
+      "test": "80ms simulated jitter/loss exercised",
+      "passed": true,
+      "details": {
+        "jitter_ms": 20,
+        "configured_loss": 0.01,
+        "dropped": 2,
+        "sent": 175
+      }
+    },
+    {
+      "test": "80ms no Chromium runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "150ms immediate guest input and local prediction armed",
+      "passed": true,
+      "details": {
+        "same_event_turn_position_m": 0.0,
+        "key_present_before_next_frame": true,
+        "RTT_applied_ms": 150
+      }
+    },
+    {
+      "test": "150ms guest and host converge after release",
+      "passed": true,
+      "details": {
+        "position_gap_m": 0.0,
+        "guest_error_m": 0
+      }
+    },
+    {
+      "test": "150ms long drive remains finite and bounded",
+      "passed": true,
+      "details": {
+        "host": [
+          3.2,
+          0.12,
+          72
+        ],
+        "guest": [
+          3.2,
+          0.12,
+          72
+        ],
+        "peak_sample_error_m": 0
+      }
+    },
+    {
+      "test": "150ms stale input sequence rejected",
+      "passed": true,
+      "details": {
+        "accepted_seq": 74,
+        "stale_seq": 73
+      }
+    },
+    {
+      "test": "150ms simulated jitter/loss exercised",
+      "passed": true,
+      "details": {
+        "jitter_ms": 20,
+        "configured_loss": 0.01,
+        "dropped": 0,
+        "sent": 178
+      }
+    },
+    {
+      "test": "150ms no Chromium runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "250ms immediate guest input and local prediction armed",
+      "passed": true,
+      "details": {
+        "same_event_turn_position_m": 0.0,
+        "key_present_before_next_frame": true,
+        "RTT_applied_ms": 250
+      }
+    },
+    {
+      "test": "250ms guest and host converge after release",
+      "passed": true,
+      "details": {
+        "position_gap_m": 0.0,
+        "guest_error_m": 0
+      }
+    },
+    {
+      "test": "250ms long drive remains finite and bounded",
+      "passed": true,
+      "details": {
+        "host": [
+          3.2,
+          0.12,
+          72
+        ],
+        "guest": [
+          3.2,
+          0.12,
+          72
+        ],
+        "peak_sample_error_m": 0
+      }
+    },
+    {
+      "test": "250ms stale input sequence rejected",
+      "passed": true,
+      "details": {
+        "accepted_seq": 72,
+        "stale_seq": 71
+      }
+    },
+    {
+      "test": "250ms simulated jitter/loss exercised",
+      "passed": true,
+      "details": {
+        "jitter_ms": 20,
+        "configured_loss": 0.01,
+        "dropped": 0,
+        "sent": 175
+      }
+    },
+    {
+      "test": "250ms no Chromium runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "400ms immediate guest input and local prediction armed",
+      "passed": true,
+      "details": {
+        "same_event_turn_position_m": 0.0,
+        "key_present_before_next_frame": true,
+        "RTT_applied_ms": 400
+      }
+    },
+    {
+      "test": "400ms guest and host converge after release",
+      "passed": true,
+      "details": {
+        "position_gap_m": 0.0,
+        "guest_error_m": 0
+      }
+    },
+    {
+      "test": "400ms long drive remains finite and bounded",
+      "passed": true,
+      "details": {
+        "host": [
+          3.2,
+          0.12,
+          72
+        ],
+        "guest": [
+          3.2,
+          0.12,
+          72
+        ],
+        "peak_sample_error_m": 0
+      }
+    },
+    {
+      "test": "400ms stale input sequence rejected",
+      "passed": true,
+      "details": {
+        "accepted_seq": 70,
+        "stale_seq": 69
+      }
+    },
+    {
+      "test": "400ms simulated jitter/loss exercised",
+      "passed": true,
+      "details": {
+        "jitter_ms": 20,
+        "configured_loss": 0.01,
+        "dropped": 1,
+        "sent": 173
+      }
+    },
+    {
+      "test": "400ms no Chromium runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "400ms hard correction after host collision/respawn relocation",
+      "passed": true,
+      "details": {
+        "gap_m": 1.224,
+        "host_position": [
+          70,
+          0.12,
+          70
+        ],
+        "guest_position": [
+          68.77651532223256,
+          0.12,
+          70.03663127777747
+        ]
+      }
+    },
+    {
+      "test": "400ms critical pickup action not repeated by retry/loss",
+      "passed": true,
+      "details": {
+        "dropped_replaceable": 5,
+        "host_last_action": 2,
+        "guest_held": {
+          "id": 1,
+          "kind": 0,
+          "p": [
+            8,
+            0.5,
+            70
+          ],
+          "rot": [
+            0,
+            0.011,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            0
+          ],
+          "delivered": false,
+          "order": 101,
+          "lossCounted": false,
+          "wrongAt": [],
+          "integrity": 100,
+          "bounces": 0,
+          "blastBoosted": false,
+          "mystery": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1371 @@
+{
+  "transport": "ordered test adapter with deterministic one-way delay, uniform jitter, and 1-2% replaceable packet loss; not real WebRTC or Cloudflare TURN",
+  "scenarios_ms": [
+    0,
+    100,
+    250,
+    400
+  ],
+  "passed": 25,
+  "total": 25,
+  "results": [
+    {
+      "test": "0ms cargo local WASD responds in-frame during vehicle motion and converges",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.79,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 3,
+          "interpolationBufferMs": 189.8107271205999,
+          "extrapolationMs": 17.28927287902752,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.014,
+        "hard_corrections": 1,
+        "unacked_inputs": 1,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 64,
+        "configured_loss": 0.02,
+        "sent": 79,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "0ms render and predicted simulation remain finite",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.79,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 3,
+          "interpolationBufferMs": 189.8107271205999,
+          "extrapolationMs": 17.28927287902752,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.014,
+        "hard_corrections": 1,
+        "unacked_inputs": 1,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 64,
+        "configured_loss": 0.02,
+        "sent": 79,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "0ms moving courier snapshot buffer remains bounded",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.79,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 3,
+          "interpolationBufferMs": 189.8107271205999,
+          "extrapolationMs": 17.28927287902752,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.014,
+        "hard_corrections": 1,
+        "unacked_inputs": 1,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 64,
+        "configured_loss": 0.02,
+        "sent": 79,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "0ms Chromium runtime remains clean",
+      "passed": true,
+      "metrics": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "0ms mobile joystick moves locally and stops on pointerup",
+      "passed": true,
+      "metrics": {
+        "local_delta_m": 0.1,
+        "start": [
+          0,
+          2.38,
+          0
+        ],
+        "moved": [
+          4.083687282830263e-05,
+          2.38,
+          0.10025096464918348
+        ],
+        "held_stick": [
+          0,
+          -0.8020077837324829
+        ],
+        "stop_drift_m": 0.0,
+        "direction": -1,
+        "seq_start": 33,
+        "seq_after_down": 36,
+        "seq_after_direction_and_release": 39,
+        "released_stick": [
+          0,
+          0
+        ],
+        "RTT_ms": 0
+      }
+    },
+    {
+      "test": "100ms cargo local WASD responds in-frame during vehicle motion and converges",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.9,
+        "vehicle_turn_rad": 0.691,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 6,
+          "interpolationBufferMs": 192.9554441438034,
+          "extrapolationMs": 160,
+          "snapshotBuffer": 8
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.189,
+        "mean_reconciliation_error_m": 0.035,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 91,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "100ms render and predicted simulation remain finite",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.9,
+        "vehicle_turn_rad": 0.691,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 6,
+          "interpolationBufferMs": 192.9554441438034,
+          "extrapolationMs": 160,
+          "snapshotBuffer": 8
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.189,
+        "mean_reconciliation_error_m": 0.035,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 91,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "100ms moving courier snapshot buffer remains bounded",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.9,
+        "vehicle_turn_rad": 0.691,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 6,
+          "interpolationBufferMs": 192.9554441438034,
+          "extrapolationMs": 160,
+          "snapshotBuffer": 8
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.189,
+        "mean_reconciliation_error_m": 0.035,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 91,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "100ms Chromium runtime remains clean",
+      "passed": true,
+      "metrics": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "100ms mobile joystick moves locally and stops on pointerup",
+      "passed": true,
+      "metrics": {
+        "local_delta_m": 0.1,
+        "start": [
+          0,
+          2.38,
+          0
+        ],
+        "moved": [
+          4.083687282830263e-05,
+          2.38,
+          0.10025096464918348
+        ],
+        "held_stick": [
+          0,
+          -0.8020077837324829
+        ],
+        "stop_drift_m": 0.0,
+        "direction": -1,
+        "seq_start": 37,
+        "seq_after_down": 41,
+        "seq_after_direction_and_release": 43,
+        "released_stick": [
+          0,
+          0
+        ],
+        "RTT_ms": 100
+      }
+    },
+    {
+      "test": "250ms cargo local WASD responds in-frame during vehicle motion and converges",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 18.57,
+        "vehicle_turn_rad": 0.763,
+        "pre_release_position": [
+          0.4201018365997354,
+          2.38,
+          -0.6500000207413869
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 7
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.023,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "250ms render and predicted simulation remain finite",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 18.57,
+        "vehicle_turn_rad": 0.763,
+        "pre_release_position": [
+          0.4201018365997354,
+          2.38,
+          -0.6500000207413869
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 7
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.023,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "250ms moving courier snapshot buffer remains bounded",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 18.57,
+        "vehicle_turn_rad": 0.763,
+        "pre_release_position": [
+          0.4201018365997354,
+          2.38,
+          -0.6500000207413869
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "render": [
+            0.4201018365997354,
+            2.38,
+            -0.6500000207413869
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 7
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.191,
+        "mean_reconciliation_error_m": 0.023,
+        "hard_corrections": 1,
+        "unacked_inputs": 2,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 73,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "250ms Chromium runtime remains clean",
+      "passed": true,
+      "metrics": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "250ms mobile joystick moves locally and stops on pointerup",
+      "passed": true,
+      "metrics": {
+        "local_delta_m": 0.1,
+        "start": [
+          0,
+          2.38,
+          0
+        ],
+        "moved": [
+          4.083687282830263e-05,
+          2.38,
+          0.10025096464918348
+        ],
+        "held_stick": [
+          0,
+          -0.8020077837324829
+        ],
+        "stop_drift_m": 0.0,
+        "direction": -1,
+        "seq_start": 37,
+        "seq_after_down": 40,
+        "seq_after_direction_and_release": 43,
+        "released_stick": [
+          0,
+          0
+        ],
+        "RTT_ms": 250
+      }
+    },
+    {
+      "test": "400ms cargo local WASD responds in-frame during vehicle motion and converges",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.35,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.3,
+        "mean_reconciliation_error_m": 0.05,
+        "hard_corrections": 1,
+        "unacked_inputs": 3,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 72,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "400ms render and predicted simulation remain finite",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.35,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.3,
+        "mean_reconciliation_error_m": 0.05,
+        "hard_corrections": 1,
+        "unacked_inputs": 3,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 72,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "400ms moving courier snapshot buffer remains bounded",
+      "passed": true,
+      "metrics": {
+        "first_frame_local_distance_m": 0.125,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 17.35,
+        "vehicle_turn_rad": 0.629,
+        "pre_release_position": [
+          0.4200509182998677,
+          2.38,
+          -0.7750000103706934
+        ],
+        "start_position": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "movement_at_sample": {
+          "space": "vehicle-local",
+          "view": "cargo",
+          "mode": "playing",
+          "switchRemaining": 0,
+          "authoritative": [
+            0.42,
+            2.38,
+            -0.9
+          ],
+          "predicted": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "render": [
+            0.4200509182998677,
+            2.38,
+            -0.7750000103706934
+          ],
+          "positionError": 0,
+          "averageReconciliationError": 0,
+          "maxReconciliationError": 0,
+          "hardCorrections": 1,
+          "unackedInputs": 5,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 6
+        },
+        "active_controls_at_sample": {
+          "keys": [
+            "KeyW"
+          ],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "final_host_guest_gap_m": 0.0,
+        "max_reconciliation_error_m": 0.3,
+        "mean_reconciliation_error_m": 0.05,
+        "hard_corrections": 1,
+        "unacked_inputs": 3,
+        "snapshot_buffer": 12,
+        "dropped_replaceable": 1,
+        "eligible_replaceable": 72,
+        "configured_loss": 0.02,
+        "sent": 87,
+        "mobile_view": [
+          390,
+          740
+        ],
+        "space": "vehicle-local",
+        "mode": "playing",
+        "switch_remaining_s": 0,
+        "controls_after_release": {
+          "keys": [],
+          "left": [],
+          "right": [],
+          "gas": [],
+          "brake": [],
+          "stick": [
+            0,
+            0
+          ],
+          "charging": false
+        },
+        "transport": "deterministic delayed in-page bridge"
+      }
+    },
+    {
+      "test": "400ms Chromium runtime remains clean",
+      "passed": true,
+      "metrics": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "400ms mobile joystick moves locally and stops on pointerup",
+      "passed": true,
+      "metrics": {
+        "local_delta_m": 0.1,
+        "start": [
+          0,
+          2.38,
+          0
+        ],
+        "moved": [
+          4.083687282830263e-05,
+          2.38,
+          0.10025096464918348
+        ],
+        "held_stick": [
+          0,
+          -0.8020077837324829
+        ],
+        "stop_drift_m": 0.0,
+        "direction": -1,
+        "seq_start": 37,
+        "seq_after_down": 40,
+        "seq_after_direction_and_release": 43,
+        "released_stick": [
+          0,
+          0
+        ],
+        "RTT_ms": 400
+      }
+    },
+    {
+      "test": "400ms host courier relocation is applied on the guest",
+      "passed": true,
+      "metrics": {
+        "position_gap_m": 0.0,
+        "host_actor": [
+          1.05,
+          2.38,
+          -1.15
+        ],
+        "guest_prediction": [
+          1.05,
+          2.38,
+          -1.15
+        ]
+      }
+    },
+    {
+      "test": "400ms severe authority relocation uses one hard correction and converges",
+      "passed": true,
+      "metrics": {
+        "hard_before": 1,
+        "hard_after": 2,
+        "reconciliation_error_m": 4.83,
+        "max_reconciliation_error_m": 4.83,
+        "predicted": [
+          -1.05,
+          2.38,
+          3.2
+        ],
+        "authoritative": [
+          -1.05,
+          2.38,
+          3.2
+        ]
+      }
+    },
+    {
+      "test": "300s continuous 400ms cargo movement stays bounded and converges",
+      "passed": true,
+      "metrics": {
+        "wall_seconds": 308.2,
+        "simulated_steps": 300,
+        "configured_rtt_ms": 400,
+        "jitter_ms": 22,
+        "configured_replaceable_loss": 0.02,
+        "lost_replaceable": 90,
+        "eligible_replaceable": 4514,
+        "maximum_reconciliation_error_m": 0.765,
+        "mean_reconciliation_error_m": 0.086,
+        "maximum_sampled_host_guest_gap_m": 0.55,
+        "gap_after_release_m": 0.0,
+        "hard_corrections": 1,
+        "maximum_unacked_history": 6,
+        "maximum_remote_snapshot_buffer": 12,
+        "final_unacked_history": 3,
+        "final_snapshot_buffer": 12,
+        "vehicle_travel_m": 125.67,
+        "runtime_errors": [],
+        "transport": "deterministic ordered in-page bridge, not real WebRTC/Cloudflare TURN"
+      }
+    },
+    {
+      "test": "5-minute movement simulation keeps input and snapshot history bounded",
+      "passed": true,
+      "metrics": {
+        "simulatedSeconds": 300,
+        "frames": 18000,
+        "maxInputHistory": 256,
+        "inputHistory": 256,
+        "snapshotBuffer": 12,
+        "predicted": [
+          1.12,
+          2.38,
+          -0.9
+        ],
+        "finite": true
+      }
+    },
+    {
+      "test": "5-minute movement simulation has no Chromium runtime errors",
+      "passed": true,
+      "metrics": {
+        "errors": []
+      }
+    }
+  ]
+}

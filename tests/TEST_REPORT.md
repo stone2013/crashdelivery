@@ -1,6 +1,6 @@
-# V0.7.1 ONLINE · PUBLIC NET 测试记录
+# V0.7.1 ONLINE · PUBLIC NET 历史测试记录
 
-> 本报告记录的是 2026-09-22 的 V0.7.1 历史回归，不代表 V0.7.2 Cloudflare TURN 端到端验收。V0.7.2 当前构建检查已通过；本次环境没有安装 Python Playwright，浏览器回归未重跑。真实 TURN relay 与异网真机验收仍未通过验证。
+> 本报告仅为 2026-09-22 的 V0.7.1 历史回归。当前版本为 V0.7.3.1；请查阅 `artifacts/V0.7.3.1-TEST_REPORT.md`。
 
 日期：2026-09-22。构建 SHA-256：`33215bd85d4046fa6f7670c721f1a550d8107f5f72a7970bc082bf675c4e5cf5`。
 

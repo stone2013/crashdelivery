@@ -1,9 +1,10 @@
 from pathlib import Path
+import os
 ROOT=Path(__file__).resolve().parents[1]
-SOURCE=(ROOT/'index.html').read_text()
+SOURCE=Path(os.environ.get('CRASH_TEST_HTML',ROOT/'index.html')).read_text(encoding='utf-8')
 # Only enable the opt-in fixtures when loading into about:blank. Runtime code is unchanged.
 TEST_SOURCE=SOURCE.replace("new URLSearchParams(location.search).has('test')","true")
-ARGS=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']
+ARGS=['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--disable-background-timer-throttling','--disable-renderer-backgrounding','--disable-backgrounding-occluded-windows']
 def load(b, mobile=False, size=(1280,800), name='page'):
  ctx=b.new_context(viewport={'width':size[0],'height':size[1]},has_touch=mobile,is_mobile=mobile,device_scale_factor=1)
  pg=ctx.new_page();errors=[]
