@@ -1,0 +1,126 @@
+{
+  "passed": 24,
+  "total": 24,
+  "results": [
+    {
+      "name": "V0.7.1 boots",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Network settings modal opens",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Default network policy auto",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Default STUN configured",
+      "pass": true,
+      "detail": "['stun:stun.l.google.com:19302']"
+    },
+    {
+      "name": "Default policy allows direct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Auto mode includes STUN and TURN",
+      "pass": true,
+      "detail": "['stun:stun.l.google.com:19302', 'turn:relay.example:3478']"
+    },
+    {
+      "name": "TURN credentials passed only to RTC config",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Direct mode excludes TURN",
+      "pass": true,
+      "detail": "['stun:stun.l.google.com:19302']"
+    },
+    {
+      "name": "Relay mode forces relay policy",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Relay mode contains TURN only",
+      "pass": true,
+      "detail": "['turn:relay.example:3478']"
+    },
+    {
+      "name": "QA redacts TURN password",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No page errors desktop",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "320x640 network UI visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "320x640 network UI no horizontal overflow",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "320x640 controls tappable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "320x640 no JS errors",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "390x740 network UI visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "390x740 network UI no horizontal overflow",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "390x740 controls tappable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "390x740 no JS errors",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "844x390 network UI visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "844x390 network UI no horizontal overflow",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "844x390 controls tappable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "844x390 no JS errors",
+      "pass": true,
+      "detail": "[]"
+    }
+  ]
+}

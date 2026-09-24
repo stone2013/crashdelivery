@@ -1,0 +1,44 @@
+/* V0.6: clear canvas, contextual actions and a compact opt-in job sheet. */
+#game{height:100%;height:100dvh}#errorScreen{z-index:90}
+.route{pointer-events:auto;height:40px;padding-right:3px;max-width:390px}
+.route>button{border:1px solid #d3e1cc3b;background:#31515a;font-size:11px;min-width:44px;min-height:34px;border-radius:7px;margin-left:3px}
+.route #distance{margin-left:auto}.route b{max-width:205px}
+.mobility{position:absolute;right:max(23px,var(--safeR));bottom:calc(246px + var(--safeB));background:#335d66e8}
+.taskBadge{position:absolute;left:50%;top:calc(155px + var(--safeT));transform:translateX(-50%);font-size:11px;color:#d0efce;background:#1c4149ed;border:1px solid #a9d29a55;padding:7px 11px;border-radius:8px;max-width:80%;text-align:center;white-space:nowrap}
+.taskBadge.mismatch{background:#765035ed;color:#ffe1aa;border-color:#efc28577}
+.workProgress{position:absolute;left:50%;top:58%;transform:translateX(-50%);width:210px;padding:10px;border-radius:10px;background:#15353aed;text-align:center;font-size:12px}
+.workProgress>div{height:5px;margin-top:8px;background:#718b8966;border-radius:6px;overflow:hidden}.workProgress i{height:100%;display:block;background:#ffd05b;width:0}
+.manifest{position:absolute;z-index:8;top:calc(65px + var(--safeT));right:max(18px,var(--safeR));width:360px;max-width:calc(100% - 24px);max-height:calc(100% - 96px - var(--safeT) - var(--safeB));overflow:auto;background:#14313bee;border:1px solid #9eb6ad69;border-radius:18px;padding:18px;box-shadow:0 15px 40px #071f2855;backdrop-filter:blur(10px)}
+.manifest header{display:flex;gap:12px;justify-content:space-between;align-items:center}.manifest h2{font-size:19px;letter-spacing:.3px;margin:8px 0 0}.manifest header small{font-size:8px;letter-spacing:1.5px;color:#adc9c8}.manifest p,.manifest footer{font-size:10px;line-height:1.7;color:#adc9c8}.manifest header button{font-size:22px;flex-shrink:0}
+#orderList{display:grid;gap:6px;margin:12px 0}.job{min-height:58px;background:#ffffff07;border:1px solid #acc4b827;border-radius:10px;display:flex;align-items:center;gap:10px;text-align:left;padding:9px 10px;color:#eff0dc;touch-action:manipulation}.job>strong{font-size:22px;color:#ffe0a1;letter-spacing:1px}.jobText{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}.jobText b{font-size:12px}.jobText small{font-size:9px;color:#aec4c7}.jobLocation{font-size:9px;color:#c1d5ca;white-space:nowrap}.job.selected{background:#ffe2a211;border-color:#f5d18ea6}.job.complete{opacity:.55}.job.complete strong{color:#b0d7b1}
+[data-view=outside] .telemetry{display:none}.menuCopy h2{font-size:32px}
+@media(pointer:coarse),(max-width:760px){
+ .route{height:38px;top:calc(55px + var(--safeT));max-width:calc(100% - 94px)}.route b{max-width:140px;font-size:10px}.route>button{min-height:34px;font-size:10px;margin-left:0;padding:0 7px}
+ .statuschips{top:calc(99px + var(--safeT))}.mobility{right:max(12px,var(--safeR));bottom:calc(240px + var(--safeB));font-size:10px;min-height:44px}
+ .taskBadge{top:calc(193px + var(--safeT));font-size:9px;padding:5px 8px;max-width:88%}.manifest{right:12px;top:calc(54px + var(--safeT));padding:14px}.manifest h2{font-size:18px}
+ #hud[data-view=cargo] #hint,#hud[data-view=outside] #hint{bottom:calc(154px + var(--safeB));left:45%;max-width:49%;font-size:9px}
+ .cargoActions #interactBtn:not(.hidden){max-width:112px}.taskBadge{pointer-events:none}
+}
+@media(max-width:600px) and (orientation:portrait){
+ .menuCopy h2{font-size:27px}.route{gap:5px;padding-left:8px;right:90px}.route #distance{font-size:10px}.route b{max-width:91px}.route>span:first-child{font-size:13px}.route>button{margin-left:0}
+ .roomStrip{max-width:calc(100% - 20px)}.crewHudName{max-width:88px}.job{padding:8px;gap:7px}.jobText small{font-size:8px}
+ .rearControls{left:47%;bottom:calc(94px + var(--safeB))}.rearControls small{display:none}.telemetry{bottom:calc(29px + var(--safeB));left:48%}
+}
+@media(max-width:360px) and (orientation:portrait){.route{right:82px;gap:3px;font-size:9px}.route b{max-width:70px}.route #distance{font-size:8px}.route>button{font-size:9px;min-width:44px}.jobLocation{font-size:8px}.taskBadge{font-size:8px}.rearControls{left:48%}.doorToggle{font-size:9px}}
+@media(max-height:540px) and (orientation:landscape){
+ .route{top:calc(54px + var(--safeT));height:34px}.route>button{min-height:30px}.statuschips{top:calc(94px + var(--safeT))}.taskBadge{top:calc(48px + var(--safeT));left:69%;max-width:45%}
+ .mobility{right:max(23px,var(--safeR));bottom:calc(154px + var(--safeB));min-height:44px}
+ .manifest{top:calc(12px + var(--safeT));max-height:calc(100% - 24px - var(--safeT) - var(--safeB));width:390px}.manifest p{margin:7px 0}#orderList{grid-template-columns:1fr 1fr}.job{gap:5px;padding:7px;flex-wrap:wrap}.job>strong{font-size:18px}.jobLocation{width:100%;margin-left:32px}.jobText small{font-size:8px}
+ #hud[data-view=cargo] #hint,#hud[data-view=outside] #hint{bottom:calc(92px + var(--safeB));left:48%;max-width:40%;font-size:9px}.rearControls{left:33%;bottom:calc(14px + var(--safeB))}
+}
+/* Lobby has a naturally scrollable copy column; never center an over-height column off-screen. */
+.menuScreen{align-items:flex-start;padding-top:28px;padding-bottom:24px}.menuCopy h1{font-size:50px;margin:12px 0 6px}.menuCopy h2{margin:12px 0;font-size:29px;line-height:1.15}.menuCopy h2 br{display:none}.menuCopy .edition{margin-top:13px}.menuCopy p{font-size:12px;line-height:1.7;margin:12px 0!important}.menuLinks{gap:13px}.menuCopy>.secondary{padding:9px 0;min-height:38px}.menuCopy .eyebrow{font-size:8px}
+@media(max-width:600px) and (orientation:portrait){.menuScreen{padding:20px 7%}.menuCopy h1{font-size:43px}.menuCopy h2{font-size:25px}.menuCopy p{font-size:10px}.mapPanel{width:64px;top:calc(58px + var(--safeT))}.mapPanel small{display:none}.nicknameRow input,.joinRow input{font-size:16px}.menuCopy .eyebrow{font-size:7px;letter-spacing:1px}}
+@media(max-height:540px) and (orientation:landscape){
+ .menuScreen{display:block;padding:18px 5%;overflow-y:auto}.menuCopy{width:100%;max-width:none;display:grid;grid-template-columns:minmax(220px,1fr) minmax(240px,1fr);gap:5px 30px;align-content:start}
+ .menuCopy>.eyebrow,.menuCopy>h1,.menuCopy>.englishTitle,.menuCopy>.edition,.menuCopy>h2,.menuCopy>p,.menuCopy>.menuFooter{grid-column:1}
+ .menuCopy>.eyebrow{grid-row:1}.menuCopy>h1{grid-row:2;font-size:35px;margin:5px 0}.menuCopy>.englishTitle{grid-row:3}.menuCopy>.edition{grid-row:4}.menuCopy>h2{grid-row:5;font-size:22px}.menuCopy>p{display:none}.menuCopy>.menuFooter{grid-row:9}
+ .profileSetup,.multiplayerPanel,.netStatusPill,.soloLink,.menuLinks{position:static!important;max-width:none;width:100%!important;margin:0!important;left:auto;top:auto}
+ .profileSetup{grid-column:2;grid-row:1 / span 2}.multiplayerPanel{grid-column:2;grid-row:3 / span 3}.netStatusPill{grid-column:2;grid-row:6}.soloLink{grid-column:2;grid-row:7;min-height:40px!important}.menuLinks{grid-column:1;grid-row:6;display:flex;flex-wrap:wrap}.menuCopy>#garageBtn{grid-column:1;grid-row:7}.menuCopy>#helpBtn{grid-column:1;grid-row:8}
+ .lobbyLabel{display:none}.menuStamp{display:none}.nicknameRow input,.joinRow input{font-size:16px!important;height:40px}.multiplayerPanel .primary{min-height:42px!important}.menuLinks .secondary,#garageBtn,#helpBtn{min-height:32px!important}.menuCopy .englishTitle{font-size:8px}
+}

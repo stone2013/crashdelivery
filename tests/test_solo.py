@@ -1,0 +1,81 @@
+from test_utils import *
+from playwright.sync_api import sync_playwright
+import json,traceback
+results=[]
+def check(name,ok,details=None):
+ results.append({'test':name,'passed':bool(ok),'details':details});print(('PASS ' if ok else 'FAIL ')+name,details if not ok else '')
+with sync_playwright() as p:
+ b=launch(p)
+ c,pg,errs=load(b)
+ E=pg.evaluate
+ check('Startup and WebGL',pg.locator('#startBtn').is_enabled() and E('__deliveryTest.glError()')==0)
+ pg.click('#startBtn');E('__deliveryTest.freeze(true);__deliveryTest.clearTraffic()')
+ def reset(): E('__deliveryTest.reset();__deliveryTest.freeze(true);__deliveryTest.clearTraffic()')
+ def snap():return E('__deliveryTest.snapshot()')
+ def info():return E('__deliveryTest.v06()')
+ check('Eighteen unique order parcels',len(info()['inventory'])==18 and len(set(x['order'] for x in info()['inventory']))==18)
+ check('Six parcel types',len(set(x['kind'] for x in info()['orders']))==6)
+ E('__deliveryTest.openOrders()');pg.click('#job_106')
+ check('Order sheet sets navigation',info()['selectedOrder']==106 and snap()['state']['mode']=='playing')
+ reset();E('__deliveryTest.playerAt(0,-.9,Math.PI,-.2)');pg.keyboard.down('w');E('__deliveryTest.advance(.6)');pg.keyboard.up('w')
+ check('Cargo keyboard movement',snap()['player']['p'][2]>.3,snap()['player'])
+ E('__deliveryTest.playerAt(0,2.7,Math.PI,-.2);__deliveryTest.mobility()')
+ check('Closed doors prevent exit',snap()['state']['view']=='cargo')
+ E('__deliveryTest.bothDoors();__deliveryTest.advance(1);__deliveryTest.place(3.2,72,0,10);__deliveryTest.mobility()')
+ check('High speed exit guarded',snap()['state']['view']=='cargo')
+ E('__deliveryTest.place(3.2,72,0,0);__deliveryTest.playerAt(0,2.7,Math.PI,-.2);__deliveryTest.mobility()')
+ check('Rear exit enters world coordinates',snap()['state']['view']=='outside' and snap()['player']['p'][2]>76)
+ E('__deliveryTest.outsideAt(8,70,0,-.5)');pg.keyboard.down('w');E('__deliveryTest.advance(.5)');pg.keyboard.up('w')
+ check('Exterior walking',snap()['player']['p'][2]<68)
+ pid=E("__deliveryTest.fixtureParcel(101,[8,.5,70]);__deliveryTest.outsideAt(8,71.1,0,-.85);__deliveryTest.interact();__deliveryTest.v06().held")
+ check('Ground pickup preserves order',pid is not None and pid['order']==101,pid)
+ check('Recovery does not duplicate shipment',len(info()['inventory'])==18 and len(set(x['id'] for x in info()['inventory']))==18)
+ E('__deliveryTest.outsideAt(3.2,76.65,Math.PI,0);__deliveryTest.mobility()')
+ check('Board with parcel',snap()['state']['view']=='cargo' and info()['held']['order']==101)
+ E('__deliveryTest.advance(.5);__deliveryTest.drop()')
+ check('Restow recovered parcel',info()['held'] is None and len(info()['inventory'])==18)
+ # Repair state machine, actual interaction + physics updates.
+ reset();E("__deliveryTest.outsideAt(3.2,67.1,Math.PI,-.3);__deliveryTest.fault(25);__deliveryTest.interact()")
+ check('Repair starts near bonnet',info()['repair'] is not None)
+ E('__deliveryTest.advance(3.2)')
+ check('Three-second repair restores van',info()['fault']=='' and snap()['car']['hp']==100 and info()['repairs']==1)
+ E("__deliveryTest.fault(30);__deliveryTest.interact()");pg.keyboard.down('a');E('__deliveryTest.advance(.3)');pg.keyboard.up('a')
+ check('Movement cancels repair',info()['repair'] is None and snap()['car']['hp']==30)
+ reset();E("__deliveryTest.fixtureParcel(101,[9,.5,69]);__deliveryTest.advance(40)")
+ check('Unfinished parcels do not despawn',any(x['order']==101 for x in info()['inventory']))
+ # Firing actual trajectories through the facade, not calling deliver directly.
+ reset();E("__deliveryTest.outsideAt(8.5,25.1,-Math.PI/2,0);__deliveryTest.fixtureParcel(101,[0,0,0],'held');__deliveryTest.aimAt(101,0);__deliveryTest.shoot(1);__deliveryTest.advance(1.4)")
+ check('Correct parcel crosses window and signs',snap()['state']['delivered']==1,snap()['state'])
+ pg.screenshot(path=str(ROOT/'screenshots/correct_delivery.png'))
+ # Wrong shipment is rejected and remains recoverable; counters don't tick repeatedly.
+ reset();E("__deliveryTest.outsideAt(8.5,25.1,-Math.PI/2,0);__deliveryTest.fixtureParcel(102,[0,0,0],'held');__deliveryTest.aimAt(101,0);__deliveryTest.shoot(1);__deliveryTest.advance(1.4)")
+ check('Wrong address does not sign order',snap()['state']['delivered']==0 and info()['wrong']==1,snap()['state'])
+ check('Rejected parcel still exists',any(x['order']==102 and not x['delivered'] for x in info()['inventory']))
+ pg.screenshot(path=str(ROOT/'screenshots/wrong_delivery.png'))
+ E('__deliveryTest.advance(2)')
+ check('No repeated wrong-address penalty',info()['wrong']==1)
+ # Pickup the returned box by the same interaction system.
+ box=[x for x in snap()['packages'] if x['id']==2][0]
+ pos=box['p'];E('p=>{__deliveryTest.outsideAt(p[0]-1.1,p[2],-Math.PI/2,-.9);__deliveryTest.interact();}',pos)
+ check('Recover rejected shipment',info()['held'] is not None and info()['held']['order']==102,info()['held'])
+ # Correct shipment to solid wall: no facade hole means no score.
+ reset();E("__deliveryTest.outsideAt(8.5,28,-Math.PI/2,0);__deliveryTest.fixtureParcel(101,[0,0,0],'held');__deliveryTest.lookAt([15.64,4.8,28]);__deliveryTest.shoot(1);__deliveryTest.advance(1.4)")
+ check('Wall hit cannot complete delivery',snap()['state']['delivered']==0)
+ # Recovery recreates missing shipments exactly once and doesn't reset delivered jobs.
+ reset();E("__deliveryTest.outsideAt(8.5,25.1,-Math.PI/2,0);__deliveryTest.fixtureParcel(101,[0,0,0],'held');__deliveryTest.aimAt(101,0);__deliveryTest.shoot(1);__deliveryTest.advance(1.4);__deliveryTest.service()")
+ check('Rescue preserves completed deliveries',snap()['state']['delivered']==1)
+ check('Rescue restocks only unfinished orders',len(info()['inventory'])==17 and all(x['order']!=101 for x in info()['inventory']),info()['inventory'])
+ # Garage UI startup regression.
+ E('__deliveryTest.menu()');pg.click('#garageBtn')
+ check('Garage opens with four upgrades',pg.locator('#garageScreen').is_visible() and pg.locator('#upgrade_engine').count()==1)
+ E('__deliveryTest.setCredits(1000);__deliveryTest.buyUpgrade("engine")')
+ check('Garage purchase bookkeeping',info()['credits']==700 and info()['upgrades']['engine']==1)
+ pg.click('#closeGarageBtn');pg.click('#wardrobeBtn');pg.wait_for_timeout(150)
+ check('Avatar preview still runs',snap()['state']['mode']=='wardrobe')
+ pg.click('#closeWardrobe');pg.wait_for_timeout(80)
+ check('Return from preview keeps startup usable',pg.locator('#startBtn').is_enabled() and snap()['state']['mode']=='menu')
+ check('No uncaught JavaScript errors',not errs,errs)
+ check('WebGL render state valid',E('__deliveryTest.glError()')==0)
+ b.close()
+(ROOT/'tests/solo_results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
+print('TOTAL',sum(r['passed'] for r in results),'/',len(results))

@@ -1,0 +1,222 @@
+[
+  {
+    "test": "Online (320, 640): teammates do not overlap vehicle chips",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 138,
+        "left": 11,
+        "right": 198.6875
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 10,
+        "right": 310
+      },
+      "map": {
+        "top": 58,
+        "bottom": 122,
+        "left": 247,
+        "right": 311
+      }
+    }
+  },
+  {
+    "test": "Online (320, 640): team strip fits viewport",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 138,
+        "left": 11,
+        "right": 198.6875
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 10,
+        "right": 310
+      },
+      "map": {
+        "top": 58,
+        "bottom": 122,
+        "left": 247,
+        "right": 311
+      }
+    }
+  },
+  {
+    "test": "Online (320, 640): guest can open live city map",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Online (390, 740): teammates do not overlap vehicle chips",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 139,
+        "left": 11,
+        "right": 217.359375
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 10,
+        "right": 380
+      },
+      "map": {
+        "top": 58,
+        "bottom": 122,
+        "left": 316,
+        "right": 380
+      }
+    }
+  },
+  {
+    "test": "Online (390, 740): team strip fits viewport",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 139,
+        "left": 11,
+        "right": 217.359375
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 10,
+        "right": 380
+      },
+      "map": {
+        "top": 58,
+        "bottom": 122,
+        "left": 316,
+        "right": 380
+      }
+    }
+  },
+  {
+    "test": "Online (390, 740): guest can open live city map",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Online (844, 390): teammates do not overlap vehicle chips",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 113,
+        "bottom": 132,
+        "left": 11,
+        "right": 223.359375
+      },
+      "team": {
+        "top": 135,
+        "bottom": 175,
+        "left": 16,
+        "right": 246.71875
+      },
+      "map": {
+        "top": 8,
+        "bottom": 81,
+        "left": 761,
+        "right": 834
+      }
+    }
+  },
+  {
+    "test": "Online (844, 390): team strip fits viewport",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 113,
+        "bottom": 132,
+        "left": 11,
+        "right": 223.359375
+      },
+      "team": {
+        "top": 135,
+        "bottom": 175,
+        "left": 16,
+        "right": 246.71875
+      },
+      "map": {
+        "top": 8,
+        "bottom": 81,
+        "left": 761,
+        "right": 834
+      }
+    }
+  },
+  {
+    "test": "Online (844, 390): guest can open live city map",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Online (1280, 800): teammates do not overlap vehicle chips",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 139,
+        "left": 11,
+        "right": 223.359375
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 16,
+        "right": 246.71875
+      },
+      "map": {
+        "top": 9,
+        "bottom": 101,
+        "left": 1192,
+        "right": 1270
+      }
+    }
+  },
+  {
+    "test": "Online (1280, 800): team strip fits viewport",
+    "passed": true,
+    "details": {
+      "chips": {
+        "top": 120,
+        "bottom": 139,
+        "left": 11,
+        "right": 223.359375
+      },
+      "team": {
+        "top": 145,
+        "bottom": 185,
+        "left": 16,
+        "right": 246.71875
+      },
+      "map": {
+        "top": 9,
+        "bottom": 101,
+        "left": 1192,
+        "right": 1270
+      }
+    }
+  },
+  {
+    "test": "Online (1280, 800): guest can open live city map",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Online responsive UI has no runtime errors",
+    "passed": true,
+    "details": {
+      "h": [],
+      "g": []
+    }
+  }
+]

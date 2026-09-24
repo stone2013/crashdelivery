@@ -1,0 +1,22 @@
+{
+  "version": "0.7.2",
+  "name": "TURN FALLBACK",
+  "protocol": "crash-delivery-mp071-1",
+  "html_sha256": "2f3b60a56f46ab44014315ae799f49ef8018057563945f8443c8aad78f4ccf5f",
+  "html_size_bytes": 284844,
+  "baseline": "V0.7.0 CITY ROUTES local release artifact",
+  "checks_provenance": "Inherited V0.7.1 results; V0.7.2 browser tests require rerun",
+  "checks": {
+    "solo": 31,
+    "ui": 32,
+    "finish": 21,
+    "network": 30,
+    "city": 24,
+    "city_extended": 26,
+    "public_network": 24
+  },
+  "native_ice_candidates_verified": false,
+  "internet_webrtc_verified": false,
+  "turn_relay_verified": false,
+  "safari_hardware_verified": false
+}

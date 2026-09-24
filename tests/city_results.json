@@ -1,0 +1,375 @@
+[
+  {
+    "test": "30 buildings / 18 order parcels / three districts",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Finite city graph fully connected",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Real T junctions and corners",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Missing plaza roads absent from graph",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Spatial batches generated",
+    "passed": true,
+    "details": 86
+  },
+  {
+    "test": "Conflicting traffic lights never green together",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Red light approach stops before crossing",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 17,
+      "to": 12,
+      "next": 7,
+      "progress": 37.51284385925939,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "straight",
+      "speed": 0,
+      "wait": "red",
+      "p": [
+        3.05,
+        0.1,
+        9.287156140740606
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "Still cannot creep past a red stop line",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 17,
+      "to": 12,
+      "next": 7,
+      "progress": 37.51284385925939,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "straight",
+      "speed": 0,
+      "wait": "red",
+      "p": [
+        3.05,
+        0.1,
+        9.287156140740606
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "Green restarts traffic",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 12,
+      "to": 7,
+      "next": 6,
+      "progress": 8.316177192592797,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "left",
+      "speed": 6.8,
+      "wait": "",
+      "p": [
+        3.05,
+        0.1,
+        -17.516177192592796
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "right turn completed on connected exit",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 12,
+      "to": 13,
+      "next": 18,
+      "progress": 33.60644989527709,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "right",
+      "speed": 6.8,
+      "wait": "",
+      "p": [
+        42.80644989527708,
+        0.1,
+        3.05
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "left turn completed on connected exit",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 12,
+      "to": 11,
+      "next": 10,
+      "progress": 17.30974513951324,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "straight",
+      "speed": 6.8,
+      "wait": "",
+      "p": [
+        -26.50974513951324,
+        0.1,
+        -3.05
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "Following car forms a spaced queue",
+    "passed": true,
+    "details": {
+      "gap": 4.989690525504514,
+      "cars": [
+        {
+          "id": 0,
+          "from": 17,
+          "to": 12,
+          "next": 7,
+          "progress": 37.51284385925939,
+          "pathLen": 37.599999999999994,
+          "motion": "road",
+          "intent": "straight",
+          "speed": 0,
+          "wait": "red",
+          "p": [
+            3.05,
+            0.1,
+            9.287156140740606
+          ],
+          "phase": "normal",
+          "braking": false
+        },
+        {
+          "id": 1,
+          "from": 17,
+          "to": 12,
+          "next": 7,
+          "progress": 32.52315333375488,
+          "pathLen": 37.599999999999994,
+          "motion": "road",
+          "intent": "straight",
+          "speed": 0,
+          "wait": "queue",
+          "p": [
+            3.05,
+            0.1,
+            14.27684666624512
+          ],
+          "phase": "normal",
+          "braking": false
+        }
+      ]
+    }
+  },
+  {
+    "test": "Wreck blocks traffic rather than being driven through",
+    "passed": true,
+    "details": [
+      {
+        "id": 0,
+        "from": 17,
+        "to": 12,
+        "next": 7,
+        "progress": 17.805603145202255,
+        "pathLen": 37.599999999999994,
+        "motion": "road",
+        "intent": "straight",
+        "speed": 0,
+        "wait": "incident",
+        "p": [
+          3.05,
+          0.1,
+          28.994396854797742
+        ],
+        "phase": "normal",
+        "braking": false
+      },
+      {
+        "id": 1,
+        "from": 17,
+        "to": 12,
+        "next": 11,
+        "progress": 8,
+        "pathLen": 37.599999999999994,
+        "motion": "road",
+        "intent": "left",
+        "speed": 0,
+        "wait": "",
+        "p": [
+          3.05,
+          0.1,
+          24
+        ],
+        "phase": "wreck",
+        "braking": false
+      }
+    ]
+  },
+  {
+    "test": "Accident edge appears on map",
+    "passed": true,
+    "details": [
+      [
+        "12:17",
+        {
+          "id": 1,
+          "phase": "wreck",
+          "remaining": 17.01666666666663
+        }
+      ]
+    ]
+  },
+  {
+    "test": "Timed road clearance removes wreck obstruction",
+    "passed": true,
+    "details": {
+      "id": 1,
+      "from": 17,
+      "to": 12,
+      "next": 11,
+      "progress": 8,
+      "pathLen": 37.599999999999994,
+      "motion": "road",
+      "intent": "left",
+      "speed": 0,
+      "wait": "",
+      "p": [
+        3.05,
+        0.1,
+        24
+      ],
+      "phase": "cleared",
+      "braking": false
+    }
+  },
+  {
+    "test": "Queued traffic resumes after clearance",
+    "passed": true,
+    "details": {
+      "id": 0,
+      "from": 17,
+      "to": 12,
+      "next": 7,
+      "progress": 13.128936478535623,
+      "pathLen": 18.4,
+      "motion": "junction",
+      "intent": "straight",
+      "speed": 6.8,
+      "wait": "",
+      "p": [
+        3.05,
+        0.1,
+        -3.928936478535621
+      ],
+      "phase": "normal",
+      "braking": false
+    }
+  },
+  {
+    "test": "Navigation detours around blocked road",
+    "passed": true,
+    "details": {
+      "points": [
+        [
+          0,
+          0,
+          56
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -56
+        ]
+      ],
+      "length": 112,
+      "blocked": false,
+      "edges": [
+        "7:12"
+      ],
+      "target": [
+        0,
+        0,
+        -56
+      ]
+    }
+  },
+  {
+    "test": "All jobs have finite road navigation",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Network snapshot fits 64 KiB",
+    "passed": true,
+    "details": 8783
+  },
+  {
+    "test": "Traffic moves smoothly without intersection teleport",
+    "passed": true,
+    "details": {
+      "max_0.5s_displacement": 4.339999999999989
+    }
+  },
+  {
+    "test": "Ordinary traffic creates no spontaneous accidents",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "City throughput: left and right turns observed",
+    "passed": true,
+    "details": {
+      "turns": 21,
+      "left": 2,
+      "right": 4,
+      "redStops": 25,
+      "yields": 1,
+      "cleared": 0
+    }
+  },
+  {
+    "test": "City finite state after simulation",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "No city runtime / GL errors",
+    "passed": true,
+    "details": []
+  }
+]

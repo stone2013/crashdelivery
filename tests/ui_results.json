@@ -1,0 +1,334 @@
+[
+  {
+    "test": "320x640 boot",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "320x640 lobby no horizontal overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 drive buttons in viewport",
+    "passed": true,
+    "details": [
+      {
+        "id": "leftBtn",
+        "x": 8,
+        "y": 576,
+        "w": 47,
+        "h": 49
+      },
+      {
+        "id": "rightBtn",
+        "x": 61,
+        "y": 576,
+        "w": 47,
+        "h": 49
+      },
+      {
+        "id": "gasBtn",
+        "x": 265,
+        "y": 576,
+        "w": 47,
+        "h": 49
+      },
+      {
+        "id": "brakeBtn",
+        "x": 212,
+        "y": 576,
+        "w": 47,
+        "h": 49
+      },
+      {
+        "id": "cargoBtn",
+        "x": 212,
+        "y": 522,
+        "w": 100,
+        "h": 46
+      },
+      {
+        "id": "ordersBtn",
+        "x": 189,
+        "y": 57,
+        "w": 44,
+        "h": 34
+      }
+    ]
+  },
+  {
+    "test": "320x640 multi-pointer control streams",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 cancel releases only that pointer",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 orders rendered",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 contextual exterior controls",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 no runtime or GL errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "390x740 boot",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "390x740 lobby no horizontal overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 drive buttons in viewport",
+    "passed": true,
+    "details": [
+      {
+        "id": "leftBtn",
+        "x": 12,
+        "y": 673,
+        "w": 52,
+        "h": 52
+      },
+      {
+        "id": "rightBtn",
+        "x": 70,
+        "y": 673,
+        "w": 52,
+        "h": 52
+      },
+      {
+        "id": "gasBtn",
+        "x": 326,
+        "y": 673,
+        "w": 52,
+        "h": 52
+      },
+      {
+        "id": "brakeBtn",
+        "x": 268,
+        "y": 673,
+        "w": 52,
+        "h": 52
+      },
+      {
+        "id": "cargoBtn",
+        "x": 270,
+        "y": 619,
+        "w": 108,
+        "h": 46
+      },
+      {
+        "id": "ordersBtn",
+        "x": 253,
+        "y": 57,
+        "w": 44,
+        "h": 34
+      }
+    ]
+  },
+  {
+    "test": "390x740 multi-pointer control streams",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 cancel releases only that pointer",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 orders rendered",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 contextual exterior controls",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 no runtime or GL errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "844x390 boot",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "844x390 lobby no horizontal overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 drive buttons in viewport",
+    "passed": true,
+    "details": [
+      {
+        "id": "leftBtn",
+        "x": 12,
+        "y": 334,
+        "w": 49,
+        "h": 46
+      },
+      {
+        "id": "rightBtn",
+        "x": 67,
+        "y": 334,
+        "w": 49,
+        "h": 46
+      },
+      {
+        "id": "gasBtn",
+        "x": 783,
+        "y": 334,
+        "w": 49,
+        "h": 46
+      },
+      {
+        "id": "brakeBtn",
+        "x": 728,
+        "y": 334,
+        "w": 49,
+        "h": 46
+      },
+      {
+        "id": "cargoBtn",
+        "x": 724,
+        "y": 285,
+        "w": 108,
+        "h": 44
+      },
+      {
+        "id": "ordersBtn",
+        "x": 153,
+        "y": 56,
+        "w": 44,
+        "h": 30
+      }
+    ]
+  },
+  {
+    "test": "844x390 multi-pointer control streams",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 cancel releases only that pointer",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 orders rendered",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 contextual exterior controls",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 no runtime or GL errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "1280x800 boot",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "1280x800 lobby no horizontal overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 drive buttons in viewport",
+    "passed": true,
+    "details": [
+      {
+        "id": "leftBtn",
+        "x": 23,
+        "y": 717,
+        "w": 64,
+        "h": 58
+      },
+      {
+        "id": "rightBtn",
+        "x": 95,
+        "y": 717,
+        "w": 64,
+        "h": 58
+      },
+      {
+        "id": "gasBtn",
+        "x": 1193,
+        "y": 717,
+        "w": 64,
+        "h": 58
+      },
+      {
+        "id": "brakeBtn",
+        "x": 1121,
+        "y": 717,
+        "w": 64,
+        "h": 58
+      },
+      {
+        "id": "cargoBtn",
+        "x": 1135.3125,
+        "y": 659,
+        "w": 121.6875,
+        "h": 48
+      },
+      {
+        "id": "ordersBtn",
+        "x": 177.21875,
+        "y": 65,
+        "w": 44,
+        "h": 34
+      }
+    ]
+  },
+  {
+    "test": "1280x800 multi-pointer control streams",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 cancel releases only that pointer",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 orders rendered",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 contextual exterior controls",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 no runtime or GL errors",
+    "passed": true,
+    "details": []
+  }
+]

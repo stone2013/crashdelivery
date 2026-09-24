@@ -1,0 +1,386 @@
+[
+  {
+    "test": "Startup and WebGL",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Eighteen unique order parcels",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Six parcel types",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Order sheet sets navigation",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Cargo keyboard movement",
+    "passed": true,
+    "details": {
+      "p": [
+        -1.8369701987210282e-16,
+        2.38,
+        0.6000000000000004
+      ],
+      "yaw": 3.141592653589793,
+      "pitch": -0.2,
+      "held": null,
+      "focus": "package"
+    }
+  },
+  {
+    "test": "Closed doors prevent exit",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "High speed exit guarded",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Rear exit enters world coordinates",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Exterior walking",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Ground pickup preserves order",
+    "passed": true,
+    "details": {
+      "id": 1,
+      "kind": 0,
+      "p": [
+        8,
+        0.5,
+        70
+      ],
+      "rot": [
+        0,
+        0.011,
+        0
+      ],
+      "v": [
+        0,
+        0,
+        0
+      ],
+      "delivered": false,
+      "order": 101,
+      "lossCounted": false,
+      "wrongAt": [],
+      "integrity": 100,
+      "bounces": 0,
+      "blastBoosted": false,
+      "mystery": null
+    }
+  },
+  {
+    "test": "Recovery does not duplicate shipment",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Board with parcel",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Restow recovered parcel",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Repair starts near bonnet",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Three-second repair restores van",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Movement cancels repair",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Unfinished parcels do not despawn",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Correct parcel crosses window and signs",
+    "passed": true,
+    "details": {
+      "mode": "playing",
+      "view": "outside",
+      "time": 1.3999999999999975,
+      "score": 100,
+      "delivered": 1,
+      "shots": 1,
+      "lost": 0,
+      "explosions": 0,
+      "combo": 1,
+      "lastDelivery": 0.19166666666666665,
+      "brick": false,
+      "charge": 0,
+      "charging": false,
+      "chargeSource": null,
+      "cooldown": 0,
+      "toastUntil": 2.9916666666666663,
+      "shake": 0,
+      "hitCooldown": 0,
+      "hintUntil": 5.191666666666666,
+      "switchUntil": 0,
+      "warnUntil": 0,
+      "helpFrom": "menu",
+      "nextId": 19,
+      "damageCost": 0,
+      "trickCount": 0,
+      "lastBreakdown": "基础 $100",
+      "selectedOrder": 0,
+      "recovered": 0,
+      "repairs": 0,
+      "wrong": 0
+    }
+  },
+  {
+    "test": "Wrong address does not sign order",
+    "passed": true,
+    "details": {
+      "mode": "playing",
+      "view": "outside",
+      "time": 1.3999999999999975,
+      "score": 0,
+      "delivered": 0,
+      "shots": 1,
+      "lost": 0,
+      "explosions": 0,
+      "combo": 0,
+      "lastDelivery": -100,
+      "brick": false,
+      "charge": 0,
+      "charging": false,
+      "chargeSource": null,
+      "cooldown": 0,
+      "toastUntil": 3.1916666666666664,
+      "shake": 0,
+      "hitCooldown": 0,
+      "hintUntil": 8,
+      "switchUntil": 0,
+      "warnUntil": 0,
+      "helpFrom": "menu",
+      "nextId": 19,
+      "damageCost": 0,
+      "trickCount": 0,
+      "lastBreakdown": "",
+      "selectedOrder": 0,
+      "recovered": 0,
+      "repairs": 0,
+      "wrong": 1
+    }
+  },
+  {
+    "test": "Rejected parcel still exists",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "No repeated wrong-address penalty",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Recover rejected shipment",
+    "passed": true,
+    "details": {
+      "id": 2,
+      "kind": 2,
+      "p": [
+        14.247,
+        0.32,
+        25.1
+      ],
+      "rot": [
+        1.051,
+        -0.292,
+        0.5
+      ],
+      "v": [
+        0,
+        0,
+        0
+      ],
+      "delivered": false,
+      "order": 102,
+      "lossCounted": false,
+      "wrongAt": [
+        101
+      ],
+      "integrity": 100,
+      "bounces": 1,
+      "blastBoosted": false,
+      "mystery": null
+    }
+  },
+  {
+    "test": "Wall hit cannot complete delivery",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Rescue preserves completed deliveries",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Rescue restocks only unfinished orders",
+    "passed": true,
+    "details": [
+      {
+        "id": 2,
+        "order": 102,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 3,
+        "order": 103,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 4,
+        "order": 104,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 5,
+        "order": 105,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 6,
+        "order": 106,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 7,
+        "order": 107,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 8,
+        "order": 108,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 9,
+        "order": 109,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 10,
+        "order": 110,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 11,
+        "order": 111,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 12,
+        "order": 112,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 13,
+        "order": 113,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 14,
+        "order": 114,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 15,
+        "order": 115,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 16,
+        "order": 116,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 17,
+        "order": 117,
+        "delivered": false,
+        "integrity": 100
+      },
+      {
+        "id": 18,
+        "order": 118,
+        "delivered": false,
+        "integrity": 100
+      }
+    ]
+  },
+  {
+    "test": "Garage opens with four upgrades",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Garage purchase bookkeeping",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Avatar preview still runs",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Return from preview keeps startup usable",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "No uncaught JavaScript errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "WebGL render state valid",
+    "passed": true,
+    "details": null
+  }
+]

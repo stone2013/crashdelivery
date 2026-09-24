@@ -1,0 +1,119 @@
+[
+  {
+    "test": "Shipment 101 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 102 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 103 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 104 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 105 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 106 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 107 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 108 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 109 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 110 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 111 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 112 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 113 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 114 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 115 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 116 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 117 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Shipment 118 complete through actual facade",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Both players reach end of eighteen-job round",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Repeated final snapshots cannot double-pay",
+    "passed": true,
+    "details": {
+      "before": [
+        3550,
+        3550
+      ],
+      "after": [
+        3550,
+        3550
+      ]
+    }
+  },
+  {
+    "test": "Full round has no JS or GL errors",
+    "passed": true,
+    "details": {
+      "h": [],
+      "g": []
+    }
+  }
+]

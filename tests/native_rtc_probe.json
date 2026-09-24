@@ -1,0 +1,21 @@
+{
+  "kind": "Native RTCPeerConnection / RTCDataChannel negotiation, two Chromium contexts",
+  "connected": false,
+  "host": {
+    "connection": "new",
+    "ice": "new",
+    "gathering": "complete",
+    "channel": "connecting"
+  },
+  "guest": {
+    "connection": "new",
+    "ice": "new",
+    "gathering": "complete",
+    "channel": null
+  },
+  "ice_candidates": [
+    0,
+    0
+  ],
+  "js_errors": []
+}

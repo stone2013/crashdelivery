@@ -1,0 +1,11 @@
+name = "crashdelivery-turn-credentials"
+main = "src/index.js"
+compatibility_date = "2026-09-23"
+
+[vars]
+TURN_TTL_SECONDS = "3600"
+ALLOWED_ORIGIN = "https://game.feelpal.app"
+
+[[routes]]
+pattern = "api.feelpal.app"
+custom_domain = true

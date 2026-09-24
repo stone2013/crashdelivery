@@ -1,0 +1,5 @@
+{
+  "diag": "ICE 测试完成：\n无候选\n\n未配置 TURN。\n没有 srflx；当前网络可能限制 UDP/STUN。",
+  "errors": [],
+  "pass": true
+}

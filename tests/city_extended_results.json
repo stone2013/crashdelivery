@@ -1,0 +1,1154 @@
+{
+  "transport": "ordered JSON bridge; not an internet WebRTC connectivity test",
+  "checks": [
+    {
+      "test": "Four-minute city: every traffic car changes position",
+      "passed": true,
+      "details": {
+        "distance_lower_bound": [
+          691.9385628722198,
+          859.4799817606561,
+          873.1971019667706,
+          942.9866313064367,
+          870.0008376978941,
+          718.2957246579087,
+          840.3462020472009,
+          834.949615347103,
+          784.8643331578523,
+          883.1790136821762,
+          716.8024205383313,
+          852.7223409223494,
+          777.9042987283303,
+          861.2826317872868
+        ]
+      }
+    },
+    {
+      "test": "Four-minute city: throughput in every 20-second window",
+      "passed": true,
+      "details": {
+        "junction_completions": [
+          11,
+          23,
+          21,
+          22,
+          20,
+          21,
+          20,
+          19,
+          21,
+          26,
+          20,
+          22
+        ]
+      }
+    },
+    {
+      "test": "Four-minute city: no spontaneous wreck / NaN",
+      "passed": true,
+      "details": {
+        "version": "0.7.0",
+        "nodes": [
+          {
+            "id": 0,
+            "x": -112,
+            "z": -112,
+            "adj": [
+              1,
+              5
+            ]
+          },
+          {
+            "id": 1,
+            "x": -56,
+            "z": -112,
+            "adj": [
+              0,
+              2,
+              6
+            ]
+          },
+          {
+            "id": 2,
+            "x": 0,
+            "z": -112,
+            "adj": [
+              1,
+              3,
+              7
+            ]
+          },
+          {
+            "id": 3,
+            "x": 56,
+            "z": -112,
+            "adj": [
+              2,
+              4,
+              8
+            ]
+          },
+          {
+            "id": 4,
+            "x": 112,
+            "z": -112,
+            "adj": [
+              3,
+              9
+            ]
+          },
+          {
+            "id": 5,
+            "x": -112,
+            "z": -56,
+            "adj": [
+              0,
+              10
+            ]
+          },
+          {
+            "id": 6,
+            "x": -56,
+            "z": -56,
+            "adj": [
+              1,
+              7,
+              11
+            ]
+          },
+          {
+            "id": 7,
+            "x": 0,
+            "z": -56,
+            "adj": [
+              2,
+              6,
+              8,
+              12
+            ]
+          },
+          {
+            "id": 8,
+            "x": 56,
+            "z": -56,
+            "adj": [
+              3,
+              7,
+              9,
+              13
+            ]
+          },
+          {
+            "id": 9,
+            "x": 112,
+            "z": -56,
+            "adj": [
+              4,
+              8,
+              14
+            ]
+          },
+          {
+            "id": 10,
+            "x": -112,
+            "z": 0,
+            "adj": [
+              5,
+              11,
+              15
+            ]
+          },
+          {
+            "id": 11,
+            "x": -56,
+            "z": 0,
+            "adj": [
+              6,
+              10,
+              12,
+              16
+            ]
+          },
+          {
+            "id": 12,
+            "x": 0,
+            "z": 0,
+            "adj": [
+              7,
+              11,
+              13,
+              17
+            ]
+          },
+          {
+            "id": 13,
+            "x": 56,
+            "z": 0,
+            "adj": [
+              8,
+              12,
+              18
+            ]
+          },
+          {
+            "id": 14,
+            "x": 112,
+            "z": 0,
+            "adj": [
+              9,
+              19
+            ]
+          },
+          {
+            "id": 15,
+            "x": -112,
+            "z": 56,
+            "adj": [
+              10,
+              16,
+              20
+            ]
+          },
+          {
+            "id": 16,
+            "x": -56,
+            "z": 56,
+            "adj": [
+              11,
+              15,
+              17,
+              21
+            ]
+          },
+          {
+            "id": 17,
+            "x": 0,
+            "z": 56,
+            "adj": [
+              12,
+              16,
+              18,
+              22
+            ]
+          },
+          {
+            "id": 18,
+            "x": 56,
+            "z": 56,
+            "adj": [
+              13,
+              17,
+              19,
+              23
+            ]
+          },
+          {
+            "id": 19,
+            "x": 112,
+            "z": 56,
+            "adj": [
+              14,
+              18,
+              24
+            ]
+          },
+          {
+            "id": 20,
+            "x": -112,
+            "z": 112,
+            "adj": [
+              15,
+              21
+            ]
+          },
+          {
+            "id": 21,
+            "x": -56,
+            "z": 112,
+            "adj": [
+              16,
+              20,
+              22
+            ]
+          },
+          {
+            "id": 22,
+            "x": 0,
+            "z": 112,
+            "adj": [
+              17,
+              21,
+              23
+            ]
+          },
+          {
+            "id": 23,
+            "x": 56,
+            "z": 112,
+            "adj": [
+              18,
+              22,
+              24
+            ]
+          },
+          {
+            "id": 24,
+            "x": 112,
+            "z": 112,
+            "adj": [
+              19,
+              23
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "id": 0,
+            "key": "0:1",
+            "a": 0,
+            "b": 1,
+            "len": 56
+          },
+          {
+            "id": 1,
+            "key": "0:5",
+            "a": 0,
+            "b": 5,
+            "len": 56
+          },
+          {
+            "id": 2,
+            "key": "1:2",
+            "a": 1,
+            "b": 2,
+            "len": 56
+          },
+          {
+            "id": 3,
+            "key": "1:6",
+            "a": 1,
+            "b": 6,
+            "len": 56
+          },
+          {
+            "id": 4,
+            "key": "2:3",
+            "a": 2,
+            "b": 3,
+            "len": 56
+          },
+          {
+            "id": 5,
+            "key": "2:7",
+            "a": 2,
+            "b": 7,
+            "len": 56
+          },
+          {
+            "id": 6,
+            "key": "3:4",
+            "a": 3,
+            "b": 4,
+            "len": 56
+          },
+          {
+            "id": 7,
+            "key": "3:8",
+            "a": 3,
+            "b": 8,
+            "len": 56
+          },
+          {
+            "id": 8,
+            "key": "4:9",
+            "a": 4,
+            "b": 9,
+            "len": 56
+          },
+          {
+            "id": 9,
+            "key": "5:10",
+            "a": 5,
+            "b": 10,
+            "len": 56
+          },
+          {
+            "id": 10,
+            "key": "6:7",
+            "a": 6,
+            "b": 7,
+            "len": 56
+          },
+          {
+            "id": 11,
+            "key": "6:11",
+            "a": 6,
+            "b": 11,
+            "len": 56
+          },
+          {
+            "id": 12,
+            "key": "7:8",
+            "a": 7,
+            "b": 8,
+            "len": 56
+          },
+          {
+            "id": 13,
+            "key": "7:12",
+            "a": 7,
+            "b": 12,
+            "len": 56
+          },
+          {
+            "id": 14,
+            "key": "8:9",
+            "a": 8,
+            "b": 9,
+            "len": 56
+          },
+          {
+            "id": 15,
+            "key": "8:13",
+            "a": 8,
+            "b": 13,
+            "len": 56
+          },
+          {
+            "id": 16,
+            "key": "9:14",
+            "a": 9,
+            "b": 14,
+            "len": 56
+          },
+          {
+            "id": 17,
+            "key": "10:11",
+            "a": 10,
+            "b": 11,
+            "len": 56
+          },
+          {
+            "id": 18,
+            "key": "10:15",
+            "a": 10,
+            "b": 15,
+            "len": 56
+          },
+          {
+            "id": 19,
+            "key": "11:12",
+            "a": 11,
+            "b": 12,
+            "len": 56
+          },
+          {
+            "id": 20,
+            "key": "11:16",
+            "a": 11,
+            "b": 16,
+            "len": 56
+          },
+          {
+            "id": 21,
+            "key": "12:13",
+            "a": 12,
+            "b": 13,
+            "len": 56
+          },
+          {
+            "id": 22,
+            "key": "12:17",
+            "a": 12,
+            "b": 17,
+            "len": 56
+          },
+          {
+            "id": 23,
+            "key": "13:18",
+            "a": 13,
+            "b": 18,
+            "len": 56
+          },
+          {
+            "id": 24,
+            "key": "14:19",
+            "a": 14,
+            "b": 19,
+            "len": 56
+          },
+          {
+            "id": 25,
+            "key": "15:16",
+            "a": 15,
+            "b": 16,
+            "len": 56
+          },
+          {
+            "id": 26,
+            "key": "15:20",
+            "a": 15,
+            "b": 20,
+            "len": 56
+          },
+          {
+            "id": 27,
+            "key": "16:17",
+            "a": 16,
+            "b": 17,
+            "len": 56
+          },
+          {
+            "id": 28,
+            "key": "16:21",
+            "a": 16,
+            "b": 21,
+            "len": 56
+          },
+          {
+            "id": 29,
+            "key": "17:18",
+            "a": 17,
+            "b": 18,
+            "len": 56
+          },
+          {
+            "id": 30,
+            "key": "17:22",
+            "a": 17,
+            "b": 22,
+            "len": 56
+          },
+          {
+            "id": 31,
+            "key": "18:19",
+            "a": 18,
+            "b": 19,
+            "len": 56
+          },
+          {
+            "id": 32,
+            "key": "18:23",
+            "a": 18,
+            "b": 23,
+            "len": 56
+          },
+          {
+            "id": 33,
+            "key": "19:24",
+            "a": 19,
+            "b": 24,
+            "len": 56
+          },
+          {
+            "id": 34,
+            "key": "20:21",
+            "a": 20,
+            "b": 21,
+            "len": 56
+          },
+          {
+            "id": 35,
+            "key": "21:22",
+            "a": 21,
+            "b": 22,
+            "len": 56
+          },
+          {
+            "id": 36,
+            "key": "22:23",
+            "a": 22,
+            "b": 23,
+            "len": 56
+          },
+          {
+            "id": 37,
+            "key": "23:24",
+            "a": 23,
+            "b": 24,
+            "len": 56
+          }
+        ],
+        "buildings": 30,
+        "orders": 18,
+        "districts": [
+          {
+            "num": 101,
+            "district": "garden"
+          },
+          {
+            "num": 102,
+            "district": "garden"
+          },
+          {
+            "num": 103,
+            "district": "garden"
+          },
+          {
+            "num": 104,
+            "district": "garden"
+          },
+          {
+            "num": 105,
+            "district": "garden"
+          },
+          {
+            "num": 106,
+            "district": "market"
+          },
+          {
+            "num": 107,
+            "district": "market"
+          },
+          {
+            "num": 108,
+            "district": "garden"
+          },
+          {
+            "num": 109,
+            "district": "garden"
+          },
+          {
+            "num": 110,
+            "district": "works"
+          },
+          {
+            "num": 111,
+            "district": "works"
+          },
+          {
+            "num": 112,
+            "district": "garden"
+          },
+          {
+            "num": 113,
+            "district": "market"
+          },
+          {
+            "num": 114,
+            "district": "market"
+          },
+          {
+            "num": 115,
+            "district": "works"
+          },
+          {
+            "num": 116,
+            "district": "works"
+          },
+          {
+            "num": 117,
+            "district": "works"
+          },
+          {
+            "num": 118,
+            "district": "works"
+          }
+        ],
+        "blocked": [],
+        "claims": [
+          [
+            17,
+            5
+          ],
+          [
+            12,
+            9
+          ],
+          [
+            7,
+            4
+          ]
+        ],
+        "stats": {
+          "turns": 246,
+          "left": 48,
+          "right": 92,
+          "redStops": 174,
+          "yields": 22,
+          "cleared": 0
+        },
+        "traffic": [
+          {
+            "id": 0,
+            "from": 18,
+            "to": 17,
+            "next": 22,
+            "progress": 7.996320334842766,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "left",
+            "speed": 6.8,
+            "wait": "",
+            "p": [
+              38.80367966515723,
+              0.1,
+              52.95
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 1,
+            "from": 8,
+            "to": 9,
+            "next": 14,
+            "progress": 37.51502300159817,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "right",
+            "speed": 0,
+            "wait": "red",
+            "p": [
+              102.71502300159818,
+              0.1,
+              -52.95
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 2,
+            "from": 12,
+            "to": 7,
+            "next": 2,
+            "progress": 32.596195225814355,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "straight",
+            "speed": 0,
+            "wait": "queue",
+            "p": [
+              3.05,
+              0.1,
+              -41.79619522581436
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 3,
+            "from": 15,
+            "to": 10,
+            "next": 5,
+            "progress": 11.98284176301425,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "straight",
+            "speed": 8.209999999999999,
+            "wait": "",
+            "p": [
+              -108.95,
+              0.1,
+              34.81715823698575
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 4,
+            "from": 2,
+            "to": 7,
+            "next": 12,
+            "progress": 3.5358488294990043,
+            "pathLen": 18.400000000000006,
+            "motion": "junction",
+            "intent": "straight",
+            "speed": 4.800000000000002,
+            "wait": "",
+            "p": [
+              -3.05,
+              0.1,
+              -61.664151170501
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 5,
+            "from": 12,
+            "to": 17,
+            "next": 18,
+            "progress": 10.34138192026719,
+            "pathLen": 21.634520731125143,
+            "motion": "junction",
+            "intent": "left",
+            "speed": 4.5,
+            "wait": "",
+            "p": [
+              -1.548394491987278,
+              0.10000000000000003,
+              56.87721551580907
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 6,
+            "from": 21,
+            "to": 22,
+            "next": 23,
+            "progress": 37.51506749731333,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "straight",
+            "speed": 0,
+            "wait": "red",
+            "p": [
+              -9.284932502686665,
+              0.1,
+              115.05
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 7,
+            "from": 19,
+            "to": 18,
+            "next": 13,
+            "progress": 19.294897642400475,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "right",
+            "speed": 7.74,
+            "wait": "",
+            "p": [
+              83.50510235759953,
+              0.1,
+              52.95
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 8,
+            "from": 3,
+            "to": 4,
+            "next": 9,
+            "progress": 37.514504550876985,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "right",
+            "speed": 0,
+            "wait": "red",
+            "p": [
+              102.714504550877,
+              0.1,
+              -108.95
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 9,
+            "from": 7,
+            "to": 12,
+            "next": 17,
+            "progress": 13.758160000071964,
+            "pathLen": 18.4,
+            "motion": "junction",
+            "intent": "straight",
+            "speed": 7.5,
+            "wait": "",
+            "p": [
+              -3.05,
+              0.1,
+              4.558160000071961
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 10,
+            "from": 12,
+            "to": 7,
+            "next": 6,
+            "progress": 37.599999999999994,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "left",
+            "speed": 0,
+            "wait": "yield",
+            "p": [
+              3.05,
+              0.1,
+              -46.8
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 11,
+            "from": 10,
+            "to": 15,
+            "next": 16,
+            "progress": 37.52891425774342,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "left",
+            "speed": 0.29333333333333333,
+            "wait": "",
+            "p": [
+              -115.05,
+              0.1,
+              46.728914257743426
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 12,
+            "from": 10,
+            "to": 5,
+            "next": 0,
+            "progress": 37.51548827351008,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "straight",
+            "speed": 0,
+            "wait": "red",
+            "p": [
+              -108.95,
+              0.1,
+              -46.715488273510076
+            ],
+            "phase": "normal",
+            "braking": false
+          },
+          {
+            "id": 13,
+            "from": 2,
+            "to": 3,
+            "next": 8,
+            "progress": 32.39552254434313,
+            "pathLen": 37.599999999999994,
+            "motion": "road",
+            "intent": "right",
+            "speed": 7.572884696148888,
+            "wait": "red",
+            "p": [
+              41.595522544343126,
+              0.1,
+              -108.95
+            ],
+            "phase": "normal",
+            "braking": true
+          }
+        ],
+        "route": {
+          "points": [
+            [
+              25,
+              0,
+              112
+            ],
+            [
+              0,
+              0,
+              112
+            ],
+            [
+              0,
+              0,
+              56
+            ],
+            [
+              0,
+              0,
+              28
+            ]
+          ],
+          "length": 133,
+          "blocked": false,
+          "edges": [
+            "17:22"
+          ],
+          "target": [
+            12,
+            0,
+            28
+          ],
+          "order": 101
+        },
+        "batches": 86,
+        "visibleBatches": 37,
+        "visibleTriangles": 65187
+      }
+    },
+    {
+      "test": "Walking courier causes NPC to stop at safe distance",
+      "passed": true,
+      "details": {
+        "id": 0,
+        "from": 17,
+        "to": 12,
+        "next": 7,
+        "progress": 12.36043329187124,
+        "pathLen": 37.599999999999994,
+        "motion": "road",
+        "intent": "straight",
+        "speed": 0,
+        "wait": "pedestrian",
+        "p": [
+          3.05,
+          0.1,
+          34.43956670812876
+        ],
+        "phase": "normal",
+        "braking": false
+      }
+    },
+    {
+      "test": "Outer-district parcel survives beyond old map bounds",
+      "passed": true,
+      "details": {
+        "id": 18,
+        "order": 118,
+        "delivered": false,
+        "integrity": 100
+      }
+    },
+    {
+      "test": "Live city map opens with 18 selectable jobs",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Tap address selects district / order detail",
+      "passed": true,
+      "details": "#118 · 北港工业区"
+    },
+    {
+      "test": "Map selection sets authoritative task",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Open map suppresses walking keyboard input",
+      "passed": true,
+      "details": {
+        "before": [
+          -127.265,
+          1.73,
+          28
+        ],
+        "after": [
+          -127.265,
+          1.73,
+          28
+        ]
+      }
+    },
+    {
+      "test": "Escape closes map without changing play mode",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "City map stays within 320x640 viewport",
+      "passed": true,
+      "details": {
+        "l": 8,
+        "r": 312,
+        "t": 8,
+        "b": 632,
+        "w": 320,
+        "h": 640,
+        "sw": 287,
+        "cw": 287
+      }
+    },
+    {
+      "test": "Menu map navigation disabled until playing (320, 640)",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Map close works at (320, 640)",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "City map stays within 844x390 viewport",
+      "passed": true,
+      "details": {
+        "l": 8,
+        "r": 836,
+        "t": 8,
+        "b": 382,
+        "w": 844,
+        "h": 390,
+        "sw": 811,
+        "cw": 811
+      }
+    },
+    {
+      "test": "Menu map navigation disabled until playing (844, 390)",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Map close works at (844, 390)",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Extended city and map have no JS/GL errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "Both clients retain 14 traffic actors",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Traffic intent and signals use shared authoritative clock",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest traffic tracks host positions after interpolation settle",
+      "passed": true,
+      "details": {
+        "max_position_error": 0.2851947464714364
+      }
+    },
+    {
+      "test": "Guest city map selection updates both navigators",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Incident phase and blocked-road map synchronize",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Road clearance is shared without stale wreck",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Restart resets city incidents/stats on both peers",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Updated network snapshot stays below 64 KiB",
+      "passed": true,
+      "details": {
+        "max_bytes": 9200
+      }
+    },
+    {
+      "test": "Two clients city additions have no runtime errors",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    }
+  ]
+}

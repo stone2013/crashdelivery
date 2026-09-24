@@ -1,0 +1,403 @@
+{
+  "transport": "ordered JSON bridge; NOT an ICE/P2P connectivity test",
+  "checks": [
+    {
+      "test": "Host and guest initialize independently",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Nickname handshake",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Eighteen IDs synchronize",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest updates shared order navigation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Cannot steal occupied driver seat",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest can take empty driver seat",
+      "passed": true,
+      "details": {
+        "h": "cargo",
+        "g": "drive"
+      }
+    },
+    {
+      "test": "Cargo player cannot drive",
+      "passed": true,
+      "details": 0
+    },
+    {
+      "test": "Guest gas drives authoritative vehicle",
+      "passed": true,
+      "details": 4.3000000000000025
+    },
+    {
+      "test": "Restart preserves nicknames",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Host restart syncs epoch and roles",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Stale-epoch action rejected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest door actions synchronize",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest can exit to world",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest recovers a tagged fragile parcel",
+      "passed": true,
+      "details": {
+        "id": 4,
+        "kind": 3,
+        "p": [
+          8,
+          0.5,
+          70
+        ],
+        "rot": [
+          0,
+          -0.062,
+          0
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": false,
+        "order": 104,
+        "lossCounted": false,
+        "wrongAt": [],
+        "integrity": 100,
+        "bounces": 0,
+        "blastBoosted": false,
+        "mystery": null
+      }
+    },
+    {
+      "test": "Recovery inventory has no duplicate ID",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest exterior drop synchronizes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Simultaneous pickup has only one owner",
+      "passed": true,
+      "details": {
+        "owners": 1,
+        "inv": [
+          {
+            "id": 2,
+            "order": 102,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 3,
+            "order": 103,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 5,
+            "order": 105,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 6,
+            "order": 106,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 7,
+            "order": 107,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 8,
+            "order": 108,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 9,
+            "order": 109,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 10,
+            "order": 110,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 11,
+            "order": 111,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 12,
+            "order": 112,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 13,
+            "order": 113,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 14,
+            "order": 114,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 15,
+            "order": 115,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 16,
+            "order": 116,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 17,
+            "order": 117,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 18,
+            "order": 118,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 4,
+            "order": 104,
+            "delivered": false,
+            "integrity": 98.56
+          },
+          {
+            "id": 1,
+            "order": 101,
+            "delivered": false,
+            "integrity": 100
+          }
+        ]
+      }
+    },
+    {
+      "test": "Rescue with two couriers preserves uniqueness",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest holds matching order before throw",
+      "passed": true,
+      "details": {
+        "id": 1,
+        "kind": 0,
+        "p": [
+          8.5,
+          0.5,
+          25.1
+        ],
+        "rot": [
+          0,
+          0.011,
+          0
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": false,
+        "order": 101,
+        "lossCounted": false,
+        "wrongAt": [],
+        "integrity": 100,
+        "bounces": 0,
+        "blastBoosted": false,
+        "mystery": null
+      }
+    },
+    {
+      "test": "Guest real throw signs matching order",
+      "passed": true,
+      "details": {
+        "h": {
+          "mode": "playing",
+          "view": "drive",
+          "time": 26.099999999999817,
+          "score": 100,
+          "delivered": 1,
+          "shots": 1,
+          "lost": 0,
+          "explosions": 0,
+          "combo": 1,
+          "lastDelivery": 25.049999999999876,
+          "brick": false,
+          "charge": 0,
+          "charging": false,
+          "chargeSource": null,
+          "cooldown": 0,
+          "toastUntil": 27.849999999999877,
+          "shake": 0,
+          "hitCooldown": 0,
+          "hintUntil": 30.049999999999876,
+          "switchUntil": 0,
+          "warnUntil": 0,
+          "helpFrom": "menu",
+          "nextId": 19,
+          "damageCost": 0,
+          "trickCount": 0,
+          "lastBreakdown": "基础 $100",
+          "selectedOrder": 0,
+          "recovered": 4,
+          "repairs": 0,
+          "wrong": 0
+        },
+        "g": {
+          "mode": "playing",
+          "view": "outside",
+          "time": 26.1275,
+          "score": 100,
+          "delivered": 1,
+          "shots": 1,
+          "lost": 0,
+          "explosions": 0,
+          "combo": 0,
+          "lastDelivery": -100,
+          "brick": false,
+          "charge": 0,
+          "charging": false,
+          "chargeSource": null,
+          "cooldown": 0.17000000000000004,
+          "toastUntil": 27.52459999999986,
+          "shake": 0,
+          "hitCooldown": 0,
+          "hintUntil": 27.52159999999986,
+          "switchUntil": 0,
+          "warnUntil": 0,
+          "helpFrom": "menu",
+          "nextId": 19,
+          "damageCost": 0,
+          "trickCount": 0,
+          "lastBreakdown": "基础 $100",
+          "selectedOrder": 0,
+          "recovered": 4,
+          "repairs": 0,
+          "wrong": 0
+        }
+      }
+    },
+    {
+      "test": "Both peers agree on money and damage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Held item clears after acknowledged throw",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest repair progress synchronized",
+      "passed": true,
+      "details": {
+        "at": 26.099999999999817,
+        "origin": [
+          3.05,
+          1.73,
+          67.1
+        ]
+      }
+    },
+    {
+      "test": "Guest repair mutates shared car once",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest pause freezes both",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "Guest resume returns both",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "No runtime errors in two pages",
+      "passed": true,
+      "details": {
+        "host": [],
+        "guest": []
+      }
+    },
+    {
+      "test": "WebGL stays valid on both",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "World snapshot stays below 64KiB",
+      "passed": true,
+      "details": {
+        "max_message_bytes": 9218,
+        "messages": [
+          118,
+          83
+        ]
+      }
+    },
+    {
+      "test": "Disconnect pauses host",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

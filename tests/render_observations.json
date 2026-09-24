@@ -1,0 +1,17 @@
+{
+  "views": [
+    {
+      "view": "market",
+      "render": 60111,
+      "total": 79450,
+      "batches": 37
+    },
+    {
+      "view": "works",
+      "render": 51335,
+      "total": 79450,
+      "batches": 36
+    }
+  ],
+  "errors": []
+}

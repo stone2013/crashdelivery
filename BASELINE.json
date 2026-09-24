@@ -1,0 +1,7 @@
+{
+  "baseline_release": "V0.7.0 ONLINE / CITY ROUTES",
+  "baseline_html_sha256": "d4b8c4d3966632458a0e997be181fa544db03af0e3b573a3b9de5e040aa66d57",
+  "baseline_size": 266070,
+  "v071_html_sha256": "33215bd85d4046fa6f7670c721f1a550d8107f5f72a7970bc082bf675c4e5cf5",
+  "note": "V0.7.1 was built from the previously delivered V0.7.0 release artifact. GitHub main was not modified during this build."
+}
