@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#162e34"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="暴力快递 V0.7 城市交通：住宅、商业、工业三区，18 件任务包裹，路口转弯让行、事故清障及双人同车合作。">
+<title>暴力快递 · V0.7 ONLINE · CITY ROUTES</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<main id="game" aria-label="暴力快递 V0.7 ONLINE 游戏">
+ <canvas id="world" tabindex="0" aria-label="3D 游戏。驾驶时 WASD 开车；V 进入货箱。货箱内 WASD 走动，拖动画面观察，E 互动，空格蓄力投掷。"></canvas>
+ <canvas id="overlay" aria-hidden="true"></canvas><div id="vignette"></div>
+ <div id="hud" class="hidden" data-view="drive">
+  <header class="statusbar"><span id="viewTag" class="viewtag">驾驶</span><span class="stat"><b id="count">0</b><small>/18</small></span><span class="money">$<b id="score">0</b></span><span class="time" id="clock">00:00</span><button id="pauseBtn" class="pause control" aria-label="暂停游戏" title="暂停 Esc">Ⅱ</button></header>
+  <div class="route" role="group" aria-label="当前订单"><span id="routeArrow">↗</span><b id="address">向阳街 101 号</b><span id="distance">40 m</span><button id="ordersBtn" type="button" aria-label="打开订单清单">订单</button></div>
+  <div id="routeGuide" class="routeGuide">沿道路前往目标</div><div class="statuschips"><span id="districtChip">住宅区</span><span id="autoChip">手动油门</span><span id="doorChip">后门已关</span><span id="stockChip">货物 18</span></div>
+  <aside class="mapPanel"><button id="mapOpenBtn" type="button" aria-label="打开城市地图和路线"><canvas id="minimap" width="220" height="220" aria-label="小镇地图，黄色标记下一单"></canvas><small>下一单 <span id="nextNum">101</span> · 地图</small></button></aside>
+  <div id="risk" class="hidden" role="status"></div>
+  <div id="toast" role="status" aria-live="polite"><b id="toastTitle"></b><span id="toastSub"></span></div>
+  <div id="hint" class="hidden" aria-live="polite"></div>
+  <div class="telemetry"><strong id="speed">0</strong><small>km/h</small><span class="healthtrack" aria-label="车辆耐久"><i id="healthFill"></i></span></div>
+  <div id="driveUI" class="viewUI">
+   <div class="driveLeft"><div class="driveTools"><button id="watchBtn" class="control smallAct hidden">看队友</button><button id="brickBtn" class="tool control" title="B 放砖 / 取砖"><span>🧱</span><small id="brickLabel">放砖</small></button></div><div class="steering"><button id="leftBtn" class="control wheelBtn" aria-label="左转">◀</button><button id="rightBtn" class="control wheelBtn" aria-label="右转">▶</button></div></div>
+   <div class="driveRight"><button id="cargoBtn" class="enter control"><span>▣</span><b>进货箱</b><kbd>V</kbd></button><div class="pedals"><button id="brakeBtn" class="control" aria-label="刹车，停稳后继续按住倒车">刹车</button><button id="gasBtn" class="control gas">油门</button></div></div>
+  </div>
+  <div id="cargoUI" class="viewUI hidden">
+   <div id="joystick" class="joystick" role="group" aria-label="在货箱内移动，拖动或按四个方向"><span class="stickring"></span><span id="stickThumb" class="stickthumb"></span><button id="walkForward" aria-label="往前走" class="walk up">▲</button><button id="walkBack" aria-label="往后走" class="walk down">▼</button><button id="walkLeft" aria-label="向左走" class="walk left">◀</button><button id="walkRight" aria-label="向右走" class="walk right">▶</button><small>移动</small></div>
+   <div class="rearControls hidden" id="rearControls"><small>后门</small><div><button id="leftDoorBtn" class="control doorToggle" aria-label="打开左后门">左</button><button id="rightDoorBtn" class="control doorToggle" aria-label="打开右后门">右</button></div></div>
+   <div class="cargoActions"><button id="assistAimBtn" class="control smallAct hidden" aria-label="看向下一单的门窗，重复点击切换入口">◎ 瞄准</button><button id="interactBtn" class="control interact" aria-label="与当前目标互动"><span id="interactIcon">✋</span><b id="interactText">拿起</b><kbd>E</kbd></button><button id="dropBtn" class="control smallAct hidden" title="放下包裹 R">↓ 放下</button><button id="throwBtn" class="control throw hidden" aria-label="按住蓄力，松开投掷"><span>↗</span><b>投掷</b></button><div id="powerTrack" class="powertrack hidden"><i id="powerFill"></i></div></div>
+   <button id="boardBtn" type="button" class="control smallAct hidden mobility">下车</button><div id="crosshair" aria-hidden="true"><i></i></div><div id="focusLabel"></div>
+  </div>
+  <div id="taskBadge" class="taskBadge hidden"></div><div id="workProgress" class="workProgress hidden" role="status"><span id="workLabel">维修中</span><div><i id="workFill"></i></div></div><div id="roomStrip" class="roomStrip hidden"><div class="crewHud"><span class="crewDot local"></span><span class="crewHudText"><strong id="localNameHud">我</strong><small id="localRoleHud">驾驶员</small></span></div><span class="roomDivider"></span><div class="crewHud"><span class="crewDot remote"></span><span class="crewHudText"><strong id="remoteNameHud">等待队友</strong><small id="remoteRoleHud">未连接</small></span></div><span class="roomMeta" id="roomMetaHud"></span><button id="waveBtn" title="H 挥手" aria-label="向队友挥手">👋</button></div><div id="keyHelp" class="keyhelp"></div>
+ </div>
+ <section id="manifest" class="manifest hidden" aria-label="配送清单"><header><div><small>DISPATCH / 12 JOBS</small><h2>认准门牌，再扔。</h2></div><button id="closeOrdersBtn" type="button" class="control" aria-label="关闭订单清单">×</button></header><p>点一单设置团队导航。清单打开时车辆仍会行驶。</p><div id="orderList"></div><footer id="manifestFooter">每个包裹都有唯一收件地址。</footer></section>
+<section id="menu" class="screen menuScreen">
+  <div class="menuCopy"><div class="eyebrow"><i></i> A VERY UNPROFESSIONAL DELIVERY SERVICE</div><h1>暴力<span>快递</span><sup>↗</sup></h1><div class="englishTitle">CRASH DELIVERY</div><div class="edition">V0.7 ONLINE <span>CITY ROUTES</span></div><h2>认准这箱。<br>一起送到。</h2><p>同一辆车，两名快递员。<br>18 件快递，三片街区。看路况、找包裹，和搭档一起送到。</p><div class="profileSetup"><label><b>你的快递员昵称</b><span>最多 12 个字</span></label><div class="nicknameRow"><input id="nicknameInput" maxlength="12" autocomplete="nickname" placeholder="例如：闪电小张" aria-label="你的游戏昵称"><span class="nicknameBadge"><i></i>头顶显示</span></div></div><div class="lobbyLabel">MULTIPLAYER / 双人联机</div><div class="multiplayerPanel"><button id="hostBtn" class="primary" style="background:#f1e4b5">🌐 创建双人房间</button><div class="joinRow"><input id="roomCode" maxlength="6" inputmode="numeric" placeholder="输入 6 位房间码" aria-label="6 位房间码"><button id="joinBtn" class="control">加入</button></div></div><div id="netStatus" class="netStatusPill">多人模式：等待创建或加入房间</div><button id="startBtn" class="secondary soloLink" disabled>单人练习 →</button><div class="packageLegend"><span>📦 普通</span><span>📱 小包</span><span>📺 重箱</span><span>🍷 易碎</span><span>🛢 圆筒</span><span>❓ 神秘</span></div><div class="menuLinks"><button id="wardrobeBtn" class="secondary">角色 / 动作预览 ↗</button><button id="copyRoomBtn" class="secondary hidden">复制邀请</button><button id="cancelNetBtn" class="secondary hidden">取消连接</button></div><button id="garageBtn" class="secondary">车库 / 永久升级 ↗</button><button id="cityMenuBtn" class="secondary">城市地图 / 三个街区 ↗</button><button id="helpBtn" class="secondary">怎么玩 · 操作说明 ↗</button><div class="menuFooter"><span>真 3D / 多人实验版</span><span>手机 + 电脑</span><span id="bestMenu">最高收入 $0</span></div></div>
+  <div class="menuStamp"><span>CREW / 02</span><strong>一个看路。<br>一个送到。</strong><small>独立玩家 · 实体角色 · 同车协作</small></div>
+ </section>
+ <section id="pauseScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">PIT STOP / 暂停</div><h2>喘口气。车也暂停了。</h2><p id="pauseSummary"></p><p id="pauseNet" class="fineprint"></p><button id="resumeBtn" class="primary">继续派送 →</button><div class="settings"><button id="qualityBtn">画质：自动高清</button><button id="assistBtn">辅助瞄准：开</button><button id="soundBtn">音效：开</button><button id="motionBtn">镜头晃动：轻微</button><button id="serviceBtn">道路救援 / 救援 / 补齐订单</button><button id="restartBtn">重新开始本轮</button></div><p class="resolution" id="resolutionLabel"></p><p class="fineprint">救援保留已送订单，将车辆停回道路、修复并补齐未完成订单的包裹（不会复制队友手中的包裹）；收入扣 $120（最低为 0），用时 +20 秒。不会自动替你关闭后门。</p><button id="leaveBtn" class="secondary hidden">退出联机 / 返回菜单</button><button id="pauseHelpBtn" class="secondary">查看操作说明</button></div></section>
+ <section id="garageScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">GARAGE / 永久升级</div><h2>把今天赚的钱，花在明天的事故上。</h2><p>当前车库资金：<strong id="garageCredits" style="color:var(--gold)">$0</strong></p><div class="settings"><button id="upgrade_engine"><b>发动机 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_brakes"><b>刹车 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_grip"><b>抓地力 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_mat"><b>货箱防滑 Lv.0</b><br><span>升级 $300</span></button></div><p class="fineprint">发动机提高加速；刹车缩短制动距离；抓地力改善高速转向；防滑垫降低货箱内包裹滑动。升级永久保存在本机。</p><button id="closeGarageBtn" class="primary">返回主菜单 →</button></div></section>
+ <section id="cityScreen" class="cityScreen hidden" aria-label="城市地图"><div class="citySheet"><header><div><small>V0.7 / CITY ROUTES</small><h2>认路，再出发。</h2></div><button id="closeCityMapBtn" class="control" type="button" aria-label="关闭城市地图">×</button></header><div class="cityLayout"><div class="cityMapBox"><canvas id="cityMap" width="640" height="640" aria-label="城市道路与任务地址。点击编号选择地址；也可使用订单面板选择。"></canvas><p class="cityLegend">黄线：团队路线　橙虚线：事故路　浅色方块：包裹地址<br>点击编号查看详情。路线只作提示，不会替你转向。</p></div><div class="cityInfo"><div id="cityDistricts" class="cityDistricts"><button type="button" data-district="all" class="active">全部</button><button type="button" data-district="garden">住宅区</button><button type="button" data-district="market">商业街</button><button type="button" data-district="works">工业区</button></div><h3 id="cityMapRoute">向阳住宅区</h3><p id="cityMapDetail"></p><p id="cityRouteSummary"></p><p id="cityMapTraffic"></p><button id="cityNavigateBtn" class="primary" type="button">设为团队下一单 →</button><p class="cityNote">地图不会暂停联机世界。车在继续行驶，打开前请先停车或让搭档掌舵。更改导航会同步给队友。</p></div></div></div></section>
+<section id="helpScreen" class="screen modalScreen hidden"><div class="modal helpModal"><div class="eyebrow">QUICK START / 上岗指南</div><h2>搭档一起，亲手投递。</h2><div class="helpRows"><div><b>V0.7 城市交通 / N 打开地图</b><p>18 个地址分布在住宅、商业、工业三区。NPC 会沿车道转弯、等红灯、排队与让行；事故车辆会堵住道路，清障后车流恢复。黄色路线只作提示，不会自动转向。点城市地图编号或订单选择下一单。</p></div>
+<div><b>01 / 一单一箱</b><p>每个地址只认对应编号的实体包裹。车里共 12 个订单箱，六种类型。看箱体门牌号或点顶部「订单」确认；选一单会同步团队导航。</p></div>
+<div><b>02 / 两个人都能开车</b><p>房主起步驾驶，队友在货箱。先停车，驾驶员按 V 离座；另一人走到前方，按 E 接管空座。驾驶位只能坐一人。两人都离座时砖头只管油门，不会转向。</p></div>
+<div><b>03 / 认号、拿起、投出去</b><p>WASD / 左下移动区走动，拖动右侧画面观察。低头看编号箱，E /「拿起」。走到后沿，G / 门钮开后门，F /「瞄准」辅助锁定门窗；按住空格 / 左键 /「投掷」蓄力，松手扔出。R 放下。</p></div>
+<div><b>04 / 下车找回掉货</b><p>走到车尾、开门，车速低于 12 km/h 时按 V /「下车」。在街上靠近包裹并低头，E 回收。到打开的后门旁按 V /「上车」，可以抱着箱子上车。未送的快递不会定时消失。</p></div>
+<div><b>05 / 地址错了，会退货</b><p>送错地址不算完成，首次送错这家最多扣 $40；箱子会退到这家门口，可以捡回重送。首次掉货最多扣 $25，捡回后再掉落不重复收取。只有包裹真正穿过入口、进入对应房屋才签收。</p></div>
+<div><b>06 / 现场维修</b><p>严重撞击可能伤到轮胎，车速受限。停车、取砖，下车空手靠近车头，E /「维修」，保持原地 3 秒恢复车况。移动或车辆开走会取消；修车不重置订单，也不自动关后门。</p></div>
+<div><b>07 / 脱困与共享暂停</b><p>Esc / 暂停会同时停住两人。由房主申请道路救援，最多扣 $120、用时加 20 秒，将两人带回车内并补齐未送订单，不会复制包裹。M 打开清单；清单本身不会暂停车辆。</p></div>
+</div><p class="fineprint">到后门后点「下车」可走到街上；先开门并减速至 12 km/h 以下。下车后可回收地上快递，空手靠近车头维修。货箱为轻量碰撞 / 惯性物理，不是完整刚体或软体模拟。砖头驾驶仅为游戏设定。</p><button id="closeHelpBtn" class="primary">明白了 →</button></div></section>
+ <section id="endScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">SHIFT COMPLETE</div><h2>这趟，送完了。</h2><div class="endMark">✓</div><div class="endStats"><div><small>收入</small><strong id="endScore">$0</strong></div><div><small>用时</small><strong id="endTime">00:00</strong></div><div><small>掉落货物</small><strong id="endLost">0</strong></div></div><p id="endBest"></p><button id="againBtn" class="primary">再跑一轮 →</button><button id="backMenuBtn" class="secondary">返回菜单</button></div></section>
+ <section id="errorScreen" class="screen modalScreen hidden"><div class="modal"><h2>画面没有启动</h2><p id="errorText">请使用支持 WebGL 的浏览器打开。</p><button id="reloadBtn" class="primary">重新加载</button></div></section>
+<section id="wardrobe" class="screen wardrobe hidden"><header><div class="eyebrow">CREW FILE / 实时 3D 模型</div><h2>搭档上岗<span>V0.7 ONLINE</span></h2><p>拖动画面旋转 · 选择动作实时预览</p></header><button id="closeWardrobe" class="control galleryClose">返回菜单 ×</button><div class="avatarCaption"><small id="crewNumber">COURIER / 01</small><strong id="crewName">橙帽快递员</strong><span id="poseTitle">待机呼吸</span></div><div class="poseDock"><div class="crewSelect"><button id="crew0" class="active">01 / 橙帽</button><button id="crew1">02 / 蓝帽</button><span>关节动画 · 无贴图依赖</span></div><div class="poseGrid"><button data-pose="idle">待机</button><button data-pose="walk">走路</button><button data-pose="carry">抱箱走</button><button data-pose="charge">蓄力</button><button data-pose="throw">投掷</button><button data-pose="interact">开门</button><button data-pose="drive">驾驶</button><button data-pose="wave">挥手</button></div></div></section>
+ <noscript><div class="noscript">游戏需要 JavaScript，请使用浏览器打开，而不是文件预览器。</div></noscript>
+</main>
+<script>
+window.__deliveryBootReady=false;
+window.addEventListener('error',function(e){
+ if(window.__deliveryBootReady)return;
+ var panel=document.getElementById('errorScreen'),text=document.getElementById('errorText');
+ if(text)text.textContent='启动检查失败：'+(e.message||'未知错误')+'。请保留这个错误提示。';
+ if(panel){panel.classList.remove('hidden');panel.style.zIndex='99';}
+ ['startBtn','hostBtn','joinBtn'].forEach(function(id){var b=document.getElementById(id);if(b)b.disabled=true;});
+});
+</script><script>
+(function(){function fail(message){if(window.__deliveryBootReady)return;var el=document.getElementById('errorScreen'),text=document.getElementById('errorText');if(el&&text){text.textContent='启动失败：'+String(message).slice(0,260);el.classList.remove('hidden');}var btn=document.getElementById('reloadBtn');if(btn)btn.onclick=function(){location.reload();};}window.addEventListener('error',function(e){fail(e.message||'脚本加载失败');});window.addEventListener('unhandledrejection',function(e){fail(e.reason&&e.reason.message||'初始化异常');});setTimeout(function(){if(!window.__deliveryBootReady)fail('初始化未完成，请检查浏览器错误信息或重新加载。');},12000);})();
+</script>
+<script>/*__ENGINE__*/</script><script>/*__GAME__*/</script>
+</body></html>

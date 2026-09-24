@@ -58,3 +58,11 @@ npx wrangler deploy
 ```
 
 Do not run `wrangler secret put` with values embedded in commands. Prefer having the owner enter the new credential values directly into Cloudflare's Secret fields. The Worker name/domain, frontend endpoint, and expected variable names are recorded in `turn-worker/wrangler.toml`, `turn-worker/README.md`, and `NETWORK_SETUP.md`; the secret values are intentionally absent.
+
+## Legacy V0.7 source recovery (2026-09-24)
+
+- The 11 files under `source/` were mechanically split from the V0.7 `index.html` baseline at commit `9ca544f`; they preserve that earlier game implementation and are retained as historical recovery material.
+- Before the upstream V0.7.2 update, rebuilding those modules reproduced the old V0.7 bundle byte-for-byte (SHA-256 `F3033C9683A6221FA566D4666B017DB46177F37089D2339B1CB5B98C25BA5EE3`). The original authoring structure, comments or files omitted from the bundle cannot be recovered from the compiled page.
+- Current `main` is V0.7.2. Its production page is generated from `src/release-v071.snapshot.html`; `source/` is not the current build input. The current root `index.html` remains the V0.7.2 reference and must not be replaced with the legacy V0.7 output.
+- Browser checks on the recovered V0.7 candidate confirmed desktop and mobile loading, game entry, and tested gameplay behaviors; those checks do not establish V0.7.2 parity for the legacy source.
+- No Cloudflare secrets or credentials were added during source recovery. Continue to keep all TURN keys and API tokens out of files, terminal logs, and Git.
