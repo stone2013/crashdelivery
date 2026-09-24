@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "six route labels shown": true,
+    "six independent relay-only connections": true,
+    "each connection tests only one URL": true,
+    "only actual relay candidates pass": true,
+    "failed route times out": true,
+    "fastest valid relay is persisted": true,
+    "credentials absent from UI and localStorage": true,
+    "direct policy remains selected": true,
+    "no JS errors": true
+  },
+  "diag": "六路 TURN 实测\nUDP 3478\n❌ 失败 · 59 ms\nTCP 3478 · 推荐\n✅ relay · 60 ms\nTLS 5349\n✅ relay · 86 ms\nUDP 443\n⌛ 超时 · 7007 ms\nTCP 80\n❌ 失败 · 60 ms\nTLS 443\n❌ 失败 · 59 ms\n推荐路线：TCP 3478。自动模式仍先尝试 P2P，联机 ICE 会优先此 TURN 路线。",
+  "routes": [
+    {
+      "url": "turn:turn.cloudflare.com:3478?transport=udp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:3478?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turns:turn.cloudflare.com:5349?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:443?transport=udp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:80?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turns:turn.cloudflare.com:443?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    }
+  ],
+  "runtimeErrors": []
+}

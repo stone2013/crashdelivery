@@ -4,9 +4,14 @@ Updated: 2026-09-24
 
 ## Goal
 
-Continue the `stone2013/crashdelivery` `main` line. V0.7.3.1 ONLINE focuses on locally predicted courier movement, bounded reconciliation, and smooth teammate snapshots while preserving host authority. Public acceptance remains P2P first, Cloudflare Realtime TURN fallback, with short-lived credentials served only by the Worker.
+Continue the `stone2013/crashdelivery` `main` line. V0.7.4 ONLINE expands host-authoritative co-op to one host plus two guests and adds an in-game player manager, preserving locally predicted driving and Cloudflare Realtime TURN fallback. Short-lived credentials remain served only by the Worker.
 
 ## Completed
+
+- V0.7.4 candidate supports three actor slots (host + two guests), independent guest inputs/actions and player state, host-authoritative shared world simulation, reconnect slot reservation, room-full/kicked-client handling, and a roster UI with role, connection, link, RTT, invite-copy, and host kick controls.
+- V0.7.4 build metadata and protocol are versioned `mp074`; artifact HTML/ZIP, changelog, and report are generated independently from root `index.html`.
+- Static release build passed inline JavaScript syntax and DOM reference checks. Three Chromium clients (desktop host, portrait phone guest, landscape desktop guest) passed 11/11 checks for roster/slots, authoritative actor snapshots, exclusive driver seat, host kick, solo entry, city/order availability, and mobile layout using a deterministic in-page transport bridge. The six-route ICE harness passed 9/9 with synthetic credentials/candidates; this is not a real TURN allocation.
+- Public Cloudflare TURN, actual signaling/ICE room admission, Wi-Fi↔5G acceptance, and the full historical gameplay regression suite remain unverified for V0.7.4.
 
 - V0.7.3 candidate adds locally predicted driving, sequenced input/acks, adaptive reconciliation, bounded teammate interpolation/extrapolation, and actual P2P/TURN RTT HUD.
 - V0.7.3.1 candidate adds guest courier prediction/replay for on-foot movement, render correction offsets, cargo-local actor coordinates, immediate joystick input/release, and remote actor pose interpolation. The production bundle retains all V0.7.3 vehicle/ICE features.

@@ -1,0 +1,62 @@
+{
+  "transport": "three Chromium pages with deterministic ordered in-page message bridge; not WebRTC/ICE",
+  "passed": 11,
+  "total": 11,
+  "results": [
+    {
+      "name": "Room roster assigns all three unique player slots",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Manager lists host and both guests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Room count shows three connected players",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Mobile player panel stays within viewport",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Authoritative world packet includes all three actors",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Driver role is exclusive across both guests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Host can remove a guest from manager",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Other guest remains connected and visible",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "No uncaught JS runtime errors across three clients",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Single-player entry and V0.7 city/order setup remain available",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Phone layout keeps primary game controls on-screen",
+      "passed": true,
+      "details": null
+    }
+  ]
+}
