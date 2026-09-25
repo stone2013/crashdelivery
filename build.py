@@ -26,7 +26,10 @@ rules = DUEL_RULES.read_text(encoding='utf-8')
 if not DUEL_RUNTIME.exists():
     raise RuntimeError('Missing 2v2 runtime adapter')
 runtime = DUEL_RUNTIME.read_text(encoding='utf-8')
-html = html.replace('</body>', '<script>\n' + rules + '\n</script>\n<script>\n' + runtime + '\n</script>\n</body>')
+anchor = '/*__DUEL_RUNTIME_INSERTION_POINT__*/'
+if html.count(anchor) != 1:
+    raise RuntimeError('Missing or duplicate 2v2 runtime insertion point')
+html = html.replace(anchor, rules + '\n' + runtime, 1)
 ids = re.findall(r'\bid="([^"\n]+)"', html)
 if len(ids) != len(set(ids)):
     raise RuntimeError('Duplicate DOM IDs')

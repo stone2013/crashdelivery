@@ -2021,10 +2021,6 @@ setInterval(()=>{if(!$('multiplayerScreen').classList.contains('hidden'))refresh
 if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCapacity:setMaxPlayers,capacity:()=>net.maxPlayers,render:renderPublicRooms}});
 if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCapacity:setMaxPlayers,capacity:()=>net.maxPlayers,render:renderPublicRooms}});
 
-})();
-</script>
-
-<script>
 /* 2v2 delivery duel: deterministic host-authoritative match rules.
  * This module is embedded by build.py so the released game remains one HTML file.
  * Vehicle movement, collision geometry, room assignment and rendering are integrated separately.
@@ -2285,8 +2281,6 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   });
 })();
 
-</script>
-<script>
 /* V0.8.0 2v2 runtime adapter. Kept separate so the V0.7 co-op path is untouched. */
 (() => {
   'use strict';
@@ -2811,5 +2805,7 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   // The host creates the match after the fourth player is admitted; the menu and room flow stay shared.
 })();
 
+})();
 </script>
+
 </body></html>
