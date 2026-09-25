@@ -158,7 +158,7 @@
    <div class="cargoActions"><button id="assistAimBtn" class="control smallAct hidden" aria-label="看向下一单的门窗，重复点击切换入口">◎ 瞄准</button><button id="interactBtn" class="control interact" aria-label="与当前目标互动"><span id="interactIcon">✋</span><b id="interactText">拿起</b><kbd>E</kbd></button><button id="dropBtn" class="control smallAct hidden" title="放下包裹 R">↓ 放下</button><button id="throwBtn" class="control throw hidden" aria-label="按住蓄力，松开投掷"><span>↗</span><b>投掷</b></button><div id="powerTrack" class="powertrack hidden"><i id="powerFill"></i></div></div>
    <div id="crosshair" aria-hidden="true"><i></i></div><div id="focusLabel"></div>
   </div>
-  <button id="boardBtn" type="button" class="control smallAct hidden mobility" aria-label="随时跳跃；靠近车尾可上下车，空格跳跃">↟ 跳跃</button>
+  <button id="boardBtn" type="button" class="control smallAct hidden mobility" aria-label="随时跳跃；按 J 跳跃；靠近车尾可上下车">↟ 跳跃 J</button>
   <div id="taskBadge" class="taskBadge hidden"></div><div id="workProgress" class="workProgress hidden" role="status"><span id="workLabel">维修中</span><div><i id="workFill"></i></div></div><div id="roomStrip" class="roomStrip hidden"><div class="crewHud"><span class="crewDot local"></span><span class="crewHudText"><strong id="localNameHud">我</strong><small id="localRoleHud">驾驶员</small></span></div><span class="roomDivider"></span><div class="crewHud"><span class="crewDot remote"></span><span class="crewHudText"><strong id="remoteNameHud">等待队友</strong><small id="remoteRoleHud">未连接</small></span></div><span class="roomMeta" id="roomMetaHud"></span><button id="playersBtn" class="control" title="玩家管理" aria-label="玩家管理">👥 1/4</button><button id="waveBtn" title="H 挥手" aria-label="向队友挥手">👋</button></div><section id="playersPanel" class="hidden" aria-label="玩家管理"><header><b>房间玩家 <span id="playerCountLabel">1/4</span></b><button id="panelInviteBtn" type="button">复制邀请</button><button id="closePlayersBtn" type="button" aria-label="关闭玩家列表">×</button></header><div id="playersList"></div><p class="roomHelp">房主可移除客机；人数上限按房主设置，最多 4 人同房。离线玩家保留 20 秒以便自动重连。</p></section><div id="keyHelp" class="keyhelp"></div>
  </div>
  <section id="manifest" class="manifest hidden" aria-label="配送清单"><header><div><small>DISPATCH / 12 JOBS</small><h2>认准门牌，再扔。</h2></div><button id="closeOrdersBtn" type="button" class="control" aria-label="关闭订单清单">×</button></header><p>点一单设置团队导航。清单打开时车辆仍会行驶。</p><div id="orderList"></div><footer id="manifestFooter">每个包裹都有唯一收件地址。</footer></section>
@@ -1742,7 +1742,7 @@ drawMap=function(){
 syncButtons=function(){
  if(net.executing)return;v06.syncButtons();
  $('cargoUI').classList.toggle('hidden',!isWalking());$('viewTag').textContent=roleLabel(state.view);
- $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶 · 空格随时跳跃 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停':player.held?'WASD 移动 · 拖动观察 · 空格蓄力投掷 · 右侧↟随时跳跃/上下车 · E 交互':'WASD 移动 · 空格或右侧↟随时跳跃 · 靠近后门可上下车 · E 交互 · G 后门 · F 瞄准';
+ $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶 · J/右侧↟跳跃 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停':player.held?'WASD 移动 · 拖动观察 · 空格蓄力投掷 · J/右侧↟跳跃或上下车 · E 交互':'WASD 移动 · J/右侧↟随时跳跃 · 靠近后门可上下车 · E 交互 · G 后门 · F 瞄准';
 };
 updateHUD=function(){
  if(net.executing)return;v06.updateHUD();
@@ -1752,7 +1752,7 @@ updateHUD=function(){
  if(h&&outside)$('distance').textContent=Math.round(Math.hypot(h.x-player.p[0],h.z-player.p[2]))+' m';
  $('localRoleHud').textContent=roleLabel(state.view);if(otherAvatar())$('remoteRoleHud').textContent=otherAvatar().repair?'维修中':roleLabel(otherAvatar().view);
  const nearRear=outside?rearDistance()<2.7:state.view==='cargo'&&player.p[2]>2.3;
- $('boardBtn').classList.toggle('hidden',state.mode!=='playing');$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃';
+ $('boardBtn').classList.toggle('hidden',state.mode!=='playing');$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃 J';
  $('rearControls').classList.toggle('hidden',!nearRear);$('assistAimBtn').classList.toggle('hidden',!held||!walking||(!outside&&player.p[2]<2.25));
  $('throwBtn').classList.toggle('hidden',!held||!walking);$('dropBtn').classList.toggle('hidden',!held||!walking);$('powerTrack').classList.toggle('hidden',!held||!walking);
  let text='靠近箱子',icon='✋',focusText='';
@@ -1923,11 +1923,11 @@ function stopStick(e){if(e.pointerId!==joyPointer)return;joyPointer=null;inputs.
 for(const type of ['pointerup','pointercancel','lostpointercapture'])stick.addEventListener(type,stopStick);
 $('throwBtn').addEventListener('pointerdown',e=>{if(state.mode!=='playing'||state.view==='drive')return;e.preventDefault();capture($('throwBtn'),e.pointerId);startCharge('throw'+e.pointerId);});
 $('throwBtn').addEventListener('pointerup',e=>finishCharge('throw'+e.pointerId));for(const type of ['pointercancel','lostpointercapture'])$('throwBtn').addEventListener(type,e=>{if(state.chargeSource==='throw'+e.pointerId)cancelCharge();});
-const gameKeys=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyB','KeyV','KeyE','KeyG','KeyF','KeyR','KeyC','Space','Escape','KeyP']);
+const gameKeys=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyB','KeyV','KeyE','KeyG','KeyF','KeyR','KeyC','KeyJ','Space','Escape','KeyP']);
  window.addEventListener('keydown',e=>{if(!gameKeys.has(e.code)||['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
  if(e.code==='Escape'||e.code==='KeyP'){if(e.repeat)return;e.preventDefault();if(!$('helpScreen').classList.contains('hidden')){closeHelp();return;}if(state.mode==='playing')pause();else if(state.mode==='paused')resume();return;}
  if(state.mode!=='playing')return;e.preventDefault();inputs.keys.add(e.code);sendInputNow();if(e.repeat)return;
- if(e.code==='KeyB')toggleBrick();else if(e.code==='KeyV')(state.view==='outside'||state.view==='cargo'&&player.p[2]>1.45?mobility():setView(state.view==='drive'?'cargo':'drive'));else if(e.code==='KeyE')interact();else if(e.code==='KeyG')toggleBothDoors();else if(e.code==='KeyF')lockTarget();else if(e.code==='KeyR')dropPackage();else if(e.code==='KeyC'){if(state.view==='drive')driveOrbitGoal=0;else{player.yaw=Math.PI;player.pitch=-.15;player.aimGate=player.aimHouse=null;}}else if(e.code==='Space'){if(player.held&&state.view!=='drive')startCharge('space');else jumpVehicle();}
+ if(e.code==='KeyB')toggleBrick();else if(e.code==='KeyV')(state.view==='outside'||state.view==='cargo'&&player.p[2]>1.45?mobility():setView(state.view==='drive'?'cargo':'drive'));else if(e.code==='KeyE')interact();else if(e.code==='KeyG')toggleBothDoors();else if(e.code==='KeyF')lockTarget();else if(e.code==='KeyR')dropPackage();else if(e.code==='KeyC'){if(state.view==='drive')driveOrbitGoal=0;else{player.yaw=Math.PI;player.pitch=-.15;player.aimGate=player.aimHouse=null;}}else if(e.code==='KeyJ')jumpVehicle();else if(e.code==='Space'&&player.held&&state.view!=='drive')startCharge('space');
 });
 window.addEventListener('keyup',e=>{inputs.keys.delete(e.code);if(e.code==='Space'){if(state.mode==='playing')e.preventDefault();finishCharge('space');}sendInputNow();});
 $('startBtn').addEventListener('click',()=>{stopNetwork(false);resetGame();});$('hostBtn').addEventListener('click',()=>{net.maxPlayers=selectedMaxPlayers();hostRoom();});$('joinBtn').addEventListener('click',()=>joinRoom());$('againBtn').addEventListener('click',()=>resetGame());$('backMenuBtn').addEventListener('click',()=>stopNetwork(true));$('restartBtn').addEventListener('click',()=>resetGame());$('pauseBtn').addEventListener('click',pause);$('resumeBtn').addEventListener('click',resume);$('serviceBtn').addEventListener('click',service);
