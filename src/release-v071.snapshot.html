@@ -134,6 +134,7 @@
 @media(max-width:620px){.multiLobby{padding:17px 14px;border-radius:16px}.multiLobbyHeader{margin-bottom:12px}.multiLobbyHeader h2{font-size:22px}.multiLobbyGrid{grid-template-columns:1fr;gap:8px}.mpCard{padding:11px}.mpBrowser{grid-column:auto}.publicRoomsList{grid-template-columns:1fr}.publicRoomRow{grid-template-columns:minmax(0,1fr) auto auto;gap:6px}.publicRoomMeta{font-size:8px}.multiLobbyFooter{font-size:8px}.mpJoin .joinRow{margin-top:10px}.capacityLabel{margin-top:10px}}
 @media(max-height:600px) and (orientation:landscape){.multiLobby{padding:13px 16px}.multiLobbyHeader{margin-bottom:8px}.multiLobbyHeader h2{font-size:20px}.multiLobbyGrid{grid-template-columns:1fr 1fr}.mpBrowser{grid-column:1/-1}.mpCard{padding:9px}.publicRoomsList{grid-template-columns:1fr 1fr;max-height:160px;overflow:auto}.publicRoomsStatus{padding:8px 3px}}
 </style>
+<style>.pedals #brakeBtn.reverse{background:linear-gradient(180deg,#f2c36b,#dfaa4e);border-color:#ffe3a0;color:#17343a;font-weight:800;box-shadow:0 0 0 2px #ffd05b35,inset 0 1px #fff5cf}</style>
 </head>
 <body>
 <main id="game" aria-label="暴力快递 V0.7 ONLINE 游戏">
@@ -1732,6 +1733,8 @@ syncButtons=function(){
 };
 updateHUD=function(){
  if(net.executing)return;v06.updateHUD();
+ const brakeButton=$('brakeBtn'),brakeHeld=inputs.brake.size>0||inputs.keys.has('KeyS')||inputs.keys.has('ArrowDown'),reverseMode=state.view==='drive'&&(car.speed<-.08||brakeHeld&&car.speed<=.15);
+ brakeButton.textContent=reverseMode?'倒车':'刹车';brakeButton.setAttribute('aria-label',reverseMode?'倒车中；松开刹车踏板停止倒车':'刹车；停稳后继续按住倒车');brakeButton.classList.toggle('reverse',reverseMode);
  const h=nextHouse();$('address').textContent=h?'#'+h.num+' '+h.item:'派送完成';
  const held=player.held,walking=isWalking(),outside=state.view==='outside',f=walking?collectFocus():null;
  $('cargoUI').classList.toggle('hidden',!walking);$('viewTag').textContent=roleLabel(state.view);
