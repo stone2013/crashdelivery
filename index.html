@@ -2304,7 +2304,7 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   const originalOtherAvatars = otherAvatars;
   const originalStopNetwork = stopNetwork;
   let localEventSeq = 0, hostDriverSeq = 0, duelLastStep = performance.now();
-  let duelCanvas = null, duelHud = null, duelButtons = null, duelToast = null, duelResult = null, pred = null;
+  let duelCanvas = null, duelHud = null, duelButtons = null, duelToast = null, duelResult = null, duelFlash = null, pred = null;
   let rememberedCoopSize = selectedMaxPlayers();
 
   function currentMode() {
@@ -2323,20 +2323,31 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
     .duelModePicker{display:flex;gap:8px;margin:0 0 12px}
     .duelModePicker button{flex:1;border:1px solid #ffffff22;background:#ffffff0a;border-radius:9px;padding:11px 8px;min-height:46px;font-size:12px}
     .duelModePicker button.active{background:#ffd05b;color:#16343a;border-color:#ffe6a6;font-weight:800}
-    #duelHud{position:absolute;z-index:5;top:calc(9px + var(--safeT));left:50%;transform:translateX(-50%);display:none;align-items:center;gap:9px;padding:7px 11px;border:1px solid #ffffff33;border-radius:12px;background:#142f37ee;box-shadow:0 3px 12px #10262a88;pointer-events:auto;max-width:calc(100% - 150px);white-space:nowrap;font-size:11px}
-    #duelHud[data-active=true]{display:flex}#duelHud .duelTeam{display:flex;align-items:center;gap:5px;font-weight:800}
-    #duelHud .amber{color:#ffd05b}#duelHud .teal{color:#74d1dc}#duelHud .duelTime{font-variant-numeric:tabular-nums;color:#fff4d7}
-    #duelHud .duelDamage{color:#ffc17a;font-size:9px}#duelHud button{min-width:36px;min-height:36px;border-radius:8px;background:#294951;border:1px solid #ffffff35;font-size:14px}
+    #duelHud{position:absolute;z-index:5;top:calc(10px + var(--safeT));left:50%;transform:translateX(-50%);display:none;width:min(620px,calc(100% - 170px));grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:7px;padding:9px 10px 7px;border:1px solid #ffffff37;border-radius:16px;background:linear-gradient(135deg,#102a32f5,#173943f0 52%,#102a32f5);box-shadow:0 8px 26px #071a20a8,inset 0 1px #ffffff12;backdrop-filter:blur(12px);pointer-events:auto;white-space:nowrap;font-size:11px}
+    #duelHud[data-active=true]{display:grid}#duelHud .duelScore{min-width:0;display:flex;align-items:center;gap:8px;padding:5px 9px;border:1px solid #ffffff14;border-radius:11px;background:#ffffff08}
+    #duelHud .duelScore.amber{grid-column:1;color:#ffcf58;border-color:#ffc94c36;background:linear-gradient(100deg,#ffbe3d19,#ffffff06)}#duelHud .duelScore.teal{grid-column:3;flex-direction:row-reverse;text-align:right;color:#80d8e1;border-color:#70d2dd36;background:linear-gradient(260deg,#58c7d41b,#ffffff06)}
+    #duelHud .duelScore .duelTeamDot{font-size:17px;filter:drop-shadow(0 0 5px currentColor)}#duelHud .duelScoreCopy{display:grid;gap:2px;min-width:0}#duelHud .duelScoreCopy b{font-size:10px;letter-spacing:.06em}#duelHud .duelScoreCopy small{font-size:9px;color:#d1ded4a8}
+    #duelHud .duelScore>strong{font-size:23px;line-height:1;font-variant-numeric:tabular-nums;color:#fff5d9;text-shadow:0 2px 8px #0008;margin-left:auto}#duelHud .teal>strong{margin-left:0;margin-right:auto}
+    #duelHud .duelClockWrap{grid-column:2;display:grid;justify-items:center;gap:2px;min-width:70px;padding:0 5px}#duelHud .duelClockWrap small{font-size:7px;letter-spacing:.18em;color:#91b2b5;font-weight:800}#duelHud .duelTime{font:800 17px/1 ui-monospace,monospace;font-variant-numeric:tabular-nums;color:#fff4d7}
+    #duelHud .duelBottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:6px;border-top:1px solid #ffffff12}#duelHud .duelStatus{min-width:0;display:flex;align-items:center;gap:6px;color:#c5d5d0;font-size:9px}#duelHud .duelStatus i{width:7px;height:7px;flex:none;border-radius:50%;background:#75c79c;box-shadow:0 0 8px #75c79c99}#duelHud .duelDamage{overflow:hidden;text-overflow:ellipsis;color:#c5d5d0;font-size:9px}
+    #duelHud button{min-width:68px;min-height:36px;display:flex;align-items:center;justify-content:center;gap:5px;padding:4px 8px;border-radius:9px;background:linear-gradient(180deg,#31545b,#23444c);border:1px solid #ffffff2b;color:#f8efd2;font-size:13px;box-shadow:inset 0 1px #ffffff0c;transition:transform .12s,border-color .12s,background .12s}
+    #duelHud button:not(:disabled):hover{transform:translateY(-1px);border-color:#ffd05b99;background:linear-gradient(180deg,#426b70,#294f56)}#duelHud button:not(:disabled):active{transform:translateY(1px) scale(.98)}#duelHud button small{font-size:9px;font-weight:700}
+    #duelHud[data-danger=burning] .duelStatus i,#duelHud[data-danger=disabled] .duelStatus i{background:#ff6758;box-shadow:0 0 10px #ff5149;animation:duelPulse .8s ease-in-out infinite alternate}#duelHud[data-danger=warning] .duelStatus i{background:#ffbf54;box-shadow:0 0 8px #ffbf54}
+    #duelWait:empty{display:none}#duelWait:not(:empty){grid-column:1/-1;text-align:center;padding:2px 4px;color:#d9e6dc;font-size:10px;font-weight:700;letter-spacing:.04em}
+    #duelHud[data-urgent=true] .duelTime{color:#ff8c70;animation:duelPulse .65s ease-in-out infinite alternate}
+    @keyframes duelPulse{to{opacity:.62;filter:brightness(1.45)}}
+    #duelImpactFlash{position:absolute;z-index:4;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 22%,#ff3e2f00 60%)}#duelImpactFlash.hit{animation:duelHitFlash .42s ease-out}@keyframes duelHitFlash{0%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}20%{opacity:1;background:radial-gradient(ellipse at center,#ffb24a32 18%,#ff3e2f85 100%)}100%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}}
     #game[data-duel=true] #ordersBtn,#game[data-duel=true] #manifest,#game[data-duel=true] #routeGuide,#game[data-duel=true] #assistAimBtn,#game[data-duel=true] #interactBtn,#game[data-duel=true] #dropBtn,#game[data-duel=true] #throwBtn,#game[data-duel=true] #powerTrack,#game[data-duel=true] #rearControls,#game[data-duel=true] #boardBtn,#game[data-duel=true] #brickBtn,#game[data-duel=true] #serviceBtn,#game[data-duel=true] #restartBtn{display:none!important}
     #game[data-duel=true] .statuschips,#game[data-duel=true] #clock,#game[data-duel=true] .statusbar .money{display:none!important}
-    #duelHud button:disabled{opacity:.42}#duelHud .duelTools{display:flex;gap:4px;margin-left:3px}
+    #duelHud button:disabled{opacity:.38;filter:saturate(.5)}#duelHud .duelTools{display:flex;gap:5px}
+    #duelHud[data-live=false] .duelBottom{display:none}
     #duelToast{position:absolute;z-index:6;top:70px;left:50%;transform:translateX(-50%);padding:7px 12px;border-radius:8px;background:#843f31ef;color:#fff4d7;font-size:11px;display:none;pointer-events:none}
     #duelToast.show{display:block}
     #duelResult{position:absolute;z-index:20;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:#0c2229c9;backdrop-filter:blur(5px);pointer-events:auto}
     #duelResult[data-active=true]{display:flex}#duelResult>section{width:min(410px,100%);padding:28px;border-radius:18px;background:#1a3940;border:1px solid #ffffff2a;text-align:center}
     #duelResult h2{margin:0 0 12px;color:#ffd05b;font-size:30px}#duelResult p{font-size:13px;line-height:1.7;color:#d4e2dd}#duelResult button{width:100%;margin-top:15px;border-radius:10px;padding:14px;background:#ffd05b;color:#16343a;font-weight:800;min-height:48px}
-    @media(pointer:coarse),(max-width:760px){#duelHud{top:calc(57px + var(--safeT));gap:5px;padding:5px 7px;font-size:10px;max-width:calc(100% - 18px)}#duelHud button{min-width:42px;min-height:42px}#duelHud .duelTools{gap:3px}}
-    @media(max-width:380px){#duelHud{gap:3px;padding:4px 5px;font-size:9px}#duelHud button{min-width:38px;min-height:40px}#duelHud .duelTeam small{display:none}#duelHud .duelDamage{max-width:52px;overflow:hidden;text-overflow:ellipsis}}
+    @media(pointer:coarse),(max-width:760px){#duelHud{top:calc(57px + var(--safeT));width:calc(100% - 18px);gap:5px;padding:6px 7px;border-radius:13px;font-size:10px}#duelHud .duelScore{gap:5px;padding:5px 6px}#duelHud .duelScore>strong{font-size:20px}#duelHud .duelClockWrap{min-width:62px}#duelHud .duelTime{font-size:15px}#duelHud button{min-width:58px;min-height:40px}#duelHud .duelTools{gap:4px}}
+    @media(max-width:420px){#duelHud{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:3px;padding:5px}#duelHud .duelScoreCopy b{font-size:9px}#duelHud .duelScoreCopy small{font-size:8px}#duelHud .duelScore>strong{font-size:18px}#duelHud .duelTeamDot{font-size:14px!important}#duelHud .duelClockWrap{min-width:56px;padding:0 2px}#duelHud .duelClockWrap small{font-size:6px}#duelHud .duelTime{font-size:13px}#duelHud .duelBottom{gap:4px}#duelHud .duelTools{gap:3px}#duelHud button{min-width:43px;min-height:39px;padding:3px 5px}#duelHud button small{font-size:8px}#duelHud .duelStatus{max-width:95px}#duelHud .duelDamage{max-width:78px}}
   `;
   document.head.appendChild(style);
   const duelGearBuilder = new MeshBuilder();
@@ -2349,6 +2360,24 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   duelGearBuilder.box(.28, .11, .12, '#879a91', [-1.12, 1.47, 2.18]);
   duelGearBuilder.box(.28, .11, .12, '#879a91', [-1.12, .85, 2.18]);
   const duelGearMesh = renderer.mesh(duelGearBuilder);
+  function buildTeamMarker(color) {
+    const builder = new MeshBuilder();
+    builder.cylinder(.045, .55, 8, '#e7e1cb', [0, -.22, 0]);
+    builder.box(.76, .38, .10, color, [.15, .22, 0]);
+    builder.box(.56, .045, .115, '#fff4d2', [.15, .22, .06]);
+    builder.box(.12, .12, .12, color, [-.09, .22, 0]);
+    return renderer.mesh(builder);
+  }
+  const duelTeamMarkers = { amber: buildTeamMarker('#f3aa37'), teal: buildTeamMarker('#45bbc9') };
+  function buildDuelAmmo(color) {
+    const builder = new MeshBuilder();
+    builder.box(.52, .38, .52, '#f2e7c9');
+    builder.box(.54, .075, .54, color, [0, .02, 0]);
+    builder.box(.085, .40, .55, color);
+    builder.box(.54, .40, .085, '#f7f0d9');
+    return renderer.mesh(builder);
+  }
+  const duelAmmoMeshes = { amber: buildDuelAmmo('#eda834'), teal: buildDuelAmmo('#42b7c6') };
 
   const createCard = document.querySelector('.mpCard.mpCreate');
   if (createCard) {
@@ -2370,9 +2399,10 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   function ensureHud() {
     if (duelHud) return;
     duelHud = document.createElement('div'); duelHud.id = 'duelHud';
-    duelHud.innerHTML = '<span id="duelWait"></span><span class="duelTeam amber"><i>🟠</i><b id="duelAmberScore">0</b><small id="duelAmberTarget"></small></span><span class="duelTime" id="duelClock">05:00</span><span class="duelTeam teal"><i>🔵</i><b id="duelTealScore">0</b><small id="duelTealTarget"></small></span><span class="duelDamage" id="duelDamage"></span><span class="duelTools"><button type="button" data-duel-action="fire" aria-label="拉下快递大炮拉杆" title="拉杆：发射普通快递">🕹️</button><button type="button" data-duel-action="extinguisher" aria-label="使用灭火器" title="灭火器">🧯</button><button type="button" data-duel-action="wrench" aria-label="使用扳手维修" title="扳手维修">🔧</button></span>';
+    duelHud.innerHTML = '<span id="duelWait" class="duelWait"></span><div class="duelScore amber"><span class="duelTeamDot">●</span><span class="duelScoreCopy"><b>橙队</b><small id="duelAmberTarget">目标 #1</small></span><strong id="duelAmberScore">0</strong></div><div class="duelClockWrap"><small id="duelPhase">5 MIN RACE</small><b class="duelTime" id="duelClock">05:00</b></div><div class="duelScore teal"><span class="duelTeamDot">●</span><span class="duelScoreCopy"><b>蓝队</b><small id="duelTealTarget">目标 #10</small></span><strong id="duelTealScore">0</strong></div><div class="duelBottom"><span class="duelStatus"><i></i><b class="duelDamage" id="duelDamage">车辆状态正常</b></span><span class="duelTools"><button type="button" data-duel-action="fire" aria-label="拉下快递大炮拉杆" title="拉杆：发射普通快递"><span>🕹️</span><small>发射</small></button><button type="button" data-duel-action="extinguisher" aria-label="使用灭火器" title="灭火器"><span>🧯</span><small>灭火</small></button><button type="button" data-duel-action="wrench" aria-label="使用扳手维修" title="扳手维修"><span>🔧</span><small>修车</small></button></span></div>';
     duelToast = document.createElement('div'); duelToast.id = 'duelToast'; duelToast.setAttribute('role', 'status');
     const hud = $('hud'); hud.append(duelHud, duelToast);
+    duelFlash = document.createElement('div'); duelFlash.id = 'duelImpactFlash'; $('game').append(duelFlash);
     duelResult = document.createElement('div'); duelResult.id = 'duelResult';
     duelResult.innerHTML = '<section><div class="eyebrow">2V2 DELIVERY DUEL</div><h2>比赛结束</h2><p></p><button type="button">返回多人大厅</button></section>';
     $('game').append(duelResult);
@@ -2419,7 +2449,8 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
     }
   };
   stopNetwork = function (toMenu = true) {
-    net.duelMatch = null; net.duelSnapshot = null; net.duelEndNotified = false; pred = null;
+    net.duelMatch = null; net.duelSnapshot = null; net.duelEndNotified = false; net.duelHudHits = {}; pred = null;
+    duelFlash?.classList.remove('hit');
     return originalStopNetwork(toMenu);
   };
   const inDuel = () => net.duelMode === 'duel2v2' && networked();
@@ -2673,17 +2704,29 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
     const live = net.duelMode === 'duel2v2' && !!snapshot;
     const waiting = net.duelMode === 'duel2v2' && net.mode !== 'solo' && !live;
     duelHud.dataset.active = live || waiting ? 'true' : 'false';
+    duelHud.dataset.live = live ? 'true' : 'false';
     $('duelWait').textContent = waiting ? `等待四名玩家 · ${net.mode === 'host' ? (net.duelWaitingPlayers || 1) : net.roster.filter((person) => person.online).length}/4` : '';
     if (!live) { if (duelButtons) duelButtons.forEach((button) => { button.disabled = true; }); return; }
     $('duelAmberScore').textContent = snapshot.trucks.amber.delivered;
     $('duelTealScore').textContent = snapshot.trucks.teal.delivered;
     const amberHouse = deliverable[snapshot.trucks.amber.targetIndex % deliverable.length];
     const tealHouse = deliverable[snapshot.trucks.teal.targetIndex % deliverable.length];
-    $('duelAmberTarget').textContent = amberHouse ? '#' + amberHouse.num : '';
-    $('duelTealTarget').textContent = tealHouse ? '#' + tealHouse.num : '';
-    const seconds = Math.ceil(snapshot.remaining); $('duelClock').textContent = (snapshot.overtime ? '加时 ' : '') + String(Math.floor(seconds / 60)).padStart(2, '0') + ':' + String(seconds % 60).padStart(2, '0');
+    $('duelAmberTarget').textContent = amberHouse ? '目标 #' + amberHouse.num : '派送完成';
+    $('duelTealTarget').textContent = tealHouse ? '目标 #' + tealHouse.num : '派送完成';
+    const seconds = Math.ceil(snapshot.remaining); $('duelClock').textContent = String(Math.floor(seconds / 60)).padStart(2, '0') + ':' + String(seconds % 60).padStart(2, '0');
+    $('duelPhase').textContent = snapshot.overtime ? '突然死亡加时' : '5 MIN RACE';
+    duelHud.dataset.urgent = seconds <= 30 ? 'true' : 'false';
     const mine = snapshot.trucks[localTeam()];
     $('duelDamage').textContent = mine.burning ? `🔥 ${Math.floor(mine.burnTotal)}/30s · 车况 ${Math.ceil(mine.hp)}%` : mine.disabled ? '车辆瘫痪 · 等待维修' : mine.hitCount ? `受击 ${mine.hitCount}/3` : '';
+    duelHud.dataset.danger = mine.burning ? 'burning' : mine.disabled ? 'disabled' : mine.hitCount ? 'warning' : 'safe';
+    net.duelHudHits ||= {};
+    for (const team of ['amber', 'teal']) {
+      const hits = snapshot.trucks[team].hitCount;
+      if (net.duelHudHits[team] != null && hits > net.duelHudHits[team] && duelFlash) {
+        duelFlash.classList.remove('hit'); void duelFlash.offsetWidth; duelFlash.classList.add('hit');
+      }
+      net.duelHudHits[team] = hits;
+    }
     const roleAllowed = [1, 3].includes(localId());
     const fire = duelButtons.find((button) => button.dataset.duelAction === 'fire');
     const extinguisher = duelButtons.find((button) => button.dataset.duelAction === 'extinguisher');
@@ -2760,6 +2803,7 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
     const model = M.model(p, [0, yaw, 0]);
     renderer.draw(rival.exploded ? wreckMesh : vanMesh, model);
     renderer.draw(duelGearMesh, model);
+    renderer.draw(duelTeamMarkers[rivalTeam], M.model([p[0], 4.25 + Math.sin(snapshot.elapsed * 2.1) * .07, p[2]], [0, yaw, 0]));
     for (let i = 0; i < Math.min(18, rival.cargoCount); i++) {
       const side = i % 2 ? .96 : -.96, row = Math.floor(i / 2);
       renderer.draw(packageMeshes[0], M.multiply(model, M.model([side, .28 + (row >= 12 ? .82 : 0), -1.04 + (row % 12) * .36])));
@@ -2771,14 +2815,15 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
       for (let i = 0; i < 3; i++) { const s = .65 + .2 * Math.sin(t * 10 + i * 2); renderer.draw(fireMeshes[i], scaled(M.model([p[0] + (i - 1) * .45, 1.25 + i * .23, p[2] - .5], [0, t * 2, 0]), [s, s * 1.7, s])); }
       renderer.draw(smokeMesh, M.model([p[0], 3.4 + Math.sin(t * 3) * .2, p[2]], [0, 0, 0]));
     }
-    const mine = snapshot.trucks[localTeam()], own = mine.vehicle.p;
+    const mine = snapshot.trucks[localTeam()], own = net.mode === 'guest' && localId() % 2 === 0 ? car.p : mine.vehicle.p;
     renderer.draw(duelGearMesh, M.model(own, [0, mine.vehicle.yaw, 0]));
+    renderer.draw(duelTeamMarkers[localTeam()], M.model([own[0], 4.25 + Math.sin(snapshot.elapsed * 2.1 + 1) * .07, own[2]], [0, mine.vehicle.yaw, 0]));
     if (mine.exploded) renderer.draw(wreckMesh, M.model(mine.vehicle.p, [0, mine.vehicle.yaw, 0]));
     if (mine.burning) {
       for (let i = 0; i < 3; i++) { const s = .65 + .2 * Math.sin(snapshot.elapsed * 10 + i * 2); renderer.draw(fireMeshes[i], scaled(M.model([own[0] + (i - 1) * .45, 1.25 + i * .23, own[2] - .5], [0, snapshot.elapsed * 2, 0]), [s, s * 1.7, s])); }
       renderer.draw(smokeMesh, M.model([own[0], 3.4 + Math.sin(snapshot.elapsed * 3) * .2, own[2]], [0, 0, 0]));
     }
-    for (const shot of snapshot.projectiles || []) if (shot.p) renderer.draw(packageMeshes[0], M.model(shot.p));
+    for (const shot of snapshot.projectiles || []) if (shot.p) renderer.draw(duelAmmoMeshes[shot.team] || packageMeshes[0], M.model(shot.p, [snapshot.elapsed * 3, snapshot.elapsed * 4, snapshot.elapsed * 2]));
   }
   draw3D = function () { originalDraw3D(); drawRivalTruck(); };
 
