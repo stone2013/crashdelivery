@@ -11,7 +11,7 @@ def check(name, cond, detail=''):
 with sync_playwright() as p:
     b=launch(p)
     ctx,pg,errors=load(b,mobile=False,size=(1280,800))
-    check('V0.7.3 boots', not pg.locator('#startBtn').is_disabled() and 'V0.7.3' in pg.title())
+    check('V0.7.5 boots', not pg.locator('#startBtn').is_disabled() and 'V0.7.5' in pg.title())
     pg.locator('#networkBtn').click()
     check('Network settings modal opens', pg.locator('#networkScreen').is_visible())
     check('Default network policy auto', pg.locator('#netPolicy').input_value()=='auto')

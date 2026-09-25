@@ -1,4 +1,4 @@
-"""Repeatable V0.7.3 client prediction and network-delay checks in Chromium."""
+"""Repeatable V0.7.3/V0.7.5 client prediction and network-delay checks in Chromium."""
 import json, math, random, time
 from pathlib import Path
 from test_utils import *

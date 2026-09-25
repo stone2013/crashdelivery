@@ -48,8 +48,8 @@
       "test": "0ms stale input sequence rejected",
       "passed": true,
       "details": {
-        "accepted_seq": 68,
-        "stale_seq": 67
+        "accepted_seq": 65,
+        "stale_seq": 64
       }
     },
     {
@@ -58,8 +58,8 @@
       "details": {
         "jitter_ms": 0,
         "configured_loss": 0.01,
-        "dropped": 1,
-        "sent": 167
+        "dropped": 2,
+        "sent": 162
       }
     },
     {
@@ -108,8 +108,8 @@
       "test": "80ms stale input sequence rejected",
       "passed": true,
       "details": {
-        "accepted_seq": 71,
-        "stale_seq": 70
+        "accepted_seq": 69,
+        "stale_seq": 68
       }
     },
     {
@@ -118,8 +118,8 @@
       "details": {
         "jitter_ms": 20,
         "configured_loss": 0.01,
-        "dropped": 2,
-        "sent": 175
+        "dropped": 1,
+        "sent": 174
       }
     },
     {
@@ -168,8 +168,8 @@
       "test": "150ms stale input sequence rejected",
       "passed": true,
       "details": {
-        "accepted_seq": 74,
-        "stale_seq": 73
+        "accepted_seq": 65,
+        "stale_seq": 64
       }
     },
     {
@@ -179,7 +179,7 @@
         "jitter_ms": 20,
         "configured_loss": 0.01,
         "dropped": 0,
-        "sent": 178
+        "sent": 165
       }
     },
     {
@@ -228,8 +228,8 @@
       "test": "250ms stale input sequence rejected",
       "passed": true,
       "details": {
-        "accepted_seq": 72,
-        "stale_seq": 71
+        "accepted_seq": 64,
+        "stale_seq": 63
       }
     },
     {
@@ -238,8 +238,8 @@
       "details": {
         "jitter_ms": 20,
         "configured_loss": 0.01,
-        "dropped": 0,
-        "sent": 175
+        "dropped": 2,
+        "sent": 161
       }
     },
     {
@@ -288,8 +288,8 @@
       "test": "400ms stale input sequence rejected",
       "passed": true,
       "details": {
-        "accepted_seq": 70,
-        "stale_seq": 69
+        "accepted_seq": 63,
+        "stale_seq": 62
       }
     },
     {
@@ -298,8 +298,8 @@
       "details": {
         "jitter_ms": 20,
         "configured_loss": 0.01,
-        "dropped": 1,
-        "sent": 173
+        "dropped": 5,
+        "sent": 163
       }
     },
     {
@@ -331,7 +331,7 @@
       "test": "400ms critical pickup action not repeated by retry/loss",
       "passed": true,
       "details": {
-        "dropped_replaceable": 5,
+        "dropped_replaceable": 2,
         "host_last_action": 2,
         "guest_held": {
           "id": 1,

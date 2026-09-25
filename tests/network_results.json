@@ -277,16 +277,16 @@
           "lost": 0,
           "explosions": 0,
           "combo": 1,
-          "lastDelivery": 25.049999999999876,
+          "lastDelivery": 25.03333333333321,
           "brick": false,
           "charge": 0,
           "charging": false,
           "chargeSource": null,
           "cooldown": 0,
-          "toastUntil": 27.849999999999877,
+          "toastUntil": 27.83333333333321,
           "shake": 0,
           "hitCooldown": 0,
-          "hintUntil": 30.049999999999876,
+          "hintUntil": 30.03333333333321,
           "switchUntil": 0,
           "warnUntil": 0,
           "helpFrom": "menu",
@@ -302,7 +302,7 @@
         "g": {
           "mode": "playing",
           "view": "outside",
-          "time": 26.1275,
+          "time": 26.11589999999851,
           "score": 100,
           "delivered": 1,
           "shots": 1,
@@ -315,10 +315,10 @@
           "charging": false,
           "chargeSource": null,
           "cooldown": 0.17000000000000004,
-          "toastUntil": 27.52459999999986,
+          "toastUntil": 27.5,
           "shake": 0,
           "hitCooldown": 0,
-          "hintUntil": 27.52159999999986,
+          "hintUntil": 27.549800000000744,
           "switchUntil": 0,
           "warnUntil": 0,
           "helpFrom": "menu",
@@ -387,10 +387,10 @@
       "test": "World snapshot stays below 64KiB",
       "passed": true,
       "details": {
-        "max_message_bytes": 9218,
+        "max_message_bytes": 9512,
         "messages": [
-          118,
-          83
+          148,
+          109
         ]
       }
     },

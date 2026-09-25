@@ -1,5 +1,61 @@
 {
-  "diag": "ICE 测试完成：\n无候选\n\n未配置 TURN。\n没有 srflx；当前网络可能限制 UDP/STUN。",
-  "errors": [],
-  "pass": true
+  "checks": {
+    "six routes rendered": true,
+    "six separate relay-only PeerConnections": true,
+    "each PeerConnection tests one URL": true,
+    "only relay candidate marks success": true,
+    "gathering deadline reports timeout": true,
+    "timed relay is rejected as recommendation": true,
+    "fastest successful route saved": true,
+    "automatic P2P-first mode retained": true,
+    "diagnostics still fetch TURN in direct mode": true,
+    "short-lived credentials absent from UI and storage": true,
+    "no browser runtime errors": true
+  },
+  "diag": "六路 TURN 实测\nUDP 3478\n❌ 失败 · 63 ms\nTCP 3478 · 推荐\n✅ relay · 63 ms\nTLS 5349\n✅ relay · 359 ms\nUDP 443\n⌛ 超时 · 7017 ms\nTCP 80\n❌ 失败 · 63 ms\nTLS 443\n❌ 失败 · 63 ms\n推荐路线：TCP 3478。自动模式仍先尝试 P2P，联机 ICE 会优先此 TURN 路线。",
+  "routes": [
+    {
+      "url": "turn:turn.cloudflare.com:3478?transport=udp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:3478?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turns:turn.cloudflare.com:5349?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:443?transport=udp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turn:turn.cloudflare.com:80?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    },
+    {
+      "url": "turns:turn.cloudflare.com:443?transport=tcp",
+      "policy": "relay",
+      "channel": true,
+      "offer": true,
+      "local": true
+    }
+  ],
+  "runtimeErrors": []
 }

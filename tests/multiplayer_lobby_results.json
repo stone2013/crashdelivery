@@ -1,0 +1,303 @@
+[
+  {
+    "test": "(1280, 800): multiplayer menu opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(1280, 800): create and room-code join share the multiplayer menu",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(1280, 800): capacity 2 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 2
+    }
+  },
+  {
+    "test": "(1280, 800): capacity 3 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 3
+    }
+  },
+  {
+    "test": "(1280, 800): capacity 4 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 4
+    }
+  },
+  {
+    "test": "(1280, 800): online room row shows occupancy and join action",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(1280, 800): multiplayer panel stays inside viewport width",
+    "passed": true,
+    "details": {
+      "left": 215,
+      "right": 1065,
+      "top": 122.75,
+      "bottom": 677.25,
+      "sw": 1280,
+      "iw": 1280
+    }
+  },
+  {
+    "test": "(1280, 800): no JavaScript errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "(390, 740): multiplayer menu opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(390, 740): create and room-code join share the multiplayer menu",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(390, 740): capacity 2 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 2
+    }
+  },
+  {
+    "test": "(390, 740): capacity 3 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 3
+    }
+  },
+  {
+    "test": "(390, 740): capacity 4 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 4
+    }
+  },
+  {
+    "test": "(390, 740): online room row shows occupancy and join action",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(390, 740): multiplayer panel stays inside viewport width",
+    "passed": true,
+    "details": {
+      "left": 17,
+      "right": 373,
+      "top": 37.25,
+      "bottom": 702.75,
+      "sw": 390,
+      "iw": 390
+    }
+  },
+  {
+    "test": "(390, 740): no JavaScript errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "(320, 640): multiplayer menu opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(320, 640): create and room-code join share the multiplayer menu",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(320, 640): capacity 2 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 2
+    }
+  },
+  {
+    "test": "(320, 640): capacity 3 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 3
+    }
+  },
+  {
+    "test": "(320, 640): capacity 4 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 4
+    }
+  },
+  {
+    "test": "(320, 640): online room row shows occupancy and join action",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(320, 640): multiplayer panel stays inside viewport width",
+    "passed": true,
+    "details": {
+      "left": 17,
+      "right": 303,
+      "top": 15,
+      "bottom": 625,
+      "sw": 320,
+      "iw": 320
+    }
+  },
+  {
+    "test": "(320, 640): no JavaScript errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "(844, 390): multiplayer menu opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(844, 390): create and room-code join share the multiplayer menu",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(844, 390): capacity 2 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 2
+    }
+  },
+  {
+    "test": "(844, 390): capacity 3 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 3
+    }
+  },
+  {
+    "test": "(844, 390): capacity 4 selection is applied",
+    "passed": true,
+    "details": {
+      "selected": true,
+      "capacity": 4
+    }
+  },
+  {
+    "test": "(844, 390): online room row shows occupancy and join action",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "(844, 390): multiplayer panel stays inside viewport width",
+    "passed": true,
+    "details": {
+      "left": 17,
+      "right": 827,
+      "top": 15,
+      "bottom": 375,
+      "sw": 844,
+      "iw": 844
+    }
+  },
+  {
+    "test": "(844, 390): no JavaScript errors",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "Four-person room assigns host plus three unique guest slots",
+    "passed": true,
+    "details": {
+      "roster": [
+        {
+          "id": 0,
+          "name": "快递员",
+          "online": true,
+          "host": true,
+          "view": "drive",
+          "rtt": 0,
+          "relay": false,
+          "linkType": "房主"
+        },
+        {
+          "id": 1,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 692,
+          "relay": false,
+          "linkType": ""
+        },
+        {
+          "id": 2,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 816,
+          "relay": false,
+          "linkType": ""
+        },
+        {
+          "id": 3,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 0,
+          "relay": false,
+          "linkType": ""
+        }
+      ],
+      "actors": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "players": 4
+    }
+  },
+  {
+    "test": "Fourth player is identified as slot 3",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Four-player in-game roster shows all members and 4/4 capacity",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Host and all guests have no runtime errors",
+    "passed": true,
+    "details": {
+      "host": [],
+      "guests": [
+        [],
+        [],
+        []
+      ]
+    }
+  }
+]

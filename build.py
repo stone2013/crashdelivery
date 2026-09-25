@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild and validate the V0.7.4 three-player co-op release HTML."""
+"""Rebuild and validate the V0.7.5 multiplayer lobby release HTML."""
 import argparse
 from pathlib import Path
 import re
@@ -25,9 +25,10 @@ required = set(re.findall(r"\$\('([^']+)'\)", html))
 missing = required - set(ids)
 if missing:
     raise RuntimeError('Missing DOM elements: ' + ', '.join(sorted(missing)))
-if ('crash-delivery-mp074-1' not in html or 'V0.7.4 ONLINE' not in html
-        or 'cleanIceUrls' not in html or 'playersPanel' not in html):
-    raise RuntimeError('Release snapshot is not V0.7.4')
+if ('crash-delivery-mp075-1' not in html or 'V0.7.5 ONLINE' not in html
+        or 'cleanIceUrls' not in html or 'playersPanel' not in html
+        or 'publicRoomsList' not in html or 'maxPlayers' not in html):
+    raise RuntimeError('Release snapshot is not V0.7.5')
 if shutil.which('node'):
     with tempfile.TemporaryDirectory() as directory:
         for index, script in enumerate(re.findall(r'<script>(.*?)</script>', html, re.S)):
@@ -38,5 +39,5 @@ if shutil.which('node'):
 args.output.parent.mkdir(parents=True, exist_ok=True)
 with args.output.open('w', encoding='utf-8', newline='\n') as output:
     output.write(html)
-print(f'Built V0.7.4 {args.output}: {len(html.encode("utf-8")):,} bytes; '
+print(f'Built V0.7.5 {args.output}: {len(html.encode("utf-8")):,} bytes; '
       f'{len(ids)} unique DOM IDs; all direct refs valid.')

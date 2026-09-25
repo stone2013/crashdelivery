@@ -336,7 +336,7 @@
   {
     "test": "Network snapshot fits 64 KiB",
     "passed": true,
-    "details": 8783
+    "details": 8842
   },
   {
     "test": "Traffic moves smoothly without intersection teleport",

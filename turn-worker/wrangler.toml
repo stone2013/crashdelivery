@@ -9,3 +9,7 @@ ALLOWED_ORIGIN = "https://game.feelpal.app"
 [[routes]]
 pattern = "api.feelpal.app"
 custom_domain = true
+
+[[kv_namespaces]]
+binding = "ROOM_DIRECTORY"
+id = "afb0f82e36eb43669f5a0d20c918b5cc"

@@ -1,26 +1,26 @@
 {
-  "transport": "Deterministic ordered in-page bridge for 0/100/250/400ms short scenarios plus one 308.2-second real-time 400ms run; no real WebRTC/Cloudflare TURN.",
+  "transport": "ordered test adapter with deterministic one-way delay, uniform jitter, and 1-2% replaceable packet loss; not real WebRTC or Cloudflare TURN",
   "scenarios_ms": [
     0,
     100,
     250,
     400
   ],
-  "passed": 27,
-  "total": 27,
+  "passed": 26,
+  "total": 26,
   "results": [
     {
       "test": "0ms cargo local WASD responds in-frame during vehicle motion and converges",
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 17.96,
-        "vehicle_turn_rad": 0.694,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.56,
+        "vehicle_turn_rad": 0.565,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -38,22 +38,22 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
           "unackedInputs": 3,
-          "interpolationBufferMs": 170.4155017689462,
-          "extrapolationMs": 36.7844982303086,
+          "interpolationBufferMs": 201.50175609842023,
+          "extrapolationMs": 83.59824390120684,
           "snapshotBuffer": 7
         },
         "active_controls_at_sample": {
@@ -71,15 +71,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.19,
-        "mean_reconciliation_error_m": 0.018,
+        "max_reconciliation_error_m": 0.196,
+        "mean_reconciliation_error_m": 0.024,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 64,
         "configured_loss": 0.02,
-        "sent": 87,
+        "sent": 85,
         "mobile_view": [
           390,
           740
@@ -107,13 +107,13 @@
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 17.96,
-        "vehicle_turn_rad": 0.694,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.56,
+        "vehicle_turn_rad": 0.565,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -131,22 +131,22 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
           "unackedInputs": 3,
-          "interpolationBufferMs": 170.4155017689462,
-          "extrapolationMs": 36.7844982303086,
+          "interpolationBufferMs": 201.50175609842023,
+          "extrapolationMs": 83.59824390120684,
           "snapshotBuffer": 7
         },
         "active_controls_at_sample": {
@@ -164,15 +164,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.19,
-        "mean_reconciliation_error_m": 0.018,
+        "max_reconciliation_error_m": 0.196,
+        "mean_reconciliation_error_m": 0.024,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 64,
         "configured_loss": 0.02,
-        "sent": 87,
+        "sent": 85,
         "mobile_view": [
           390,
           740
@@ -200,13 +200,13 @@
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 17.96,
-        "vehicle_turn_rad": 0.694,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.56,
+        "vehicle_turn_rad": 0.565,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -224,22 +224,22 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
           "unackedInputs": 3,
-          "interpolationBufferMs": 170.4155017689462,
-          "extrapolationMs": 36.7844982303086,
+          "interpolationBufferMs": 201.50175609842023,
+          "extrapolationMs": 83.59824390120684,
           "snapshotBuffer": 7
         },
         "active_controls_at_sample": {
@@ -257,15 +257,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.19,
-        "mean_reconciliation_error_m": 0.018,
+        "max_reconciliation_error_m": 0.196,
+        "mean_reconciliation_error_m": 0.024,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 64,
         "configured_loss": 0.02,
-        "sent": 87,
+        "sent": 85,
         "mobile_view": [
           390,
           740
@@ -317,9 +317,9 @@
         ],
         "stop_drift_m": 0.0,
         "direction": -1,
-        "seq_start": 36,
-        "seq_after_down": 39,
-        "seq_after_direction_and_release": 42,
+        "seq_start": 34,
+        "seq_after_down": 37,
+        "seq_after_direction_and_release": 41,
         "released_stick": [
           0,
           0
@@ -332,13 +332,13 @@
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 18.94,
-        "vehicle_turn_rad": 0.76,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.35,
+        "vehicle_turn_rad": 0.694,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -356,23 +356,23 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 190.90382522371635,
-          "extrapolationMs": 159.09617477628353,
-          "snapshotBuffer": 8
+          "unackedInputs": 3,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 11
         },
         "active_controls_at_sample": {
           "keys": [
@@ -389,15 +389,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.159,
-        "mean_reconciliation_error_m": 0.029,
+        "max_reconciliation_error_m": 0.291,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 79,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 96,
+        "sent": 91,
         "mobile_view": [
           390,
           740
@@ -425,13 +425,13 @@
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 18.94,
-        "vehicle_turn_rad": 0.76,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.35,
+        "vehicle_turn_rad": 0.694,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -449,23 +449,23 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 190.90382522371635,
-          "extrapolationMs": 159.09617477628353,
-          "snapshotBuffer": 8
+          "unackedInputs": 3,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 11
         },
         "active_controls_at_sample": {
           "keys": [
@@ -482,15 +482,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.159,
-        "mean_reconciliation_error_m": 0.029,
+        "max_reconciliation_error_m": 0.291,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 79,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 96,
+        "sent": 91,
         "mobile_view": [
           390,
           740
@@ -518,13 +518,13 @@
       "passed": true,
       "metrics": {
         "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.25,
-        "vehicle_travel_m": 18.94,
-        "vehicle_turn_rad": 0.76,
+        "local_120ms_distance_m": 0.125,
+        "vehicle_travel_m": 16.35,
+        "vehicle_turn_rad": 0.694,
         "pre_release_position": [
-          0.4201018365997354,
+          0.4200509182998677,
           2.38,
-          -0.6500000207413869
+          -0.7750000103706934
         ],
         "start_position": [
           0.42,
@@ -542,23 +542,23 @@
             -0.9
           ],
           "predicted": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "render": [
-            0.4201018365997354,
+            0.4200509182998677,
             2.38,
-            -0.6500000207413869
+            -0.7750000103706934
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 190.90382522371635,
-          "extrapolationMs": 159.09617477628353,
-          "snapshotBuffer": 8
+          "unackedInputs": 3,
+          "interpolationBufferMs": 220,
+          "extrapolationMs": 0,
+          "snapshotBuffer": 11
         },
         "active_controls_at_sample": {
           "keys": [
@@ -575,15 +575,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.159,
-        "mean_reconciliation_error_m": 0.029,
+        "max_reconciliation_error_m": 0.291,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 1,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 79,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 96,
+        "sent": 91,
         "mobile_view": [
           390,
           740
@@ -635,9 +635,9 @@
         ],
         "stop_drift_m": 0.0,
         "direction": -1,
-        "seq_start": 40,
-        "seq_after_down": 43,
-        "seq_after_direction_and_release": 46,
+        "seq_start": 35,
+        "seq_after_down": 38,
+        "seq_after_direction_and_release": 41,
         "released_stick": [
           0,
           0
@@ -651,7 +651,7 @@
       "metrics": {
         "first_frame_local_distance_m": 0.125,
         "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 17.46,
+        "vehicle_travel_m": 16.92,
         "vehicle_turn_rad": 0.694,
         "pre_release_position": [
           0.4200509182998677,
@@ -690,7 +690,7 @@
           "unackedInputs": 4,
           "interpolationBufferMs": 220,
           "extrapolationMs": 0,
-          "snapshotBuffer": 7
+          "snapshotBuffer": 8
         },
         "active_controls_at_sample": {
           "keys": [
@@ -707,15 +707,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.264,
-        "mean_reconciliation_error_m": 0.025,
+        "max_reconciliation_error_m": 0.318,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 69,
         "configured_loss": 0.02,
-        "sent": 86,
+        "sent": 88,
         "mobile_view": [
           390,
           740
@@ -744,7 +744,7 @@
       "metrics": {
         "first_frame_local_distance_m": 0.125,
         "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 17.46,
+        "vehicle_travel_m": 16.92,
         "vehicle_turn_rad": 0.694,
         "pre_release_position": [
           0.4200509182998677,
@@ -783,7 +783,7 @@
           "unackedInputs": 4,
           "interpolationBufferMs": 220,
           "extrapolationMs": 0,
-          "snapshotBuffer": 7
+          "snapshotBuffer": 8
         },
         "active_controls_at_sample": {
           "keys": [
@@ -800,15 +800,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.264,
-        "mean_reconciliation_error_m": 0.025,
+        "max_reconciliation_error_m": 0.318,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 69,
         "configured_loss": 0.02,
-        "sent": 86,
+        "sent": 88,
         "mobile_view": [
           390,
           740
@@ -837,7 +837,7 @@
       "metrics": {
         "first_frame_local_distance_m": 0.125,
         "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 17.46,
+        "vehicle_travel_m": 16.92,
         "vehicle_turn_rad": 0.694,
         "pre_release_position": [
           0.4200509182998677,
@@ -876,7 +876,7 @@
           "unackedInputs": 4,
           "interpolationBufferMs": 220,
           "extrapolationMs": 0,
-          "snapshotBuffer": 7
+          "snapshotBuffer": 8
         },
         "active_controls_at_sample": {
           "keys": [
@@ -893,15 +893,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.264,
-        "mean_reconciliation_error_m": 0.025,
+        "max_reconciliation_error_m": 0.318,
+        "mean_reconciliation_error_m": 0.038,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 71,
+        "eligible_replaceable": 69,
         "configured_loss": 0.02,
-        "sent": 86,
+        "sent": 88,
         "mobile_view": [
           390,
           740
@@ -953,9 +953,9 @@
         ],
         "stop_drift_m": 0.0,
         "direction": -1,
-        "seq_start": 36,
-        "seq_after_down": 39,
-        "seq_after_direction_and_release": 42,
+        "seq_start": 35,
+        "seq_after_down": 38,
+        "seq_after_direction_and_release": 41,
         "released_stick": [
           0,
           0
@@ -967,14 +967,14 @@
       "test": "400ms cargo local WASD responds in-frame during vehicle motion and converges",
       "passed": true,
       "metrics": {
-        "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 18.42,
-        "vehicle_turn_rad": 0.694,
+        "first_frame_local_distance_m": 0.25,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 16.86,
+        "vehicle_turn_rad": 0.691,
         "pre_release_position": [
-          0.4200509182998677,
+          0.4201018365997354,
           2.38,
-          -0.7750000103706934
+          -0.6500000207413869
         ],
         "start_position": [
           0.42,
@@ -992,23 +992,23 @@
             -0.9
           ],
           "predicted": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "render": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 220,
-          "extrapolationMs": 0,
-          "snapshotBuffer": 6
+          "unackedInputs": 7,
+          "interpolationBufferMs": 141.59709735221418,
+          "extrapolationMs": 122.40290264778605,
+          "snapshotBuffer": 5
         },
         "active_controls_at_sample": {
           "keys": [
@@ -1025,15 +1025,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.383,
-        "mean_reconciliation_error_m": 0.057,
+        "max_reconciliation_error_m": 0.398,
+        "mean_reconciliation_error_m": 0.05,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 73,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 88,
+        "sent": 89,
         "mobile_view": [
           390,
           740
@@ -1060,14 +1060,14 @@
       "test": "400ms render and predicted simulation remain finite",
       "passed": true,
       "metrics": {
-        "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 18.42,
-        "vehicle_turn_rad": 0.694,
+        "first_frame_local_distance_m": 0.25,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 16.86,
+        "vehicle_turn_rad": 0.691,
         "pre_release_position": [
-          0.4200509182998677,
+          0.4201018365997354,
           2.38,
-          -0.7750000103706934
+          -0.6500000207413869
         ],
         "start_position": [
           0.42,
@@ -1085,23 +1085,23 @@
             -0.9
           ],
           "predicted": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "render": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 220,
-          "extrapolationMs": 0,
-          "snapshotBuffer": 6
+          "unackedInputs": 7,
+          "interpolationBufferMs": 141.59709735221418,
+          "extrapolationMs": 122.40290264778605,
+          "snapshotBuffer": 5
         },
         "active_controls_at_sample": {
           "keys": [
@@ -1118,15 +1118,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.383,
-        "mean_reconciliation_error_m": 0.057,
+        "max_reconciliation_error_m": 0.398,
+        "mean_reconciliation_error_m": 0.05,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 73,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 88,
+        "sent": 89,
         "mobile_view": [
           390,
           740
@@ -1153,14 +1153,14 @@
       "test": "400ms moving courier snapshot buffer remains bounded",
       "passed": true,
       "metrics": {
-        "first_frame_local_distance_m": 0.125,
-        "local_120ms_distance_m": 0.125,
-        "vehicle_travel_m": 18.42,
-        "vehicle_turn_rad": 0.694,
+        "first_frame_local_distance_m": 0.25,
+        "local_120ms_distance_m": 0.25,
+        "vehicle_travel_m": 16.86,
+        "vehicle_turn_rad": 0.691,
         "pre_release_position": [
-          0.4200509182998677,
+          0.4201018365997354,
           2.38,
-          -0.7750000103706934
+          -0.6500000207413869
         ],
         "start_position": [
           0.42,
@@ -1178,23 +1178,23 @@
             -0.9
           ],
           "predicted": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "render": [
-            0.4200509182998677,
+            0.4201018365997354,
             2.38,
-            -0.7750000103706934
+            -0.6500000207413869
           ],
           "positionError": 0,
           "averageReconciliationError": 0,
           "maxReconciliationError": 0,
           "hardCorrections": 1,
-          "unackedInputs": 5,
-          "interpolationBufferMs": 220,
-          "extrapolationMs": 0,
-          "snapshotBuffer": 6
+          "unackedInputs": 7,
+          "interpolationBufferMs": 141.59709735221418,
+          "extrapolationMs": 122.40290264778605,
+          "snapshotBuffer": 5
         },
         "active_controls_at_sample": {
           "keys": [
@@ -1211,15 +1211,15 @@
           "charging": false
         },
         "final_host_guest_gap_m": 0.0,
-        "max_reconciliation_error_m": 0.383,
-        "mean_reconciliation_error_m": 0.057,
+        "max_reconciliation_error_m": 0.398,
+        "mean_reconciliation_error_m": 0.05,
         "hard_corrections": 1,
         "unacked_inputs": 3,
         "snapshot_buffer": 12,
         "dropped_replaceable": 1,
-        "eligible_replaceable": 73,
+        "eligible_replaceable": 70,
         "configured_loss": 0.02,
-        "sent": 88,
+        "sent": 89,
         "mobile_view": [
           390,
           740
@@ -1271,9 +1271,9 @@
         ],
         "stop_drift_m": 0.0,
         "direction": -1,
-        "seq_start": 37,
-        "seq_after_down": 40,
-        "seq_after_direction_and_release": 44,
+        "seq_start": 35,
+        "seq_after_down": 38,
+        "seq_after_direction_and_release": 41,
         "released_stick": [
           0,
           0
@@ -1289,12 +1289,12 @@
         "host_actor": [
           1.05,
           2.38,
-          -1.15
+          3.2
         ],
         "guest_prediction": [
           1.05,
           2.38,
-          -1.15
+          3.2
         ]
       }
     },
@@ -1302,19 +1302,19 @@
       "test": "400ms severe authority relocation uses one hard correction and converges",
       "passed": true,
       "metrics": {
-        "hard_before": 1,
-        "hard_after": 2,
+        "hard_before": 2,
+        "hard_after": 3,
         "reconciliation_error_m": 4.83,
         "max_reconciliation_error_m": 4.83,
         "predicted": [
           -1.05,
           2.38,
-          3.2
+          -1.15
         ],
         "authoritative": [
           -1.05,
           2.38,
-          3.2
+          -1.15
         ]
       }
     },
@@ -1363,31 +1363,6 @@
       "passed": true,
       "metrics": {
         "errors": []
-      }
-    },
-    {
-      "test": "300s continuous 400ms cargo movement stays bounded and converges",
-      "passed": true,
-      "metrics": {
-        "wall_seconds": 308.2,
-        "simulated_steps": 300,
-        "configured_rtt_ms": 400,
-        "jitter_ms": 22,
-        "configured_replaceable_loss": 0.02,
-        "lost_replaceable": 90,
-        "eligible_replaceable": 4514,
-        "maximum_reconciliation_error_m": 0.765,
-        "mean_reconciliation_error_m": 0.086,
-        "maximum_sampled_host_guest_gap_m": 0.55,
-        "gap_after_release_m": 0.0,
-        "hard_corrections": 1,
-        "maximum_unacked_history": 6,
-        "maximum_remote_snapshot_buffer": 12,
-        "final_unacked_history": 3,
-        "final_snapshot_buffer": 12,
-        "vehicle_travel_m": 125.67,
-        "runtime_errors": [],
-        "transport": "deterministic ordered in-page bridge, not real WebRTC/Cloudflare TURN"
       }
     }
   ]
