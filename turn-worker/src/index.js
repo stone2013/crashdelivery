@@ -22,6 +22,7 @@ function publicRoom(room) {
     hostName: room.hostName,
     players: room.players,
     maxPlayers: room.maxPlayers,
+    gameMode: room.gameMode === 'duel2v2' ? 'duel2v2' : 'coop',
     updatedAt: room.updatedAt,
   };
 }
@@ -57,7 +58,9 @@ async function handleRooms(request, env, url, cors) {
     let body;
     try { body = await request.json(); } catch { return json({ error: 'invalid_json' }, 400, cors); }
     if (body.protocol !== ROOM_PROTOCOL || body.roomCode !== code
-        || ![2, 3, 4].includes(Number(body.maxPlayers))) return json({ error: 'invalid_room' }, 400, cors);
+        || ![2, 3, 4].includes(Number(body.maxPlayers))
+        || !['coop', 'duel2v2'].includes(body.gameMode || 'coop')
+        || (body.gameMode === 'duel2v2' && Number(body.maxPlayers) !== 4)) return json({ error: 'invalid_room' }, 400, cors);
     const prior = await directory.get(roomKey(code), 'json');
     if (prior && prior.expiresAt > Date.now()) return json({ error: 'room_code_in_use' }, 409, cors);
     const maxPlayers = Number(body.maxPlayers);
@@ -69,6 +72,7 @@ async function handleRooms(request, env, url, cors) {
       hostName: String(body.hostName || '快递员').slice(0, 36),
       players: 1,
       maxPlayers,
+      gameMode: body.gameMode === 'duel2v2' ? 'duel2v2' : 'coop',
       updatedAt: now,
       expiresAt: now + ROOM_TTL_SECONDS * 1000,
       tokenHash: await digestToken(token),
