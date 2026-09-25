@@ -54,7 +54,7 @@
     #duelHud[data-urgent=true] .duelTime{color:#ff8c70;animation:duelPulse .65s ease-in-out infinite alternate}
     @keyframes duelPulse{to{opacity:.62;filter:brightness(1.45)}}
     #duelImpactFlash{position:absolute;z-index:4;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 22%,#ff3e2f00 60%)}#duelImpactFlash.hit{animation:duelHitFlash .42s ease-out}@keyframes duelHitFlash{0%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}20%{opacity:1;background:radial-gradient(ellipse at center,#ffb24a32 18%,#ff3e2f85 100%)}100%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}}
-    #game[data-duel=true] #ordersBtn,#game[data-duel=true] #manifest,#game[data-duel=true] #routeGuide,#game[data-duel=true] #assistAimBtn,#game[data-duel=true] #interactBtn,#game[data-duel=true] #dropBtn,#game[data-duel=true] #throwBtn,#game[data-duel=true] #powerTrack,#game[data-duel=true] #rearControls,#game[data-duel=true] #boardBtn,#game[data-duel=true] #brickBtn,#game[data-duel=true] #serviceBtn,#game[data-duel=true] #restartBtn{display:none!important}
+    #game[data-duel=true] #ordersBtn,#game[data-duel=true] #manifest,#game[data-duel=true] #routeGuide,#game[data-duel=true] #interactBtn,#game[data-duel=true] #dropBtn,#game[data-duel=true] #throwBtn,#game[data-duel=true] #powerTrack,#game[data-duel=true] #rearControls,#game[data-duel=true] #boardBtn,#game[data-duel=true] #brickBtn,#game[data-duel=true] #serviceBtn,#game[data-duel=true] #restartBtn{display:none!important}
     #game[data-duel=true] .statuschips,#game[data-duel=true] #clock,#game[data-duel=true] .statusbar .money{display:none!important}
     #duelHud button:disabled{opacity:.38;filter:saturate(.5)}#duelHud .duelTools{display:flex;gap:5px}
     #duelHud[data-live=false] .duelBottom{display:none}
@@ -178,7 +178,7 @@
   setView = blockedAction(setView); mobility = blockedAction(mobility); interact = blockedAction(interact);
   throwPackage = blockedAction(throwPackage); dropPackage = blockedAction(dropPackage);
   toggleDoor = blockedAction(toggleDoor); toggleBothDoors = blockedAction(toggleBothDoors);
-  lockTarget = blockedAction(lockTarget); startCharge = blockedAction(startCharge); finishCharge = blockedAction(finishCharge);
+  startCharge = blockedAction(startCharge); finishCharge = blockedAction(finishCharge);
   selectOrder = blockedAction(selectOrder); service = blockedAction(service);
   document.querySelectorAll('[data-game-mode]').forEach((button) => button.addEventListener('click', () => selectMode(button.dataset.gameMode)));
   selectMode(currentMode());

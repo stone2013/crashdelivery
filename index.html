@@ -137,7 +137,7 @@
 </head>
 <body>
 <main id="game" aria-label="暴力快递 V0.7 ONLINE 游戏">
- <canvas id="world" tabindex="0" aria-label="3D 游戏。驾驶时 WASD 开车；V 进入货箱。货箱内 WASD 走动，拖动画面观察，E 互动，空格蓄力投掷。"></canvas>
+ <canvas id="world" tabindex="0" aria-label="3D 游戏。驾驶时 WASD 开车、空格跳跃；V 进入货箱。货箱内 WASD 走动，空格跳跃，按住 Q 蓄力投掷，拖动画面手动瞄准，E 互动。"></canvas>
  <canvas id="overlay" aria-hidden="true"></canvas><div id="vignette"></div>
  <div id="hud" class="hidden" data-view="drive">
   <header class="statusbar"><span id="viewTag" class="viewtag">驾驶</span><span class="stat"><b id="count">0</b><small>/18</small></span><span class="money">$<b id="score">0</b></span><span class="time" id="clock">00:00</span><button id="pauseBtn" class="pause control" aria-label="暂停游戏" title="暂停 Esc">Ⅱ</button></header>
@@ -155,10 +155,10 @@
   <div id="cargoUI" class="viewUI hidden">
    <div id="joystick" class="joystick" role="group" aria-label="在货箱内移动，拖动或按四个方向"><span class="stickring"></span><span id="stickThumb" class="stickthumb"></span><button id="walkForward" aria-label="往前走" class="walk up">▲</button><button id="walkBack" aria-label="往后走" class="walk down">▼</button><button id="walkLeft" aria-label="向左走" class="walk left">◀</button><button id="walkRight" aria-label="向右走" class="walk right">▶</button><small>移动</small></div>
    <div class="rearControls hidden" id="rearControls"><small>后门</small><div><button id="leftDoorBtn" class="control doorToggle" aria-label="打开左后门">左</button><button id="rightDoorBtn" class="control doorToggle" aria-label="打开右后门">右</button></div></div>
-   <div class="cargoActions"><button id="assistAimBtn" class="control smallAct hidden" aria-label="看向下一单的门窗，重复点击切换入口">◎ 瞄准</button><button id="interactBtn" class="control interact" aria-label="与当前目标互动"><span id="interactIcon">✋</span><b id="interactText">拿起</b><kbd>E</kbd></button><button id="dropBtn" class="control smallAct hidden" title="放下包裹 R">↓ 放下</button><button id="throwBtn" class="control throw hidden" aria-label="按住蓄力，松开投掷"><span>↗</span><b>投掷</b></button><div id="powerTrack" class="powertrack hidden"><i id="powerFill"></i></div></div>
+   <div class="cargoActions"><button id="interactBtn" class="control interact" aria-label="与当前目标互动"><span id="interactIcon">✋</span><b id="interactText">拿起</b><kbd>E</kbd></button><button id="dropBtn" class="control smallAct hidden" title="放下包裹 R">↓ 放下</button><button id="throwBtn" class="control throw hidden" aria-label="按住蓄力，松开投掷；键盘 Q"><span>↗</span><b>投掷 Q</b></button><div id="powerTrack" class="powertrack hidden"><i id="powerFill"></i></div></div>
    <div id="crosshair" aria-hidden="true"><i></i></div><div id="focusLabel"></div>
   </div>
-  <button id="boardBtn" type="button" class="control smallAct hidden mobility" aria-label="随时跳跃；按 J 跳跃；靠近车尾可上下车">↟ 跳跃 J</button>
+  <button id="boardBtn" type="button" class="control smallAct hidden mobility" aria-label="随时跳跃；空格跳跃；靠近车尾可上下车">↟ 跳跃 Space</button>
   <div id="taskBadge" class="taskBadge hidden"></div><div id="workProgress" class="workProgress hidden" role="status"><span id="workLabel">维修中</span><div><i id="workFill"></i></div></div><div id="roomStrip" class="roomStrip hidden"><div class="crewHud"><span class="crewDot local"></span><span class="crewHudText"><strong id="localNameHud">我</strong><small id="localRoleHud">驾驶员</small></span></div><span class="roomDivider"></span><div class="crewHud"><span class="crewDot remote"></span><span class="crewHudText"><strong id="remoteNameHud">等待队友</strong><small id="remoteRoleHud">未连接</small></span></div><span class="roomMeta" id="roomMetaHud"></span><button id="playersBtn" class="control" title="玩家管理" aria-label="玩家管理">👥 1/4</button><button id="waveBtn" title="H 挥手" aria-label="向队友挥手">👋</button></div><section id="playersPanel" class="hidden" aria-label="玩家管理"><header><b>房间玩家 <span id="playerCountLabel">1/4</span></b><button id="panelInviteBtn" type="button">复制邀请</button><button id="closePlayersBtn" type="button" aria-label="关闭玩家列表">×</button></header><div id="playersList"></div><p class="roomHelp">房主可移除客机；人数上限按房主设置，最多 4 人同房。离线玩家保留 20 秒以便自动重连。</p></section><div id="keyHelp" class="keyhelp"></div>
  </div>
  <section id="manifest" class="manifest hidden" aria-label="配送清单"><header><div><small>DISPATCH / 12 JOBS</small><h2>认准门牌，再扔。</h2></div><button id="closeOrdersBtn" type="button" class="control" aria-label="关闭订单清单">×</button></header><p>点一单设置团队导航。清单打开时车辆仍会行驶。</p><div id="orderList"></div><footer id="manifestFooter">每个包裹都有唯一收件地址。</footer></section>
@@ -173,14 +173,14 @@
 <section class="mpCard mpBrowser"><header class="mpBrowserHeader"><div class="mpStep"><i>3</i><div><h3>正在招募的房间</h3><small>可加入的公开车队</small></div></div><button id="refreshRoomsBtn" class="refreshRooms" type="button">↻ 刷新</button></header><div id="publicRoomsStatus" class="publicRoomsStatus" role="status">正在查找线上房间…</div><div id="publicRoomsList" class="publicRoomsList"></div></section></div>
 <div id="mpNetStatus" class="mpNetStatus" data-state="idle" role="status">多人联机状态：待命</div><footer class="multiLobbyFooter"><span>最多 4 人同场　·　房主负责世界状态</span><button id="backMenuBtnFromMulti" type="button">返回主菜单</button></footer>
 </div></section>
- <section id="pauseScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">PIT STOP / 暂停</div><h2>喘口气。车也暂停了。</h2><p id="pauseSummary"></p><p id="pauseNet" class="fineprint"></p><button id="resumeBtn" class="primary">继续派送 →</button><div class="settings"><button id="qualityBtn">画质：自动高清</button><button id="assistBtn">辅助瞄准：开</button><button id="soundBtn">音效：开</button><button id="motionBtn">镜头晃动：轻微</button><button id="pauseNetworkBtn">网络 / TURN 设置</button><button id="serviceBtn">道路救援 / 救援 / 补齐订单</button><button id="restartBtn">重新开始本轮</button></div><p class="resolution" id="resolutionLabel"></p><p class="fineprint">救援保留已送订单，将车辆停回道路、修复并补齐未完成订单的包裹（不会复制队友手中的包裹）；收入扣 $120（最低为 0），用时 +20 秒。不会自动替你关闭后门。</p><button id="leaveBtn" class="secondary hidden">退出联机 / 返回菜单</button><button id="pauseHelpBtn" class="secondary">查看操作说明</button></div></section>
+ <section id="pauseScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">PIT STOP / 暂停</div><h2>喘口气。车也暂停了。</h2><p id="pauseSummary"></p><p id="pauseNet" class="fineprint"></p><button id="resumeBtn" class="primary">继续派送 →</button><div class="settings"><button id="qualityBtn">画质：自动高清</button><button id="soundBtn">音效：开</button><button id="motionBtn">镜头晃动：轻微</button><button id="pauseNetworkBtn">网络 / TURN 设置</button><button id="serviceBtn">道路救援 / 救援 / 补齐订单</button><button id="restartBtn">重新开始本轮</button></div><p class="resolution" id="resolutionLabel"></p><p class="fineprint">救援保留已送订单，将车辆停回道路、修复并补齐未完成订单的包裹（不会复制队友手中的包裹）；收入扣 $120（最低为 0），用时 +20 秒。不会自动替你关闭后门。</p><button id="leaveBtn" class="secondary hidden">退出联机 / 返回菜单</button><button id="pauseHelpBtn" class="secondary">查看操作说明</button></div></section>
  <section id="networkScreen" class="screen modalScreen hidden"><div class="modal networkModal"><div class="eyebrow">PUBLIC NETWORK / 公网联机</div><h2>先直连，必要时走中继。</h2><p>默认使用 STUN 尝试 P2P。要让严格 NAT / 蜂窝网络也更可靠，请填入你自己的 TURN 服务。Cloudflare 临时凭证只保存在当前页面内存中。</p><div class="netGrid"><label><span>连接策略</span><select id="netPolicy"><option value="auto">自动：P2P 优先，优先实测线路</option><option value="direct">仅直连 / STUN</option><option value="relay">强制 TURN 中继</option></select></label><label><span>TURN 地址（可选）</span><input id="turnUrl" autocomplete="off" placeholder="turn:turn.example.com:3478"></label><label><span>TURN 用户名（可选）</span><input id="turnUser" autocomplete="off" placeholder="username"></label><label><span>TURN 密码 / credential（可选）</span><input id="turnPass" type="password" autocomplete="new-password" placeholder="credential"></label><label class="wide"><span>额外 STUN（可留空）</span><input id="extraStun" autocomplete="off" placeholder="stun:stun.example.com:3478"></label></div><p class="netSecret">自动模式继续优先 P2P；实测最快的 TURN 路线会排在备用线路前。强制 TURN 可用于验收。</p><div class="netActions"><button id="saveNetworkBtn" class="primary" type="button">保存到本机</button><button id="testIceBtn" class="secondary" type="button">测试 6 条 TURN 路线</button><button id="clearTurnBtn" class="secondary" type="button">清除 TURN 配置</button></div><div id="iceDiag" class="netDiag">尚未测试。<br>只有真实 <b>relay</b> candidate 才表示 TURN 中继可用；TCP 端口可达不算通过。</div><button id="closeNetworkBtn" class="secondary" type="button">返回</button></div></section>
 <section id="garageScreen" class="screen modalScreen hidden"><div class="modal"><div class="eyebrow">GARAGE / 永久升级</div><h2>把今天赚的钱，花在明天的事故上。</h2><p>当前车库资金：<strong id="garageCredits" style="color:var(--gold)">$0</strong></p><div class="settings"><button id="upgrade_engine"><b>发动机 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_brakes"><b>刹车 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_grip"><b>抓地力 Lv.0</b><br><span>升级 $300</span></button><button id="upgrade_mat"><b>货箱防滑 Lv.0</b><br><span>升级 $300</span></button></div><p class="fineprint">发动机提高加速；刹车缩短制动距离；抓地力改善高速转向；防滑垫降低货箱内包裹滑动。升级永久保存在本机。</p><button id="closeGarageBtn" class="primary">返回主菜单 →</button></div></section>
  <section id="cityScreen" class="cityScreen hidden" aria-label="城市地图"><div class="citySheet"><header><div><small>V0.7.1 / CITY ROUTES</small><h2>认路，再出发。</h2></div><button id="closeCityMapBtn" class="control" type="button" aria-label="关闭城市地图">×</button></header><div class="cityLayout"><div class="cityMapBox"><canvas id="cityMap" width="640" height="640" aria-label="城市道路与任务地址。点击编号选择地址；也可使用订单面板选择。"></canvas><p class="cityLegend">黄线：团队路线　橙虚线：事故路　浅色方块：包裹地址<br>点击编号查看详情。路线只作提示，不会替你转向。</p></div><div class="cityInfo"><div id="cityDistricts" class="cityDistricts"><button type="button" data-district="all" class="active">全部</button><button type="button" data-district="garden">住宅区</button><button type="button" data-district="market">商业街</button><button type="button" data-district="works">工业区</button></div><h3 id="cityMapRoute">向阳住宅区</h3><p id="cityMapDetail"></p><p id="cityRouteSummary"></p><p id="cityMapTraffic"></p><button id="cityNavigateBtn" class="primary" type="button">设为团队下一单 →</button><p class="cityNote">地图不会暂停联机世界。车在继续行驶，打开前请先停车或让搭档掌舵。更改导航会同步给队友。</p></div></div></div></section>
 <section id="helpScreen" class="screen modalScreen hidden"><div class="modal helpModal"><div class="eyebrow">QUICK START / 上岗指南</div><h2>多人同车，一起送到。</h2><div class="helpRows"><div><b>V0.7.5 MULTIPLAYER ROOMS</b><p>房主可设置 2、3 或 4 人房间。统一多人菜单支持创建、输码加入和浏览公开房间；游戏内名单可查看连接状态，房主可移除队友；断线玩家保留 20 秒用于重连。</p></div><div><b>V0.7.3.1 低延迟驾驶</b><p>客机移动按键由本机立即预测，房主仍负责碰撞、车辆与任务权威结果。🟢 P2P / 🟡 TURN 显示实测 RTT；六路线路自检必须取得真实 relay candidate。</p></div><div><b>V0.7 城市交通 / N 打开地图</b><p>18 个地址分布在住宅、商业、工业三区。NPC 会沿车道转弯、等红灯、排队与让行；事故车辆会堵住道路，清障后车流恢复。黄色路线只作提示，不会自动转向。点城市地图编号或订单选择下一单。</p></div>
 <div><b>01 / 一单一箱</b><p>每个地址只认对应编号的实体包裹。车里共 12 个订单箱，六种类型。看箱体门牌号或点顶部「订单」确认；选一单会同步团队导航。</p></div>
 <div><b>02 / 两个人都能开车</b><p>房主起步驾驶，队友在货箱。先停车，驾驶员按 V 离座；另一人走到前方，按 E 接管空座。驾驶位只能坐一人。两人都离座时砖头只管油门，不会转向。</p></div>
-<div><b>03 / 认号、拿起、投出去</b><p>WASD / 左下移动区走动，拖动右侧画面观察。低头看编号箱，E /「拿起」。走到后沿，G / 门钮开后门，F /「瞄准」辅助锁定门窗；按住空格 / 左键 /「投掷」蓄力，松手扔出。R 放下。</p></div>
+<div><b>03 / 认号、拿起、投出去</b><p>WASD / 左下移动区走动，拖动画面手动瞄准。低头看编号箱，E /「拿起」。走到后沿，G / 门钮开后门；按住 Q / 屏幕「投掷」蓄力，松开扔出。R 放下。</p></div>
 <div><b>04 / 下车找回掉货</b><p>走到车尾、开门，车速低于 12 km/h 时按 V /「下车」。在街上靠近包裹并低头，E 回收。到打开的后门旁按 V /「上车」，可以抱着箱子上车。未送的快递不会定时消失。</p></div>
 <div><b>05 / 地址错了，会退货</b><p>送错地址不算完成，首次送错这家最多扣 $40；箱子会退到这家门口，可以捡回重送。首次掉货最多扣 $25，捡回后再掉落不重复收取。只有包裹真正穿过入口、进入对应房屋才签收。</p></div>
 <div><b>06 / 现场维修</b><p>严重撞击可能伤到轮胎，车速受限。停车、取砖，下车空手靠近车头，E /「维修」，保持原地 3 秒恢复车况。移动或车辆开走会取消；修车不重置订单，也不自动关后门。</p></div>
@@ -297,7 +297,7 @@ const SAVE_KEY='crash_delivery_mp_v05';
 let stored={};
 try { stored=JSON.parse(localStorage.getItem(SAVE_KEY)||'null')||JSON.parse(localStorage.getItem('crash_delivery_offline_v01')||'{}')||{}; } catch(e) {}
 let best=Number.isFinite(Number(stored.best))?clamp(Number(stored.best),0,99999999):0;
-let soundOn=stored.sound!==false, assist=stored.assist!==false, motion=stored.motion!==false&&!nativeReduced;
+let soundOn=stored.sound!==false, motion=stored.motion!==false&&!nativeReduced;
 let quality=['auto','high','low'].includes(stored.quality)?stored.quality:'auto';
 function cleanNickname(v){const raw=String(v??'').trim().replace(/[<>\n\r\t]/g,'');return Array.from(raw).slice(0,12).join('')||'快递员';}
 let nickname=cleanNickname(stored.nickname||'快递员');
@@ -314,7 +314,7 @@ const PACKAGE_TYPES=[
 const parcelType=k=>PACKAGE_TYPES[k]||PACKAGE_TYPES[0];
 let adaptiveScale=2, fpsEMA=60, slowTime=0, fastTime=0, qualityWait=0;
 const maxViewport=renderer.gl.getParameter(renderer.gl.MAX_VIEWPORT_DIMS);
-function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify({version:'0.7.1-online',best,credits,upgrades,sound:soundOn,assist,quality,motion,nickname}));}catch(e){}}
+function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify({version:'0.7.1-online',best,credits,upgrades,sound:soundOn,quality,motion,nickname}));}catch(e){}}
 const NET_SETTINGS_KEY='crash_delivery_network_v073',TURN_ROUTE_KEY='crash_delivery_turn_route_v073';
 const TURN_ROUTES=[{url:'turn:turn.cloudflare.com:3478?transport=udp',label:'UDP 3478'},{url:'turn:turn.cloudflare.com:3478?transport=tcp',label:'TCP 3478'},{url:'turns:turn.cloudflare.com:5349?transport=tcp',label:'TLS 5349'},{url:'turn:turn.cloudflare.com:443?transport=udp',label:'UDP 443'},{url:'turn:turn.cloudflare.com:80?transport=tcp',label:'TCP 80'},{url:'turns:turn.cloudflare.com:443?transport=tcp',label:'TLS 443'}];
 let netSettings={policy:'auto',turnUrl:'',turnUser:'',turnPass:'',extraStun:''};
@@ -860,9 +860,7 @@ function interact(){if(state.mode!=='playing'||state.view!=='cargo'||state.time<
 }
 function dropPackage(){if(!player.held||state.view!=='cargo')return;const c=player.held;player.held=null;cancelCharge();c.p=[clamp(player.p[0]+Math.cos(player.yaw)*.43,-CAB.half+c.r,CAB.half-c.r),1.30,clamp(player.p[2],CAB.front+c.r,CAB.rear-c.r)];c.v=[0,-.4,0];c.thrown=false;c.spin=[0,0,0];cargo.push(c);syncButtons();tone(160,.09);}
 function turnLook(dx,dy){player.yaw=wrapAngle(player.yaw-dx*.0042);player.pitch=clamp(player.pitch-dy*.0036,-1.28,1.02);player.aimGate=player.aimHouse=null;if(net.mode==='guest'&&net.connected&&performance.now()-net.lastMovementSend>35){net.lastMovementSend=performance.now();sendInputNow();}}
-function lockTarget(cycle=true){if(state.mode!=='playing'||state.view!=='cargo')return;const h=nextHouse();if(!h)return;if(player.p[2]<2.30){showHint('先走到后门边，再瞄准房屋，避免包裹打到货箱。',4);return;}if(!doors.some(d=>d.angle>1.1)){showHint('先打开后门，不能隔着车门投递。',3);return;}const dist=V.len(V.sub(h.gates[0].center,vehicleToWorld(cameraLocal())));if(dist>65){showHint('目标还在 '+Math.round(dist)+' 米外，先开近一些。',3);return;}
- let index=0;if(cycle&&player.aimHouse===h&&player.aimGate)index=(player.aimGate.index+1)%3;player.aimHouse=h;player.aimGate=h.gates[index];aimCameraAt(player.aimGate.center);tone(490,.05,'sine',.1);showHint(h.num+' 号'+(index===1?'大门：用重箱，蓄满力。':'窗户：准星跟随入口，拖动画面可解除。'),3);
-}
+
 function aimCameraAt(p){const delta=V.sub(p,vehicleToWorld(cameraLocal()));player.yaw=wrapAngle(Math.atan2(-delta[0],-delta[2])-car.yaw);player.pitch=clamp(Math.atan2(delta[1],Math.hypot(delta[0],delta[2])),-1.28,1.02);}
 function rayHouse(ray,h){const o=houseLocal(h,ray.o),d=localVelocity(h,ray.d);if(d[2]>=-.00001||o[2]<4.3)return null;const t=(4.35-o[2])/d[2];if(t<0||t>80)return null;const p=V.add(o,V.mul(d,t));if(Math.abs(p[0])>5.55||p[1]<.2||p[1]>5.4)return null;return{t,p:houseWorld(h,p),house:h,gate:h.gates.find(g=>Math.abs(p[0]-g.x)<g.w/2&&Math.abs(p[1]-g.y)<g.h/2)||null};}
 function shotSolution(){
@@ -871,8 +869,7 @@ function shotSolution(){
  let gate=player.aimGate,house=player.aimHouse,point=null;
  if(!gate){let hit=null;for(const h of houses){const q=rayHouse({o:origin,d:dir},h);if(q&&(!hit||q.t<hit.t))hit=q;}if(hit){gate=hit.gate;house=hit.house;point=hit.p;}}
  let v,flight=1.6;
- if(assist&&gate&&V.len(V.sub(gate.center,origin))<66){const delta=V.sub(gate.center,origin);flight=clamp(Math.hypot(delta[0],delta[2])/base,.17,3);v=[delta[0]/flight,delta[1]/flight+6*flight,delta[2]/flight];point=gate.center.slice();}
- else {v=V.add(V.mul(dir,base),inherited);v[1]+=2.0;point=V.add(origin,V.mul(dir,35));}
+ v=V.add(V.mul(dir,base),inherited);v[1]+=2.0;point=V.add(origin,V.mul(dir,35));
  return{origin,v,flight,kind,point,gate,house};
 }
 function startCharge(source){if(state.mode!=='playing'||state.view!=='cargo'||!player.held||state.charging||state.cooldown>0||state.time<state.switchUntil)return;initAudio();state.charging=true;state.charge=.10;state.chargeSource=source;$('throwBtn').classList.add('charging');}
@@ -1157,7 +1154,6 @@ function stepPlayer(dt){if(state.view!=='cargo'||state.time<state.switchUntil)re
  player.p[0]=clamp(player.p[0]+dx,-1.12,1.12);player.p[2]=clamp(player.p[2]+dz,-1.21,3.35);if(l>.05)player.walkPhase+=dt*8;
  // The player is kept aboard; loose boxes get a small sideways push on contact.
  if(l>.05&&net.mode!=='guest')for(const c of cargo){const x=c.p[0]-player.p[0],z=c.p[2]-player.p[2],d=Math.hypot(x,z),r=c.r+.18;if(d<r&&d>.001&&c.p[1]<2.1){c.v[0]+=x/d*(r-d)*9*dt;c.v[2]+=z/d*(r-d)*9*dt;}}
- if(player.aimGate){if(player.aimHouse.done){player.aimGate=player.aimHouse=null;}else aimCameraAt(player.aimGate.center);}
 }
 function stepParcels(dt){for(let i=packages.length-1;i>=0;i--){const p=packages[i],old=p.p.slice();stepWorldPackage(p,dt);
  // Parcels also hit traffic. A heavy box can finish an already-damaged car.
@@ -1176,8 +1172,8 @@ function syncButtons(){
  $('hud').dataset.view=state.view;$('driveUI').classList.toggle('hidden',state.view!=='drive');$('cargoUI').classList.toggle('hidden',state.view!=='cargo');$('viewTag').textContent=state.view==='drive'?'驾驶':'货箱 · 第一人称';
  $('brickBtn').classList.toggle('active',state.brick);$('brickLabel').textContent=state.brick?'取砖':'放砖';
  const held=!!player.held;$('throwBtn').classList.toggle('hidden',!held);$('dropBtn').classList.toggle('hidden',!held);$('powerTrack').classList.toggle('hidden',!held);
- $('qualityBtn').textContent='画质：'+({auto:'自动高清',high:'高清锁定',low:'省电'}[quality]);$('assistBtn').textContent='辅助瞄准：'+(assist?'开':'关');$('soundBtn').textContent='音效：'+(soundOn?'开':'关');$('motionBtn').textContent='镜头晃动：'+(motion?'轻微':'关闭');$('bestMenu').textContent='最高收入 $'+best;
- $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶　 B 放砖　 V 进入货箱　拖动画面环顾　 Esc 暂停':'WASD 走动　 右键拖动观察　 E 互动　 G 后门　 F 瞄准　 左键 / 空格投掷　 R 放下　 V 回驾驶位';
+ $('qualityBtn').textContent='画质：'+({auto:'自动高清',high:'高清锁定',low:'省电'}[quality]);$('soundBtn').textContent='音效：'+(soundOn?'开':'关');$('motionBtn').textContent='镜头晃动：'+(motion?'轻微':'关闭');$('bestMenu').textContent='最高收入 $'+best;
+ $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶　空格跳跃　B 放砖　V 进入货箱　拖动画面环顾':'WASD 走动　空格跳跃　Q / 屏幕投掷键蓄力投掷　拖动画面手动瞄准　E 互动　G 后门　R 放下';
  if(audioMaster&&audio)audioMaster.gain.setTargetAtTime(soundOn?.16:0,audio.currentTime,.04);
  for(let i=0;i<2;i++){const d=doors[i],el=$(i===0?'leftDoorBtn':'rightDoorBtn');el.classList.toggle('open',d.target>0);el.textContent=(d.target>0?'关':'开')+(i===0?'左':'右');el.setAttribute('aria-label',(d.target>0?'关闭':'打开')+(i===0?'左':'右')+'后门');}
  if(state.mode==='paused'){$('pauseSummary').textContent='已送 '+state.delivered+' / '+TOTAL+' 单 · 货物 '+physicalStock()+' 件 · 车辆耐久 '+Math.round(car.hp)+'%';$('resolutionLabel').textContent='3D 实际渲染 '+world.width+' × '+world.height+' · '+actualDPR().toFixed(2)+'× 采样 · UI 独立清晰渲染';}
@@ -1192,11 +1188,11 @@ function updateHUD(){
  if(car.hp<=0)risk='车辆已熄火 · 暂停菜单可救援';else if(nearFire)risk='起火车辆 · '+Math.max(0,nearFire.burn).toFixed(1)+' 秒后爆炸';else if(state.view==='cargo'&&Math.abs(car.speed)>2){const dist=nextIntersection();if(dist<62)risk='路口约 '+(dist/Math.max(1,Math.abs(car.speed))).toFixed(1)+' 秒 · 无人掌舵';}else if(state.view==='drive'&&open&&Math.abs(car.speed)>3)risk='后门未关 · 正在冒险驾驶';
  $('risk').textContent=risk;$('risk').classList.toggle('hidden',!risk);
  if(state.view==='cargo'){
-  const focus=collectFocus();player.focus=focus;$('rearControls').classList.toggle('hidden',player.p[2]<1.45);$('assistAimBtn').classList.toggle('hidden',!player.held||player.p[2]<2.25);
+  const focus=collectFocus();player.focus=focus;$('rearControls').classList.toggle('hidden',player.p[2]<1.45);
   $('interactBtn').classList.toggle('hidden',!!player.held&&focus?.type!=='cab');$('interactBtn').disabled=!focus;
   let text='靠近箱子',icon='✋',label='';if(focus?.type==='package'){text='拿起';label=parcelLabel(focus.item)+' · 拿起';icon='📦';}else if(focus?.type==='door'){text=doors[focus.index].target?'关门':'开门';label=(focus.index===0?'左':'右')+'后门 · '+text;icon='▥';}else if(focus?.type==='cab'){text='回驾驶位';label='驾驶位 · 接管车辆';icon='↶';}
   if(player.held){label=player.aimGate?(player.aimGate.type==='door'?'大门':'窗户')+' · '+(state.charging?'蓄力 '+Math.round(state.charge*100)+'%':'按住，再松手'):(state.charging?'蓄力 '+Math.round(state.charge*100)+'%':player.p[2]>2.8?'站稳后沿 · 按住投掷':parcelLabel(player.held)+' · 走到后门');}
-  $('interactText').textContent=text;$('interactIcon').textContent=icon;$('focusLabel').textContent=label;$('crosshair').classList.toggle('locked',!!player.aimGate);
+  $('interactText').textContent=text;$('interactIcon').textContent=icon;$('focusLabel').textContent=label;$('crosshair').classList.remove('locked');
  }
  $('vignette').style.boxShadow=state.hitCooldown>.36&&motion?'inset 0 0 70px #d5885526':'none';
 }
@@ -1582,23 +1578,14 @@ dropPackage=function(){
  }else{const f=viewDirection();p.p=V.add(worldEye(),V.mul(f,.65));p.p[1]=Math.max(p.r+.15,p.p[1]-.5);p.v=[0,-.4,0];packages.push(p);}
  pulse('pick');syncButtons();
 };
-lockTarget=function(cycle=true){
- if(state.mode!=='playing'||!isWalking())return;
- const h=nextHouse();if(!h)return;
- if(state.view==='cargo'&&(player.p[2]<2.3||!doors.some(d=>d.angle>1.1))){showHint('先走到打开的后门边。',3);return;}
- if(V.len(V.sub(h.gates[0].center,worldEye()))>65){showHint('先靠近当前地址，65 米内可辅助瞄准。',3);return;}
- let i=cycle&&player.aimHouse===h&&player.aimGate?(player.aimGate.index+1)%3:0;
- player.aimHouse=h;player.aimGate=h.gates[i];aimCameraAt(player.aimGate.center);
- showHint('#'+h.num+' '+(i===1?'大门：用重箱蓄力':'窗户')+(player.held?.order!==h.num?' · 手里的包裹不属于这家':''),3);
-};
+
 shotSolution=function(){
  const kind=player.held?.kind??currentKind,dir=viewDirection(),origin=V.add(worldEye(),V.add(V.mul(dir,.56),[0,-.13,0]));
  const power=state.charging?state.charge:.60,base=(18+power*22)*parcelType(kind).throwMul,inherited=state.view==='outside'?[0,0,0]:car.velocity.slice();
  let gate=player.aimGate,house=player.aimHouse,point=null;
  if(!gate){let hit=null;for(const h of houses){const q=rayHouse({o:origin,d:dir},h);if(q&&(!hit||q.t<hit.t))hit=q;}if(hit){gate=hit.gate;house=hit.house;point=hit.p;}}
  let v,flight=1.6;
- if(assist&&gate&&V.len(V.sub(gate.center,origin))<66){const d=V.sub(gate.center,origin);flight=clamp(Math.hypot(d[0],d[2])/base,.17,3);v=[d[0]/flight,d[1]/flight+6*flight,d[2]/flight];point=gate.center.slice();}
- else{v=V.add(V.mul(dir,base),inherited);v[1]+=2;point=V.add(origin,V.mul(dir,35));}
+ v=V.add(V.mul(dir,base),inherited);v[1]+=2;point=V.add(origin,V.mul(dir,35));
  return{origin,v,flight,kind,point,gate,house};
 };
 startCharge=function(source){
@@ -1660,7 +1647,6 @@ stepPlayer=function(dt){
  const speed=player.held?3.6:4.8,old=player.p.slice(),dx=(-Math.sin(player.yaw)*fw+Math.cos(player.yaw)*right)*speed*dt,dz=(-Math.cos(player.yaw)*fw-Math.sin(player.yaw)*right)*speed*dt;
  player.p=walkCollision([old[0]+dx,WALK_EYE,old[2]+dz]);const move=Math.hypot(player.p[0]-old[0],player.p[2]-old[2]);
  if(move>.0001)player.walkPhase+=dt*8;player.move=mix(player.move||0,clamp(move/(speed*dt),0,1),1-Math.exp(-14*dt));
- if(player.aimGate){if(player.aimHouse.done)player.aimGate=player.aimHouse=null;else aimCameraAt(player.aimGate.center);}
  stepRepair();
 };
 stepCar=function(dt,predictionOnly=false){v06.stepCar(dt,predictionOnly);if(car.fault==='tyre'){car.speed=clamp(car.speed,-4.5,8.6);car.yaw=wrapAngle(car.yaw+car.speed*.0025*dt);}};
@@ -1742,7 +1728,7 @@ drawMap=function(){
 syncButtons=function(){
  if(net.executing)return;v06.syncButtons();
  $('cargoUI').classList.toggle('hidden',!isWalking());$('viewTag').textContent=roleLabel(state.view);
- $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶 · J/右侧↟跳跃 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停':player.held?'WASD 移动 · 拖动观察 · 空格蓄力投掷 · J/右侧↟跳跃或上下车 · E 交互':'WASD 移动 · J/右侧↟随时跳跃 · 靠近后门可上下车 · E 交互 · G 后门 · F 瞄准';
+ $('keyHelp').textContent=state.view==='drive'?'WASD 驾驶 · 空格跳跃 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停':player.held?'WASD 移动 · 空格跳跃 · 按住 Q 蓄力投掷 · 右侧↟跳跃/上下车 · 拖动画面手动瞄准':'WASD 移动 · 空格或右侧↟随时跳跃 · 靠近后门可上下车 · E 交互 · G 后门';
 };
 updateHUD=function(){
  if(net.executing)return;v06.updateHUD();
@@ -1752,8 +1738,8 @@ updateHUD=function(){
  if(h&&outside)$('distance').textContent=Math.round(Math.hypot(h.x-player.p[0],h.z-player.p[2]))+' m';
  $('localRoleHud').textContent=roleLabel(state.view);if(otherAvatar())$('remoteRoleHud').textContent=otherAvatar().repair?'维修中':roleLabel(otherAvatar().view);
  const nearRear=outside?rearDistance()<2.7:state.view==='cargo'&&player.p[2]>2.3;
- $('boardBtn').classList.toggle('hidden',state.mode!=='playing');$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃 J';
- $('rearControls').classList.toggle('hidden',!nearRear);$('assistAimBtn').classList.toggle('hidden',!held||!walking||(!outside&&player.p[2]<2.25));
+ $('boardBtn').classList.toggle('hidden',state.mode!=='playing');$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃';
+ $('rearControls').classList.toggle('hidden',!nearRear);
  $('throwBtn').classList.toggle('hidden',!held||!walking);$('dropBtn').classList.toggle('hidden',!held||!walking);$('powerTrack').classList.toggle('hidden',!held||!walking);
  let text='靠近箱子',icon='✋',focusText='';
  if(f?.type==='package'||f?.type==='ground'){text=f.type==='ground'?'回收':'拿起';focusText=parcelLabel(f.item);icon='📦';}
@@ -1765,7 +1751,7 @@ updateHUD=function(){
  $('interactBtn').classList.toggle('hidden',!walking||!!held&&!['cab','board'].includes(f?.type));$('interactBtn').disabled=!f||!!player.repair;
  $('interactText').textContent=text;$('interactIcon').textContent=icon;
  if(held)focusText=parcelLabel(held)+(state.charging?' · 蓄力 '+Math.round(state.charge*100)+'%':'');
- $('focusLabel').textContent=focusText;$('crosshair').classList.toggle('locked',!!player.aimGate);
+ $('focusLabel').textContent=focusText;$('crosshair').classList.remove('locked');
  $('taskBadge').classList.toggle('hidden',!held||!h);if(held&&h){const match=held.order===h.num;$('taskBadge').classList.toggle('mismatch',!match);$('taskBadge').textContent=match?'✓ 包裹 #'+held.order+' 与目标一致':'手持 #'+held.order+' / 导航 #'+h.num+' · 注意地址';}
  $('workProgress').classList.toggle('hidden',!player.repair);if(player.repair){const t=clamp((state.time-player.repair.at)/REPAIR_SECONDS,0,1);$('workLabel').textContent='维修中 '+Math.round(t*100)+'% · 移动取消';$('workFill').style.width=(t*100)+'%';}
  if(car.fault&&!outside){$('risk').textContent='轮胎受损 · 车速受限 · 停车后到车头维修';$('risk').classList.remove('hidden');}
@@ -1774,7 +1760,7 @@ updateHUD=function(){
 };
 // Contextual buttons. New UI stays absent until needed, without adding a full panel to play.
 $('ordersBtn').addEventListener('click',()=>{$('manifest').classList.contains('hidden')?openOrders():closeOrders();});
-$('closeOrdersBtn').addEventListener('click',closeOrders);$('boardBtn').addEventListener('click',mobility);
+$('closeOrdersBtn').addEventListener('click',closeOrders);
 window.addEventListener('keydown',e=>{
  if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.repeat)return;
  if(e.code==='KeyM'){e.preventDefault();$('manifest').classList.contains('hidden')?openOrders():closeOrders();}
@@ -1923,16 +1909,16 @@ function stopStick(e){if(e.pointerId!==joyPointer)return;joyPointer=null;inputs.
 for(const type of ['pointerup','pointercancel','lostpointercapture'])stick.addEventListener(type,stopStick);
 $('throwBtn').addEventListener('pointerdown',e=>{if(state.mode!=='playing'||state.view==='drive')return;e.preventDefault();capture($('throwBtn'),e.pointerId);startCharge('throw'+e.pointerId);});
 $('throwBtn').addEventListener('pointerup',e=>finishCharge('throw'+e.pointerId));for(const type of ['pointercancel','lostpointercapture'])$('throwBtn').addEventListener(type,e=>{if(state.chargeSource==='throw'+e.pointerId)cancelCharge();});
-const gameKeys=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyB','KeyV','KeyE','KeyG','KeyF','KeyR','KeyC','KeyJ','Space','Escape','KeyP']);
+const gameKeys=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyB','KeyV','KeyE','KeyG','KeyR','KeyC','KeyQ','Space','Escape','KeyP']);
  window.addEventListener('keydown',e=>{if(!gameKeys.has(e.code)||['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))return;
  if(e.code==='Escape'||e.code==='KeyP'){if(e.repeat)return;e.preventDefault();if(!$('helpScreen').classList.contains('hidden')){closeHelp();return;}if(state.mode==='playing')pause();else if(state.mode==='paused')resume();return;}
  if(state.mode!=='playing')return;e.preventDefault();inputs.keys.add(e.code);sendInputNow();if(e.repeat)return;
- if(e.code==='KeyB')toggleBrick();else if(e.code==='KeyV')(state.view==='outside'||state.view==='cargo'&&player.p[2]>1.45?mobility():setView(state.view==='drive'?'cargo':'drive'));else if(e.code==='KeyE')interact();else if(e.code==='KeyG')toggleBothDoors();else if(e.code==='KeyF')lockTarget();else if(e.code==='KeyR')dropPackage();else if(e.code==='KeyC'){if(state.view==='drive')driveOrbitGoal=0;else{player.yaw=Math.PI;player.pitch=-.15;player.aimGate=player.aimHouse=null;}}else if(e.code==='KeyJ')jumpVehicle();else if(e.code==='Space'&&player.held&&state.view!=='drive')startCharge('space');
+ if(e.code==='KeyB')toggleBrick();else if(e.code==='KeyV')(state.view==='outside'||state.view==='cargo'&&player.p[2]>1.45?mobility():setView(state.view==='drive'?'cargo':'drive'));else if(e.code==='KeyE')interact();else if(e.code==='KeyG')toggleBothDoors();else if(e.code==='KeyR')dropPackage();else if(e.code==='KeyC'){if(state.view==='drive')driveOrbitGoal=0;else{player.yaw=Math.PI;player.pitch=-.15;player.aimGate=player.aimHouse=null;}}else if(e.code==='Space')jumpVehicle();else if(e.code==='KeyQ'&&player.held&&state.view!=='drive')startCharge('keyboard-q');
 });
-window.addEventListener('keyup',e=>{inputs.keys.delete(e.code);if(e.code==='Space'){if(state.mode==='playing')e.preventDefault();finishCharge('space');}sendInputNow();});
+window.addEventListener('keyup',e=>{inputs.keys.delete(e.code);if(e.code==='KeyQ'){if(state.mode==='playing')e.preventDefault();finishCharge('keyboard-q');}sendInputNow();});
 $('startBtn').addEventListener('click',()=>{stopNetwork(false);resetGame();});$('hostBtn').addEventListener('click',()=>{net.maxPlayers=selectedMaxPlayers();hostRoom();});$('joinBtn').addEventListener('click',()=>joinRoom());$('againBtn').addEventListener('click',()=>resetGame());$('backMenuBtn').addEventListener('click',()=>stopNetwork(true));$('restartBtn').addEventListener('click',()=>resetGame());$('pauseBtn').addEventListener('click',pause);$('resumeBtn').addEventListener('click',resume);$('serviceBtn').addEventListener('click',service);
-$('cargoBtn').addEventListener('click',()=>setView('cargo'));$('boardBtn').addEventListener('click',jumpVehicle);$('brickBtn').addEventListener('click',toggleBrick);$('interactBtn').addEventListener('click',interact);$('leftDoorBtn').addEventListener('click',()=>toggleDoor(0));$('rightDoorBtn').addEventListener('click',()=>toggleDoor(1));$('dropBtn').addEventListener('click',dropPackage);$('assistAimBtn').addEventListener('click',()=>lockTarget());
-$('qualityBtn').addEventListener('click',()=>{quality={auto:'high',high:'low',low:'auto'}[quality];adaptiveScale=2;qualityWait=slowTime=fastTime=0;syncButtons();save();});$('assistBtn').addEventListener('click',()=>{assist=!assist;syncButtons();save();});$('soundBtn').addEventListener('click',()=>{soundOn=!soundOn;initAudio();syncButtons();save();});$('motionBtn').addEventListener('click',()=>{motion=!motion;syncButtons();save();});
+$('cargoBtn').addEventListener('click',()=>setView('cargo'));$('boardBtn').addEventListener('click',jumpVehicle);$('brickBtn').addEventListener('click',toggleBrick);$('interactBtn').addEventListener('click',interact);$('leftDoorBtn').addEventListener('click',()=>toggleDoor(0));$('rightDoorBtn').addEventListener('click',()=>toggleDoor(1));$('dropBtn').addEventListener('click',dropPackage);
+$('qualityBtn').addEventListener('click',()=>{quality={auto:'high',high:'low',low:'auto'}[quality];adaptiveScale=2;qualityWait=slowTime=fastTime=0;syncButtons();save();});$('soundBtn').addEventListener('click',()=>{soundOn=!soundOn;initAudio();syncButtons();save();});$('motionBtn').addEventListener('click',()=>{motion=!motion;syncButtons();save();});
 function openHelp(){state.helpFrom=state.mode;if(state.mode==='playing')pause();$('helpScreen').classList.remove('hidden');$('closeHelpBtn').focus({preventScroll:true});}
 function closeHelp(){$('helpScreen').classList.add('hidden');if(state.helpFrom==='menu')$('helpBtn').focus({preventScroll:true});else $('resumeBtn').focus({preventScroll:true});}
 $('helpBtn').addEventListener('click',openHelp);$('pauseHelpBtn').addEventListener('click',openHelp);$('closeHelpBtn').addEventListener('click',closeHelp);$('reloadBtn').addEventListener('click',()=>location.reload());
@@ -1955,21 +1941,21 @@ function frame(now){const rawdt=clamp((now-last)/1000,.001,.2),dt=Math.min(rawdt
 }
 // QA fixtures are opt-in and call the same physics / interaction functions as play.
 if(new URLSearchParams(location.search).has('test'))window.__deliveryTest={
- snapshot:()=>({version:'multiplayer-0.7.0',state:{...state},car:JSON.parse(JSON.stringify(car)),player:{p:player.p.slice(),yaw:player.yaw,pitch:player.pitch,held:player.held?{id:player.held.id,kind:player.held.kind}:null,focus:player.focus?.type||null},doors:doors.map(d=>({...d})),cargo:cargo.map(c=>({id:c.id,kind:c.kind,p:c.p.slice(),v:c.v.slice(),thrown:c.thrown})),packages:packages.map(p=>({id:p.id,p:p.p.slice(),v:p.v.slice(),delivered:p.delivered,spilled:p.spilled,pending:p.pending?.h.num||null})),traffic:traffic.map(t=>({id:t.id,p:t.p.slice(),hp:t.hp,phase:t.phase,burn:t.burn})),houses:deliverable.map(h=>({num:h.num,x:h.x,z:h.z,yaw:h.yaw,done:h.done,gates:h.gates.map(g=>({index:g.index,type:g.type,broken:g.broken,center:g.center.slice(),screen:renderer.project(g.center)}))})),debris:debris.length,effects:effects.length,staticTriangles,render:{width:world.width,height:world.height,dpr:actualDPR(),cssWidth:width,cssHeight:height,quality},soundOn,assist,stock:physicalStock()}),
+ snapshot:()=>({version:'multiplayer-0.7.0',state:{...state},car:JSON.parse(JSON.stringify(car)),player:{p:player.p.slice(),yaw:player.yaw,pitch:player.pitch,held:player.held?{id:player.held.id,kind:player.held.kind}:null,focus:player.focus?.type||null},doors:doors.map(d=>({...d})),cargo:cargo.map(c=>({id:c.id,kind:c.kind,p:c.p.slice(),v:c.v.slice(),thrown:c.thrown})),packages:packages.map(p=>({id:p.id,p:p.p.slice(),v:p.v.slice(),delivered:p.delivered,spilled:p.spilled,pending:p.pending?.h.num||null})),traffic:traffic.map(t=>({id:t.id,p:t.p.slice(),hp:t.hp,phase:t.phase,burn:t.burn})),houses:deliverable.map(h=>({num:h.num,x:h.x,z:h.z,yaw:h.yaw,done:h.done,gates:h.gates.map(g=>({index:g.index,type:g.type,broken:g.broken,center:g.center.slice(),screen:renderer.project(g.center)}))})),debris:debris.length,effects:effects.length,staticTriangles,render:{width:world.width,height:world.height,dpr:actualDPR(),cssWidth:width,cssHeight:height,quality},soundOn,stock:physicalStock()}),
  reset:()=>resetGame(),menu:()=>resetGame(true),freeze:b=>{freezeSimulation=b;simAccumulator=0;},
  advance:seconds=>{for(let i=0,n=Math.ceil(clamp(seconds,0,100)*120);i<n&&state.mode==='playing';i++)step(1/120);updateCamera(.3);updateHUD();drawMap();draw3D();},
  place:(x,z,yaw=0,speed=0)=>{car.p=[x,.12,z];car.yaw=yaw;car.speed=speed;car.velocity=V.mul(carForward(),speed);car.accel=[0,0,0];car.kick=[0,0,0];car.hp=100;car.steer=0;state.hitCooldown=0;state.brick=false;brickBody.placed=false;clearInputs();syncButtons();},
  playerAt:(x,z,yaw=Math.PI,pitch=-.2)=>{if(state.view==='drive')setView('cargo');player.p=[clamp(x,-1.12,1.12),2.38,clamp(z,-1.21,3.35)];player.yaw=yaw;player.pitch=pitch;player.aimGate=player.aimHouse=null;state.switchUntil=0;cameraBlend=0;updateCamera(.3);syncButtons();updateHUD();},
  lookAt:p=>{player.aimGate=player.aimHouse=null;aimCameraAt(p);updateCamera(.3);updateHUD();},
  cargoLook:index=>{const c=cargo[index];if(c){aimCameraAt(vehicleToWorld(c.p));updateCamera(.3);updateHUD();}},
- interact,brick:toggleBrick,door:toggleDoor,bothDoors:toggleBothDoors,view:setView,drop:dropPackage,lock:lockTarget,
+ interact,brick:toggleBrick,door:toggleDoor,bothDoors:toggleBothDoors,view:setView,drop:dropPackage,
  cargoSet:(index,p,v=[0,0,0])=>{const c=cargo[index];if(!c)throw new Error('Missing cargo index');c.p=p.slice();c.v=v.slice();},
  solution:shotSolution,shoot:power=>{startCharge('qa');if(state.charging){state.charge=clamp(power,.1,1);finishCharge('qa');}},
  aimAt:(num,index=0)=>{const h=houses.find(h=>h.num===num);if(!h)throw new Error('Unknown address');player.aimHouse=h;player.aimGate=h.gates[index];aimCameraAt(player.aimGate.center);},
  trafficPlace:(index,x,z,yaw=0,hp=100)=>{const t=traffic[index];Object.assign(t,{p:[x,.1,z],yaw,hp,phase:'damaged',drift:[0,0,0],spin:0,burn:0,hitCooldown:0});},
  damage:(index,amount)=>damageTraffic(traffic[index],amount),
  quality:q=>{if(!['auto','high','low'].includes(q))throw new Error('Invalid quality');quality=q;syncButtons();draw3D();},
- assist:b=>{assist=!!b;syncButtons();}, service,pause,resume,
+ service,pause,resume,
  controls:()=>({keys:[...inputs.keys],left:[...inputs.left],right:[...inputs.right],gas:[...inputs.gas],brake:[...inputs.brake],stick:[inputs.stickX,inputs.stickY],charging:state.charging}),
  glError:()=>renderer.gl.getError()
 };
@@ -2353,7 +2339,7 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
     #duelHud[data-urgent=true] .duelTime{color:#ff8c70;animation:duelPulse .65s ease-in-out infinite alternate}
     @keyframes duelPulse{to{opacity:.62;filter:brightness(1.45)}}
     #duelImpactFlash{position:absolute;z-index:4;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 22%,#ff3e2f00 60%)}#duelImpactFlash.hit{animation:duelHitFlash .42s ease-out}@keyframes duelHitFlash{0%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}20%{opacity:1;background:radial-gradient(ellipse at center,#ffb24a32 18%,#ff3e2f85 100%)}100%{opacity:0;background:radial-gradient(ellipse at center,#ffb24a00 18%,#ff3e2f00 65%)}}
-    #game[data-duel=true] #ordersBtn,#game[data-duel=true] #manifest,#game[data-duel=true] #routeGuide,#game[data-duel=true] #assistAimBtn,#game[data-duel=true] #interactBtn,#game[data-duel=true] #dropBtn,#game[data-duel=true] #throwBtn,#game[data-duel=true] #powerTrack,#game[data-duel=true] #rearControls,#game[data-duel=true] #boardBtn,#game[data-duel=true] #brickBtn,#game[data-duel=true] #serviceBtn,#game[data-duel=true] #restartBtn{display:none!important}
+    #game[data-duel=true] #ordersBtn,#game[data-duel=true] #manifest,#game[data-duel=true] #routeGuide,#game[data-duel=true] #interactBtn,#game[data-duel=true] #dropBtn,#game[data-duel=true] #throwBtn,#game[data-duel=true] #powerTrack,#game[data-duel=true] #rearControls,#game[data-duel=true] #boardBtn,#game[data-duel=true] #brickBtn,#game[data-duel=true] #serviceBtn,#game[data-duel=true] #restartBtn{display:none!important}
     #game[data-duel=true] .statuschips,#game[data-duel=true] #clock,#game[data-duel=true] .statusbar .money{display:none!important}
     #duelHud button:disabled{opacity:.38;filter:saturate(.5)}#duelHud .duelTools{display:flex;gap:5px}
     #duelHud[data-live=false] .duelBottom{display:none}
@@ -2477,7 +2463,7 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
   setView = blockedAction(setView); mobility = blockedAction(mobility); interact = blockedAction(interact);
   throwPackage = blockedAction(throwPackage); dropPackage = blockedAction(dropPackage);
   toggleDoor = blockedAction(toggleDoor); toggleBothDoors = blockedAction(toggleBothDoors);
-  lockTarget = blockedAction(lockTarget); startCharge = blockedAction(startCharge); finishCharge = blockedAction(finishCharge);
+  startCharge = blockedAction(startCharge); finishCharge = blockedAction(finishCharge);
   selectOrder = blockedAction(selectOrder); service = blockedAction(service);
   document.querySelectorAll('[data-game-mode]').forEach((button) => button.addEventListener('click', () => selectMode(button.dataset.gameMode)));
   selectMode(currentMode());
