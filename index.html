@@ -135,6 +135,11 @@
 @media(max-height:600px) and (orientation:landscape){.multiLobby{padding:13px 16px}.multiLobbyHeader{margin-bottom:8px}.multiLobbyHeader h2{font-size:20px}.multiLobbyGrid{grid-template-columns:1fr 1fr}.mpBrowser{grid-column:1/-1}.mpCard{padding:9px}.publicRoomsList{grid-template-columns:1fr 1fr;max-height:160px;overflow:auto}.publicRoomsStatus{padding:8px 3px}}
 </style>
 <style>.pedals #brakeBtn.reverse{background:linear-gradient(180deg,#f2c36b,#dfaa4e);border-color:#ffe3a0;color:#17343a;font-weight:800;box-shadow:0 0 0 2px #ffd05b35,inset 0 1px #fff5cf}</style>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="暴力快递">
 </head>
 <body>
 <main id="game" aria-label="暴力快递 V0.7 ONLINE 游戏">
@@ -2858,4 +2863,19 @@ if(window.__deliveryTest)Object.assign(window.__deliveryTest,{roomBrowser:{setCa
 })();
 </script>
 
+<script>
+(function(){
+  if(!('serviceWorker' in navigator) || !/^https?:$/.test(location.protocol)) return;
+  window.addEventListener('load', async function(){
+    try{
+      const reg=await navigator.serviceWorker.register('./sw.js',{scope:'./'});
+      reg.update().catch(()=>{});
+      let refreshing=false;
+      navigator.serviceWorker.addEventListener('controllerchange',()=>{
+        if(refreshing)return; refreshing=true; location.reload();
+      });
+    }catch(e){ console.warn('PWA service worker unavailable:',e); }
+  });
+})();
+</script>
 </body></html>

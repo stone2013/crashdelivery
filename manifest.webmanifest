@@ -1,0 +1,30 @@
+{
+  "id": "./",
+  "name": "暴力快递 Crash Delivery",
+  "short_name": "暴力快递",
+  "description": "低多边形快递驾驶、投掷、合作与 2v2 多人游戏。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#142b31",
+  "theme_color": "#162e34",
+  "categories": [
+    "games"
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
