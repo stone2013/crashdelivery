@@ -1,0 +1,127 @@
+{
+  "pack": "City Kit Roads 2.1",
+  "author": "Kenney",
+  "license": "CC0",
+  "models": [
+    {
+      "name": "road-straight",
+      "bytes": 5248,
+      "triangles": 44,
+      "sha256": "f8f744fb6fc96dedd5ad1f763b550166f2624a3757bf36b4b39969d2e7cacac5"
+    },
+    {
+      "name": "road-straight-barrier",
+      "bytes": 4196,
+      "triangles": 24,
+      "sha256": "eeaf5469bb34b94e3edaf71c5d7c9da152c0a398f86c9ec6c234a82a42833e4e"
+    },
+    {
+      "name": "road-bend",
+      "bytes": 20164,
+      "triangles": 260,
+      "sha256": "9752f63448c8e7a3d30ca2e0e1bb6784c5adb72b56a2b05667be8d546c1674bc"
+    },
+    {
+      "name": "road-curve",
+      "bytes": 23912,
+      "triangles": 308,
+      "sha256": "d076717bfe3493dfd5a4b4207a7825e4aff1876273f0d58f5e16e8e8670906f7"
+    },
+    {
+      "name": "road-crossroad",
+      "bytes": 10084,
+      "triangles": 116,
+      "sha256": "2dc52a28cf89ec88025a047c0f6fff4c643f16b0f50f0e9a1140f16230c28b12"
+    },
+    {
+      "name": "road-intersection",
+      "bytes": 7900,
+      "triangles": 84,
+      "sha256": "fdf4f213abe41ddfe2a7e798a0ef1c3de5b7a68143e21c44f1893985ec6aae58"
+    },
+    {
+      "name": "road-crossing",
+      "bytes": 8700,
+      "triangles": 104,
+      "sha256": "eb8575335f77da513add4a5277a7b60cad4886c07966f024b15cf55e5966cde3"
+    },
+    {
+      "name": "road-roundabout",
+      "bytes": 105876,
+      "triangles": 1636,
+      "sha256": "6bde41e46040fa35c90f86a524fe5ff344ede07f50f077e1732762b82f8e2d66"
+    },
+    {
+      "name": "road-slant-curve",
+      "bytes": 47880,
+      "triangles": 544,
+      "sha256": "9cf7fed9d5770bdc6043825d99b9e814bf3315de56dd3e77ea38e1f2e54f3d4c"
+    },
+    {
+      "name": "road-slant-curve-barrier",
+      "bytes": 38824,
+      "triangles": 420,
+      "sha256": "ebc41618b5f63bb339f9877520000e63d4c33c4fd350bc81ff6bb21dcc778eac"
+    },
+    {
+      "name": "road-bridge",
+      "bytes": 24796,
+      "triangles": 240,
+      "sha256": "5e2bdaabddf39b309a3b5d109d7c6423cd68829a8e63960fcc2d23d62c8425b0"
+    },
+    {
+      "name": "bridge-pillar",
+      "bytes": 5468,
+      "triangles": 38,
+      "sha256": "71c8d9dbaa502e63bf803c6873165873df4601f7285e1fe040d0f03acab3f0ec"
+    },
+    {
+      "name": "light-curved",
+      "bytes": 9492,
+      "triangles": 92,
+      "sha256": "154dcce9d58ec2cd165e26c91a89c97bdd2838cf06d255099b3570df84f82ec6"
+    },
+    {
+      "name": "traffic-light",
+      "bytes": 20344,
+      "triangles": 212,
+      "sha256": "6c9ee253b7370e1043168493b2e662b349484a0cdd02100cff04d9d8d1bd9abb"
+    },
+    {
+      "name": "sign-highway",
+      "bytes": 17288,
+      "triangles": 180,
+      "sha256": "95858108df403b7051f97598a78b93ddc398ac6cac85ad8abc0bf9198a9fe282"
+    },
+    {
+      "name": "road-sign-stop",
+      "bytes": 10720,
+      "triangles": 104,
+      "sha256": "0991181f37171daf8d2501e436a688e46ea2bcebb5e27aa451640fcbaab107ef"
+    },
+    {
+      "name": "road-sign-warning",
+      "bytes": 11496,
+      "triangles": 104,
+      "sha256": "db8049a51eb60c77e40253e8b5a9d41359a49d2a9083223dce361cfb0605c3a9"
+    },
+    {
+      "name": "construction-cone",
+      "bytes": 7056,
+      "triangles": 66,
+      "sha256": "50ceae45cd1d71f738a8f7c40f8b6b46f360063c2754bf717aae54013d6f2ee4"
+    },
+    {
+      "name": "construction-barrier",
+      "bytes": 7052,
+      "triangles": 60,
+      "sha256": "906f73a6d62d8de58a4c5a19e76ff95b460c42b37e5fa37478b8612f06793f26"
+    },
+    {
+      "name": "road-end-round",
+      "bytes": 17532,
+      "triangles": 218,
+      "sha256": "0ad2c0cd4fde52724a5fe277f0eba71df530a5b6c7570d0efe1686c7b456bc76"
+    }
+  ]
+}

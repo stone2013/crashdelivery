@@ -1,0 +1,9 @@
+Minimal runtime upload:
+index.html
+sw.js
+manifest.webmanifest
+icons/
+.nojekyll
+
+Models are embedded in index.html. assets/ and src/ are for editing/rebuilding.
+Keep any existing CNAME and turn-worker backend unless separately changing them.
