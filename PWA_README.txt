@@ -1,1 +1,0 @@
-PWA build: index.html + manifest + service worker + icon. Multiplayer/TURN APIs are not cached. Serve over HTTPS.
