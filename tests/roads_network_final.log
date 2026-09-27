@@ -1,0 +1,16 @@
+PASS Both clients joined same V0.9 protocol 
+PASS Host trial selection replicated 
+PASS Guest van is rendered at authority bridge height 
+PASS Extra district NPC state replicated 
+PASS Guest walking responds over rendered frames without new authority packet 
+PASS Guest body remains in vehicle-local coordinates 
+PASS Cargo local point follows elevated world transform 
+PASS Incline pitch replicated to passenger renderer 
+PASS Network packet carries distinct V0.9 metadata 
+PASS One serialized world packet stays below 64KiB 
+PASS Guest cannot relocate the shared vehicle 
+PASS Return to old city synchronized 
+PASS Both clients retain 18 orders 
+PASS No JS errors in host or guest 
+PASS WebGL healthy on both clients 
+TOTAL 15 / 15

@@ -2,7 +2,7 @@
 'use strict';
 const ROOT = new URL('./', self.registration.scope);
 const PREFIX = 'crashdelivery-pwa::' + ROOT.pathname + '::';
-const CACHE = PREFIX + '25de3ffc736a3a53';
+const CACHE = PREFIX + '__BUILD_HASH__';
 const INDEX = new URL('index.html', ROOT).href;
 const STATIC = ['manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'].map(p=>new URL(p,ROOT).href);
 const SHELL = [INDEX,...STATIC];

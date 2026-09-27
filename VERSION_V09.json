@@ -1,0 +1,10 @@
+{
+  "version": "0.9.0",
+  "name": "SKYWAY / 立体路网试验区",
+  "protocol": "crash-delivery-mp090-1",
+  "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
+  "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
+  "html_sha256": "25de3ffc736a3a53bd5d60952de6c40ef34cbab19b7f40b88a5948398e6faf4b",
+  "models": 20,
+  "notes": "Additive road test district; co-op and legacy 2v2 retained. Internet/Safari hardware testing not implied."
+}

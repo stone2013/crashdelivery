@@ -1,0 +1,31 @@
+PASS Host and guest initialize independently 
+PASS Nickname handshake 
+PASS Eighteen IDs synchronize 
+PASS Guest updates shared order navigation 
+PASS Cannot steal occupied driver seat 
+PASS Guest can take empty driver seat 
+PASS Cargo player cannot drive 
+PASS Guest gas drives authoritative vehicle 
+PASS Restart preserves nicknames 
+PASS Host restart syncs epoch and roles 
+PASS Stale-epoch action rejected 
+PASS Guest door actions synchronize 
+PASS Guest can exit to world 
+PASS Guest recovers a tagged fragile parcel 
+PASS Recovery inventory has no duplicate ID 
+PASS Guest exterior drop synchronizes 
+PASS Simultaneous pickup has only one owner 
+PASS Rescue with two couriers preserves uniqueness 
+PASS Guest holds matching order before throw 
+PASS Guest real throw signs matching order 
+PASS Both peers agree on money and damage 
+PASS Held item clears after acknowledged throw 
+PASS Guest repair progress synchronized 
+PASS Guest repair mutates shared car once 
+PASS Guest pause freezes both 
+PASS Guest resume returns both 
+PASS No runtime errors in two pages 
+PASS WebGL stays valid on both 
+PASS World snapshot stays below 64KiB 
+PASS Disconnect pauses host 
+TOTAL 30 / 30

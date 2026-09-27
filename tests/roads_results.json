@@ -1,0 +1,979 @@
+[
+  {
+    "test": "Verified V0.8 base still contains 2v2 runtime",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "20 real GLBs decoded and baked",
+    "passed": true,
+    "details": {
+      "ready": true,
+      "error": "",
+      "assets": 20,
+      "tiles": 88,
+      "triangles": 12584,
+      "chunks": 20,
+      "visible": 20,
+      "loadMs": 120,
+      "trial": null,
+      "stats": {
+        "stops": 0,
+        "laps": 0,
+        "contacts": 0
+      },
+      "car": {
+        "p": [
+          208,
+          8.12,
+          8
+        ],
+        "yaw": -1.5707963267948966,
+        "pitch": 0,
+        "speed": 0
+      },
+      "npc": [
+        {
+          "p": [
+            146.65,
+            0.09999999821186066,
+            56
+          ],
+          "speed": 5.5,
+          "wait": "",
+          "progress": 0,
+          "phase": "normal"
+        },
+        {
+          "p": [
+            238.41494840583835,
+            8.100000072717666,
+            10.65
+          ],
+          "speed": 5.5,
+          "wait": "",
+          "progress": 140.2632127793566,
+          "phase": "normal"
+        },
+        {
+          "p": [
+            268.2948703150984,
+            0.09999999821186066,
+            53.35
+          ],
+          "speed": 5.5,
+          "wait": "",
+          "progress": 280.5264255587132,
+          "phase": "normal"
+        },
+        {
+          "p": [
+            221.35,
+            0.09999999821186066,
+            -24
+          ],
+          "speed": 5.5,
+          "wait": "",
+          "progress": 0,
+          "phase": "normal"
+        },
+        {
+          "p": [
+            261.0079143839353,
+            0.09999999821186066,
+            85.35
+          ],
+          "speed": 5.5,
+          "wait": "",
+          "progress": 164.97625684819405,
+          "phase": "normal"
+        }
+      ],
+      "nodes": [
+        {
+          "id": "city",
+          "p": [
+            120,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "fork",
+          "p": [
+            144,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "bendW",
+          "p": [
+            144,
+            0.08,
+            16
+          ]
+        },
+        {
+          "id": "rampW",
+          "p": [
+            152,
+            0.08,
+            8
+          ]
+        },
+        {
+          "id": "topW",
+          "p": [
+            184,
+            8.08,
+            8
+          ]
+        },
+        {
+          "id": "upper",
+          "p": [
+            224,
+            8.08,
+            8
+          ]
+        },
+        {
+          "id": "topE",
+          "p": [
+            248,
+            8.08,
+            8
+          ]
+        },
+        {
+          "id": "rampE",
+          "p": [
+            280,
+            0.08,
+            8
+          ]
+        },
+        {
+          "id": "bendE",
+          "p": [
+            304,
+            0.08,
+            32
+          ]
+        },
+        {
+          "id": "east",
+          "p": [
+            304,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "cross",
+          "p": [
+            272,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "roundE",
+          "p": [
+            248,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "roundW",
+          "p": [
+            200,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "roundN",
+          "p": [
+            224,
+            0.08,
+            32
+          ]
+        },
+        {
+          "id": "roundS",
+          "p": [
+            224,
+            0.08,
+            80
+          ]
+        },
+        {
+          "id": "lower",
+          "p": [
+            224,
+            0.08,
+            8
+          ]
+        },
+        {
+          "id": "north",
+          "p": [
+            224,
+            0.08,
+            -24
+          ]
+        },
+        {
+          "id": "finish",
+          "p": [
+            284,
+            0.08,
+            -24
+          ]
+        },
+        {
+          "id": "south",
+          "p": [
+            224,
+            0.08,
+            88
+          ]
+        },
+        {
+          "id": "crossS",
+          "p": [
+            272,
+            0.08,
+            88
+          ]
+        },
+        {
+          "id": "southE",
+          "p": [
+            304,
+            0.08,
+            80
+          ]
+        },
+        {
+          "id": "rE",
+          "p": [
+            238,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "rS",
+          "p": [
+            224,
+            0.08,
+            70
+          ]
+        },
+        {
+          "id": "rW",
+          "p": [
+            210,
+            0.08,
+            56
+          ]
+        },
+        {
+          "id": "rN",
+          "p": [
+            224,
+            0.08,
+            42
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "a": "city",
+          "b": "fork",
+          "len": 24
+        },
+        {
+          "a": "fork",
+          "b": "city",
+          "len": 24
+        },
+        {
+          "a": "fork",
+          "b": "bendW",
+          "len": 40
+        },
+        {
+          "a": "bendW",
+          "b": "fork",
+          "len": 40
+        },
+        {
+          "a": "bendW",
+          "b": "rampW",
+          "len": 12.562383561216766
+        },
+        {
+          "a": "rampW",
+          "b": "bendW",
+          "len": 12.562383561216768
+        },
+        {
+          "a": "rampW",
+          "b": "topW",
+          "len": 33.28588081235907
+        },
+        {
+          "a": "topW",
+          "b": "rampW",
+          "len": 33.28588081235908
+        },
+        {
+          "a": "topW",
+          "b": "upper",
+          "len": 40
+        },
+        {
+          "a": "upper",
+          "b": "topW",
+          "len": 40
+        },
+        {
+          "a": "upper",
+          "b": "topE",
+          "len": 24
+        },
+        {
+          "a": "topE",
+          "b": "upper",
+          "len": 24
+        },
+        {
+          "a": "topE",
+          "b": "rampE",
+          "len": 33.285880818708904
+        },
+        {
+          "a": "rampE",
+          "b": "topE",
+          "len": 33.285880818708904
+        },
+        {
+          "a": "rampE",
+          "b": "bendE",
+          "len": 37.6871506836503
+        },
+        {
+          "a": "bendE",
+          "b": "rampE",
+          "len": 37.687150683650316
+        },
+        {
+          "a": "bendE",
+          "b": "east",
+          "len": 24
+        },
+        {
+          "a": "east",
+          "b": "bendE",
+          "len": 24
+        },
+        {
+          "a": "east",
+          "b": "cross",
+          "len": 32
+        },
+        {
+          "a": "cross",
+          "b": "east",
+          "len": 32
+        },
+        {
+          "a": "cross",
+          "b": "roundE",
+          "len": 24
+        },
+        {
+          "a": "roundE",
+          "b": "cross",
+          "len": 24
+        },
+        {
+          "a": "roundW",
+          "b": "fork",
+          "len": 56
+        },
+        {
+          "a": "fork",
+          "b": "roundW",
+          "len": 56
+        },
+        {
+          "a": "roundN",
+          "b": "lower",
+          "len": 24
+        },
+        {
+          "a": "lower",
+          "b": "roundN",
+          "len": 24
+        },
+        {
+          "a": "lower",
+          "b": "north",
+          "len": 32
+        },
+        {
+          "a": "north",
+          "b": "lower",
+          "len": 32
+        },
+        {
+          "a": "north",
+          "b": "finish",
+          "len": 60
+        },
+        {
+          "a": "finish",
+          "b": "north",
+          "len": 60
+        },
+        {
+          "a": "roundS",
+          "b": "south",
+          "len": 8
+        },
+        {
+          "a": "south",
+          "b": "roundS",
+          "len": 8
+        },
+        {
+          "a": "south",
+          "b": "crossS",
+          "len": 48
+        },
+        {
+          "a": "crossS",
+          "b": "south",
+          "len": 48
+        },
+        {
+          "a": "crossS",
+          "b": "southE",
+          "len": 36.56238356121676
+        },
+        {
+          "a": "southE",
+          "b": "crossS",
+          "len": 36.56238356121676
+        },
+        {
+          "a": "southE",
+          "b": "east",
+          "len": 24
+        },
+        {
+          "a": "east",
+          "b": "southE",
+          "len": 24
+        },
+        {
+          "a": "cross",
+          "b": "crossS",
+          "len": 32
+        },
+        {
+          "a": "crossS",
+          "b": "cross",
+          "len": 32
+        },
+        {
+          "a": "roundE",
+          "b": "rE",
+          "len": 10
+        },
+        {
+          "a": "rE",
+          "b": "roundE",
+          "len": 10
+        },
+        {
+          "a": "roundS",
+          "b": "rS",
+          "len": 10
+        },
+        {
+          "a": "rS",
+          "b": "roundS",
+          "len": 10
+        },
+        {
+          "a": "roundW",
+          "b": "rW",
+          "len": 10
+        },
+        {
+          "a": "rW",
+          "b": "roundW",
+          "len": 10
+        },
+        {
+          "a": "roundN",
+          "b": "rN",
+          "len": 10
+        },
+        {
+          "a": "rN",
+          "b": "roundN",
+          "len": 10
+        },
+        {
+          "a": "rE",
+          "b": "rS",
+          "len": 21.984171232129345
+        },
+        {
+          "a": "rS",
+          "b": "rW",
+          "len": 21.98417123212934
+        },
+        {
+          "a": "rW",
+          "b": "rN",
+          "len": 21.984171232129345
+        },
+        {
+          "a": "rN",
+          "b": "rE",
+          "len": 21.984171232129345
+        }
+      ]
+    }
+  },
+  {
+    "test": "Selected pack rendered through actual WebGL",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Spatial batching reduces draws below placement count",
+    "passed": true,
+    "details": {
+      "tiles": 88,
+      "chunks": 20,
+      "triangles": 12584,
+      "loadMs": 120
+    }
+  },
+  {
+    "test": "New trial and old solo entry both enabled",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Bridge has two distinct real mesh surfaces",
+    "passed": true,
+    "details": [
+      {
+        "y": 0.07999999821186066,
+        "n": [
+          0,
+          1,
+          0
+        ],
+        "tile": 16,
+        "road": true
+      },
+      {
+        "y": 8.079999849200249,
+        "n": [
+          0,
+          1,
+          0
+        ],
+        "tile": 16,
+        "road": true
+      }
+    ]
+  },
+  {
+    "test": "Lower reference never teleports onto bridge",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Upper reference stays on upper deck",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "West ramp rises continuously",
+    "passed": true,
+    "details": {
+      "start": 0.07999999821186066,
+      "end": 8.079999849200249
+    }
+  },
+  {
+    "test": "East ramp descends continuously",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "All deck tile seams connect",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Routing goes via ramp, not false vertical crossing",
+    "passed": true,
+    "details": [
+      {
+        "a": "upper",
+        "b": "topW",
+        "len": 40
+      },
+      {
+        "a": "topW",
+        "b": "rampW",
+        "len": 33.28588081235908
+      },
+      {
+        "a": "rampW",
+        "b": "bendW",
+        "len": 12.562383561216768
+      },
+      {
+        "a": "bendW",
+        "b": "fork",
+        "len": 40
+      },
+      {
+        "a": "fork",
+        "b": "roundW",
+        "len": 56
+      },
+      {
+        "a": "roundW",
+        "b": "rW",
+        "len": 10
+      },
+      {
+        "a": "rW",
+        "b": "rN",
+        "len": 21.984171232129345
+      },
+      {
+        "a": "rN",
+        "b": "roundN",
+        "len": 10
+      },
+      {
+        "a": "roundN",
+        "b": "lower",
+        "len": 24
+      }
+    ]
+  },
+  {
+    "test": "Real pedal driving climbs ramp",
+    "passed": true,
+    "details": {
+      "p": [
+        189.75470042752926,
+        8.120000072717666,
+        8
+      ],
+      "yaw": -1.5707963267948966,
+      "pitch": 0.0007171320985118286,
+      "speed": 20.499977290818826
+    }
+  },
+  {
+    "test": "Vehicle pitches from the actual ramp normal",
+    "passed": true,
+    "details": {
+      "p": [
+        160.3933290985478,
+        1.2653014651002332,
+        8
+      ],
+      "yaw": -1.5707963267948966,
+      "pitch": 0.2006929277299755,
+      "speed": 3.85904102213943
+    }
+  },
+  {
+    "test": "Inclined cargo local/world transforms invert",
+    "passed": true,
+    "details": {
+      "world": [
+        158.25299785882234,
+        3.258639417588711,
+        8.4
+      ],
+      "roundtrip": [
+        0.40000000000000024,
+        2.380000632073062,
+        1.7000032085940786
+      ]
+    }
+  },
+  {
+    "test": "Van drives beneath same bridge without snapping up",
+    "passed": true,
+    "details": {
+      "p": [
+        224,
+        0.11999999821186066,
+        -2.829416666666684
+      ],
+      "yaw": 0,
+      "pitch": 0,
+      "speed": 19.77999999999998
+    }
+  },
+  {
+    "test": "Van drives over crossing without falling through",
+    "passed": true,
+    "details": {
+      "p": [
+        243.15226388888792,
+        8.120000072717666,
+        8
+      ],
+      "yaw": -1.5707963267948966,
+      "pitch": 0,
+      "speed": 20.5
+    }
+  },
+  {
+    "test": "Upper guard rail holds van on deck",
+    "passed": true,
+    "details": {
+      "p": [
+        210,
+        8.120000072717666,
+        3.2
+      ],
+      "yaw": 0,
+      "pitch": 0,
+      "speed": 3.2980129525414075
+    }
+  },
+  {
+    "test": "Parcel falling from above lands on upper road",
+    "passed": true,
+    "details": {
+      "p": [
+        224,
+        8.347583182533583,
+        8
+      ],
+      "v": [
+        0,
+        -0.1,
+        0
+      ]
+    }
+  },
+  {
+    "test": "Parcel below span lands on ground road",
+    "passed": true,
+    "details": {
+      "p": [
+        224,
+        0.4002633333333334,
+        8
+      ],
+      "v": [
+        0,
+        0.3563200000000023,
+        0
+      ]
+    }
+  },
+  {
+    "test": "Parcel cannot fly through underside of crossing",
+    "passed": true,
+    "details": {
+      "p": [
+        224,
+        0.5773333333333439,
+        8
+      ],
+      "v": [
+        0,
+        -13.11999999999997,
+        0
+      ]
+    }
+  },
+  {
+    "test": "Actual V key exits onto elevated deck",
+    "passed": true,
+    "details": {
+      "view": "outside",
+      "p": [
+        210,
+        9.810000072717667,
+        12.65
+      ],
+      "world": [
+        210,
+        9.810000072717667,
+        12.65
+      ],
+      "avatarFeet": [
+        210,
+        8.079999923706055,
+        12.649999618530273
+      ]
+    }
+  },
+  {
+    "test": "On-foot prediction stays on elevated mesh",
+    "passed": true,
+    "details": {
+      "view": "outside",
+      "p": [
+        211.955,
+        9.810000072717667,
+        5.559999999999999
+      ],
+      "world": [
+        211.955,
+        9.810000072717667,
+        5.559999999999999
+      ],
+      "avatarFeet": [
+        211.9550018310547,
+        8.079999923706055,
+        5.559999942779541
+      ]
+    }
+  },
+  {
+    "test": "Ground courier does not teleport to upper deck",
+    "passed": true,
+    "details": {
+      "view": "outside",
+      "p": [
+        223.91999999999962,
+        1.8099999982118606,
+        8
+      ],
+      "world": [
+        223.91999999999962,
+        1.8099999982118606,
+        8
+      ],
+      "avatarFeet": [
+        223.9199981689453,
+        0.07999999821186066,
+        8
+      ]
+    }
+  },
+  {
+    "test": "Ground courier walks beneath parked elevated van",
+    "passed": true,
+    "details": {
+      "view": "outside",
+      "p": [
+        223.91999999999962,
+        1.8099999982118606,
+        8
+      ],
+      "world": [
+        223.91999999999962,
+        1.8099999982118606,
+        8
+      ],
+      "avatarFeet": [
+        223.9199981689453,
+        0.07999999821186066,
+        8
+      ]
+    }
+  },
+  {
+    "test": "Full six-gate route completed with real pedal/steering simulation",
+    "passed": true,
+    "details": {
+      "index": 6,
+      "start": 11.299999999999999,
+      "finished": true,
+      "finishTime": 85.39166666668969
+    }
+  },
+  {
+    "test": "Trial does not consume original order inventory",
+    "passed": true,
+    "details": {
+      "houses": 30,
+      "orders": 18,
+      "traffic": 14,
+      "stock": 18,
+      "protocol": "crash-delivery-mp090-1"
+    }
+  },
+  {
+    "test": "Return city retains all 18 orders",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Four-minute road traffic run stays finite",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "High circuit NPCs remain on elevated deck",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Traffic keeps completing circuits",
+    "passed": true,
+    "details": {
+      "stops": 20,
+      "laps": 22,
+      "contacts": 0
+    }
+  },
+  {
+    "test": "Traffic has stopped for lights or queues",
+    "passed": true,
+    "details": {
+      "stops": 20,
+      "laps": 22,
+      "contacts": 0
+    }
+  },
+  {
+    "test": "Road guide contains completed world map and controls",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Old multiplayer code, realtime endpoint, and movement replay remain",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Final GL state healthy",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "No JavaScript page errors",
+    "passed": true,
+    "details": []
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "version": "0.9.0",
+  "html_sha256": "25de3ffc736a3a53bd5d60952de6c40ef34cbab19b7f40b88a5948398e6faf4b",
+  "verified_baseline_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
+  "checks": [
+    {
+      "category": "道路实体/完整试跑",
+      "file": "roads_results.json",
+      "passed": 36,
+      "total": 36
+    },
+    {
+      "category": "试验区手机/桌面界面",
+      "file": "roads_ui_results.json",
+      "passed": 28,
+      "total": 28
+    },
+    {
+      "category": "试验区双客户端同步",
+      "file": "roads_network_results.json",
+      "passed": 15,
+      "total": 15
+    },
+    {
+      "category": "四人房间与共享试跑",
+      "file": "road_four_player_results.json",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "category": "原单人核心玩法",
+      "file": "solo_results.json",
+      "passed": 31,
+      "total": 31
+    },
+    {
+      "category": "原多尺寸界面与输入",
+      "file": "ui_results.json",
+      "passed": 32,
+      "total": 32
+    },
+    {
+      "category": "18 单真实弹道与结算",
+      "file": "finish_results.json",
+      "passed": 21,
+      "total": 21
+    },
+    {
+      "category": "按当前键位运行的原双人核心回归",
+      "file": "network_current_keys_results.json",
+      "passed": 30,
+      "total": 30
+    },
+    {
+      "category": "PWA 缓存策略单元检查",
+      "file": "pwa_results.json",
+      "passed": 16,
+      "total": 16
+    }
+  ],
+  "browser_checks": 197,
+  "pwa_contract_checks": 16,
+  "scope": "Road test district; old city preserved; ordered JSON bridge, not public RTC. No Safari hardware/PWA installation benchmark."
+}

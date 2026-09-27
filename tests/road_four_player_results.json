@@ -1,0 +1,71 @@
+[
+  {
+    "test": "Four distinct actors admitted",
+    "passed": true,
+    "details": {
+      "roster": [
+        {
+          "id": 0,
+          "name": "快递员",
+          "online": true,
+          "host": true,
+          "view": "drive",
+          "rtt": 0,
+          "relay": false,
+          "linkType": "房主"
+        },
+        {
+          "id": 1,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 1070,
+          "relay": false,
+          "linkType": ""
+        },
+        {
+          "id": 2,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 1133,
+          "relay": false,
+          "linkType": ""
+        },
+        {
+          "id": 3,
+          "name": "快递员",
+          "online": true,
+          "host": false,
+          "view": "cargo",
+          "rtt": 0,
+          "relay": false,
+          "linkType": ""
+        }
+      ],
+      "actors": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "test": "Fourth guest has ID 3",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "All four clients share road-trial state",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Four-player protocol has no runtime errors",
+    "passed": true,
+    "details": null
+  }
+]

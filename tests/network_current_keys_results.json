@@ -61,12 +61,12 @@
     },
     {
       "test": "Guest door actions synchronize",
-      "passed": false,
+      "passed": true,
       "details": null
     },
     {
       "test": "Guest can exit to world",
-      "passed": false,
+      "passed": true,
       "details": null
     },
     {
@@ -265,35 +265,35 @@
     },
     {
       "test": "Guest real throw signs matching order",
-      "passed": false,
+      "passed": true,
       "details": {
         "h": {
           "mode": "playing",
           "view": "drive",
           "time": 26.099999999999817,
-          "score": 0,
-          "delivered": 0,
-          "shots": 0,
+          "score": 200,
+          "delivered": 1,
+          "shots": 1,
           "lost": 0,
           "explosions": 0,
-          "combo": 0,
-          "lastDelivery": -100,
+          "combo": 1,
+          "lastDelivery": 25.049999999999876,
           "brick": false,
           "charge": 0,
           "charging": false,
           "chargeSource": null,
           "cooldown": 0,
-          "toastUntil": 25.999999999999993,
+          "toastUntil": 27.849999999999877,
           "shake": 0,
           "hitCooldown": 0,
-          "hintUntil": 6.799999999999993,
+          "hintUntil": 30.049999999999876,
           "switchUntil": 0,
           "warnUntil": 0,
           "helpFrom": "menu",
           "nextId": 19,
           "damageCost": 0,
-          "trickCount": 0,
-          "lastBreakdown": "",
+          "trickCount": 1,
+          "lastBreakdown": "基础 $100 · 远投 +$40 · 特技 +$60",
           "selectedOrder": 0,
           "recovered": 4,
           "repairs": 0,
@@ -302,10 +302,10 @@
         "g": {
           "mode": "playing",
           "view": "outside",
-          "time": 26.1,
-          "score": 0,
-          "delivered": 0,
-          "shots": 0,
+          "time": 26.13080000000028,
+          "score": 200,
+          "delivered": 1,
+          "shots": 1,
           "lost": 0,
           "explosions": 0,
           "combo": 0,
@@ -314,18 +314,18 @@
           "charge": 0,
           "charging": false,
           "chargeSource": null,
-          "cooldown": 0,
-          "toastUntil": 6.03269999999972,
+          "cooldown": 0.27,
+          "toastUntil": 27.5,
           "shake": 0,
           "hitCooldown": 0,
-          "hintUntil": 27.5,
+          "hintUntil": 27.578600000000094,
           "switchUntil": 0,
           "warnUntil": 0,
           "helpFrom": "menu",
           "nextId": 19,
           "damageCost": 0,
-          "trickCount": 0,
-          "lastBreakdown": "",
+          "trickCount": 1,
+          "lastBreakdown": "基础 $100 · 远投 +$40 · 特技 +$60",
           "selectedOrder": 0,
           "recovered": 4,
           "repairs": 0,
@@ -340,17 +340,24 @@
     },
     {
       "test": "Held item clears after acknowledged throw",
-      "passed": false,
+      "passed": true,
       "details": null
     },
     {
       "test": "Guest repair progress synchronized",
-      "passed": false,
-      "details": null
+      "passed": true,
+      "details": {
+        "at": 26.099999999999817,
+        "origin": [
+          3.05,
+          1.73,
+          67.1
+        ]
+      }
     },
     {
       "test": "Guest repair mutates shared car once",
-      "passed": false,
+      "passed": true,
       "details": null
     },
     {
@@ -382,8 +389,8 @@
       "details": {
         "max_message_bytes": 10124,
         "messages": [
-          107,
-          72
+          127,
+          89
         ]
       }
     },

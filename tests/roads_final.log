@@ -1,0 +1,37 @@
+PASS Verified V0.8 base still contains 2v2 runtime 
+PASS 20 real GLBs decoded and baked 
+PASS Selected pack rendered through actual WebGL 
+PASS Spatial batching reduces draws below placement count 
+PASS New trial and old solo entry both enabled 
+PASS Bridge has two distinct real mesh surfaces 
+PASS Lower reference never teleports onto bridge 
+PASS Upper reference stays on upper deck 
+PASS West ramp rises continuously 
+PASS East ramp descends continuously 
+PASS All deck tile seams connect 
+PASS Routing goes via ramp, not false vertical crossing 
+PASS Real pedal driving climbs ramp 
+PASS Vehicle pitches from the actual ramp normal 
+PASS Inclined cargo local/world transforms invert 
+PASS Van drives beneath same bridge without snapping up 
+PASS Van drives over crossing without falling through 
+PASS Upper guard rail holds van on deck 
+PASS Parcel falling from above lands on upper road 
+PASS Parcel below span lands on ground road 
+PASS Parcel cannot fly through underside of crossing 
+PASS Actual V key exits onto elevated deck 
+PASS On-foot prediction stays on elevated mesh 
+PASS Ground courier does not teleport to upper deck 
+PASS Ground courier walks beneath parked elevated van 
+PASS Full six-gate route completed with real pedal/steering simulation 
+PASS Trial does not consume original order inventory 
+PASS Return city retains all 18 orders 
+PASS Four-minute road traffic run stays finite 
+PASS High circuit NPCs remain on elevated deck 
+PASS Traffic keeps completing circuits 
+PASS Traffic has stopped for lights or queues 
+PASS Road guide contains completed world map and controls 
+PASS Old multiplayer code, realtime endpoint, and movement replay remain 
+PASS Final GL state healthy 
+PASS No JavaScript page errors 
+RESULT: 36/36

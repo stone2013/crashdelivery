@@ -1,0 +1,162 @@
+[
+  {
+    "test": "320x640 menu trial accessible",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 no horizontal page overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 new HUD inside viewport",
+    "passed": true,
+    "details": {
+      "x": 10,
+      "y": 235,
+      "width": 184,
+      "height": 75
+    }
+  },
+  {
+    "test": "320x640 road map opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 road map has no sideways scroll",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 map action reachable by scrolling",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "320x640 cargo and GL still function",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "390x740 menu trial accessible",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 no horizontal page overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 new HUD inside viewport",
+    "passed": true,
+    "details": {
+      "x": 10,
+      "y": 228,
+      "width": 206,
+      "height": 75
+    }
+  },
+  {
+    "test": "390x740 road map opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 road map has no sideways scroll",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 map action reachable by scrolling",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "390x740 cargo and GL still function",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "844x390 menu trial accessible",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 no horizontal page overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 new HUD inside viewport",
+    "passed": true,
+    "details": {
+      "x": 319,
+      "y": 9,
+      "width": 206,
+      "height": 75
+    }
+  },
+  {
+    "test": "844x390 road map opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 road map has no sideways scroll",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 map action reachable by scrolling",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "844x390 cargo and GL still function",
+    "passed": true,
+    "details": []
+  },
+  {
+    "test": "1280x800 menu trial accessible",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 no horizontal page overflow",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 new HUD inside viewport",
+    "passed": true,
+    "details": {
+      "x": 508,
+      "y": 14,
+      "width": 264,
+      "height": 81
+    }
+  },
+  {
+    "test": "1280x800 road map opens",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 road map has no sideways scroll",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 map action reachable by scrolling",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "1280x800 cargo and GL still function",
+    "passed": true,
+    "details": []
+  }
+]

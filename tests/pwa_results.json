@@ -1,0 +1,66 @@
+[
+  {
+    "test": "Manifest has relative scope and start URL",
+    "passed": true
+  },
+  {
+    "test": "PNG icon exists: 192x192",
+    "passed": true
+  },
+  {
+    "test": "PNG icon exists: 512x512",
+    "passed": true
+  },
+  {
+    "test": "Shell installation does not activate during a live game",
+    "passed": true
+  },
+  {
+    "test": "Cache includes full game, manifest and icons only",
+    "passed": true
+  },
+  {
+    "test": "Activation preserves unrelated app caches",
+    "passed": true
+  },
+  {
+    "test": "Activation deletes only own outdated scope caches",
+    "passed": true
+  },
+  {
+    "test": "Game HTML uses network first",
+    "passed": true
+  },
+  {
+    "test": "Offline navigation returns cached game not a broken invite URL",
+    "passed": true
+  },
+  {
+    "test": "Server error never overwrites healthy offline HTML",
+    "passed": true
+  },
+  {
+    "test": "Cross-origin TURN credentials bypass cache",
+    "passed": true
+  },
+  {
+    "test": "Same-origin room APIs bypass cache",
+    "passed": true
+  },
+  {
+    "test": "POST requests bypass cache",
+    "passed": true
+  },
+  {
+    "test": "Unlisted resources are not opportunistically cached",
+    "passed": true
+  },
+  {
+    "test": "Unknown navigation does not cache false game responses",
+    "passed": true
+  },
+  {
+    "test": "Waiting update activates only on explicit message",
+    "passed": true
+  }
+]

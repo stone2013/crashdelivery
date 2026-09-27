@@ -1,0 +1,14 @@
+Creating guest 1
+Attaching guest 1
+Guest attached 1
+Creating guest 2
+Attaching guest 2
+Guest attached 2
+Creating guest 3
+Attaching guest 3
+Guest attached 3
+PASS Four distinct actors admitted 
+PASS Fourth guest has ID 3 
+PASS All four clients share road-trial state 
+PASS Four-player protocol has no runtime errors 
+TOTAL 4 / 4

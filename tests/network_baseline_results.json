@@ -66,7 +66,7 @@
     },
     {
       "test": "Guest can exit to world",
-      "passed": false,
+      "passed": true,
       "details": null
     },
     {
@@ -302,7 +302,7 @@
         "g": {
           "mode": "playing",
           "view": "outside",
-          "time": 26.1,
+          "time": 26.147299999999817,
           "score": 0,
           "delivered": 0,
           "shots": 0,
@@ -315,10 +315,10 @@
           "charging": false,
           "chargeSource": null,
           "cooldown": 0,
-          "toastUntil": 6.03269999999972,
+          "toastUntil": 6.025,
           "shake": 0,
           "hitCooldown": 0,
-          "hintUntil": 27.5,
+          "hintUntil": 27.547299999999815,
           "switchUntil": 0,
           "warnUntil": 0,
           "helpFrom": "menu",
@@ -380,10 +380,10 @@
       "test": "World snapshot stays below 64KiB",
       "passed": true,
       "details": {
-        "max_message_bytes": 10124,
+        "max_message_bytes": 9512,
         "messages": [
-          107,
-          72
+          111,
+          78
         ]
       }
     },

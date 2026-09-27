@@ -10,7 +10,8 @@ def load(b, mobile=False, size=(1280,800), name='page'):
  pg=ctx.new_page();errors=[]
  pg.on('pageerror',lambda e:errors.append(str(e)))
  pg.set_content(TEST_SOURCE,wait_until='load')
- pg.wait_for_function('window.__deliveryBootReady===true',timeout=12000)
+ pg.wait_for_function('window.__deliveryBootReady===true',timeout=20000)
+ if '__roads09Ready' in TEST_SOURCE:pg.wait_for_function('window.__roads09Ready===true',timeout=20000)
  pg.evaluate('__deliveryTest.background(true)')
  pg.wait_for_timeout(150)
  return ctx,pg,errors

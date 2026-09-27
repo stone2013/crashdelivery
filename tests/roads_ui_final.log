@@ -1,0 +1,29 @@
+PASS 320x640 menu trial accessible 
+PASS 320x640 no horizontal page overflow 
+PASS 320x640 new HUD inside viewport 
+PASS 320x640 road map opens 
+PASS 320x640 road map has no sideways scroll 
+PASS 320x640 map action reachable by scrolling 
+PASS 320x640 cargo and GL still function 
+PASS 390x740 menu trial accessible 
+PASS 390x740 no horizontal page overflow 
+PASS 390x740 new HUD inside viewport 
+PASS 390x740 road map opens 
+PASS 390x740 road map has no sideways scroll 
+PASS 390x740 map action reachable by scrolling 
+PASS 390x740 cargo and GL still function 
+PASS 844x390 menu trial accessible 
+PASS 844x390 no horizontal page overflow 
+PASS 844x390 new HUD inside viewport 
+PASS 844x390 road map opens 
+PASS 844x390 road map has no sideways scroll 
+PASS 844x390 map action reachable by scrolling 
+PASS 844x390 cargo and GL still function 
+PASS 1280x800 menu trial accessible 
+PASS 1280x800 no horizontal page overflow 
+PASS 1280x800 new HUD inside viewport 
+PASS 1280x800 road map opens 
+PASS 1280x800 road map has no sideways scroll 
+PASS 1280x800 map action reachable by scrolling 
+PASS 1280x800 cargo and GL still function 
+TOTAL 28 / 28

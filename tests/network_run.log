@@ -1,0 +1,31 @@
+PASS Host and guest initialize independently 
+PASS Nickname handshake 
+PASS Eighteen IDs synchronize 
+PASS Guest updates shared order navigation 
+PASS Cannot steal occupied driver seat 
+PASS Guest can take empty driver seat 
+PASS Cargo player cannot drive 
+PASS Guest gas drives authoritative vehicle 
+PASS Restart preserves nicknames 
+PASS Host restart syncs epoch and roles 
+PASS Stale-epoch action rejected 
+FAIL Guest door actions synchronize None
+FAIL Guest can exit to world None
+PASS Guest recovers a tagged fragile parcel 
+PASS Recovery inventory has no duplicate ID 
+PASS Guest exterior drop synchronizes 
+PASS Simultaneous pickup has only one owner 
+PASS Rescue with two couriers preserves uniqueness 
+PASS Guest holds matching order before throw 
+FAIL Guest real throw signs matching order {'h': {'mode': 'playing', 'view': 'drive', 'time': 26.099999999999817, 'score': 0, 'delivered': 0, 'shots': 0, 'lost': 0, 'explosions': 0, 'combo': 0, 'lastDelivery': -100, 'brick': False, 'charge': 0, 'charging': False, 'chargeSource': None, 'cooldown': 0, 'toastUntil': 25.999999999999993, 'shake': 0, 'hitCooldown': 0, 'hintUntil': 6.799999999999993, 'switchUntil': 0, 'warnUntil': 0, 'helpFrom': 'menu', 'nextId': 19, 'damageCost': 0, 'trickCount': 0, 'lastBreakdown': '', 'selectedOrder': 0, 'recovered': 4, 'repairs': 0, 'wrong': 0}, 'g': {'mode': 'playing', 'view': 'outside', 'time': 26.1, 'score': 0, 'delivered': 0, 'shots': 0, 'lost': 0, 'explosions': 0, 'combo': 0, 'lastDelivery': -100, 'brick': False, 'charge': 0, 'charging': False, 'chargeSource': None, 'cooldown': 0, 'toastUntil': 6.03269999999972, 'shake': 0, 'hitCooldown': 0, 'hintUntil': 27.5, 'switchUntil': 0, 'warnUntil': 0, 'helpFrom': 'menu', 'nextId': 19, 'damageCost': 0, 'trickCount': 0, 'lastBreakdown': '', 'selectedOrder': 0, 'recovered': 4, 'repairs': 0, 'wrong': 0}}
+PASS Both peers agree on money and damage 
+FAIL Held item clears after acknowledged throw None
+FAIL Guest repair progress synchronized None
+FAIL Guest repair mutates shared car once None
+PASS Guest pause freezes both 
+PASS Guest resume returns both 
+PASS No runtime errors in two pages 
+PASS WebGL stays valid on both 
+PASS World snapshot stays below 64KiB 
+PASS Disconnect pauses host 
+TOTAL 24 / 30

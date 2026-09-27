@@ -1,0 +1,193 @@
+[
+  {
+    "test": "Both clients joined same V0.9 protocol",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Host trial selection replicated",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Guest van is rendered at authority bridge height",
+    "passed": true,
+    "details": {
+      "h": {
+        "p": [
+          211,
+          8.120000072717666,
+          8
+        ],
+        "yaw": -1.5707963267948966,
+        "pitch": 0,
+        "speed": 0
+      },
+      "g": {
+        "p": [
+          211,
+          8.12,
+          8
+        ],
+        "yaw": -1.571,
+        "pitch": 0,
+        "speed": 0
+      }
+    }
+  },
+  {
+    "test": "Extra district NPC state replicated",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Guest walking responds over rendered frames without new authority packet",
+    "passed": true,
+    "details": {
+      "before": {
+        "view": "cargo",
+        "p": [
+          0.42,
+          2.38,
+          -0.9
+        ],
+        "world": [
+          211.89991445725434,
+          10.499999885559081,
+          8.420183305883548
+        ],
+        "avatarFeet": [
+          211.89991760253906,
+          8.9399995803833,
+          8.420183181762695
+        ]
+      },
+      "after": {
+        "view": "cargo",
+        "p": [
+          0.42025459149933847,
+          2.38,
+          -0.2750000518534672
+        ],
+        "world": [
+          211.27491445725434,
+          10.499999885559081,
+          8.420310601640983
+        ],
+        "avatarFeet": [
+          211.27491760253906,
+          8.9399995803833,
+          8.420310974121094
+        ]
+      }
+    }
+  },
+  {
+    "test": "Guest body remains in vehicle-local coordinates",
+    "passed": true,
+    "details": {
+      "view": "cargo",
+      "p": [
+        0.420627022246656,
+        2.38,
+        0.11322281102353646
+      ],
+      "world": [
+        210.88669151852318,
+        10.499999885559081,
+        8.420603961793976
+      ],
+      "avatarFeet": [
+        210.88668823242188,
+        8.9399995803833,
+        8.42060375213623
+      ]
+    }
+  },
+  {
+    "test": "Cargo local point follows elevated world transform",
+    "passed": true,
+    "details": {
+      "view": "cargo",
+      "p": [
+        0.420627022246656,
+        2.38,
+        0.11322281102353646
+      ],
+      "world": [
+        210.88669151852318,
+        10.499999885559081,
+        8.420603961793976
+      ],
+      "avatarFeet": [
+        210.88668823242188,
+        8.9399995803833,
+        8.42060375213623
+      ]
+    }
+  },
+  {
+    "test": "Incline pitch replicated to passenger renderer",
+    "passed": true,
+    "details": {
+      "h": {
+        "p": [
+          167.39175053188714,
+          3.9660268300170975,
+          8
+        ],
+        "yaw": -1.5707963267948966,
+        "pitch": 0.37019114628494576,
+        "speed": 3.814941641380092
+      },
+      "g": {
+        "p": [
+          167.6739244934393,
+          4.111530808819299,
+          8
+        ],
+        "yaw": -1.571,
+        "pitch": 0.37019114628494576,
+        "speed": 3.815
+      }
+    }
+  },
+  {
+    "test": "Network packet carries distinct V0.9 metadata",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "One serialized world packet stays below 64KiB",
+    "passed": true,
+    "details": 11753
+  },
+  {
+    "test": "Guest cannot relocate the shared vehicle",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Return to old city synchronized",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "Both clients retain 18 orders",
+    "passed": true,
+    "details": null
+  },
+  {
+    "test": "No JS errors in host or guest",
+    "passed": true,
+    "details": {
+      "host": [],
+      "guest": []
+    }
+  },
+  {
+    "test": "WebGL healthy on both clients",
+    "passed": true,
+    "details": null
+  }
+]
