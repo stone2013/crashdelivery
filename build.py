@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build V0.9.1 SKYWAY traffic/mobile hotfix from the verified V0.8/PWA baseline."""
+"""Build V0.9.2 SKYWAY collision/sign/PWA hotfix from the verified V0.8/PWA baseline."""
 from pathlib import Path
 import argparse,base64,hashlib,json,re,subprocess,shutil,tempfile
 ROOT=Path(__file__).resolve().parent
@@ -13,8 +13,8 @@ def replace(old,new,count=1):
  global html
  if html.count(old)!=count:raise RuntimeError('Patch anchor mismatch: '+old[:100]+'; found '+str(html.count(old)))
  html=html.replace(old,new)
-replace('<title>暴力快递 · V0.7.5 ONLINE · MULTIPLAYER</title>','<title>暴力快递 · V0.9.1 SKYWAY · 交通规则与移动端修复</title>')
-html=html.replace('crash-delivery-mp075-1','crash-delivery-mp091-1').replace('crash-delivery-mp075-','crash-delivery-mp091-')
+replace('<title>暴力快递 · V0.7.5 ONLINE · MULTIPLAYER</title>','<title>暴力快递 · V0.9.2 SKYWAY · 碰撞 / 路牌 / PWA 修复</title>')
+html=html.replace('crash-delivery-mp075-1','crash-delivery-mp092-1').replace('crash-delivery-mp075-','crash-delivery-mp092-')
 # Remove the old force-reloading SW registration. It could interrupt an active multiplayer match.
 oldreg=re.compile(r'<script>\s*\(function\(\)\{\s*if\(!\(\'serviceWorker\' in navigator\).*?</script>',re.S)
 html,n=oldreg.subn('',html)
@@ -73,7 +73,7 @@ if shutil.which('node'):
    f=Path(d)/f'script{i}.js';f.write_text(js);subprocess.run(['node','--check',str(f)],check=True)
 args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(html,encoding='utf8')
 sha=hashlib.sha256(html.encode()).hexdigest()
-version={'version':'0.9.1','name':'SKYWAY / MOBILE + TRAFFIC HOTFIX','protocol':'crash-delivery-mp091-1','base_blob':'8878517981cf87128ec73ecf36e0271f1b50896e','base_sha256':BASE_SHA,'html_sha256':sha,'models':20,'notes':'V0.9.1 adds PWA viewport fill, road-side vegetation exclusion, red-light/crash fines and pause-menu exit. Co-op and legacy 2v2 retained.'}
+version={'version':'0.9.2','name':'SKYWAY / COLLISION + SIGN + PWA HOTFIX','protocol':'crash-delivery-mp092-1','base_blob':'8878517981cf87128ec73ecf36e0271f1b50896e','base_sha256':BASE_SHA,'html_sha256':sha,'models':20,'notes':'V0.9.2 adds solid bridge-pillar/ramp-side collisions, flow-facing shoulder-safe road furniture and stronger iOS PWA viewport fill. V0.9.1 fines/exit and grass driving remain.'}
 (ROOT/'VERSION_V09.json').write_text(json.dumps(version,ensure_ascii=False,indent=2))
 (ROOT/'sw.js').write_text((ROOT/'src/sw-template.js').read_text().replace('__BUILD_HASH__',sha[:16]),encoding='utf8')
-print('Built V0.9.1',args.output,len(html.encode()),'bytes;',len(ids),'DOM IDs;',sha)
+print('Built V0.9.2',args.output,len(html.encode()),'bytes;',len(ids),'DOM IDs;',sha)

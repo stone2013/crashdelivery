@@ -1,10 +1,10 @@
 {
-  "version": "0.9.1",
-  "name": "SKYWAY / MOBILE + TRAFFIC HOTFIX",
-  "protocol": "crash-delivery-mp091-1",
+  "version": "0.9.2",
+  "name": "SKYWAY / COLLISION + SIGN + PWA HOTFIX",
+  "protocol": "crash-delivery-mp092-1",
   "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
   "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
-  "html_sha256": "654a55061c3631f468a3061fa36d8a90f5b58b27c1e4b07173c4a427aeff442e",
+  "html_sha256": "1ce3080f2797e9d92d0540397767920f43c939855b4d5ac4940974e8a70231f1",
   "models": 20,
-  "notes": "V0.9.1 adds PWA viewport fill, road-side vegetation exclusion, red-light/crash fines and pause-menu exit. Co-op and legacy 2v2 retained."
+  "notes": "V0.9.2 adds bridge-pillar and ramp-side collision solids, lane-flow road furniture placement, and iOS standalone viewport fill. Grass remains drivable; V0.9.1 traffic fines and pause exit are retained."
 }

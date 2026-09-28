@@ -1,4 +1,4 @@
-/* V0.9.1 additions only; existing touch controls remain unchanged. */
+/* V0.9.2 collision / furniture / PWA viewport hotfix. */
 .roadStart09{margin:12px 0 6px;display:flex;flex-direction:column;gap:5px;padding:14px 18px;background:#ffd05b;min-height:82px;max-width:360px}
 .roadStart09>span{font-size:9px;letter-spacing:2px;opacity:.7}.roadStart09>b{font-size:18px}.roadStart09>small{font-size:10px;font-weight:400;opacity:.82}
 #roadHUD09{position:absolute;top:calc(14px + var(--safeT));left:50%;transform:translateX(-50%);width:264px;background:#16363ded;border:1px solid #ffd05b45;border-radius:13px;padding:9px 11px;pointer-events:auto;box-shadow:0 5px 16px #102a3625}
@@ -8,7 +8,7 @@
 @media(max-height:540px) and (orientation:landscape){.roadStart09{min-height:50px;margin:6px 0 0;padding:8px 13px}.roadStart09>span,.roadStart09>small{display:none}.roadStart09>b{font-size:13px}.menuCopy h2{font-size:20px!important}.menuCopy h1{font-size:32px!important}.menuCopy .edition{margin-top:7px}#roadHUD09{top:9px;width:206px;padding:6px 9px}#roadHUD09 b{font-size:10px}.roadPanel09{padding:13px}.roadPanel09 canvas{max-height:48vh}.roadPanel09 h2{font-size:20px}}
 @media(max-width:360px) and (orientation:portrait){#roadHUD09{top:calc(235px + var(--safeT));width:184px}.menuCopy h1{font-size:36px!important}.menuCopy .englishTitle{font-size:8px}.roadStart09{min-height:60px}.roadStart09>small{display:none}}
 
-/* V0.9.1 iOS/PWA viewport: canvas fills the dynamic viewport; safe-area remains on controls only. */
-@supports(height:100dvh){html,body{height:100dvh!important;min-height:100dvh!important}#game,#world,#overlay,#hud,#vignette{height:100dvh!important;min-height:100dvh!important}}
-@media (display-mode:standalone){html,body{height:100dvh!important;min-height:100dvh!important;max-height:100dvh!important;overflow:hidden!important}body{position:fixed!important;inset:0!important;width:100%!important}#game{position:fixed!important;inset:0!important;width:100%!important;height:100dvh!important;min-height:100dvh!important}}
+/* V0.9.2 iOS/PWA viewport: JS measures the visual viewport and extends through the bottom safe area. */
+:root{--appViewH:100vh}html,body{height:var(--appViewH)!important;min-height:var(--appViewH)!important;overflow:hidden!important}body{position:fixed!important;inset:0!important;width:100%!important}#game{position:fixed!important;left:0!important;top:0!important;width:100%!important;height:var(--appViewH)!important;min-height:var(--appViewH)!important}#world,#overlay,#hud,#vignette{height:100%!important;min-height:100%!important}
+@media (display-mode:standalone){:root{--appViewH:100vh}html,body,#game{height:max(var(--appViewH),100lvh,100vh)!important;min-height:max(var(--appViewH),100lvh,100vh)!important}}html.pwaStandalone092,html.pwaStandalone092 body,html.pwaStandalone092 #game{height:max(var(--appViewH),100lvh,100vh)!important;min-height:max(var(--appViewH),100lvh,100vh)!important}
 #pauseExit091{grid-column:1/-1;background:#743f39!important;border-color:#d78f7770!important;color:#fff0dc!important;font-weight:700}.statuschips #trafficFine09{background:#8a4a32e8;color:#ffe7bd;border-color:#ffc68b55}
