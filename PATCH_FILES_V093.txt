@@ -1,0 +1,18 @@
+Crash Delivery V0.9.3 changed files
+
+覆盖 V0.9.2 对应文件：
+- index.html
+- sw.js
+- build.py
+- VERSION_V09.json
+- src/roads-v09.js
+- src/roads-v09.css
+- src/sw-template.js
+
+开发/验证文件：
+- tests/test_v093.py
+- tests/test_roads_network_v093.py
+- CHANGELOG_V093.md
+- TEST_REPORT_V093.md
+
+Kenney GLB、贴图、PWA 图标、manifest 等未改文件不在此补丁包中。

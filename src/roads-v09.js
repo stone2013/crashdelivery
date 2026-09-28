@@ -1,4 +1,4 @@
-/* V0.9 SKYWAY. Additive Kenney road district; no external asset fetch is needed.
+/* V0.9.3 SKYWAY geometry/furniture hotfix. Additive Kenney road district; no external asset fetch is needed.
  * Geometry comes from the provided 20 GLBs. The same transformed triangles provide
  * drive/walk/parcel support surfaces. Upper and lower graph nodes remain distinct.
  * The original V0.8 game, save keys and room mechanics remain in the surrounding scope.
@@ -30,18 +30,49 @@ class RoadGLB09{
  }
 }
 function road09Tile(name,x,z,y=0,yaw=0,scale=16,drive=true){const asset=road09.assets.get(name);if(!asset)throw Error('Missing road asset '+name);const m=scaled(M.model([x,R09.y+y,z],[0,yaw,0]),scale);const tile={id:road09.tiles.length,name,x,z,y,yaw,scale,m,drive:drive&&!name.includes('barrier')};road09.tiles.push(tile);return tile;}
-function road092Roadside(name,cx,cz,y,travelYaw,side=1,scale=9,offset=9.2){
- const right=[Math.cos(travelYaw),0,-Math.sin(travelYaw)],x=cx+right[0]*offset*side,z=cz+right[2]*offset*side;
- const tile=road09Tile(name,x,z,y,travelYaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=side;road09.furniture.push(tile);return tile;
+function road093AssetBounds(name){
+ const asset=road09.assets.get(name);if(!asset)return null;if(asset.bounds09)return asset.bounds09;
+ let min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
+ for(const tri of asset.faces)for(const p of tri)for(let i=0;i<3;i++){min[i]=Math.min(min[i],p[i]);max[i]=Math.max(max[i],p[i]);}
+ return asset.bounds09={min,max};
 }
-function road092FurnitureAt(name,x,z,y,travelYaw,scale=9){const tile=road09Tile(name,x,z,y,travelYaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=0;road09.furniture.push(tile);return tile;}
+function road093FlowForward(yaw){return[-Math.sin(yaw),0,-Math.cos(yaw)];}
+function road093FlowRight(yaw){return[Math.cos(yaw),0,-Math.sin(yaw)];}
+function road093FurnitureYaw(name,travelYaw,side=1){
+ if(name==='light-curved')return travelYaw+side*Math.PI/2; // local -Z arm points from pole toward roadway
+ if(name==='traffic-light'||name==='sign-highway'||name.startsWith('road-sign-'))return travelYaw-Math.PI/2; // local +X sign face looks at approaching traffic
+ return travelYaw;
+}
+function road093SafeOffset(name,scale,requested){
+ const roadHalf=8.15,margin=1.15,b=road093AssetBounds(name);let lateral=0;
+ if(b){if(name==='sign-highway'||name.startsWith('road-sign-'))lateral=Math.max(Math.abs(b.min[2]),Math.abs(b.max[2]))*scale;else if(name==='traffic-light')lateral=.5;}
+ if(name==='light-curved')return Math.max(requested,9.45); // pole stays outside; curved arm intentionally reaches toward lane
+ return Math.max(requested,roadHalf+lateral+margin);
+}
+function road092Roadside(name,cx,cz,y,travelYaw,side=1,scale=9,offset=9.2){
+ offset=road093SafeOffset(name,scale,offset);const right=road093FlowRight(travelYaw),x=cx+right[0]*offset*side,z=cz+right[2]*offset*side;
+ const yaw=road093FurnitureYaw(name,travelYaw,side),tile=road09Tile(name,x,z,y,yaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=side;tile.roadCenter=[cx,cz];tile.shoulderOffset=offset;tile.furnitureRole=name==='light-curved'?'light':'sign';road09.furniture.push(tile);return tile;
+}
+function road092FurnitureAt(name,x,z,y,travelYaw,scale=9,side=0){const yaw=road093FurnitureYaw(name,travelYaw,side||1),tile=road09Tile(name,x,z,y,yaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=side;tile.furnitureRole=name==='traffic-light'?'signal':'fixed';road09.furniture.push(tile);return tile;}
 function road092Circle(x,z,r,minY=R09.ground,maxY=8.2,label='pillar'){road09.colliders.push({kind:'circle',x,z,r,minY,maxY,label});}
 function road092Wall(a,b,minY,maxY,r=.18,label='ramp-side'){road09.colliders.push({kind:'segment',a,b,minY,maxY,r,label});}
-function road092AddRampWalls(path,half=6.15){if(!path?.points?.length)return;for(let i=0;i<path.points.length-1;i++){const a=path.points[i],b=path.points[i+1],dx=b[0]-a[0],dz=b[2]-a[2],len=Math.hypot(dx,dz);if(len<.05)continue;const rx=-dz/len,rz=dx/len;for(const side of [-1,1]){const p=[a[0]+rx*half*side,a[2]+rz*half*side],q=[b[0]+rx*half*side,b[2]+rz*half*side];road092Wall(p,q,R09.ground,Math.max(a[1],b[1])+1.1,.12,'ramp-side');}}}
-function road092BuildColliders(){road09.colliders.length=0;for(const x of [190,206,242])for(const z of [2,14])road092Circle(x,z,1.15,R09.ground,7.95,'bridge-pillar');const rw=road09Route('rampW','topW')[0]?.path,re=road09Route('topE','rampE')[0]?.path;road092AddRampWalls(rw);road092AddRampWalls(re);}
+function road093LocalPoint(tile,p){return M.point(tile.m,p);}
+function road093AddTileSideWalls(tile,label,minYOverride=null,maxYOverride=null){
+ const b=road093AssetBounds(tile.name);if(!b)return;for(const z of [b.min[2],b.max[2]]){const a=road093LocalPoint(tile,[b.min[0],b.min[1],z]),q=road093LocalPoint(tile,[b.max[0],b.min[1],z]);const lo=minYOverride??(R09.y+tile.y+b.min[1]*tile.scale),hi=maxYOverride??(R09.y+tile.y+b.max[1]*tile.scale);road092Wall([a[0],a[2]],[q[0],q[2]],lo,hi,.10,label);}
+}
+function road093AddRampHighCap(tile){
+ const b=road093AssetBounds(tile.name);if(!b)return;const a=road093LocalPoint(tile,[b.max[0],b.min[1],b.min[2]]),q=road093LocalPoint(tile,[b.max[0],b.min[1],b.max[2]]),top=R09.y+tile.y+b.max[1]*tile.scale;road092Wall([a[0],a[2]],[q[0],q[2]],R09.ground,top-1.0,.12,'ramp-high-cap');
+}
+function road092BuildColliders(){
+ road09.colliders.length=0;
+ for(const tile of road09.tiles){
+  if(tile.name==='bridge-pillar'){const b=road093AssetBounds(tile.name),r=Math.max(Math.abs(b.min[0]),Math.abs(b.max[0]),Math.abs(b.min[2]),Math.abs(b.max[2]))*tile.scale+.28;road092Circle(tile.x,tile.z,r,R09.ground,R09.y+tile.y+b.max[1]*tile.scale,'bridge-pillar');}
+  else if(tile.name==='road-slant-curve'){road093AddTileSideWalls(tile,'ramp-shell');road093AddRampHighCap(tile);}
+ }
+}
 function road092YOverlap(c){const bottom=car.p[1]-.05,top=bottom+3.75;return top>c.minY&&bottom<c.maxY;}
-function road092ResolveStatic(predictionOnly=false){const radius=2.05;for(const c of road09.colliders){if(!road092YOverlap(c))continue;let nx=0,nz=0,depth=0;if(c.kind==='circle'){const dx=car.p[0]-c.x,dz=car.p[2]-c.z,d=Math.hypot(dx,dz),need=radius+c.r;if(d<need){const inv=d>.001?1/d:0;nx=d>.001?dx*inv:1;nz=d>.001?dz*inv:0;depth=need-d;}}else{const ax=c.a[0],az=c.a[1],bx=c.b[0],bz=c.b[1],vx=bx-ax,vz=bz-az,l2=vx*vx+vz*vz,t=l2?road09Clamp(((car.p[0]-ax)*vx+(car.p[2]-az)*vz)/l2,0,1):0,qx=ax+vx*t,qz=az+vz*t,dx=car.p[0]-qx,dz=car.p[2]-qz,d=Math.hypot(dx,dz),need=radius+c.r;if(d<need){const inv=d>.001?1/d:0;nx=d>.001?dx*inv:(-vz/Math.max(.001,Math.sqrt(l2)));nz=d>.001?dz*inv:(vx/Math.max(.001,Math.sqrt(l2)));depth=need-d;}}if(depth>0){car.p[0]+=nx*(depth+.015);car.p[2]+=nz*(depth+.015);car.kick[0]=car.kick[2]=0;const hitSpeed=Math.abs(car.speed);car.speed*=.18;if(!predictionOnly&&hitSpeed>.8){road09.stats.staticHits++;impact(Math.min(8,hitSpeed*.55));}}}}
-function road092FurnitureDiagnostics(){return road09.furniture.map(t=>{const g=road09Support(t.x,t.z,t.y+.2);return{name:t.name,x:t.x,z:t.z,yaw:t.yaw,travelYaw:t.travelYaw,onRoad:g.road&&Math.abs(g.y-(R09.y+t.y))<1.0,level:g.y};});}
+function road092ResolveStatic(predictionOnly=false){const radius=2.05;for(const c of road09.colliders){if(!road092YOverlap(c))continue;let nx=0,nz=0,depth=0;if(c.kind==='circle'){const dx=car.p[0]-c.x,dz=car.p[2]-c.z,d=Math.hypot(dx,dz),need=radius+c.r;if(d<need){const inv=d>.001?1/d:0;nx=d>.001?dx*inv:1;nz=d>.001?dz*inv:0;depth=need-d;}}else{const ax=c.a[0],az=c.a[1],bx=c.b[0],bz=c.b[1],vx=bx-ax,vz=bz-az,l2=vx*vx+vz*vz,t=l2?road09Clamp(((car.p[0]-ax)*vx+(car.p[2]-az)*vz)/l2,0,1):0,qx=ax+vx*t,qz=az+vz*t,dx=car.p[0]-qx,dz=car.p[2]-qz,d=Math.hypot(dx,dz),need=radius+c.r;if(d<need){const inv=d>.001?1/d:0;nx=d>.001?dx*inv:(-vz/Math.max(.001,Math.sqrt(l2)));nz=d>.001?dz*inv:(vx/Math.max(.001,Math.sqrt(l2)));depth=need-d;}}if(depth>0){car.p[0]+=nx*(depth+.02);car.p[2]+=nz*(depth+.02);car.kick[0]=car.kick[2]=0;const hitSpeed=Math.abs(car.speed);car.speed*=.16;if(!predictionOnly&&hitSpeed>.8){road09.stats.staticHits++;impact(Math.min(8,hitSpeed*.55));}}}}
+function road092FurnitureDiagnostics(){return road09.furniture.map(t=>{const g=road09Support(t.x,t.z,t.y+.2),flow=road093FlowForward(t.travelYaw),right=road093FlowRight(t.travelYaw);let facingDot=null,aimDot=null;if(t.furnitureRole==='sign'||t.furnitureRole==='signal'){const front=road093FlowRight(t.yaw),incoming=V.mul(flow,-1);facingDot=V.dot(front,incoming);}if(t.furnitureRole==='light'&&t.side){const arm=road093FlowForward(t.yaw),inward=V.mul(right,-t.side);aimDot=V.dot(arm,inward);}return{name:t.name,x:t.x,z:t.z,yaw:t.yaw,travelYaw:t.travelYaw,side:t.side,onRoad:g.road&&Math.abs(g.y-(R09.y+t.y))<1.0,level:g.y,facingDot,aimDot,shoulderOffset:t.shoulderOffset||0};});}
 
 function road09Surface(tri,tile){const [a,b,c]=tri,ux=b[0]-a[0],uz=b[2]-a[2],vx=c[0]-a[0],vz=c[2]-a[2],den=ux*vz-uz*vx;if(Math.abs(den)<1e-7)return;let n=V.norm(V.cross(V.sub(b,a),V.sub(c,a)));if(n[1]<.60)return;const t={a,b,c,den,minX:Math.min(a[0],b[0],c[0]),maxX:Math.max(a[0],b[0],c[0]),minZ:Math.min(a[2],b[2],c[2]),maxZ:Math.max(a[2],b[2],c[2]),n,tile:tile.id};road09.surfaces.push(t);for(let x=Math.floor(t.minX/16);x<=Math.floor(t.maxX/16);x++)for(let z=Math.floor(t.minZ/16);z<=Math.floor(t.maxZ/16);z++){const key=x+','+z;if(!road09.grid.has(key))road09.grid.set(key,[]);road09.grid.get(key).push(t);}}
 function road09Levels(x,z){const out=[];for(const t of road09.grid.get(Math.floor(x/16)+','+Math.floor(z/16))||[]){if(x<t.minX-.0001||x>t.maxX+.0001||z<t.minZ-.0001||z>t.maxZ+.0001)continue;const dx=x-t.a[0],dz=z-t.a[2],u=(dx*(t.c[2]-t.a[2])-dz*(t.c[0]-t.a[0]))/t.den,v=((t.b[0]-t.a[0])*dz-(t.b[2]-t.a[2])*dx)/t.den;if(u>=-.0001&&v>=-.0001&&u+v<=1.0001){const y=t.a[1]+u*(t.b[1]-t.a[1])+v*(t.c[1]-t.a[1]);if(!out.some(q=>Math.abs(q.y-y)<.001))out.push({y,n:t.n,tile:t.tile,road:true});}}return out.sort((a,b)=>a.y-b.y);}
@@ -54,7 +85,7 @@ function road09Bake(){const chunks=new Map();function add(a){const cx=(a[0]+a[9]
  // Central island and a small depot apron, both leave the roundabout approaches clear.
  deco.cylinder(5.0,.18,32,'#b9cab4',[224,.17,56]);deco.cylinder(4.55,.06,32,'#7aa77b',[224,.29,56]);deco.cylinder(2.1,.65,24,'#547d7c',[224,.61,56]);
  deco.box(14,.06,13,'#aebdab',[282,.03,-36]);
- const sm=M.model([159,0,44.5],[0,Math.PI/2,0]);for(const s of [-1,1])deco.box(.14,4.5,.14,'#536775',[s*3.8,2.25,0],[0,0,0],sm);deco.box(9,1.5,.19,'#163e4e',[0,4.1,0],[0,0,0],sm);cityText(deco,'SKYWAY',[0,4.1,.13],.16,'#ffe6aa',sm);
+ const sm=M.model([159,0,44.5],[0,0,0]);for(const s of [-1,1])deco.box(.14,4.5,.14,'#536775',[s*3.8,2.25,0],[0,0,0],sm);deco.box(9,1.5,.19,'#163e4e',[0,4.1,0],[0,0,0],sm);cityText(deco,'SKYWAY',[0,4.1,.13],.16,'#ffe6aa',sm);
  for(const x of [187,215,243,271]){deco.box(1.4,.05,1.4,'#ffe090',[x,.13,-35]);}
  for(let i=0;i<deco.a.length;i+=27)add(deco.a.slice(i,i+27));
  road09.chunks=[...chunks].map(([key,b])=>{const [x,z]=key.split(',').map(Number);return{mesh:renderer.mesh(b),center:[x*40+20,4,z*40+20],radius:32};});road09.triangles=road09.chunks.reduce((n,c)=>n+c.mesh.count/3,0);
@@ -85,13 +116,13 @@ function road09Layout(){
  add('road-straight',224,24,0,ns);add('road-straight',224,-8,0,ns);add('road-intersection',224,-24);
  for(const x of [192,208,240,256,272])add('road-straight',x,-24);
  add('road-end-round',176,-24);add('road-end-round',288,-24,0,Math.PI);
- // Road furniture follows the lane direction and keeps its support on the shoulder.
- for(const x of [144,176,208,240])road092FurnitureAt('light-curved',x,70,0,-Math.PI/2,8.4);
- for(const x of [144,176,208,240,272,304])road092FurnitureAt('light-curved',x,-34,0,Math.PI/2,8.4);
+ // Road furniture: poles stay on the shoulder; lamp arms point over the road; sign faces look into oncoming traffic.
+ for(const x of [144,176,208,240])road092Roadside('light-curved',x,56,0,-Math.PI/2,1,8.4,14);
+ for(const x of [144,176,208,240,272,304])road092Roadside('light-curved',x,-24,0,Math.PI/2,1,8.4,10);
  for(const x of [192,224,240])road092Roadside('light-curved',x,8,8,-Math.PI/2,-1,8.0,10.8);
- // Signals use corner pads: the pole is outside both crossing lanes while the head faces approaching traffic.
- for(const p of [[258,42,0],[286,70,Math.PI],[258,70,-Math.PI/2],[286,42,Math.PI/2]])road092FurnitureAt('traffic-light',p[0],p[1],0,p[2],8.4);
- road092Roadside('sign-highway',194,8,8,-Math.PI/2,-1,8.7,11.8);road092Roadside('sign-highway',250,56,0,-Math.PI/2,1,8.7,11.8);
+ // Signals use corner pads; heads face the approaching lane, not the road tangent.
+ for(const p of [[258,42,0],[286,70,Math.PI],[258,70,-Math.PI/2],[286,42,Math.PI/2]])road092FurnitureAt('traffic-light',p[0],p[1],0,p[2],8.4,1);
+ road092Roadside('sign-highway',194,8,8,-Math.PI/2,-1,8.7,13.8);road092Roadside('sign-highway',250,56,0,-Math.PI/2,1,8.7,13.8);
  road092Roadside('road-sign-stop',254,56,0,Math.PI/2,1,8.2,10.4);road092Roadside('road-sign-stop',224,32,0,0,1,8.2,10.4);
  road092Roadside('road-sign-warning',144,24,0,0,1,8.2,10.8);road092Roadside('road-sign-warning',304,24,0,Math.PI,1,8.2,12.5);
  for(let i=0;i<6;i++)add('construction-cone',282+i*2,-35,0,0,8,false);
@@ -225,7 +256,7 @@ function road09PaintMap(){
 }
 function road09BuildUI(){
  const start=document.createElement('button');start.id='roadStart09';start.className='primary roadStart09';start.disabled=true;start.innerHTML='<span>SKYWAY / 09</span><b>立体路网试跑 ↗</b><small>高架 · 环岛 · 坡道 · 上下层通行</small>';start.onclick=()=>{if(networked()&&!net.connected)stopNetwork(false);road09Warp('trial');};document.getElementById('startBtn').before(start);
- const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.9.2 ONLINE <span>COLLISION + SIGN HOTFIX</span>';
+ const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.9.3 ONLINE <span>SOLID GEOMETRY + TRAFFIC FURNITURE</span>';
  const eyebrow=document.querySelector('.menuCopy h2');if(eyebrow)eyebrow.innerHTML='这次，<br>从桥上送。';
  const p=document.querySelector('.menuCopy>p');if(p)p.innerHTML='20 个真实道路模型，拼出立体试验区。<br>城市派送、多人合作与 2v2 继续保留。';
  const oldStart=document.getElementById('startBtn');if(oldStart)oldStart.textContent='原城市 · 单人派送 →';
@@ -246,10 +277,8 @@ updateCamera=function(dt){if(road09.debugCamera){eye=road09.debugCamera.eye;at=r
 
 function road092SyncViewport(){
  const vv=window.visualViewport,standalone=!!navigator.standalone||matchMedia('(display-mode: standalone)').matches;document.documentElement.classList.toggle('pwaStandalone092',standalone);
- let h=vv?.height||window.innerHeight||document.documentElement.clientHeight||1,top=vv?.offsetTop||0,fill=0;
- if(standalone&&screen?.height){const gap=screen.height-(h+top);if(gap>0&&gap<120)fill=gap;}
- const full=Math.ceil(h+top+fill);document.documentElement.style.setProperty('--appViewH',full+'px');
- const game=document.getElementById('game');if(game){game.style.height=full+'px';game.style.minHeight=full+'px';}
+ const h=Math.ceil(vv?.height||window.innerHeight||document.documentElement.clientHeight||1),top=Math.ceil(vv?.offsetTop||0);document.documentElement.style.setProperty('--visualViewH',h+'px');document.documentElement.style.setProperty('--visualOffsetTop',top+'px');
+ // The game itself uses fixed inset:0 and therefore fills the iOS layout viewport including the home-indicator region. visualViewport only informs overlays/debugging.
  requestAnimationFrame(()=>{try{resize();}catch(e){}});
 }
 for(const ev of ['orientationchange','pageshow'])window.addEventListener(ev,()=>setTimeout(road092SyncViewport,40));
@@ -275,7 +304,7 @@ if(window.__deliveryTest){Object.assign(window.__deliveryTest,{roads09:{
  noTraffic:()=>{for(const n of road09.npc){n.maxSpeed=0;n.speed=0;n.phase='parked';n.stopped=-1e6;n.p=[320,.1,-40];}},
  pose:(x,z,yaw,ref)=>{car.p=[x,road09Support(x,z,ref).y+.04,z];car.yaw=yaw;car.speed=0;car.velocity=[0,0,0];},
  camera:(e,a)=>{road09.debugCamera=e?{eye:e,at:a}:null;if(e){eye=e;at=a;cameraBlend=0;draw3D();}},
- signal:road09Signal,law:()=>({...road09.law}),exit:road091ExitToMenu,colliders:()=>road09.colliders.map(c=>JSON.parse(JSON.stringify(c))),furniture:road092FurnitureDiagnostics,viewport:()=>({css:getComputedStyle(document.documentElement).getPropertyValue('--appViewH'),innerHeight,screenHeight:screen.height,game:document.getElementById('game').getBoundingClientRect().height}),
+ signal:road09Signal,law:()=>({...road09.law}),exit:road091ExitToMenu,colliders:()=>road09.colliders.map(c=>JSON.parse(JSON.stringify(c))),furniture:road092FurnitureDiagnostics,viewport:()=>({css:getComputedStyle(document.documentElement).getPropertyValue('--visualViewH'),innerHeight,screenHeight:screen.height,visualHeight:visualViewport?.height||0,game:document.getElementById('game').getBoundingClientRect().height,bottom:document.getElementById('game').getBoundingClientRect().bottom}),
  // Test fixture only: steering/pedals feed the unchanged driver controller, not direct transforms.
  driveRoute:seconds=>{const path=road09JoinRoute(['fork','bendW','rampW','topW','upper','topE','rampE','east','cross','rE','rS','rW','rN','roundN','lower','north','finish']);let progress=17,closest=17;const samples=[];state.switchUntil=0;for(let i=0;i<Math.ceil(seconds*120)&&!road09.trial?.finished;i++){
  let best=Infinity;for(let s=Math.max(0,progress-1);s<Math.min(path.len,progress+12);s+=.3){const q=pathAt(path,s),d=Math.hypot(q.p[0]-car.p[0],q.p[2]-car.p[2]);if(d<best){best=d;closest=s;}}progress=Math.max(progress,closest);const target=pathAt(path,Math.min(path.len,progress+5.0)).p,dx=target[0]-car.p[0],dz=target[2]-car.p[2],yaw=Math.atan2(-dx,-dz),err=wrapAngle(yaw-car.yaw);inputs.keys.clear();if(err>.035)inputs.keys.add('KeyA');if(err<-.035)inputs.keys.add('KeyD');const dist=Math.hypot(car.p[0]-280,car.p[2]+24),end=progress>path.len-16;const wanted=end?Math.max(0,(dist-2)*.6):Math.abs(err)>.55?3.2:6.5;if(car.speed<wanted-.25)inputs.keys.add('KeyW');if(car.speed>wanted+.3)inputs.keys.add('KeyS');step(1/120);if(i%120===0)samples.push({t:i/120,p:car.p.slice(),speed:car.speed,index:road09.trial?.index,error:best});if(!Number.isFinite(car.p[0]))throw Error('Nonfinite car');}

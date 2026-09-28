@@ -1,10 +1,10 @@
 {
-  "version": "0.9.2",
-  "name": "SKYWAY / COLLISION + SIGN + PWA HOTFIX",
-  "protocol": "crash-delivery-mp092-1",
+  "version": "0.9.3",
+  "name": "SKYWAY / SOLID GEOMETRY + TRAFFIC FURNITURE + PWA HOTFIX",
+  "protocol": "crash-delivery-mp093-1",
   "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
   "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
-  "html_sha256": "1ce3080f2797e9d92d0540397767920f43c939855b4d5ac4940974e8a70231f1",
+  "html_sha256": "db760664bc3d54ad079d0f4cc939c3b9fe7417ae426f9a968585a29ed1ff6837",
   "models": 20,
-  "notes": "V0.9.2 adds bridge-pillar and ramp-side collision solids, lane-flow road furniture placement, and iOS standalone viewport fill. Grass remains drivable; V0.9.1 traffic fines and pause exit are retained."
+  "notes": "V0.9.3 makes ramps/bridge shells physically solid from the side and underside approach, orients lamps toward the road and sign faces toward oncoming traffic, moves wide signs fully off the lane, and uses fixed-inset iOS PWA viewport fill. Grass driving and V0.9.1 traffic fines remain."
 }
