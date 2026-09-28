@@ -53,6 +53,13 @@ function road092Roadside(name,cx,cz,y,travelYaw,side=1,scale=9,offset=9.2){
  offset=road093SafeOffset(name,scale,offset);const right=road093FlowRight(travelYaw),x=cx+right[0]*offset*side,z=cz+right[2]*offset*side;
  const yaw=road093FurnitureYaw(name,travelYaw,side),tile=road09Tile(name,x,z,y,yaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=side;tile.roadCenter=[cx,cz];tile.shoulderOffset=offset;tile.furnitureRole=name==='light-curved'?'light':'sign';road09.furniture.push(tile);return tile;
 }
+function road095PairedSigns(name,cx,cz,y,travelYaw,scale=8.2,offset=10.8){
+ const right=road092Roadside(name,cx,cz,y,travelYaw,1,scale,offset);
+ const opposite=(travelYaw+Math.PI)%(Math.PI*2);
+ const left=road092Roadside(name,cx,cz,y,opposite,1,scale,offset);
+ right.pair095='current-right-front';left.pair095='opposite-right-front';
+ return [right,left];
+}
 function road092FurnitureAt(name,x,z,y,travelYaw,scale=9,side=0){const yaw=road093FurnitureYaw(name,travelYaw,side||1),tile=road09Tile(name,x,z,y,yaw,scale,false);tile.roadFurniture=true;tile.travelYaw=travelYaw;tile.side=side;tile.furnitureRole=name==='traffic-light'?'signal':'fixed';road09.furniture.push(tile);return tile;}
 function road092Circle(x,z,r,minY=R09.ground,maxY=8.2,label='pillar'){road09.colliders.push({kind:'circle',x,z,r,minY,maxY,label});}
 function road092Wall(a,b,minY,maxY,r=.18,label='ramp-side'){road09.colliders.push({kind:'segment',a,b,minY,maxY,r,label});}
@@ -123,9 +130,9 @@ function road09Layout(){
  for(const x of [192,224,240])road092Roadside('light-curved',x,8,8,-Math.PI/2,-1,8.0,10.8);
  // Signals use corner pads; heads face the approaching lane, not the road tangent.
  for(const p of [[258,42,0],[286,70,Math.PI],[258,70,-Math.PI/2],[286,42,Math.PI/2]])road092FurnitureAt('traffic-light',p[0],p[1],0,p[2],8.4,1);
- road092Roadside('sign-highway',194,8,8,-Math.PI/2,-1,8.7,13.8);road092Roadside('sign-highway',250,56,0,-Math.PI/2,1,8.7,13.8);
- road092Roadside('road-sign-stop',254,56,0,Math.PI/2,1,8.2,10.4);road092Roadside('road-sign-stop',224,32,0,0,1,8.2,10.4);
- road092Roadside('road-sign-warning',144,24,0,0,1,8.2,10.8);road092Roadside('road-sign-warning',304,24,0,Math.PI,1,8.2,12.5);
+ road095PairedSigns('sign-highway',194,8,8,-Math.PI/2,8.7,13.8);road095PairedSigns('sign-highway',250,56,0,-Math.PI/2,8.7,13.8);
+ road095PairedSigns('road-sign-stop',254,56,0,Math.PI/2,8.2,10.4);road095PairedSigns('road-sign-stop',224,32,0,0,8.2,10.4);
+ road095PairedSigns('road-sign-warning',144,24,0,0,8.2,10.8);road095PairedSigns('road-sign-warning',304,24,0,Math.PI,8.2,12.5);
  for(let i=0;i<6;i++)add('construction-cone',282+i*2,-35,0,0,8,false);
  for(const x of [183,199,215])add('construction-barrier',x,-36,0,ns,10,false);
  city094Build();road09Bake();road09MakeGraph();road092BuildColliders();road09ResetTraffic();

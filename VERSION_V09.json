@@ -1,10 +1,10 @@
 {
-  "version": "0.9.4",
-  "name": "ALL ROADS / CITY-WIDE KENNEY ROAD REPLACEMENT",
-  "protocol": "crash-delivery-mp094-1",
+  "version": "0.9.5",
+  "name": "ROAD SIGNS / PAIRED TRAFFIC FACES + CLEAN DRIVE HUD",
+  "protocol": "crash-delivery-mp095-1",
   "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
   "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
   "html_sha256": "66ed05469a35f46b9c55b4dd3bd0af2f541742af5e8dd6edd896f8cb088b47b1",
   "models": 22,
-  "notes": "Replaces every city roadway using Kenney modules while preserving all 38 streets, 25 nodes, 18 delivery addresses, traffic AI, fees, multiplayer and SKYWAY. Original road rendering is removed. Signal faces use actual GLB -X normals; lamps face inward."
+  "notes": "V0.9.4 all-road replacement retained. Driving hides jump UI/Space action. Two-way roads use paired roadside signs: right-side face serves current traffic, left-side face serves opposite traffic and is seen from the back."
 }

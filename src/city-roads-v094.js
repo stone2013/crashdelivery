@@ -57,6 +57,15 @@ function city094Build(){
    if(selected){selected.city094=true;cityRoads094.lamps.push(selected);}
   }
  }
+ // V0.9.5: paired signs for both traffic directions on ordinary city streets.
+ for(const e of cityEdges){
+  const a=cityNodes[e.a],d=edgeDirection(e.a,e.b),travelYaw=Math.atan2(-d[0],-d[2]);let center=null;
+  for(const u of [e.len*.30,e.len*.70,e.len*.50]){
+   const c=[a.x+d[0]*u,a.z+d[2]*u],r=road093FlowRight(travelYaw),off=10.8;
+   if(city094CanPlacePole(c[0]+r[0]*off,c[1]+r[2]*off,.45)&&city094CanPlacePole(c[0]-r[0]*off,c[1]-r[2]*off,.45)){center=c;break;}
+  }
+  if(center){const pair=road095PairedSigns('road-sign-warning',center[0],center[1],0,travelYaw,8.2,10.8);for(const t of pair){t.city094=true;t.edgeId=e.id;cityRoads094.signs095=(cityRoads094.signs095||[]);cityRoads094.signs095.push(t);}}
+ }
  city094PrepareSignals();
  // Traffic lights use the SAME node/axis/phase as NPCs and the red-light fine detector.
  lights.length=0;

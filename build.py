@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build V0.9.4 ALL ROADS city-wide Kenney replacement from the verified V0.8/PWA baseline."""
+"""Build V0.9.5 ROAD SIGNS from the verified V0.8/PWA baseline."""
 from pathlib import Path
 import argparse,base64,hashlib,json,re,subprocess,shutil,tempfile
 ROOT=Path(__file__).resolve().parent
@@ -13,7 +13,7 @@ def replace(old,new,count=1):
  global html
  if html.count(old)!=count:raise RuntimeError('Patch anchor mismatch: '+old[:100]+'; found '+str(html.count(old)))
  html=html.replace(old,new)
-replace('<title>暴力快递 · V0.7.5 ONLINE · MULTIPLAYER</title>','<title>暴力快递 · V0.9.4 ALL ROADS · 全城模块道路</title>')
+replace('<title>暴力快递 · V0.7.5 ONLINE · MULTIPLAYER</title>','<title>暴力快递 · V0.9.5 ROAD SIGNS · 双向路牌 / 驾驶 HUD</title>')
 replace('<meta name="description" content="暴力快递 V0.7 城市交通：住宅、商业、工业三区，18 件任务包裹，路口转弯让行、事故清障及双人同车合作。">',
         '<meta name="description" content="暴力快递 V0.9.4：全城 Kenney 模块道路，住宅、商业、工业三区与高架试验区，18 件订单，单人、多人合作、2v2 和 PWA。">')
 replace('V0.7：18 单 / 三个城区。点右上地图看路线和事故。NPC 会转弯、等灯及让行；砖头仍不会转向。',
@@ -77,6 +77,14 @@ pos=html.rfind(anchor)
 if pos<0:raise RuntimeError('Main closure missing')
 html=html[:pos]+'\n/* V0.9.4 city-wide roads runtime; original V0.8 mechanics retained. */\n'+assets+module+html[pos:]
 html=html.replace('</body>', '<script>\n'+(ROOT/'src/pwa-v09.js').read_text()+'\n</script>\n</body>',1)
+# V0.9.5 driving HUD: jump/mobility control exists only for walking/cargo states.
+html=html.replace("$('boardBtn').classList.toggle('hidden',state.mode!=='playing');$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃';",
+                  "const showMobility=state.mode==='playing'&&state.view!=='drive';$('boardBtn').classList.toggle('hidden',!showMobility);$('boardBtn').textContent=nearRear&&outside?'↟ 跳上车':nearRear?'↟ 跳下车':'↟ 跳跃';")
+html=html.replace("else if(e.code==='Space')jumpVehicle();else if(e.code==='KeyQ'", "else if(e.code==='Space'&&state.view!=='drive')jumpVehicle();else if(e.code==='KeyQ'")
+html=html.replace('WASD 驾驶 · 空格跳跃 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停','WASD 驾驶 · V 进入货箱 · B 放砖 · M 订单 · Esc 暂停')
+html=html.replace('WASD 驾驶　空格跳跃　B 放砖　V 进入货箱　拖动画面环顾','WASD 驾驶　B 放砖　V 进入货箱　拖动画面环顾')
+html=html.replace('crash-delivery-mp094-1','crash-delivery-mp095-1')
+
 ids=re.findall(r'\bid="([^"\n]+)"',html)
 # Dynamic markup is literal as well; require no duplicate static ids in the document parsed before scripts.
 static=re.sub(r'<script[^>]*>.*?</script>','',html,flags=re.S)
@@ -88,7 +96,7 @@ if shutil.which('node'):
    f=Path(d)/f'script{i}.js';f.write_text(js);subprocess.run(['node','--check',str(f)],check=True)
 args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(html,encoding='utf8')
 sha=hashlib.sha256(html.encode()).hexdigest()
-version={'version':'0.9.4','name':'ALL ROADS / CITY-WIDE KENNEY ROAD REPLACEMENT','protocol':'crash-delivery-mp094-1','base_blob':'8878517981cf87128ec73ecf36e0271f1b50896e','base_sha256':BASE_SHA,'html_sha256':sha,'models':len(inv['models']),'notes':'Replaces every city roadway using Kenney modules while preserving all 38 streets, 25 nodes, 18 delivery addresses, traffic AI, fees, multiplayer and SKYWAY. Original road rendering is removed. Signal faces use actual GLB -X normals; lamps face inward.'}
+version={'version':'0.9.5','name':'ROAD SIGNS / PAIRED TRAFFIC FACES + CLEAN DRIVE HUD','protocol':'crash-delivery-mp095-1','base_blob':'8878517981cf87128ec73ecf36e0271f1b50896e','base_sha256':BASE_SHA,'html_sha256':sha,'models':len(inv['models']),'notes':'Replaces every city roadway using Kenney modules while preserving all 38 streets, 25 nodes, 18 delivery addresses, traffic AI, fees, multiplayer and SKYWAY. Original road rendering is removed. Signal faces use actual GLB -X normals; lamps face inward.'}
 (ROOT/'VERSION_V09.json').write_text(json.dumps(version,ensure_ascii=False,indent=2))
 (ROOT/'sw.js').write_text((ROOT/'src/sw-template.js').read_text().replace('__BUILD_HASH__',sha[:16]),encoding='utf8')
 print('Built V0.9.4',args.output,len(html.encode()),'bytes;',len(ids),'DOM IDs;',sha)
