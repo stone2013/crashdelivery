@@ -1,0 +1,21 @@
+Crash Delivery V0.9.1 — changed-files patch
+
+将这些文件覆盖到 V0.9 项目对应位置即可。
+未包含未改动的 Kenney GLB、图标、manifest、许可证等。
+
+部署至少需要替换：
+- index.html
+- sw.js
+
+如果继续开发源码，同时替换：
+- build.py
+- src/roads-v09.js
+- src/roads-v09.css
+- src/sw-template.js
+- VERSION_V09.json
+
+附带：
+- CHANGELOG_V091.md
+- TEST_REPORT_V091.md
+- tests/test_v091.py
+- tests/test_v091_network.py
