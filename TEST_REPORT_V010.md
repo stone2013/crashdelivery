@@ -1,12 +1,14 @@
-# V0.10 verification
+# V0.10 build verification
 
-- title: PASS
-- protocol: PASS
-- height_gate: PASS
-- 100kmh: PASS
-- drive_jump_hidden: PASS
-- paired_signs: PASS
-- fines: PASS
-- JavaScript syntax: PASS (6 script blocks)
+PASS:
+- 18 个唯一配送地址 101–118
+- 北部住宅 / 北东工业 / 南部商业分区规则
+- SKYWAY 高架高度判定
+- 100 km/h 高速上限
+- 主界面 V0.10 ONLINE / CITY LOOP
+- crash-delivery-mp010-1
+- V0.9.5 双向路牌规则保留
+- 驾驶状态隐藏跳跃键规则保留
+- 全部内联 JavaScript 通过 node --check
 
-高速判定使用实际 Kenney 路面高度：高架面 > 4m 才启用 100 km/h 模式；桥下地面不会启用。
+说明：本轮完成代码级构建验证；iPhone PWA、真实公网 TURN 和完整多人长局仍应在部署后真机验收。

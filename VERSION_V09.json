@@ -1,10 +1,10 @@
 {
   "version": "0.10.0",
-  "name": "CITY LOOP / SKYWAY EXPRESS",
+  "name": "CITY LOOP / ACTUAL MAP REBUILD",
   "protocol": "crash-delivery-mp010-1",
   "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
   "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
   "html_sha256": "66ed05469a35f46b9c55b4dd3bd0af2f541742af5e8dd6edd896f8cb088b47b1",
   "models": 22,
-  "notes": "V0.10 builds on V0.9.5: city-wide Kenney roads and paired signs retained. Elevated SKYWAY surfaces provide an actual 100 km/h speed mode; underpass traffic remains city-speed. Orders, fines, multiplayer and PWA retained."
+  "notes": "Actual V0.10 map rebuild: 18 jobs redistributed into north residential/industrial and south commercial zones. Existing Kenney city roads and central SKYWAY retained; elevated surface enables 100 km/h express mode. Paired signs, drive HUD, fines, multiplayer and PWA retained."
 }
