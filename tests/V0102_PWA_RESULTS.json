@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "test": "No forced skipWaiting on install",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Shell contains entry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "All 13 GLBs pre-cached",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "RGBA atlas pre-cached",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Only own old cache deleted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Activation claims clients",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Update requires explicit message",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass real-time turn-credentials",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass real-time rooms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass real-time rooms/123",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass real-time api/private",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass cross-origin credentials",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Bypass writes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Do not cache arbitrary files",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Navigation network-first no-store",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Offline falls back to cached entry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Missing offline entry returns meaningful 503",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Manifest correct visible version",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 18,
+  "total": 18
+}

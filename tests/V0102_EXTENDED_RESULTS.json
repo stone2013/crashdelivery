@@ -1,0 +1,259 @@
+{
+  "checks": [
+    {
+      "test": "Complete round, actual throw #101",
+      "passed": true,
+      "detail": {
+        "total": 1
+      }
+    },
+    {
+      "test": "Complete round, actual throw #102",
+      "passed": true,
+      "detail": {
+        "total": 2
+      }
+    },
+    {
+      "test": "Complete round, actual throw #103",
+      "passed": true,
+      "detail": {
+        "total": 3
+      }
+    },
+    {
+      "test": "Complete round, actual throw #104",
+      "passed": true,
+      "detail": {
+        "total": 4
+      }
+    },
+    {
+      "test": "Complete round, actual throw #105",
+      "passed": true,
+      "detail": {
+        "total": 5
+      }
+    },
+    {
+      "test": "Complete round, actual throw #106",
+      "passed": true,
+      "detail": {
+        "total": 6
+      }
+    },
+    {
+      "test": "Complete round, actual throw #107",
+      "passed": true,
+      "detail": {
+        "total": 7
+      }
+    },
+    {
+      "test": "Complete round, actual throw #108",
+      "passed": true,
+      "detail": {
+        "total": 8
+      }
+    },
+    {
+      "test": "Complete round, actual throw #109",
+      "passed": true,
+      "detail": {
+        "total": 9
+      }
+    },
+    {
+      "test": "Complete round, actual throw #110",
+      "passed": true,
+      "detail": {
+        "total": 10
+      }
+    },
+    {
+      "test": "Complete round, actual throw #111",
+      "passed": true,
+      "detail": {
+        "total": 11
+      }
+    },
+    {
+      "test": "Complete round, actual throw #112",
+      "passed": true,
+      "detail": {
+        "total": 12
+      }
+    },
+    {
+      "test": "Complete round, actual throw #113",
+      "passed": true,
+      "detail": {
+        "total": 13
+      }
+    },
+    {
+      "test": "Complete round, actual throw #114",
+      "passed": true,
+      "detail": {
+        "total": 14
+      }
+    },
+    {
+      "test": "Complete round, actual throw #115",
+      "passed": true,
+      "detail": {
+        "total": 15
+      }
+    },
+    {
+      "test": "Complete round, actual throw #116",
+      "passed": true,
+      "detail": {
+        "total": 16
+      }
+    },
+    {
+      "test": "Complete round, actual throw #117",
+      "passed": true,
+      "detail": {
+        "total": 17
+      }
+    },
+    {
+      "test": "Complete round, actual throw #118",
+      "passed": true,
+      "detail": {
+        "total": 18
+      }
+    },
+    {
+      "test": "All 18 delivered without direct award",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Round ends and income is finite",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Miss outside receiving aperture rejected #107",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Miss outside receiving aperture rejected #109",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Miss outside receiving aperture rejected #111",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Miss outside receiving aperture rejected #108",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Miss outside receiving aperture rejected #112",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Glass texture center is transparent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Glass remains outside the hole",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No repeated GPU texture upload at unchanged pane",
+      "passed": true,
+      "detail": [
+        {
+          "draws": 9,
+          "uploads": 48,
+          "panes": 33
+        },
+        {
+          "draws": 9,
+          "uploads": 48,
+          "panes": 33
+        }
+      ]
+    },
+    {
+      "test": "Pane texture cache remains bounded",
+      "passed": true,
+      "detail": 33
+    },
+    {
+      "test": "Host and guest connected on ordered JSON transport",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Layout identical on both clients",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Glass impact coordinates/radius/seed synchronized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Guest cannot manufacture a glass hole",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Industrial delivery result reaches guest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Industrial score is identical, no double billing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Repeated world snapshots do not duplicate score",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Full snapshot restores missed glass event",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Host restart clears cracks on both clients",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Open industrial bays survive synchronized restart",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No errors in two-client checks",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "WebGL contexts healthy",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 41,
+  "total": 41,
+  "errors": []
+}

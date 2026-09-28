@@ -1,0 +1,28 @@
+V0.10.2 changed-files patch
+适用于完整 V0.10.1 INDUSTRIAL 工程；不是 V0.5。先备份，再按路径覆盖。
+页面基线SHA256 b09e00bbf39fd33cf16b5f9dca47c1273257ecf395a5afa9df37d7d7b77c222c
+index.html
+sw.js
+build.py
+VERSION_V09.json
+manifest.webmanifest
+src/pocketgl-v0102.js
+src/v0102-industrial.js
+src/v0102-glass.js
+src/v0102-lighting.js
+src/v0102-qa.js
+src/sw-template.js
+browser_helpers.py
+tests/test_v0102_browser.py
+tests/test_v0102_extended.py
+tests/test_v0102_live.py
+tests/test_pwa_v0102.mjs
+tests/V0102_RESULTS.json
+tests/V0102_EXTENDED_RESULTS.json
+tests/V0102_LIVE_RESULTS.json
+tests/V0102_PWA_RESULTS.json
+tests/layout012.json
+CHANGELOG_V0102.md
+TEST_REPORT_V0102.md
+README_V0102.md
+PATCH_FILES_V0102.txt

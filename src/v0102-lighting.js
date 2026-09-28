@@ -1,0 +1,28 @@
+/* V0.10.2 lightweight presentation: warm sun/cool ambient in PocketGL,
+ * baked footprint/projection shadows, and smoothly reduced van light below a deck.
+ * This is NOT SSAO, ray tracing, a shadow map, or a real-time day/night cycle.
+ */
+const LIGHT012={sun:V.norm([-.50,.78,.37]),shade:1,mode:'soft',shadow:null,contact:null,program:null,draws:0};
+try{LIGHT012.mode=localStorage.getItem('crash_visual012')==='economy'?'economy':'soft';}catch(e){}
+function lighting012Hull(points){points=points.slice().sort((a,b)=>a[0]-b[0]||a[1]-b[1]);const cross=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);const low=[],up=[];for(const p of points){while(low.length>1&&cross(low[low.length-2],low[low.length-1],p)<=0)low.pop();low.push(p);}for(const p of points.slice().reverse()){while(up.length>1&&cross(up[up.length-2],up[up.length-1],p)<=0)up.pop();up.push(p);}low.pop();up.pop();return low.concat(up);}
+function lighting012Poly(data,points,alpha=.20,feather=1.4,y=.142){
+ const poly=lighting012Hull(points),cx=poly.reduce((s,p)=>s+p[0],0)/poly.length,cz=poly.reduce((s,p)=>s+p[1],0)/poly.length,outer=poly.map(p=>{const dx=p[0]-cx,dz=p[1]-cz,len=Math.hypot(dx,dz)||1;return[p[0]+dx/len*feather,p[1]+dz/len*feather];});
+ const v=(p,a)=>[p[0],y,p[1],a];for(let i=0;i<poly.length;i++){const j=(i+1)%poly.length;data.push(...v([cx,cz],alpha),...v(poly[i],alpha),...v(poly[j],alpha));data.push(...v(poly[i],alpha),...v(outer[i],0),...v(outer[j],0),...v(poly[i],alpha),...v(outer[j],0),...v(poly[j],alpha));}
+}
+function lighting012Buffer(data){const gl=renderer.gl,b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);return{buffer:b,count:data.length/4};}
+function lighting012BuildShadows(){
+ const contacts=[],sun=[];
+ const all=[...houses.filter(h=>h.style!=='works').map(h=>({x:h.x,z:h.z,yaw:h.yaw,hw:5.7,hd:4.5,height:h.style==='market'?9:7})),...industrial012.placements];
+ for(const o of all){const corners=ind012Corners(o).map(p=>[p[0],p[2]]);lighting012Poly(contacts,corners,.23,1.4,.149);
+  const height=Math.min(o.height||6,13),delta=[-LIGHT012.sun[0]/LIGHT012.sun[1]*height,-LIGHT012.sun[2]/LIGHT012.sun[1]*height],projected=corners.map(p=>[p[0]+delta[0],p[1]+delta[1]]);lighting012Poly(sun,[...corners,...projected],.13,2,.146);
+ }
+ for(const tile of road09.tiles){if(tile.name==='bridge-pillar'){lighting012Poly(contacts,[[tile.x-1.2,tile.z-1.2],[tile.x+1.2,tile.z-1.2],[tile.x+1.2,tile.z+1.2],[tile.x-1.2,tile.z+1.2]],.24,1.3);}
+  if(tile.name==='road-bridge'&&tile.y>3){const b=road093AssetBounds(tile.name),pts=[[b.min[0],b.min[2]],[b.max[0],b.min[2]],[b.max[0],b.max[2]],[b.min[0],b.max[2]]].map(p=>M.point(tile.m,[p[0],0,p[1]])).map(p=>[p[0],p[2]]);lighting012Poly(sun,pts,.16,2);}}
+ const gl=renderer.gl;if(LIGHT012.contact)gl.deleteBuffer(LIGHT012.contact.buffer);if(LIGHT012.shadow)gl.deleteBuffer(LIGHT012.shadow.buffer);LIGHT012.contact=lighting012Buffer(contacts);LIGHT012.shadow=lighting012Buffer(sun);
+}
+function lighting012Program(){if(LIGHT012.program)return;const gl=renderer.gl,compile=(t,s)=>{const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh;};const pr=gl.createProgram();gl.attachShader(pr,compile(gl.VERTEX_SHADER,'attribute vec3 aP;attribute float aA;uniform mat4 uVP;varying float vA;void main(){vA=aA;gl_Position=uVP*vec4(aP,1.);}'));gl.attachShader(pr,compile(gl.FRAGMENT_SHADER,'precision mediump float;varying float vA;void main(){gl_FragColor=vec4(.10,.16,.23,vA);}'));gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(pr));LIGHT012.program=pr;LIGHT012.p=gl.getAttribLocation(pr,'aP');LIGHT012.a=gl.getAttribLocation(pr,'aA');LIGHT012.vp=gl.getUniformLocation(pr,'uVP');}
+function lighting012Shadows(){if(!LIGHT012.contact)return;lighting012Program();const gl=renderer.gl;LIGHT012.draws=0;gl.useProgram(LIGHT012.program);gl.uniformMatrix4fv(LIGHT012.vp,false,renderer.vp);gl.disable(gl.CULL_FACE);gl.depthMask(false);for(const mesh of [LIGHT012.contact,...(quality!=='low'&&LIGHT012.mode==='soft'?[LIGHT012.shadow]:[])]){if(!mesh?.count)continue;gl.bindBuffer(gl.ARRAY_BUFFER,mesh.buffer);gl.enableVertexAttribArray(LIGHT012.p);gl.vertexAttribPointer(LIGHT012.p,3,gl.FLOAT,false,16,0);gl.enableVertexAttribArray(LIGHT012.a);gl.vertexAttribPointer(LIGHT012.a,1,gl.FLOAT,false,16,12);gl.drawArrays(gl.TRIANGLES,0,mesh.count);LIGHT012.draws++;}gl.depthMask(true);gl.enable(gl.CULL_FACE);gl.useProgram(renderer.program);}
+function lighting012Cover(){if(!road09.ready)return 1;return road09Levels(car.p[0],car.p[2]).some(g=>g.y>car.p[1]+3.6&&g.y<car.p[1]+14)? .62:1;}
+const lighting012BaseCamera=updateCamera;updateCamera=function(dt){lighting012BaseCamera(dt);LIGHT012.shade=mix(LIGHT012.shade,lighting012Cover(),1-Math.exp(-Math.max(0,dt)*7));};
+let lighting012BrakeMesh=null;function lighting012Brake(vanM){const pressed=inputs.brake.size>0||inputs.keys.has('KeyS')||inputs.keys.has('ArrowDown');if(!pressed)return;if(!lighting012BrakeMesh){const b=new MeshBuilder();for(const x of [-1.33,1.33])b.box(.16,.24,.026,'#ff4c36',[x,1.04,3.83]);lighting012BrakeMesh=renderer.mesh(b);}renderer.draw(lighting012BrakeMesh,vanM);}
+const lightButton=document.createElement('button');lightButton.id='lighting012';lightButton.textContent='光影：'+(LIGHT012.mode==='soft'?'柔和':'省电');lightButton.onclick=()=>{LIGHT012.mode=LIGHT012.mode==='soft'?'economy':'soft';lightButton.textContent='光影：'+(LIGHT012.mode==='soft'?'柔和':'省电');try{localStorage.setItem('crash_visual012',LIGHT012.mode);}catch(e){}};document.querySelector('#pauseScreen .settings')?.append(lightButton);

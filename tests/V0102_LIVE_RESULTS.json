@@ -1,0 +1,105 @@
+{
+  "checks": [
+    {
+      "test": "Production animation loop advances time",
+      "passed": true,
+      "detail": {
+        "before": 0.13333333333333333,
+        "after": 0.6333333333333335
+      }
+    },
+    {
+      "test": "No runtime error overlay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Live keyboard input moves van",
+      "passed": true,
+      "detail": {
+        "old": [
+          3.2,
+          0.12,
+          72
+        ],
+        "new": [
+          3.2,
+          0.12,
+          70.90708333333333
+        ]
+      }
+    },
+    {
+      "test": "Real highway simulation reaches 98-100 km/h",
+      "passed": true,
+      "detail": {
+        "peakKmh": 100.0,
+        "end": [
+          [
+            233.69936111111133,
+            8.120000072717666,
+            11
+          ],
+          27.77777777777778
+        ]
+      }
+    },
+    {
+      "test": "Underpass receives no high-speed mode",
+      "passed": true,
+      "detail": {
+        "p": [
+          224,
+          0.11999999821186066,
+          14.14999999999997
+        ],
+        "yaw": 3.141592653589793,
+        "speed": 20.5,
+        "steer": 0,
+        "roll": 0,
+        "wheelAngle": 12.300000000000002,
+        "hp": 100,
+        "velocity": [
+          -2.510525938252074e-15,
+          0,
+          20.5
+        ],
+        "accel": [
+          0,
+          0,
+          0
+        ],
+        "yawRate": 0,
+        "lastSpeed": 0,
+        "kick": [
+          0,
+          0,
+          0
+        ],
+        "offRoad": 0,
+        "fault": "",
+        "roadPitch": 0,
+        "roadVy": 0,
+        "roadLayer": "ground"
+      }
+    },
+    {
+      "test": "Drive jump hidden in actual animation loop",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No runtime page errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "Live WebGL healthy",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "errors": []
+}

@@ -1,0 +1,806 @@
+{
+  "checks": [
+    {
+      "test": "Industrial load all assets",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Correct main menu version",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Correct title",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Six industrial delivery addresses",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Factory density >= 24 buildings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Industrial props present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Buildings do not overlap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No road furniture in receiving bays",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "All footprints clear of road surfaces",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#107 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#107 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 107,
+        "model": "building-r",
+        "width": 22.35,
+        "depth": 11.45,
+        "height": 12.54,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 76.17614644765854,
+        "z": 72.97400060296059,
+        "yaw": 3.141592653589793,
+        "target": [
+          76.17614644765854,
+          2.5,
+          64.55
+        ]
+      }
+    },
+    {
+      "test": "#107 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#108 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#108 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 108,
+        "model": "building-a",
+        "width": 20.84,
+        "depth": 12.42,
+        "height": 14.7,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 129.4600002169609,
+        "z": 76,
+        "yaw": -1.5707963267948966,
+        "target": [
+          120.55,
+          2.5,
+          76
+        ]
+      }
+    },
+    {
+      "test": "#108 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#109 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#109 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 109,
+        "model": "building-f",
+        "width": 18.44,
+        "depth": 13.18,
+        "height": 19.83,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 73.84200015962124,
+        "z": 28,
+        "yaw": -1.5707963267948966,
+        "target": [
+          64.55,
+          2.5,
+          28
+        ]
+      }
+    },
+    {
+      "test": "#109 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#110 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#110 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 110,
+        "model": "building-q",
+        "width": 20.33,
+        "depth": 16.81,
+        "height": 8.36,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 131.65698491036892,
+        "z": -19.164999932050705,
+        "yaw": -1.5707963267948966,
+        "target": [
+          120.55,
+          2.5,
+          -19.164999932050705
+        ]
+      }
+    },
+    {
+      "test": "#110 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#111 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#111 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 111,
+        "model": "building-t",
+        "width": 18.59,
+        "depth": 15.01,
+        "height": 10.96,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 130.7560015320778,
+        "z": -74.29731911420822,
+        "yaw": -1.5707963267948966,
+        "target": [
+          120.55,
+          2.5,
+          -74.29731911420822
+        ]
+      }
+    },
+    {
+      "test": "#111 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "#112 facade faces road",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "#112 full-size factory",
+      "passed": true,
+      "detail": {
+        "num": 112,
+        "model": "building-l",
+        "width": 19.38,
+        "depth": 17.39,
+        "height": 17.9,
+        "frontDot": 1,
+        "frontSetback": 3.25,
+        "apertureFromKerb": 0.55,
+        "roadClear": true,
+        "x": 93.31131772100926,
+        "z": -75.94550057649613,
+        "yaw": -0.0,
+        "target": [
+          93.31131772100926,
+          2.5,
+          -64.55000000000001
+        ]
+      }
+    },
+    {
+      "test": "#112 setback 2-4m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "18 initial parcels and jobs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Jump hidden while driving",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Jump shown while walking",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Jump shown inside cargo",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #107",
+      "passed": true,
+      "detail": {
+        "id": 7,
+        "p": [
+          76.17614644765854,
+          0.595,
+          66.55
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 107,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #107",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #108",
+      "passed": true,
+      "detail": {
+        "id": 8,
+        "p": [
+          122.55,
+          0.99,
+          76
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 108,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #108",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #109",
+      "passed": true,
+      "detail": {
+        "id": 9,
+        "p": [
+          66.55,
+          0.69,
+          28
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 109,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #109",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #110",
+      "passed": true,
+      "detail": {
+        "id": 10,
+        "p": [
+          122.55,
+          0.6000000000000001,
+          -19.164999932050705
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 110,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #110",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #111",
+      "passed": true,
+      "detail": {
+        "id": 11,
+        "p": [
+          122.55,
+          0.62,
+          -74.29731911420822
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 111,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #111",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Actual parcel flight accepted #112",
+      "passed": true,
+      "detail": {
+        "id": 12,
+        "p": [
+          93.31131772100926,
+          1.06,
+          -66.55000000000001
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 112,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "No repeated reward #112",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Wrong-address parcel rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Guest cannot award a delivery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Glass parcel flight #101",
+      "passed": true,
+      "detail": {
+        "id": 1,
+        "p": [
+          -77.19515625,
+          1.0204999999999997,
+          78.9
+        ],
+        "v": [
+          -10.3125,
+          -6.371999999999995,
+          -6.31458505810354e-16
+        ],
+        "delivered": true,
+        "order": 101,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "Glass hole retained #101",
+      "passed": true,
+      "detail": {
+        "num": 101,
+        "index": 0,
+        "holes": [
+          {
+            "x": -0.0,
+            "y": 0.035,
+            "r": 0.56,
+            "seed": 760523
+          }
+        ],
+        "w": 2.4,
+        "h": 2.15
+      }
+    },
+    {
+      "test": "Glass parcel flight #113",
+      "passed": true,
+      "detail": {
+        "id": 13,
+        "p": [
+          -77.19515625,
+          1.9954999999999996,
+          -24.9
+        ],
+        "v": [
+          -10.3125,
+          -6.371999999999995,
+          -6.31458505810354e-16
+        ],
+        "delivered": true,
+        "order": 113,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "Glass hole retained #113",
+      "passed": true,
+      "detail": {
+        "num": 113,
+        "index": 0,
+        "holes": [
+          {
+            "x": -0.0,
+            "y": 0.035,
+            "r": 0.56,
+            "seed": 857848
+          }
+        ],
+        "w": 1.8,
+        "h": 1.65
+      }
+    },
+    {
+      "test": "Glass parcel flight #111",
+      "passed": true,
+      "detail": {
+        "id": 11,
+        "p": [
+          122.55,
+          0.62,
+          -74.29731911420822
+        ],
+        "v": [
+          0,
+          0,
+          0
+        ],
+        "delivered": true,
+        "order": 111,
+        "pending": 0,
+        "wrong": []
+      }
+    },
+    {
+      "test": "Glass hole retained #111",
+      "passed": true,
+      "detail": {
+        "num": 111,
+        "index": 0,
+        "holes": [
+          {
+            "x": -0.0,
+            "y": 0.018,
+            "r": 0.56,
+            "seed": 852287
+          }
+        ],
+        "w": 4.2,
+        "h": 2.75
+      }
+    },
+    {
+      "test": "Near impact enlarges existing hole",
+      "passed": true,
+      "detail": {
+        "old": 0.56,
+        "new": 0.8700000000000002
+      }
+    },
+    {
+      "test": "Bounded holes <= 4 per pane",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Restart clears all cracks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Enlarged collider blocks side entry #107",
+      "passed": true,
+      "detail": {
+        "p": [
+          61.158,
+          0.12,
+          72.97400060296059
+        ],
+        "local": [
+          15.018146447658538,
+          0.12,
+          -1.839192497625122e-15
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Enlarged collider blocks side entry #108",
+      "passed": true,
+      "detail": {
+        "p": [
+          129.4600002169609,
+          0.12,
+          90.25994121265411
+        ],
+        "local": [
+          14.259941212654113,
+          0.12,
+          8.731695681053143e-16
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Enlarged collider blocks side entry #109",
+      "passed": true,
+      "detail": {
+        "p": [
+          73.84200015962124,
+          0.12,
+          41.060501184880735
+        ],
+        "local": [
+          13.060501184880735,
+          0.12,
+          7.997250485662203e-16
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Enlarged collider blocks side entry #110",
+      "passed": true,
+      "detail": {
+        "p": [
+          131.65698491036892,
+          0.12,
+          -5.158
+        ],
+        "local": [
+          14.006999932050704,
+          0.12,
+          8.576813816221544e-16
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Enlarged collider blocks side entry #111",
+      "passed": true,
+      "detail": {
+        "p": [
+          130.7560015320778,
+          0.12,
+          -61.158
+        ],
+        "local": [
+          13.13931911420822,
+          0.12,
+          8.045512548095366e-16
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Enlarged collider blocks side entry #112",
+      "passed": true,
+      "detail": {
+        "p": [
+          106.84200000000001,
+          0.12,
+          -75.94550057649613
+        ],
+        "local": [
+          13.530682278990753,
+          0.12,
+          0
+        ],
+        "speed": 0,
+        "overlap": false
+      }
+    },
+    {
+      "test": "Bridge cover darkens truck",
+      "passed": true,
+      "detail": {
+        "shade": 0.6431078237975828,
+        "cover": 0.62,
+        "mode": "soft",
+        "draws": 2
+      }
+    },
+    {
+      "test": "Leaving bridge restores light smoothly",
+      "passed": true,
+      "detail": {
+        "shade": 0.9782973644146807,
+        "cover": 1,
+        "mode": "soft",
+        "draws": 2
+      }
+    },
+    {
+      "test": "Viewport 390x844",
+      "passed": true,
+      "detail": {
+        "w": 390,
+        "h": 844,
+        "game": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "over": false
+      }
+    },
+    {
+      "test": "Drive jump stays hidden 390x844",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Viewport 844x390",
+      "passed": true,
+      "detail": {
+        "w": 844,
+        "h": 390,
+        "game": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390,
+          "top": 0,
+          "right": 844,
+          "bottom": 390,
+          "left": 0
+        },
+        "over": false
+      }
+    },
+    {
+      "test": "Drive jump stays hidden 844x390",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Viewport 320x640",
+      "passed": true,
+      "detail": {
+        "w": 320,
+        "h": 640,
+        "game": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 640,
+          "top": 0,
+          "right": 320,
+          "bottom": 640,
+          "left": 0
+        },
+        "over": false
+      }
+    },
+    {
+      "test": "Drive jump stays hidden 320x640",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Lighting quality option present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Economy shadows limited",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Pause exit present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Exit returns to menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Can restart without page reload",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No WebGL error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "No page errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "passed": 75,
+  "total": 75,
+  "errors": []
+}
