@@ -1,10 +1,10 @@
-/* Crash Delivery V0.9.4. Versioned shell only; no room/token responses are cached. */
+/* Crash Delivery V0.10.1. Versioned shell only; no room/token responses are cached. */
 'use strict';
 const ROOT = new URL('./', self.registration.scope);
 const PREFIX = 'crashdelivery-pwa::' + ROOT.pathname + '::';
-const CACHE = PREFIX + '66ed05469a35f46b';
+const CACHE = PREFIX + 'b09e00bbf39fd33c';
 const INDEX = new URL('index.html', ROOT).href;
-const STATIC = ['manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'].map(p=>new URL(p,ROOT).href);
+const STATIC = ["manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/apple-touch-icon.png","assets/kenney-industrial/building-a.glb","assets/kenney-industrial/building-f.glb","assets/kenney-industrial/building-l.glb","assets/kenney-industrial/building-q.glb","assets/kenney-industrial/building-r.glb","assets/kenney-industrial/building-t.glb","assets/kenney-industrial/water-tower.glb","assets/kenney-industrial/detail-tank-large.glb","assets/kenney-industrial/chimney-large.glb","assets/kenney-industrial/shipping-container-a.glb","assets/kenney-industrial/shipping-container-b.glb","assets/kenney-industrial/shipping-container-c.glb","assets/kenney-industrial/solar-panel-landscape-group.glb","assets/kenney-industrial/variation-a.png"].map(p=>new URL(p,ROOT).href);
 const SHELL = [INDEX,...STATIC];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});

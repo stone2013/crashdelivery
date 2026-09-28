@@ -1,10 +1,8 @@
 {
-  "version": "0.10.0",
-  "name": "CITY LOOP / ACTUAL MAP REBUILD",
-  "protocol": "crash-delivery-mp010-1",
-  "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
-  "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
-  "html_sha256": "66ed05469a35f46b9c55b4dd3bd0af2f541742af5e8dd6edd896f8cb088b47b1",
-  "models": 22,
-  "notes": "Actual V0.10 map rebuild: 18 jobs redistributed into north residential/industrial and south commercial zones. Existing Kenney city roads and central SKYWAY retained; elevated surface enables 100 km/h express mode. Paired signs, drive HUD, fines, multiplayer and PWA retained."
+  "version": "0.10.1",
+  "name": "INDUSTRIAL DELIVERY / KENNEY FACTORY DISTRICT",
+  "protocol": "crash-delivery-mp0101-1",
+  "baseline_sha256": "5fc6ed22395276d21e9c29e04603dec6999f8bc351e3dc83bce6b524162c9826",
+  "html_sha256": "b09e00bbf39fd33cf16b5f9dca47c1273257ecf395a5afa9df37d7d7b77c222c",
+  "notes": "Kenney City Kit Industrial 2.0 replaces procedural industrial buildings. Industrial package delivery uses host-authoritative loading dock/platform target zones. CITY LOOP, SKYWAY 100 km/h, paired signs, traffic fines, multiplayer and PWA are retained."
 }
