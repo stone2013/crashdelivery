@@ -122,6 +122,18 @@
       "bytes": 17532,
       "triangles": 218,
       "sha256": "0ad2c0cd4fde52724a5fe277f0eba71df530a5b6c7570d0efe1686c7b456bc76"
+    },
+    {
+      "name": "road-crossroad-path",
+      "bytes": 18708,
+      "triangles": 276,
+      "sha256": "5876a578474fabaac8608819936c499bec3d5c68b8096e27498b2163efe1ca78"
+    },
+    {
+      "name": "road-intersection-path",
+      "bytes": 13736,
+      "triangles": 204,
+      "sha256": "b5e5fcb458249c3059d12fb30880014781dcb5e3c6f958660d255986cebd865f"
     }
   ]
 }

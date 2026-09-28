@@ -1,0 +1,14 @@
+{
+  "junctions": 25,
+  "streets": 38,
+  "roadTiles": 101,
+  "lamps": 76,
+  "signals": 64,
+  "originalSlabs": 0,
+  "samples": {
+    "roads": 6156,
+    "joins": 912,
+    "turns": 8176
+  },
+  "failures": []
+}

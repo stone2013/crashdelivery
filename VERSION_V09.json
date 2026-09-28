@@ -1,10 +1,10 @@
 {
-  "version": "0.9.3",
-  "name": "SKYWAY / SOLID GEOMETRY + TRAFFIC FURNITURE + PWA HOTFIX",
-  "protocol": "crash-delivery-mp093-1",
+  "version": "0.9.4",
+  "name": "ALL ROADS / CITY-WIDE KENNEY ROAD REPLACEMENT",
+  "protocol": "crash-delivery-mp094-1",
   "base_blob": "8878517981cf87128ec73ecf36e0271f1b50896e",
   "base_sha256": "28f3cfd4a7559c1977c0d383d072b29b895478181d13427bebbbc6fd166779ba",
-  "html_sha256": "db760664bc3d54ad079d0f4cc939c3b9fe7417ae426f9a968585a29ed1ff6837",
-  "models": 20,
-  "notes": "V0.9.3 makes ramps/bridge shells physically solid from the side and underside approach, orients lamps toward the road and sign faces toward oncoming traffic, moves wide signs fully off the lane, and uses fixed-inset iOS PWA viewport fill. Grass driving and V0.9.1 traffic fines remain."
+  "html_sha256": "66ed05469a35f46b9c55b4dd3bd0af2f541742af5e8dd6edd896f8cb088b47b1",
+  "models": 22,
+  "notes": "Replaces every city roadway using Kenney modules while preserving all 38 streets, 25 nodes, 18 delivery addresses, traffic AI, fees, multiplayer and SKYWAY. Original road rendering is removed. Signal faces use actual GLB -X normals; lamps face inward."
 }

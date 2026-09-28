@@ -1,0 +1,6930 @@
+{
+  "version": "0.9.4",
+  "html_sha256": "66ed05469a35f46b9c55b4dd3bd0af2f541742af5e8dd6edd896f8cb088b47b1",
+  "summary": [
+    {
+      "name": "solo",
+      "script": "test_solo.py",
+      "exit": 0,
+      "seconds": 10.8,
+      "passed": 31,
+      "total": 31,
+      "result_file": "solo_results.json"
+    },
+    {
+      "name": "finish",
+      "script": "test_finish.py",
+      "exit": 0,
+      "seconds": 15.4,
+      "passed": 21,
+      "total": 21,
+      "result_file": "finish_results.json"
+    },
+    {
+      "name": "ui",
+      "script": "test_ui.py",
+      "exit": 0,
+      "seconds": 19.1,
+      "passed": 32,
+      "total": 32,
+      "result_file": "ui_results.json"
+    },
+    {
+      "name": "roads",
+      "script": "test_roads_v094.py",
+      "exit": 0,
+      "seconds": 11.5,
+      "passed": 36,
+      "total": 36,
+      "result_file": "roads_v094_results.json"
+    },
+    {
+      "name": "geometry",
+      "script": "test_geometry_v094.py",
+      "exit": 0,
+      "seconds": 4.8,
+      "passed": 15,
+      "total": 15,
+      "result_file": "v094_geometry_results.json"
+    },
+    {
+      "name": "roads_ui",
+      "script": "test_roads_ui.py",
+      "exit": 0,
+      "seconds": 24.7,
+      "passed": 28,
+      "total": 28,
+      "result_file": "roads_ui_results.json"
+    },
+    {
+      "name": "roads_network",
+      "script": "test_roads_network_v094.py",
+      "exit": 0,
+      "seconds": 17.9,
+      "passed": 15,
+      "total": 15,
+      "result_file": "roads_network_v094_results.json"
+    },
+    {
+      "name": "traffic_fines_network",
+      "script": "test_v091_network.py",
+      "exit": 0,
+      "seconds": 8.3,
+      "passed": 5,
+      "total": 5,
+      "result_file": "v091_network_results.json"
+    },
+    {
+      "name": "four_players",
+      "script": "test_four_players.py",
+      "exit": 0,
+      "seconds": 16.3,
+      "passed": 4,
+      "total": 4,
+      "result_file": "road_four_player_results.json"
+    },
+    {
+      "name": "pwa",
+      "script": "test_pwa.mjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "passed": 16,
+      "total": 16,
+      "result_file": "pwa_results.json"
+    },
+    {
+      "name": "all_city_roads",
+      "script": "test_city_roads_v094.py",
+      "result_file": "city_roads_v094_results.json",
+      "passed": 34,
+      "total": 34
+    },
+    {
+      "name": "four_client_2v2_city",
+      "script": "test_city_duel_v094.py",
+      "result_file": "city_duel_v094_results.json",
+      "passed": 10,
+      "total": 10
+    }
+  ],
+  "assertions": {
+    "solo": [
+      {
+        "test": "Startup and WebGL",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Eighteen unique order parcels",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Six parcel types",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Order sheet sets navigation",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Cargo keyboard movement",
+        "passed": true,
+        "details": {
+          "p": [
+            -1.8369701987210282e-16,
+            2.38,
+            0.6000000000000004
+          ],
+          "yaw": 3.141592653589793,
+          "pitch": -0.2,
+          "held": null,
+          "focus": "package"
+        }
+      },
+      {
+        "test": "Closed doors prevent exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "High speed exit guarded",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Rear exit enters world coordinates",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Exterior walking",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Ground pickup preserves order",
+        "passed": true,
+        "details": {
+          "id": 1,
+          "kind": 0,
+          "p": [
+            8,
+            0.5,
+            70
+          ],
+          "rot": [
+            0,
+            0.011,
+            0
+          ],
+          "v": [
+            0,
+            0,
+            0
+          ],
+          "delivered": false,
+          "order": 101,
+          "lossCounted": false,
+          "wrongAt": [],
+          "integrity": 100,
+          "bounces": 0,
+          "blastBoosted": false,
+          "mystery": null
+        }
+      },
+      {
+        "test": "Recovery does not duplicate shipment",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Board with parcel",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Restow recovered parcel",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Repair starts near bonnet",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Three-second repair restores van",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Movement cancels repair",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Unfinished parcels do not despawn",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Correct parcel crosses window and signs",
+        "passed": true,
+        "details": {
+          "mode": "playing",
+          "view": "outside",
+          "time": 1.3999999999999975,
+          "score": 200,
+          "delivered": 1,
+          "shots": 1,
+          "lost": 0,
+          "explosions": 0,
+          "combo": 1,
+          "lastDelivery": 0.18333333333333332,
+          "brick": false,
+          "charge": 0,
+          "charging": false,
+          "chargeSource": null,
+          "cooldown": 0,
+          "toastUntil": 2.983333333333333,
+          "shake": 0,
+          "hitCooldown": 0,
+          "hintUntil": 5.183333333333334,
+          "switchUntil": 0,
+          "warnUntil": 0,
+          "helpFrom": "menu",
+          "nextId": 19,
+          "damageCost": 0,
+          "trickCount": 1,
+          "lastBreakdown": "基础 $100 · 远投 +$40 · 特技 +$60",
+          "selectedOrder": 0,
+          "recovered": 0,
+          "repairs": 0,
+          "wrong": 0
+        }
+      },
+      {
+        "test": "Wrong address does not sign order",
+        "passed": true,
+        "details": {
+          "mode": "playing",
+          "view": "outside",
+          "time": 1.3999999999999975,
+          "score": 0,
+          "delivered": 0,
+          "shots": 1,
+          "lost": 0,
+          "explosions": 0,
+          "combo": 0,
+          "lastDelivery": -100,
+          "brick": false,
+          "charge": 0,
+          "charging": false,
+          "chargeSource": null,
+          "cooldown": 0,
+          "toastUntil": 3.15,
+          "shake": 0,
+          "hitCooldown": 0,
+          "hintUntil": 8,
+          "switchUntil": 0,
+          "warnUntil": 0,
+          "helpFrom": "menu",
+          "nextId": 19,
+          "damageCost": 0,
+          "trickCount": 0,
+          "lastBreakdown": "",
+          "selectedOrder": 0,
+          "recovered": 0,
+          "repairs": 0,
+          "wrong": 1
+        }
+      },
+      {
+        "test": "Rejected parcel still exists",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No repeated wrong-address penalty",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Recover rejected shipment",
+        "passed": true,
+        "details": {
+          "id": 2,
+          "kind": 2,
+          "p": [
+            14.247,
+            0.32,
+            25.1
+          ],
+          "rot": [
+            0.976,
+            -0.388,
+            0.463
+          ],
+          "v": [
+            0,
+            0,
+            0
+          ],
+          "delivered": false,
+          "order": 102,
+          "lossCounted": false,
+          "wrongAt": [
+            101
+          ],
+          "integrity": 100,
+          "bounces": 1,
+          "blastBoosted": false,
+          "mystery": null
+        }
+      },
+      {
+        "test": "Wall hit cannot complete delivery",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Rescue preserves completed deliveries",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Rescue restocks only unfinished orders",
+        "passed": true,
+        "details": [
+          {
+            "id": 2,
+            "order": 102,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 3,
+            "order": 103,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 4,
+            "order": 104,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 5,
+            "order": 105,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 6,
+            "order": 106,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 7,
+            "order": 107,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 8,
+            "order": 108,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 9,
+            "order": 109,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 10,
+            "order": 110,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 11,
+            "order": 111,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 12,
+            "order": 112,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 13,
+            "order": 113,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 14,
+            "order": 114,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 15,
+            "order": 115,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 16,
+            "order": 116,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 17,
+            "order": 117,
+            "delivered": false,
+            "integrity": 100
+          },
+          {
+            "id": 18,
+            "order": 118,
+            "delivered": false,
+            "integrity": 100
+          }
+        ]
+      },
+      {
+        "test": "Garage opens with four upgrades",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Garage purchase bookkeeping",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Avatar preview still runs",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Return from preview keeps startup usable",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No uncaught JavaScript errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "WebGL render state valid",
+        "passed": true,
+        "details": null
+      }
+    ],
+    "finish": [
+      {
+        "test": "Shipment 101 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 102 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 103 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 104 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 105 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 106 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 107 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 108 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 109 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 110 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 111 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 112 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 113 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 114 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 115 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 116 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 117 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Shipment 118 complete through actual facade",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Both players reach end of eighteen-job round",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Repeated final snapshots cannot double-pay",
+        "passed": true,
+        "details": {
+          "before": [
+            5350,
+            5350
+          ],
+          "after": [
+            5350,
+            5350
+          ]
+        }
+      },
+      {
+        "test": "Full round has no JS or GL errors",
+        "passed": true,
+        "details": {
+          "h": [],
+          "g": []
+        }
+      }
+    ],
+    "ui": [
+      {
+        "test": "320x640 boot",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "320x640 lobby no horizontal overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 drive buttons in viewport",
+        "passed": true,
+        "details": [
+          {
+            "id": "leftBtn",
+            "x": 8,
+            "y": 576,
+            "w": 47,
+            "h": 49
+          },
+          {
+            "id": "rightBtn",
+            "x": 61,
+            "y": 576,
+            "w": 47,
+            "h": 49
+          },
+          {
+            "id": "gasBtn",
+            "x": 265,
+            "y": 576,
+            "w": 47,
+            "h": 49
+          },
+          {
+            "id": "brakeBtn",
+            "x": 212,
+            "y": 576,
+            "w": 47,
+            "h": 49
+          },
+          {
+            "id": "cargoBtn",
+            "x": 212,
+            "y": 522,
+            "w": 100,
+            "h": 46
+          },
+          {
+            "id": "ordersBtn",
+            "x": 189,
+            "y": 57,
+            "w": 44,
+            "h": 34
+          }
+        ]
+      },
+      {
+        "test": "320x640 multi-pointer control streams",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 cancel releases only that pointer",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 orders rendered",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 contextual exterior controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 no runtime or GL errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "390x740 boot",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "390x740 lobby no horizontal overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 drive buttons in viewport",
+        "passed": true,
+        "details": [
+          {
+            "id": "leftBtn",
+            "x": 12,
+            "y": 673,
+            "w": 52,
+            "h": 52
+          },
+          {
+            "id": "rightBtn",
+            "x": 70,
+            "y": 673,
+            "w": 52,
+            "h": 52
+          },
+          {
+            "id": "gasBtn",
+            "x": 326,
+            "y": 673,
+            "w": 52,
+            "h": 52
+          },
+          {
+            "id": "brakeBtn",
+            "x": 268,
+            "y": 673,
+            "w": 52,
+            "h": 52
+          },
+          {
+            "id": "cargoBtn",
+            "x": 270,
+            "y": 619,
+            "w": 108,
+            "h": 46
+          },
+          {
+            "id": "ordersBtn",
+            "x": 253,
+            "y": 57,
+            "w": 44,
+            "h": 34
+          }
+        ]
+      },
+      {
+        "test": "390x740 multi-pointer control streams",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 cancel releases only that pointer",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 orders rendered",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 contextual exterior controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 no runtime or GL errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "844x390 boot",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "844x390 lobby no horizontal overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 drive buttons in viewport",
+        "passed": true,
+        "details": [
+          {
+            "id": "leftBtn",
+            "x": 12,
+            "y": 334,
+            "w": 49,
+            "h": 46
+          },
+          {
+            "id": "rightBtn",
+            "x": 67,
+            "y": 334,
+            "w": 49,
+            "h": 46
+          },
+          {
+            "id": "gasBtn",
+            "x": 783,
+            "y": 334,
+            "w": 49,
+            "h": 46
+          },
+          {
+            "id": "brakeBtn",
+            "x": 728,
+            "y": 334,
+            "w": 49,
+            "h": 46
+          },
+          {
+            "id": "cargoBtn",
+            "x": 724,
+            "y": 285,
+            "w": 108,
+            "h": 44
+          },
+          {
+            "id": "ordersBtn",
+            "x": 153,
+            "y": 56,
+            "w": 44,
+            "h": 30
+          }
+        ]
+      },
+      {
+        "test": "844x390 multi-pointer control streams",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 cancel releases only that pointer",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 orders rendered",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 contextual exterior controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 no runtime or GL errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "1280x800 boot",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "1280x800 lobby no horizontal overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 drive buttons in viewport",
+        "passed": true,
+        "details": [
+          {
+            "id": "leftBtn",
+            "x": 23,
+            "y": 717,
+            "w": 64,
+            "h": 58
+          },
+          {
+            "id": "rightBtn",
+            "x": 95,
+            "y": 717,
+            "w": 64,
+            "h": 58
+          },
+          {
+            "id": "gasBtn",
+            "x": 1193,
+            "y": 717,
+            "w": 64,
+            "h": 58
+          },
+          {
+            "id": "brakeBtn",
+            "x": 1121,
+            "y": 717,
+            "w": 64,
+            "h": 58
+          },
+          {
+            "id": "cargoBtn",
+            "x": 1135.3125,
+            "y": 659,
+            "w": 121.6875,
+            "h": 48
+          },
+          {
+            "id": "ordersBtn",
+            "x": 177.21875,
+            "y": 65,
+            "w": 44,
+            "h": 34
+          }
+        ]
+      },
+      {
+        "test": "1280x800 multi-pointer control streams",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 cancel releases only that pointer",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 orders rendered",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 contextual exterior controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 no runtime or GL errors",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "roads": [
+      {
+        "test": "Verified V0.8 base still contains 2v2 runtime",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "22 real GLBs decoded and baked",
+        "passed": true,
+        "details": {
+          "ready": true,
+          "error": "",
+          "assets": 22,
+          "tiles": 327,
+          "triangles": 42652,
+          "chunks": 79,
+          "visible": 54,
+          "loadMs": 293.9000000001397,
+          "trial": null,
+          "stats": {
+            "stops": 0,
+            "laps": 0,
+            "contacts": 0,
+            "staticHits": 0
+          },
+          "law": {
+            "fines": 0,
+            "red": 0,
+            "crashes": 0,
+            "lastRedAt": -99,
+            "lastCrashAt": -99,
+            "lastRedKey": "",
+            "lastCrashId": -1
+          },
+          "treeCull": 3,
+          "car": {
+            "p": [
+              3.2,
+              0.12,
+              72
+            ],
+            "yaw": 0,
+            "pitch": 0,
+            "speed": 0
+          },
+          "npc": [
+            {
+              "p": [
+                146.65,
+                0.09999999821186066,
+                56
+              ],
+              "speed": 5.5,
+              "wait": "",
+              "progress": 0,
+              "phase": "normal"
+            },
+            {
+              "p": [
+                238.41494840583835,
+                8.100000072717666,
+                10.65
+              ],
+              "speed": 5.5,
+              "wait": "",
+              "progress": 140.2632127793566,
+              "phase": "normal"
+            },
+            {
+              "p": [
+                268.2948703150984,
+                0.09999999821186066,
+                53.35
+              ],
+              "speed": 5.5,
+              "wait": "",
+              "progress": 280.5264255587132,
+              "phase": "normal"
+            },
+            {
+              "p": [
+                221.35,
+                0.09999999821186066,
+                -24
+              ],
+              "speed": 5.5,
+              "wait": "",
+              "progress": 0,
+              "phase": "normal"
+            },
+            {
+              "p": [
+                261.0079143839353,
+                0.09999999821186066,
+                85.35
+              ],
+              "speed": 5.5,
+              "wait": "",
+              "progress": 164.97625684819405,
+              "phase": "normal"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "city",
+              "p": [
+                120,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "fork",
+              "p": [
+                144,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "bendW",
+              "p": [
+                144,
+                0.08,
+                16
+              ]
+            },
+            {
+              "id": "rampW",
+              "p": [
+                152,
+                0.08,
+                8
+              ]
+            },
+            {
+              "id": "topW",
+              "p": [
+                184,
+                8.08,
+                8
+              ]
+            },
+            {
+              "id": "upper",
+              "p": [
+                224,
+                8.08,
+                8
+              ]
+            },
+            {
+              "id": "topE",
+              "p": [
+                248,
+                8.08,
+                8
+              ]
+            },
+            {
+              "id": "rampE",
+              "p": [
+                280,
+                0.08,
+                8
+              ]
+            },
+            {
+              "id": "bendE",
+              "p": [
+                304,
+                0.08,
+                32
+              ]
+            },
+            {
+              "id": "east",
+              "p": [
+                304,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "cross",
+              "p": [
+                272,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "roundE",
+              "p": [
+                248,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "roundW",
+              "p": [
+                200,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "roundN",
+              "p": [
+                224,
+                0.08,
+                32
+              ]
+            },
+            {
+              "id": "roundS",
+              "p": [
+                224,
+                0.08,
+                80
+              ]
+            },
+            {
+              "id": "lower",
+              "p": [
+                224,
+                0.08,
+                8
+              ]
+            },
+            {
+              "id": "north",
+              "p": [
+                224,
+                0.08,
+                -24
+              ]
+            },
+            {
+              "id": "finish",
+              "p": [
+                284,
+                0.08,
+                -24
+              ]
+            },
+            {
+              "id": "south",
+              "p": [
+                224,
+                0.08,
+                88
+              ]
+            },
+            {
+              "id": "crossS",
+              "p": [
+                272,
+                0.08,
+                88
+              ]
+            },
+            {
+              "id": "southE",
+              "p": [
+                304,
+                0.08,
+                80
+              ]
+            },
+            {
+              "id": "rE",
+              "p": [
+                238,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "rS",
+              "p": [
+                224,
+                0.08,
+                70
+              ]
+            },
+            {
+              "id": "rW",
+              "p": [
+                210,
+                0.08,
+                56
+              ]
+            },
+            {
+              "id": "rN",
+              "p": [
+                224,
+                0.08,
+                42
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "a": "city",
+              "b": "fork",
+              "len": 24
+            },
+            {
+              "a": "fork",
+              "b": "city",
+              "len": 24
+            },
+            {
+              "a": "fork",
+              "b": "bendW",
+              "len": 40
+            },
+            {
+              "a": "bendW",
+              "b": "fork",
+              "len": 40
+            },
+            {
+              "a": "bendW",
+              "b": "rampW",
+              "len": 12.562383561216766
+            },
+            {
+              "a": "rampW",
+              "b": "bendW",
+              "len": 12.562383561216768
+            },
+            {
+              "a": "rampW",
+              "b": "topW",
+              "len": 33.28588081235907
+            },
+            {
+              "a": "topW",
+              "b": "rampW",
+              "len": 33.28588081235908
+            },
+            {
+              "a": "topW",
+              "b": "upper",
+              "len": 40
+            },
+            {
+              "a": "upper",
+              "b": "topW",
+              "len": 40
+            },
+            {
+              "a": "upper",
+              "b": "topE",
+              "len": 24
+            },
+            {
+              "a": "topE",
+              "b": "upper",
+              "len": 24
+            },
+            {
+              "a": "topE",
+              "b": "rampE",
+              "len": 33.285880818708904
+            },
+            {
+              "a": "rampE",
+              "b": "topE",
+              "len": 33.285880818708904
+            },
+            {
+              "a": "rampE",
+              "b": "bendE",
+              "len": 37.6871506836503
+            },
+            {
+              "a": "bendE",
+              "b": "rampE",
+              "len": 37.687150683650316
+            },
+            {
+              "a": "bendE",
+              "b": "east",
+              "len": 24
+            },
+            {
+              "a": "east",
+              "b": "bendE",
+              "len": 24
+            },
+            {
+              "a": "east",
+              "b": "cross",
+              "len": 32
+            },
+            {
+              "a": "cross",
+              "b": "east",
+              "len": 32
+            },
+            {
+              "a": "cross",
+              "b": "roundE",
+              "len": 24
+            },
+            {
+              "a": "roundE",
+              "b": "cross",
+              "len": 24
+            },
+            {
+              "a": "roundW",
+              "b": "fork",
+              "len": 56
+            },
+            {
+              "a": "fork",
+              "b": "roundW",
+              "len": 56
+            },
+            {
+              "a": "roundN",
+              "b": "lower",
+              "len": 24
+            },
+            {
+              "a": "lower",
+              "b": "roundN",
+              "len": 24
+            },
+            {
+              "a": "lower",
+              "b": "north",
+              "len": 32
+            },
+            {
+              "a": "north",
+              "b": "lower",
+              "len": 32
+            },
+            {
+              "a": "north",
+              "b": "finish",
+              "len": 60
+            },
+            {
+              "a": "finish",
+              "b": "north",
+              "len": 60
+            },
+            {
+              "a": "roundS",
+              "b": "south",
+              "len": 8
+            },
+            {
+              "a": "south",
+              "b": "roundS",
+              "len": 8
+            },
+            {
+              "a": "south",
+              "b": "crossS",
+              "len": 48
+            },
+            {
+              "a": "crossS",
+              "b": "south",
+              "len": 48
+            },
+            {
+              "a": "crossS",
+              "b": "southE",
+              "len": 36.56238356121676
+            },
+            {
+              "a": "southE",
+              "b": "crossS",
+              "len": 36.56238356121676
+            },
+            {
+              "a": "southE",
+              "b": "east",
+              "len": 24
+            },
+            {
+              "a": "east",
+              "b": "southE",
+              "len": 24
+            },
+            {
+              "a": "cross",
+              "b": "crossS",
+              "len": 32
+            },
+            {
+              "a": "crossS",
+              "b": "cross",
+              "len": 32
+            },
+            {
+              "a": "roundE",
+              "b": "rE",
+              "len": 10
+            },
+            {
+              "a": "rE",
+              "b": "roundE",
+              "len": 10
+            },
+            {
+              "a": "roundS",
+              "b": "rS",
+              "len": 10
+            },
+            {
+              "a": "rS",
+              "b": "roundS",
+              "len": 10
+            },
+            {
+              "a": "roundW",
+              "b": "rW",
+              "len": 10
+            },
+            {
+              "a": "rW",
+              "b": "roundW",
+              "len": 10
+            },
+            {
+              "a": "roundN",
+              "b": "rN",
+              "len": 10
+            },
+            {
+              "a": "rN",
+              "b": "roundN",
+              "len": 10
+            },
+            {
+              "a": "rE",
+              "b": "rS",
+              "len": 21.984171232129345
+            },
+            {
+              "a": "rS",
+              "b": "rW",
+              "len": 21.98417123212934
+            },
+            {
+              "a": "rW",
+              "b": "rN",
+              "len": 21.984171232129345
+            },
+            {
+              "a": "rN",
+              "b": "rE",
+              "len": 21.984171232129345
+            }
+          ]
+        }
+      },
+      {
+        "test": "Selected pack rendered through actual WebGL",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Spatial batching reduces draws below placement count",
+        "passed": true,
+        "details": {
+          "tiles": 327,
+          "chunks": 79,
+          "triangles": 42652,
+          "loadMs": 293.9000000001397
+        }
+      },
+      {
+        "test": "New trial and old solo entry both enabled",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Bridge has two distinct real mesh surfaces",
+        "passed": true,
+        "details": [
+          {
+            "y": 0.07999999821186066,
+            "n": [
+              0,
+              1,
+              0
+            ],
+            "tile": 16,
+            "road": true
+          },
+          {
+            "y": 8.079999849200249,
+            "n": [
+              0,
+              1,
+              0
+            ],
+            "tile": 16,
+            "road": true
+          }
+        ]
+      },
+      {
+        "test": "Lower reference never teleports onto bridge",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Upper reference stays on upper deck",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "West ramp rises continuously",
+        "passed": true,
+        "details": {
+          "start": 0.07999999821186066,
+          "end": 8.079999849200249
+        }
+      },
+      {
+        "test": "East ramp descends continuously",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "All deck tile seams connect",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Routing goes via ramp, not false vertical crossing",
+        "passed": true,
+        "details": [
+          {
+            "a": "upper",
+            "b": "topW",
+            "len": 40
+          },
+          {
+            "a": "topW",
+            "b": "rampW",
+            "len": 33.28588081235908
+          },
+          {
+            "a": "rampW",
+            "b": "bendW",
+            "len": 12.562383561216768
+          },
+          {
+            "a": "bendW",
+            "b": "fork",
+            "len": 40
+          },
+          {
+            "a": "fork",
+            "b": "roundW",
+            "len": 56
+          },
+          {
+            "a": "roundW",
+            "b": "rW",
+            "len": 10
+          },
+          {
+            "a": "rW",
+            "b": "rN",
+            "len": 21.984171232129345
+          },
+          {
+            "a": "rN",
+            "b": "roundN",
+            "len": 10
+          },
+          {
+            "a": "roundN",
+            "b": "lower",
+            "len": 24
+          }
+        ]
+      },
+      {
+        "test": "Real pedal driving climbs ramp",
+        "passed": true,
+        "details": {
+          "p": [
+            189.75470042752926,
+            8.120000072717666,
+            8
+          ],
+          "yaw": -1.5707963267948966,
+          "pitch": 0.0007171320985118286,
+          "speed": 20.499977290818826
+        }
+      },
+      {
+        "test": "Vehicle pitches from the actual ramp normal",
+        "passed": true,
+        "details": {
+          "p": [
+            160.3933290985478,
+            1.2653014651002332,
+            8
+          ],
+          "yaw": -1.5707963267948966,
+          "pitch": 0.2006929277299755,
+          "speed": 3.85904102213943
+        }
+      },
+      {
+        "test": "Inclined cargo local/world transforms invert",
+        "passed": true,
+        "details": {
+          "world": [
+            158.25299785882234,
+            3.258639417588711,
+            8.4
+          ],
+          "roundtrip": [
+            0.40000000000000024,
+            2.380000632073062,
+            1.7000032085940786
+          ]
+        }
+      },
+      {
+        "test": "Van drives beneath same bridge without snapping up",
+        "passed": true,
+        "details": {
+          "p": [
+            224,
+            0.11999999821186066,
+            -2.829416666666684
+          ],
+          "yaw": 0,
+          "pitch": 0,
+          "speed": 19.77999999999998
+        }
+      },
+      {
+        "test": "Van drives over crossing without falling through",
+        "passed": true,
+        "details": {
+          "p": [
+            243.15226388888792,
+            8.120000072717666,
+            8
+          ],
+          "yaw": -1.5707963267948966,
+          "pitch": 0,
+          "speed": 20.5
+        }
+      },
+      {
+        "test": "Upper guard rail holds van on deck",
+        "passed": true,
+        "details": {
+          "p": [
+            210,
+            8.120000072717666,
+            3.2
+          ],
+          "yaw": 0,
+          "pitch": 0,
+          "speed": 0.18428571428612317
+        }
+      },
+      {
+        "test": "Parcel falling from above lands on upper road",
+        "passed": true,
+        "details": {
+          "p": [
+            224,
+            8.347583182533583,
+            8
+          ],
+          "v": [
+            0,
+            -0.1,
+            0
+          ]
+        }
+      },
+      {
+        "test": "Parcel below span lands on ground road",
+        "passed": true,
+        "details": {
+          "p": [
+            224,
+            0.4002633333333334,
+            8
+          ],
+          "v": [
+            0,
+            0.3563200000000023,
+            0
+          ]
+        }
+      },
+      {
+        "test": "Parcel cannot fly through underside of crossing",
+        "passed": true,
+        "details": {
+          "p": [
+            224,
+            0.5773333333333439,
+            8
+          ],
+          "v": [
+            0,
+            -13.11999999999997,
+            0
+          ]
+        }
+      },
+      {
+        "test": "Actual V key exits onto elevated deck",
+        "passed": true,
+        "details": {
+          "view": "outside",
+          "p": [
+            210,
+            9.810000072717667,
+            12.65
+          ],
+          "world": [
+            210,
+            9.810000072717667,
+            12.65
+          ],
+          "avatarFeet": [
+            210,
+            8.079999923706055,
+            12.649999618530273
+          ]
+        }
+      },
+      {
+        "test": "On-foot prediction stays on elevated mesh",
+        "passed": true,
+        "details": {
+          "view": "outside",
+          "p": [
+            211.955,
+            9.810000072717667,
+            5.559999999999999
+          ],
+          "world": [
+            211.955,
+            9.810000072717667,
+            5.559999999999999
+          ],
+          "avatarFeet": [
+            211.9550018310547,
+            8.079999923706055,
+            5.559999942779541
+          ]
+        }
+      },
+      {
+        "test": "Ground courier does not teleport to upper deck",
+        "passed": true,
+        "details": {
+          "view": "outside",
+          "p": [
+            223.91999999999962,
+            1.8099999982118606,
+            8
+          ],
+          "world": [
+            223.91999999999962,
+            1.8099999982118606,
+            8
+          ],
+          "avatarFeet": [
+            223.9199981689453,
+            0.07999999821186066,
+            8
+          ]
+        }
+      },
+      {
+        "test": "Ground courier walks beneath parked elevated van",
+        "passed": true,
+        "details": {
+          "view": "outside",
+          "p": [
+            223.91999999999962,
+            1.8099999982118606,
+            8
+          ],
+          "world": [
+            223.91999999999962,
+            1.8099999982118606,
+            8
+          ],
+          "avatarFeet": [
+            223.9199981689453,
+            0.07999999821186066,
+            8
+          ]
+        }
+      },
+      {
+        "test": "Full six-gate route completed with real pedal/steering simulation",
+        "passed": true,
+        "details": {
+          "index": 6,
+          "start": 11.299999999999999,
+          "finished": true,
+          "finishTime": 85.39166666668969
+        }
+      },
+      {
+        "test": "Trial does not consume original order inventory",
+        "passed": true,
+        "details": {
+          "houses": 30,
+          "orders": 18,
+          "traffic": 14,
+          "stock": 18,
+          "protocol": "crash-delivery-mp094-1"
+        }
+      },
+      {
+        "test": "Return city retains all 18 orders",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Four-minute road traffic run stays finite",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "High circuit NPCs remain on elevated deck",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Traffic keeps completing circuits",
+        "passed": true,
+        "details": {
+          "stops": 20,
+          "laps": 22,
+          "contacts": 0,
+          "staticHits": 0
+        }
+      },
+      {
+        "test": "Traffic has stopped for lights or queues",
+        "passed": true,
+        "details": {
+          "stops": 20,
+          "laps": 22,
+          "contacts": 0,
+          "staticHits": 0
+        }
+      },
+      {
+        "test": "Road guide contains completed world map and controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Old multiplayer code, realtime endpoint, and movement replay remain",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Final GL state healthy",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No JavaScript page errors",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "geometry": [
+      {
+        "test": "V0.9.4 title",
+        "passed": true,
+        "details": "暴力快递 · V0.9.4 ALL ROADS · 全城模块道路"
+      },
+      {
+        "test": "Fixed game fills iPhone-sized viewport",
+        "passed": true,
+        "details": {
+          "css": "844px",
+          "innerHeight": 844,
+          "screenHeight": 844,
+          "visualHeight": 844,
+          "game": 844,
+          "bottom": 844
+        }
+      },
+      {
+        "test": "Furniture supports stay off drivable road",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Signs/signals face approaching traffic",
+        "passed": true,
+        "details": [
+          {
+            "name": "traffic-light",
+            "x": 258,
+            "z": 42,
+            "yaw": 1.5707963267948966,
+            "travelYaw": 0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 286,
+            "z": 70,
+            "yaw": 4.71238898038469,
+            "travelYaw": 3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 258,
+            "z": 70,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 286,
+            "z": 42,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "sign-highway",
+            "x": 194,
+            "z": -5.800000000000001,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 13.8
+          },
+          {
+            "name": "sign-highway",
+            "x": 250,
+            "z": 69.8,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 13.8
+          },
+          {
+            "name": "road-sign-stop",
+            "x": 254,
+            "z": 45.6,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 10.4
+          },
+          {
+            "name": "road-sign-stop",
+            "x": 234.4,
+            "z": 32,
+            "yaw": 1.5707963267948966,
+            "travelYaw": 0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 10.4
+          },
+          {
+            "name": "road-sign-warning",
+            "x": 154.8,
+            "z": 24,
+            "yaw": 1.5707963267948966,
+            "travelYaw": 0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 10.8
+          },
+          {
+            "name": "road-sign-warning",
+            "x": 291.5,
+            "z": 24,
+            "yaw": 4.71238898038469,
+            "travelYaw": 3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 12.5
+          },
+          {
+            "name": "traffic-light",
+            "x": -66.8,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -45.2,
+            "z": -121.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -46.35,
+            "z": -101.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -10.8,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 10.8,
+            "z": -121.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 9.65,
+            "z": -101.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 45.2,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 66.8,
+            "z": -121.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 65.65,
+            "z": -101.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -65.65,
+            "z": -66.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -45.2,
+            "z": -65.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -46.35,
+            "z": -45.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -9.65,
+            "z": -66.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -10.8,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 10.8,
+            "z": -65.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 9.65,
+            "z": -45.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 46.35,
+            "z": -66.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 45.2,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 66.8,
+            "z": -65.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 65.65,
+            "z": -45.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 102.35,
+            "z": -66.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 101.2,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 121.65,
+            "z": -45.2,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -121.65,
+            "z": -10.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -101.2,
+            "z": -9.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -102.35,
+            "z": 10.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -65.65,
+            "z": -10.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -66.8,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -45.2,
+            "z": -9.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -46.35,
+            "z": 10.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -9.65,
+            "z": -10.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -10.8,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 10.8,
+            "z": -9.65,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 9.65,
+            "z": 10.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 46.35,
+            "z": -10.8,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 45.2,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 65.65,
+            "z": 10.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -121.65,
+            "z": 45.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -101.2,
+            "z": 46.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -102.35,
+            "z": 66.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -65.65,
+            "z": 45.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -66.8,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -45.2,
+            "z": 46.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -46.35,
+            "z": 66.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -9.65,
+            "z": 45.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -10.8,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 10.8,
+            "z": 46.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 9.65,
+            "z": 66.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 46.35,
+            "z": 45.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 45.2,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 66.8,
+            "z": 46.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 65.65,
+            "z": 66.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 102.35,
+            "z": 45.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 101.2,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 121.65,
+            "z": 66.8,
+            "yaw": 1.5707963267948966,
+            "travelYaw": -0.0,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -65.65,
+            "z": 101.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -66.8,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -45.2,
+            "z": 102.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -9.65,
+            "z": 101.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": -10.8,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 10.8,
+            "z": 102.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 46.35,
+            "z": 101.2,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 45.2,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          },
+          {
+            "name": "traffic-light",
+            "x": 66.8,
+            "z": 102.35,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 0
+          }
+        ]
+      },
+      {
+        "test": "Lamp arms point toward roadway",
+        "passed": true,
+        "details": [
+          {
+            "name": "light-curved",
+            "x": 144,
+            "z": 70,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 14
+          },
+          {
+            "name": "light-curved",
+            "x": 176,
+            "z": 70,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 14
+          },
+          {
+            "name": "light-curved",
+            "x": 208,
+            "z": 70,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 14
+          },
+          {
+            "name": "light-curved",
+            "x": 240,
+            "z": 70,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 14
+          },
+          {
+            "name": "light-curved",
+            "x": 144,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 176,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 208,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 240,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 272,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 304,
+            "z": -34,
+            "yaw": 3.141592653589793,
+            "travelYaw": 1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10
+          },
+          {
+            "name": "light-curved",
+            "x": 192,
+            "z": -2.8000000000000007,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10.8
+          },
+          {
+            "name": "light-curved",
+            "x": 224,
+            "z": -2.8000000000000007,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.07999999821186066,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10.8
+          },
+          {
+            "name": "light-curved",
+            "x": 240,
+            "z": -2.8000000000000007,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 10.8
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": -121.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -102.35,
+            "z": -84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -121.65,
+            "z": -84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": -121.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -46.35,
+            "z": -84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -65.65,
+            "z": -84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": -121.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 9.65,
+            "z": -84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -9.65,
+            "z": -84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": -121.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": -102.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 65.65,
+            "z": -84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 46.35,
+            "z": -84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 121.65,
+            "z": -84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 102.35,
+            "z": -84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -102.35,
+            "z": -28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -121.65,
+            "z": -28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": -65.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -46.35,
+            "z": -28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -65.65,
+            "z": -28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": -65.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 9.65,
+            "z": -28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -9.65,
+            "z": -28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": -65.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": -46.35,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 65.65,
+            "z": -28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 46.35,
+            "z": -28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 121.65,
+            "z": -28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 102.35,
+            "z": -28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": -9.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -102.35,
+            "z": 28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -121.65,
+            "z": 28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -22.4,
+            "z": -9.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -46.35,
+            "z": 28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -65.65,
+            "z": 28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": -9.65,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": 9.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 9.65,
+            "z": 28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -9.65,
+            "z": 28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 65.65,
+            "z": 28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 46.35,
+            "z": 28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 121.65,
+            "z": 28,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 102.35,
+            "z": 28,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": 46.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -102.35,
+            "z": 84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -121.65,
+            "z": 84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": 46.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -46.35,
+            "z": 84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -65.65,
+            "z": 84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": 46.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 9.65,
+            "z": 84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -9.65,
+            "z": 84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": 46.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": 65.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 65.65,
+            "z": 84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 46.35,
+            "z": 84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 121.65,
+            "z": 84,
+            "yaw": -4.71238898038469,
+            "travelYaw": -3.141592653589793,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 102.35,
+            "z": 84,
+            "yaw": -1.5707963267948966,
+            "travelYaw": -3.141592653589793,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": 102.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -84,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": 102.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": -28,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": 102.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 28,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": 102.35,
+            "yaw": -3.141592653589793,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          },
+          {
+            "name": "light-curved",
+            "x": 84,
+            "z": 121.65,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": null,
+            "aimDot": 1,
+            "shoulderOffset": 9.65
+          }
+        ]
+      },
+      {
+        "test": "Wide highway signs clear lane edge",
+        "passed": true,
+        "details": [
+          {
+            "name": "sign-highway",
+            "x": 194,
+            "z": -5.800000000000001,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": -1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 13.8
+          },
+          {
+            "name": "sign-highway",
+            "x": 250,
+            "z": 69.8,
+            "yaw": 0,
+            "travelYaw": -1.5707963267948966,
+            "side": 1,
+            "onRoad": false,
+            "level": 0.08,
+            "facingDot": 1,
+            "aimDot": null,
+            "shoulderOffset": 13.8
+          }
+        ]
+      },
+      {
+        "test": "Six bridge pillars are solid",
+        "passed": true,
+        "details": {
+          "ramp-shell": 4,
+          "ramp-high-cap": 2,
+          "bridge-pillar": 6
+        }
+      },
+      {
+        "test": "Both ramps have solid side shells",
+        "passed": true,
+        "details": {
+          "ramp-shell": 4,
+          "ramp-high-cap": 2,
+          "bridge-pillar": 6
+        }
+      },
+      {
+        "test": "Both ramp high ends block ground-level entry",
+        "passed": true,
+        "details": {
+          "ramp-shell": 4,
+          "ramp-high-cap": 2,
+          "bridge-pillar": 6
+        }
+      },
+      {
+        "test": "Truck cannot enter ramp from side",
+        "passed": true,
+        "details": {
+          "car": {
+            "p": [
+              172,
+              0.12,
+              -2.1669156770949916
+            ],
+            "yaw": 3.141592653589793,
+            "pitch": 0,
+            "speed": 0
+          },
+          "stats": {
+            "stops": 0,
+            "laps": 0,
+            "contacts": 0,
+            "staticHits": 2
+          }
+        }
+      },
+      {
+        "test": "Truck cannot enter ramp body from high-end underside",
+        "passed": true,
+        "details": {
+          "car": {
+            "p": [
+              186.18831752696585,
+              0.12,
+              8
+            ],
+            "yaw": 1.5707963267948966,
+            "pitch": 0,
+            "speed": 0
+          },
+          "stats": {
+            "stops": 0,
+            "laps": 0,
+            "contacts": 0,
+            "staticHits": 3
+          }
+        }
+      },
+      {
+        "test": "Truck cannot pass through bridge pillar",
+        "passed": true,
+        "details": {
+          "p": [
+            190,
+            0.12,
+            -1.1277393453753959
+          ],
+          "yaw": 3.141592653589793,
+          "pitch": 0,
+          "speed": 0
+        }
+      },
+      {
+        "test": "Grass remains drivable",
+        "passed": true,
+        "details": {
+          "p": [
+            260,
+            0.12,
+            102.84528698467048
+          ],
+          "yaw": 0,
+          "pitch": 0,
+          "speed": 1.6508937767888856
+        }
+      },
+      {
+        "test": "V0.9.1 red-light fine retained",
+        "passed": true,
+        "details": {
+          "fines": 80,
+          "red": 1,
+          "crashes": 0,
+          "lastRedAt": 10.374999999999979,
+          "lastCrashAt": -99,
+          "lastRedKey": "skyway-x",
+          "lastCrashId": -1
+        }
+      },
+      {
+        "test": "No JavaScript page errors",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "roads_ui": [
+      {
+        "test": "320x640 menu trial accessible",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 no horizontal page overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 new HUD inside viewport",
+        "passed": true,
+        "details": {
+          "x": 10,
+          "y": 235,
+          "width": 184,
+          "height": 75
+        }
+      },
+      {
+        "test": "320x640 road map opens",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 road map has no sideways scroll",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 map action reachable by scrolling",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "320x640 cargo and GL still function",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "390x740 menu trial accessible",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 no horizontal page overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 new HUD inside viewport",
+        "passed": true,
+        "details": {
+          "x": 10,
+          "y": 228,
+          "width": 206,
+          "height": 75
+        }
+      },
+      {
+        "test": "390x740 road map opens",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 road map has no sideways scroll",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 map action reachable by scrolling",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "390x740 cargo and GL still function",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "844x390 menu trial accessible",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 no horizontal page overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 new HUD inside viewport",
+        "passed": true,
+        "details": {
+          "x": 319,
+          "y": 9,
+          "width": 206,
+          "height": 75
+        }
+      },
+      {
+        "test": "844x390 road map opens",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 road map has no sideways scroll",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 map action reachable by scrolling",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "844x390 cargo and GL still function",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "1280x800 menu trial accessible",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 no horizontal page overflow",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 new HUD inside viewport",
+        "passed": true,
+        "details": {
+          "x": 508,
+          "y": 14,
+          "width": 264,
+          "height": 81
+        }
+      },
+      {
+        "test": "1280x800 road map opens",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 road map has no sideways scroll",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 map action reachable by scrolling",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "1280x800 cargo and GL still function",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "roads_network": [
+      {
+        "test": "Both clients joined same V0.9 protocol",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Host trial selection replicated",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Guest van is rendered at authority bridge height",
+        "passed": true,
+        "details": {
+          "h": {
+            "p": [
+              211,
+              8.120000072717666,
+              8
+            ],
+            "yaw": -1.5707963267948966,
+            "pitch": 0,
+            "speed": 0
+          },
+          "g": {
+            "p": [
+              211,
+              8.12,
+              8
+            ],
+            "yaw": -1.571,
+            "pitch": 0,
+            "speed": 0
+          }
+        }
+      },
+      {
+        "test": "Extra district NPC state replicated",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Guest walking responds over rendered frames without new authority packet",
+        "passed": true,
+        "details": {
+          "before": {
+            "view": "cargo",
+            "p": [
+              0.42,
+              2.38,
+              -0.9
+            ],
+            "world": [
+              211.89991445725434,
+              10.499999885559081,
+              8.420183305883548
+            ],
+            "avatarFeet": [
+              211.89991760253906,
+              8.9399995803833,
+              8.420183181762695
+            ]
+          },
+          "after": {
+            "view": "cargo",
+            "p": [
+              0.42025459149933847,
+              2.38,
+              -0.2750000518534672
+            ],
+            "world": [
+              211.27491445725434,
+              10.499999885559081,
+              8.420310601640983
+            ],
+            "avatarFeet": [
+              211.27491760253906,
+              8.9399995803833,
+              8.420310974121094
+            ]
+          }
+        }
+      },
+      {
+        "test": "Guest body remains in vehicle-local coordinates",
+        "passed": true,
+        "details": {
+          "view": "cargo",
+          "p": [
+            0.42060954459533123,
+            2.38,
+            0.10204704827057665
+          ],
+          "world": [
+            210.89786728483585,
+            10.499999885559081,
+            8.420588760346057
+          ],
+          "avatarFeet": [
+            210.8978729248047,
+            8.9399995803833,
+            8.420588493347168
+          ]
+        }
+      },
+      {
+        "test": "Cargo local point follows elevated world transform",
+        "passed": true,
+        "details": {
+          "view": "cargo",
+          "p": [
+            0.42060954459533123,
+            2.38,
+            0.10204704827057665
+          ],
+          "world": [
+            210.89786728483585,
+            10.499999885559081,
+            8.420588760346057
+          ],
+          "avatarFeet": [
+            210.8978729248047,
+            8.9399995803833,
+            8.420588493347168
+          ]
+        }
+      },
+      {
+        "test": "Incline pitch replicated to passenger renderer",
+        "passed": true,
+        "details": {
+          "h": {
+            "p": [
+              167.39175053188714,
+              3.9660268300170975,
+              8
+            ],
+            "yaw": -1.5707963267948966,
+            "pitch": 0.37019114628494576,
+            "speed": 3.814941641380092
+          },
+          "g": {
+            "p": [
+              167.6597529282095,
+              4.104215377212182,
+              8
+            ],
+            "yaw": -1.571,
+            "pitch": 0.37019114628494576,
+            "speed": 3.815
+          }
+        }
+      },
+      {
+        "test": "Network packet carries distinct V0.9 metadata",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "One serialized world packet stays below 64KiB",
+        "passed": true,
+        "details": 11815
+      },
+      {
+        "test": "Guest cannot relocate the shared vehicle",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Return to old city synchronized",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Both clients retain 18 orders",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No JS errors in host or guest",
+        "passed": true,
+        "details": {
+          "host": [],
+          "guest": []
+        }
+      },
+      {
+        "test": "WebGL healthy on both clients",
+        "passed": true,
+        "details": null
+      }
+    ],
+    "traffic_fines_network": [
+      {
+        "test": "Host-authoritative traffic fine created",
+        "passed": true,
+        "details": {
+          "fines": 80,
+          "red": 1,
+          "crashes": 0,
+          "lastRedAt": 10.374999999999979,
+          "lastCrashAt": -99,
+          "lastRedKey": "skyway-x",
+          "lastCrashId": -1
+        }
+      },
+      {
+        "test": "Traffic fine synchronized to guest",
+        "passed": true,
+        "details": {
+          "host": {
+            "fines": 80,
+            "red": 1,
+            "crashes": 0,
+            "lastRedAt": 10.374999999999979,
+            "lastCrashAt": -99,
+            "lastRedKey": "skyway-x",
+            "lastCrashId": -1
+          },
+          "guest": {
+            "fines": 80,
+            "red": 1,
+            "crashes": 0,
+            "lastRedAt": -99,
+            "lastCrashAt": -99,
+            "lastRedKey": "",
+            "lastCrashId": -1
+          }
+        }
+      },
+      {
+        "test": "Score deduction synchronized",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Guest displays traffic-fine chip",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No runtime errors",
+        "passed": true,
+        "details": {
+          "host": [],
+          "guest": []
+        }
+      }
+    ],
+    "four_players": [
+      {
+        "test": "Four distinct actors admitted",
+        "passed": true,
+        "details": {
+          "roster": [
+            {
+              "id": 0,
+              "name": "快递员",
+              "online": true,
+              "host": true,
+              "view": "drive",
+              "rtt": 0,
+              "relay": false,
+              "linkType": "房主"
+            },
+            {
+              "id": 1,
+              "name": "快递员",
+              "online": true,
+              "host": false,
+              "view": "cargo",
+              "rtt": 261,
+              "relay": false,
+              "linkType": ""
+            },
+            {
+              "id": 2,
+              "name": "快递员",
+              "online": true,
+              "host": false,
+              "view": "cargo",
+              "rtt": 315,
+              "relay": false,
+              "linkType": ""
+            },
+            {
+              "id": 3,
+              "name": "快递员",
+              "online": true,
+              "host": false,
+              "view": "cargo",
+              "rtt": 0,
+              "relay": false,
+              "linkType": ""
+            }
+          ],
+          "actors": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "test": "Fourth guest has ID 3",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "All four clients share road-trial state",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Four-player protocol has no runtime errors",
+        "passed": true,
+        "details": null
+      }
+    ],
+    "pwa": [
+      {
+        "test": "Manifest has relative scope and start URL",
+        "passed": true
+      },
+      {
+        "test": "PNG icon exists: 192x192",
+        "passed": true
+      },
+      {
+        "test": "PNG icon exists: 512x512",
+        "passed": true
+      },
+      {
+        "test": "Shell installation does not activate during a live game",
+        "passed": true
+      },
+      {
+        "test": "Cache includes full game, manifest and icons only",
+        "passed": true
+      },
+      {
+        "test": "Activation preserves unrelated app caches",
+        "passed": true
+      },
+      {
+        "test": "Activation deletes only own outdated scope caches",
+        "passed": true
+      },
+      {
+        "test": "Game HTML uses network first",
+        "passed": true
+      },
+      {
+        "test": "Offline navigation returns cached game not a broken invite URL",
+        "passed": true
+      },
+      {
+        "test": "Server error never overwrites healthy offline HTML",
+        "passed": true
+      },
+      {
+        "test": "Cross-origin TURN credentials bypass cache",
+        "passed": true
+      },
+      {
+        "test": "Same-origin room APIs bypass cache",
+        "passed": true
+      },
+      {
+        "test": "POST requests bypass cache",
+        "passed": true
+      },
+      {
+        "test": "Unlisted resources are not opportunistically cached",
+        "passed": true
+      },
+      {
+        "test": "Unknown navigation does not cache false game responses",
+        "passed": true
+      },
+      {
+        "test": "Waiting update activates only on explicit message",
+        "passed": true
+      }
+    ],
+    "all_city_roads": [
+      {
+        "test": "Current playable title and network protocol",
+        "passed": true,
+        "details": "暴力快递 · V0.9.4 ALL ROADS · 全城模块道路"
+      },
+      {
+        "test": "Embedded original GLB assets finish loading",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Solo button starts in renewed original city not test zone",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Original graph: all 25 junctions and 38 streets preserved",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "101 real roadway modules cover the entire original city",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "All three districts and 18 addresses remain",
+        "passed": true,
+        "details": [
+          {
+            "num": 101,
+            "district": "garden"
+          },
+          {
+            "num": 102,
+            "district": "garden"
+          },
+          {
+            "num": 103,
+            "district": "garden"
+          },
+          {
+            "num": 104,
+            "district": "garden"
+          },
+          {
+            "num": 105,
+            "district": "garden"
+          },
+          {
+            "num": 106,
+            "district": "market"
+          },
+          {
+            "num": 107,
+            "district": "market"
+          },
+          {
+            "num": 108,
+            "district": "garden"
+          },
+          {
+            "num": 109,
+            "district": "garden"
+          },
+          {
+            "num": 110,
+            "district": "works"
+          },
+          {
+            "num": 111,
+            "district": "works"
+          },
+          {
+            "num": 112,
+            "district": "garden"
+          },
+          {
+            "num": 113,
+            "district": "market"
+          },
+          {
+            "num": 114,
+            "district": "market"
+          },
+          {
+            "num": 115,
+            "district": "works"
+          },
+          {
+            "num": 116,
+            "district": "works"
+          },
+          {
+            "num": 117,
+            "district": "works"
+          },
+          {
+            "num": 118,
+            "district": "works"
+          }
+        ]
+      },
+      {
+        "test": "Crossroads, T-junctions and corners use separate GLB types",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Legacy slabs/curbs removed from original world generator",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Every directional street centerline lies on actual Kenney asphalt",
+        "passed": true,
+        "details": {
+          "roads": 6156,
+          "joins": 912,
+          "turns": 8176
+        }
+      },
+      {
+        "test": "All seams continuous at both road edges and both lanes",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Every existing NPC turning spline stays within actual asphalt",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Removed graph links remain non-road, not fake shortcuts",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Original city connects seamlessly to SKYWAY entrance",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "76 inward-facing street lamps and 64 graph-controlled signals",
+        "passed": true,
+        "details": {
+          "junctions": 25,
+          "streets": 38,
+          "roadTiles": 101,
+          "lamps": 76,
+          "signals": 64,
+          "originalSlabs": 0,
+          "ready": true,
+          "tiles": [
+            {
+              "name": "road-bend",
+              "x": -112,
+              "z": -112,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 0,
+              "ports": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": -56,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 1,
+              "ports": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 0,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 2,
+              "ports": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 56,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 3,
+              "ports": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-bend",
+              "x": 112,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 4,
+              "ports": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": -56,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 5,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": -56,
+              "z": -56,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 6,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 0,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 7,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 56,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 8,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 112,
+              "z": -56,
+              "yaw": 4.71238898038469,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 9,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": -112,
+              "z": 0,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 10,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": -56,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 11,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 0,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 12,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 56,
+              "z": 0,
+              "yaw": 4.71238898038469,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 13,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": 0,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 14,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": -112,
+              "z": 56,
+              "yaw": 1.5707963267948966,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 15,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": -56,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 16,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 0,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 17,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 56,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 18,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-crossroad-path",
+              "x": 112,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 19,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-bend",
+              "x": -112,
+              "z": 112,
+              "yaw": 3.141592653589793,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 20,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": -56,
+              "z": 112,
+              "yaw": 3.141592653589793,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 21,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 0,
+              "z": 112,
+              "yaw": 3.141592653589793,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 22,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-intersection-path",
+              "x": 56,
+              "z": 112,
+              "yaw": 3.141592653589793,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 23,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-bend",
+              "x": 112,
+              "z": 112,
+              "yaw": 4.71238898038469,
+              "span": [
+                16,
+                16
+              ],
+              "nodeId": 24,
+              "ports": [
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1,
+                  0
+                ]
+              ],
+              "edgeId": null
+            },
+            {
+              "name": "road-straight",
+              "x": -94,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 0
+            },
+            {
+              "name": "road-straight",
+              "x": -74,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 0
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": -94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 1
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": -74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 1
+            },
+            {
+              "name": "road-straight",
+              "x": -38,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 2
+            },
+            {
+              "name": "road-straight",
+              "x": -18,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 2
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": -94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 3
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": -74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 3
+            },
+            {
+              "name": "road-straight",
+              "x": 18,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 4
+            },
+            {
+              "name": "road-straight",
+              "x": 38,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 4
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": -94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 5
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": -74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 5
+            },
+            {
+              "name": "road-straight",
+              "x": 74,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 6
+            },
+            {
+              "name": "road-straight",
+              "x": 94,
+              "z": -112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 6
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": -94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 7
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": -74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 7
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": -94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 8
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": -74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 8
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": -38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 9
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": -18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 9
+            },
+            {
+              "name": "road-straight",
+              "x": -38,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 10
+            },
+            {
+              "name": "road-straight",
+              "x": -18,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 10
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": -38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 11
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": -18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 11
+            },
+            {
+              "name": "road-straight",
+              "x": 18,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 12
+            },
+            {
+              "name": "road-straight",
+              "x": 38,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 12
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": -38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 13
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": -18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 13
+            },
+            {
+              "name": "road-straight",
+              "x": 74,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 14
+            },
+            {
+              "name": "road-straight",
+              "x": 94,
+              "z": -56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 14
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": -38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 15
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": -18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 15
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": -38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 16
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": -18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 16
+            },
+            {
+              "name": "road-straight",
+              "x": -94,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 17
+            },
+            {
+              "name": "road-straight",
+              "x": -74,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 17
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": 18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 18
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": 38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 18
+            },
+            {
+              "name": "road-straight",
+              "x": -38,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 19
+            },
+            {
+              "name": "road-straight",
+              "x": -18,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 19
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": 18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 20
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": 38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 20
+            },
+            {
+              "name": "road-straight",
+              "x": 18,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 21
+            },
+            {
+              "name": "road-straight",
+              "x": 38,
+              "z": 0,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 21
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": 18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 22
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": 38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 22
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": 18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 23
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": 38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 23
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": 18,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 24
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": 38,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 24
+            },
+            {
+              "name": "road-straight",
+              "x": -94,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 25
+            },
+            {
+              "name": "road-straight",
+              "x": -74,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 25
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": 74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 26
+            },
+            {
+              "name": "road-straight",
+              "x": -112,
+              "z": 94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 26
+            },
+            {
+              "name": "road-straight",
+              "x": -38,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 27
+            },
+            {
+              "name": "road-straight",
+              "x": -18,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 27
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": 74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 28
+            },
+            {
+              "name": "road-straight",
+              "x": -56,
+              "z": 94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 28
+            },
+            {
+              "name": "road-straight",
+              "x": 18,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 29
+            },
+            {
+              "name": "road-straight",
+              "x": 38,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 29
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": 74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 30
+            },
+            {
+              "name": "road-straight",
+              "x": 0,
+              "z": 94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 30
+            },
+            {
+              "name": "road-straight",
+              "x": 74,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 31
+            },
+            {
+              "name": "road-straight",
+              "x": 94,
+              "z": 56,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 31
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": 74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 32
+            },
+            {
+              "name": "road-straight",
+              "x": 56,
+              "z": 94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 32
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": 74,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 33
+            },
+            {
+              "name": "road-straight",
+              "x": 112,
+              "z": 94,
+              "yaw": 1.5707963267948966,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 33
+            },
+            {
+              "name": "road-straight",
+              "x": -94,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 34
+            },
+            {
+              "name": "road-straight",
+              "x": -74,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 34
+            },
+            {
+              "name": "road-straight",
+              "x": -38,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 35
+            },
+            {
+              "name": "road-straight",
+              "x": -18,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 35
+            },
+            {
+              "name": "road-straight",
+              "x": 18,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 36
+            },
+            {
+              "name": "road-straight",
+              "x": 38,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 36
+            },
+            {
+              "name": "road-straight",
+              "x": 74,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 37
+            },
+            {
+              "name": "road-straight",
+              "x": 94,
+              "z": 112,
+              "yaw": 0,
+              "span": [
+                20,
+                16
+              ],
+              "nodeId": null,
+              "ports": null,
+              "edgeId": 37
+            }
+          ]
+        }
+      },
+      {
+        "test": "City + test-zone furniture supports are outside drivable surfaces",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Real model -X sign normals face arriving cars",
+        "passed": true,
+        "details": {
+          "count": 74,
+          "min": 1.0
+        }
+      },
+      {
+        "test": "Real lamp -Z arms face the road, not the grass",
+        "passed": true,
+        "details": {
+          "count": 89,
+          "min": 1.0
+        }
+      },
+      {
+        "test": "Live signals cycle through red/amber/green",
+        "passed": true,
+        "details": [
+          "amber",
+          "green",
+          "red"
+        ]
+      },
+      {
+        "test": "All signal poles are attached to graph degree >=3",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "New city road red stop-line crossing produces existing $80 fine",
+        "passed": true,
+        "details": {
+          "fines": 80,
+          "red": 1,
+          "crashes": 0,
+          "lastRedAt": 8.433333333333309,
+          "lastCrashAt": -99,
+          "lastRedKey": "city-6-2",
+          "lastCrashId": -1
+        }
+      },
+      {
+        "test": "WASD actually drives across new road surfaces",
+        "passed": true,
+        "details": {
+          "p": [
+            3.05,
+            0.12,
+            66.52183333333333
+          ],
+          "yaw": 0,
+          "pitch": 0,
+          "speed": 12.040000000000015
+        }
+      },
+      {
+        "test": "City grass remains drivable rather than an invisible wall",
+        "passed": true,
+        "details": {
+          "p": [
+            20,
+            0.12,
+            18.845286984670498
+          ],
+          "yaw": 0,
+          "pitch": 0,
+          "speed": 1.6508937767888856
+        }
+      },
+      {
+        "test": "Two-minute traffic run stays on actual mesh across all sampled frames",
+        "passed": true,
+        "details": {
+          "samples": 840,
+          "failures": []
+        }
+      },
+      {
+        "test": "Traffic continues completing junction turns",
+        "passed": true,
+        "details": {
+          "turns": 124,
+          "left": 36,
+          "right": 27,
+          "redStops": 75,
+          "yields": 9,
+          "cleared": 0
+        }
+      },
+      {
+        "test": "NPCs stop for real signals and turn both directions",
+        "passed": true,
+        "details": {
+          "turns": 124,
+          "left": 36,
+          "right": 27,
+          "redStops": 75,
+          "yields": 9,
+          "cleared": 0
+        }
+      },
+      {
+        "test": "2v2 render mode does not hide the renewed city roads",
+        "passed": true,
+        "details": {
+          "visible": 46,
+          "triangles": 27443
+        }
+      },
+      {
+        "test": "City and test-zone batches use distinct region tags",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No WebGL or JavaScript errors",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Mobile (320, 640) retains edge-to-edge viewport without overflow",
+        "passed": true,
+        "details": {
+          "w": 320,
+          "h": 640,
+          "gw": 320,
+          "gh": 640,
+          "d": 320
+        }
+      },
+      {
+        "test": "Mobile (320, 640) ready, 18 orders, no runtime error",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Mobile (390, 844) retains edge-to-edge viewport without overflow",
+        "passed": true,
+        "details": {
+          "w": 390,
+          "h": 844,
+          "gw": 390,
+          "gh": 844,
+          "d": 390
+        }
+      },
+      {
+        "test": "Mobile (390, 844) ready, 18 orders, no runtime error",
+        "passed": true,
+        "details": []
+      },
+      {
+        "test": "Mobile (844, 390) retains edge-to-edge viewport without overflow",
+        "passed": true,
+        "details": {
+          "w": 844,
+          "h": 390,
+          "gw": 844,
+          "gh": 390,
+          "d": 844
+        }
+      },
+      {
+        "test": "Mobile (844, 390) ready, 18 orders, no runtime error",
+        "passed": true,
+        "details": []
+      }
+    ],
+    "four_client_2v2_city": [
+      {
+        "test": "Real 2v2 room starts after fourth client joins",
+        "passed": true,
+        "details": {
+          "protocol": "crash-delivery-duel2v2-1",
+          "active": true,
+          "elapsed": 0.24999999999999997,
+          "overtime": false,
+          "remaining": 299.75,
+          "winner": null,
+          "endReason": "",
+          "trucks": {
+            "amber": {
+              "team": "amber",
+              "delivered": 0,
+              "cargoCount": 18,
+              "targetIndex": 0,
+              "vehicle": {
+                "p": [
+                  -3.05,
+                  0.1,
+                  56.285714285714285
+                ],
+                "yaw": -3.141592653589793,
+                "speed": 0,
+                "inputSeq": 30
+              },
+              "hp": 100,
+              "hitCount": 0,
+              "slowRemaining": 0,
+              "disabled": false,
+              "burning": false,
+              "burnTotal": 0,
+              "burnRemaining": 30,
+              "repair": null,
+              "exploded": false,
+              "cannonReadyIn": 0
+            },
+            "teal": {
+              "team": "teal",
+              "delivered": 0,
+              "cargoCount": 18,
+              "targetIndex": 9,
+              "vehicle": {
+                "p": [
+                  -3.05,
+                  0.1,
+                  56.392857142857146
+                ],
+                "yaw": -3.141592653589793,
+                "speed": 0,
+                "inputSeq": 30
+              },
+              "hp": 100,
+              "hitCount": 0,
+              "slowRemaining": 0,
+              "disabled": false,
+              "burning": false,
+              "burnTotal": 0,
+              "burnRemaining": 30,
+              "repair": null,
+              "exploded": false,
+              "cannonReadyIn": 0
+            }
+          },
+          "projectiles": [],
+          "events": []
+        }
+      },
+      {
+        "test": "Host publishes two distinct team vehicles",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "Player 1 actually renders renewed city road geometry",
+        "passed": true,
+        "details": {
+          "visible": 30,
+          "triangles": 15870
+        }
+      },
+      {
+        "test": "Player 2 actually renders renewed city road geometry",
+        "passed": true,
+        "details": {
+          "visible": 45,
+          "triangles": 24826
+        }
+      },
+      {
+        "test": "Player 3 actually renders renewed city road geometry",
+        "passed": true,
+        "details": {
+          "visible": 30,
+          "triangles": 15870
+        }
+      },
+      {
+        "test": "Player 4 actually renders renewed city road geometry",
+        "passed": true,
+        "details": {
+          "visible": 45,
+          "triangles": 24826
+        }
+      },
+      {
+        "test": "2v2 driver moves via real input and authority ticks",
+        "passed": true,
+        "details": {
+          "before": [
+            -3.05,
+            0.1,
+            56.285714285714285
+          ],
+          "after": [
+            -3.05,
+            0.1,
+            73.55738095238097
+          ]
+        }
+      },
+      {
+        "test": "Teammate receives moved team vehicle",
+        "passed": true,
+        "details": {
+          "host": [
+            -3.05,
+            0.1,
+            73.55738095238097
+          ],
+          "guest": [
+            -3.05,
+            0.1,
+            73.55738095238097
+          ]
+        }
+      },
+      {
+        "test": "All four clients retain healthy WebGL",
+        "passed": true,
+        "details": null
+      },
+      {
+        "test": "No 2v2 JavaScript errors",
+        "passed": true,
+        "details": [
+          [],
+          [],
+          [],
+          []
+        ]
+      }
+    ]
+  }
+}

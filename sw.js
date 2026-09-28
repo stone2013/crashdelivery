@@ -1,8 +1,8 @@
-/* Crash Delivery V0.9.3. Versioned shell only; no room/token responses are cached. */
+/* Crash Delivery V0.9.4. Versioned shell only; no room/token responses are cached. */
 'use strict';
 const ROOT = new URL('./', self.registration.scope);
 const PREFIX = 'crashdelivery-pwa::' + ROOT.pathname + '::';
-const CACHE = PREFIX + 'db760664bc3d54ad';
+const CACHE = PREFIX + '66ed05469a35f46b';
 const INDEX = new URL('index.html', ROOT).href;
 const STATIC = ['manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png'].map(p=>new URL(p,ROOT).href);
 const SHELL = [INDEX,...STATIC];
