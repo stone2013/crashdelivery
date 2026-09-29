@@ -1,8 +1,8 @@
-/* Crash Delivery V0.10.5.1-native. Versioned shell only; no room/token responses are cached. */
+/* Crash Delivery V0.11. Versioned shell only; no room/token responses are cached. */
 'use strict';
 const ROOT = new URL('./', self.registration.scope);
 const PREFIX = 'crashdelivery-pwa::' + ROOT.pathname + '::';
-const CACHE = PREFIX + 'cfff10f0c34896b9';
+const CACHE = PREFIX + '0ddc3fbfd11d407b';
 const INDEX = new URL('index.html', ROOT).href;
 const STATIC = ["manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/apple-touch-icon.png","assets/kenney-industrial/building-a.glb","assets/kenney-industrial/building-f.glb","assets/kenney-industrial/building-l.glb","assets/kenney-industrial/building-q.glb","assets/kenney-industrial/building-r.glb","assets/kenney-industrial/building-t.glb","assets/kenney-industrial/water-tower.glb","assets/kenney-industrial/detail-tank-large.glb","assets/kenney-industrial/chimney-large.glb","assets/kenney-industrial/shipping-container-a.glb","assets/kenney-industrial/shipping-container-b.glb","assets/kenney-industrial/shipping-container-c.glb","assets/kenney-industrial/solar-panel-landscape-group.glb","assets/kenney-industrial/variation-a.png"].map(p=>new URL(p,ROOT).href);
 const SHELL = [INDEX,...STATIC];
