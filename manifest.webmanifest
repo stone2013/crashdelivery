@@ -2,7 +2,7 @@
   "id": "./",
   "name": "暴力快递 Crash Delivery V0.10.5.1",
   "short_name": "暴力快递",
-  "description": "Crash Delivery V0.10.5.1：工业投递门采用贴图/Decal，PWA 全屏修复。",
+  "description": "V0.10.5.1：使用 Kenney 厂房原生库门作为工业投递目标；不新增库门模型或库门贴图；PWA 全屏修复。",
   "lang": "zh-CN",
   "start_url": "./index.html",
   "scope": "./",

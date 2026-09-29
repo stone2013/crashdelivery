@@ -1,9 +1,8 @@
 {
   "version": "0.10.5.1",
-  "name": "TEXTURE DOORS / PWA FULLSCREEN",
-  "protocol": "crash-delivery-mp01051-1",
-  "parent_release": "0.10.5 INDUSTRIAL POLISH",
-  "parent_index_sha256": "77db00ca06b463e3d44f8017df6cb40003b3503902c583ff87a7e82e5b2576f0",
-  "html_sha256": "819cb8235db907891f4a71353a0a2397123aa4de2104caa55e743a7ef7a46d35",
-  "notes": "Removes extra 3D industrial receiving-bay geometry and draws garage doors, numbers and loading aprons as WebGL canvas-texture decals. Invisible delivery triggers remain authoritative. iOS standalone viewport uses physical screen height fallback so menu/game/pause backgrounds fill the full PWA screen."
+  "name": "NATIVE DOORS / PWA FULLSCREEN",
+  "protocol": "crash-delivery-mp01051n-1",
+  "parent_index_sha256": "819cb8235db907891f4a71353a0a2397123aa4de2104caa55e743a7ef7a46d35",
+  "html_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7",
+  "notes": "No added garage-door model or garage-door texture. Industrial delivery triggers sit directly in front of the existing Kenney factory garage facade; only the optional yellow ground outline remains."
 }
