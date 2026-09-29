@@ -1590,7 +1590,7 @@ interact=function(){
  const f=collectFocus();if(!f){showHint(state.view==='outside'?'靠近编号包裹并低头；上车请绕到后门。':'低头对准编号箱，或走到车厢前方驾驶位。',3);return;}
  if(f.type==='ground'&&!player.held){
   const i=packages.indexOf(f.item);if(i<0||f.item.delivered)return;
-  player.held=packages.splice(i,1)[0];player.held.pending=null;player.held.thrown=false;player.held.age=0;player.held.v=[0,0,0];
+  player.held=packages.splice(i,1)[0];player.held.pending=null;player.held.thrown=false;player.held.age=0;player.held.v=[0,0,0];player.held.returnToDoor=false;player.held.rest012=null;player.held.hitNpc=null;player.held.hitNpcAt=-2;player.held.lastHit=-2;
   player.held.r=parcelType(player.held.kind).r;currentKind=player.held.kind;state.recovered=(state.recovered||0)+1;
   cancelCharge();pulse('pick');tone(490,.12);showHint('回收 '+parcelLabel(player.held)+'。拿回货箱或从地面投递。',4);syncButtons();
  }else if(f.type==='board')mobility();
@@ -1645,7 +1645,7 @@ startCharge=function(source){
 throwPackage=function(){
  if(!player.held||!isWalking()||state.mode!=='playing'||state.cooldown>0)return;
  if(net.mode==='guest'&&!net.applying){const id=player.held.id,seq=action('throw',{power:state.charge});net.pendingThrow={id,seq};player.held=null;state.cooldown=.32;pulse('throw');syncButtons();return;}
- const s=shotSolution(),p=player.held;player.held=null;p.thrown=true;p.delivered=false;p.pending=null;p.age=0;p.bounces=0;p.blastBoosted=false;
+ const s=shotSolution(),p=player.held;player.held=null;p.thrown=true;p.delivered=false;p.pending=null;p.age=0;p.bounces=0;p.blastBoosted=false;p.returnToDoor=false;p.rest012=null;p.hitNpc=null;p.hitNpcAt=-2;p.lastHit=-2;
  p.vehicleSpeed=state.view==='outside'?0:Math.abs(car.speed);p.dist=V.len(V.sub(s.point,s.origin));p.spin=[1.8,2.3,.9];p.rot=[.05,worldYaw(),0];
  state.shots++;state.cooldown=.32;
  if(state.view==='outside'){p.p=s.origin;p.v=s.v;packages.push(p);}
@@ -3940,8 +3940,9 @@ function sub011Draw(){if(!SUB011.ready||state.mode==='wardrobe')return;SUB011.dr
 function sub011RayTri(a,b,tri){const d=V.sub(b,a),e1=V.sub(tri[1],tri[0]),e2=V.sub(tri[2],tri[0]),p=V.cross(d,e2),det=V.dot(e1,p);if(Math.abs(det)<1e-10)return null;const inv=1/det,t=V.sub(a,tri[0]),u=V.dot(t,p)*inv;if(u<0||u>1)return null;const q=V.cross(t,e1),v=V.dot(d,q)*inv;if(v<0||u+v>1)return null;const time=V.dot(e2,q)*inv;return time>=0&&time<=1?{t:time,n:V.norm(V.cross(e1,e2))}:null;}
 function sub011AssetPoint(o,p){const q=houseLocal(o,p),b=SUB011.assets.get(o.name).bounds;return[-q[0]/o.scale+b.center[0],(q[1]-.12)/o.scale+b.center[1],-q[2]/o.scale+b.center[2]];}
 function sub011TargetHit(h,g,old,next,p){const a=houseLocal(h,old),b=houseLocal(h,next),r=p.r||.24,z=g.planeZ+Math.max(.45,r+.08),dz=b[2]-a[2];if(dz>=-1e-6||a[2]<z||b[2]>z)return null;const u=(z-a[2])/dz,q=V.lerp(a,b,u);if(Math.abs(q[0]-g.x)>g.w/2-r*.35||Math.abs(q[1]-g.y)>g.h/2-r*.35)return null;return{t:u,h,g,q};}
+function sub011SegmentNear(o,a,b,pad=7){const dx=b[0]-a[0],dz=b[2]-a[2],den=dx*dx+dz*dz,t=den?clamp(((o.x-a[0])*dx+(o.z-a[2])*dz)/den,0,1):0,x=a[0]+dx*t,z=a[2]+dz*t;return Math.hypot(x-o.x,z-o.z)<=Math.hypot(o.hw,o.hd)+pad;}
 function sub011Intercept(p,old,next){let hit=null;
- for(const o of SUB011.homes){if(Math.hypot(old[0]-o.x,old[2]-o.z)>o.hw+o.hd+7)continue;const h=o.h;
+ for(const o of SUB011.homes){if(!sub011SegmentNear(o,old,next,7+(p.r||.24)))continue;const h=o.h;
   for(const g of h.gates){const v=sub011TargetHit(h,g,old,next,p);if(v&&(!hit||v.t<hit.t))hit={...v,kind:'gate'};}
   const la=sub011AssetPoint(o,old),lb=sub011AssetPoint(o,next),bb=SUB011.assets.get(o.name).bounds;if(!segmentBox(la,lb,bb.min,bb.max))continue;
   for(const tri of SUB011.assets.get(o.name).faces){const v=sub011RayTri(la,lb,tri);if(v&&(!hit||v.t<hit.t))hit={...v,kind:'solid',o};}
