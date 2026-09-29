@@ -1,0 +1,17 @@
+Crash Delivery V0.10.4 — changed-files patch
+
+覆盖到完整 V0.10.3 INDUSTRIAL FIX 工程。
+
+主要替换：
+- index.html
+- sw.js
+- manifest.webmanifest
+- build.py
+- VERSION_V09.json
+- src/v0103-baseline.html
+- src/v0104-industrial.js
+- src/sw-template.js
+- CHANGELOG_V0104.md
+- TEST_REPORT_V0104.md
+
+Industrial 2.0 GLB 资产没有变化，不需要重复覆盖。

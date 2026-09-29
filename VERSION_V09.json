@@ -1,9 +1,9 @@
 {
-  "version": "0.10.3",
-  "name": "INDUSTRIAL DELIVERY FIX / INTEGRATED RECEIVING FACADES",
-  "protocol": "crash-delivery-mp0103-1",
-  "parent_release": "0.10.2 INDUSTRIAL+",
-  "parent_index_sha256": "afe9181d048069ce6932ee5e015fd266c126bbcccd76ac64d703d40215cc4eec",
-  "html_sha256": "afdf9fda8e1dbec8763f96c506d61474a0578b71f507cc531737365938fea7dd",
-  "notes": "Factory receiving targets are flush/integrated into enlarged road-facing Kenney buildings; no free-standing black delivery tunnels. Main factories and infill are scale-normalized. 2.4m facade setback supports drive-by throws. V0.10.2 glass decals, lighting, CITY LOOP, fines, multiplayer and PWA retained."
+  "version": "0.10.4",
+  "name": "INDUSTRIAL PLACEMENT FIX / GROUND FRONTAGE ONLY",
+  "protocol": "crash-delivery-mp0104-1",
+  "parent_release": "0.10.3 INDUSTRIAL FIX",
+  "parent_index_sha256": "afdf9fda8e1dbec8763f96c506d61474a0578b71f507cc531737365938fea7dd",
+  "html_sha256": "f301bece71299962515ed12afa71c9191d1bd50d85c9a862a8530e2ba4f966b2",
+  "notes": "Industrial factories now select ground-level city frontage only, reject lots beneath/adjacent to SKYWAY ramps and overpasses, align Kenney facades with receiving bays, and keep 2.4m drive-by delivery setback. V0.10.3 scale normalization, integrated bays, glass decals, lighting, CITY LOOP, fines, multiplayer and PWA retained."
 }

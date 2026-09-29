@@ -1,4 +1,4 @@
-/* Crash Delivery V0.10.3. Versioned shell only; no room/token responses are cached. */
+/* Crash Delivery V0.10.4. Versioned shell only; no room/token responses are cached. */
 'use strict';
 const ROOT = new URL('./', self.registration.scope);
 const PREFIX = 'crashdelivery-pwa::' + ROOT.pathname + '::';

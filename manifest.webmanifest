@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "暴力快递 V0.10.3 · INDUSTRIAL FIX",
+  "name": "暴力快递 V0.10.4 · INDUSTRIAL PLACEMENT",
   "short_name": "暴力快递",
-  "description": "大型临街工业厂房、嵌入式收货口、车上投递、玻璃破洞、柔和光影、CITY LOOP 与多人合作。",
+  "description": "工业厂房只沿地面普通道路布置，避开高架/匝道，保留嵌入式收货口、车上投递、玻璃破洞、柔和光影、CITY LOOP 与多人合作。",
   "lang": "zh-CN",
   "start_url": "./index.html",
   "scope": "./",
