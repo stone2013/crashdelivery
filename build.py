@@ -11,10 +11,10 @@ def one(a,b):
  global s
  if s.count(a)!=1:raise RuntimeError('Expected one anchor: '+a[:80]+' count '+str(s.count(a)))
  s=s.replace(a,b,1)
-one("const NET_PROTOCOL='crash-delivery-mp01051n-1';","const NET_PROTOCOL='crash-delivery-mp011-1';")
-s=re.sub(r'<title>.*?</title>','<title>暴力快递 · V0.11 SUBURBAN · 原生住宅更新</title>',s,count=1)
-s=re.sub(r'<meta name="description" content="[^"]*">','<meta name="description" content="暴力快递 V0.11：Kenney 白墙绿顶住宅、原生门窗投递、草坪前院；保留工业区、18 单、多人合作、2v2 与 PWA。">',s,count=1)
-one("edition.innerHTML='V0.10.5.1 ONLINE <span>NATIVE DOORS</span>'","edition.innerHTML='V0.11 ONLINE <span>SUBURBAN</span>'")
+one("const NET_PROTOCOL='crash-delivery-mp01051n-1';","const NET_PROTOCOL='crash-delivery-mp0111-1';")
+s=re.sub(r'<title>.*?</title>','<title>暴力快递 · V0.11.1 PWA FIX · SUBURBAN</title>',s,count=1)
+s=re.sub(r'<meta name="description" content="[^"]*">','<meta name="description" content="暴力快递 V0.11.1：修复 iPhone PWA 底部空白与恢复前台后的视口高度；保留 V0.11 住宅区更新。">',s,count=1)
+one("edition.innerHTML='V0.10.5.1 ONLINE <span>NATIVE DOORS</span>'","edition.innerHTML='V0.11.1 ONLINE <span>PWA FIX</span>'")
 s=s.replace("'整座城，<br>换上新路。'","'开进新街区，<br>把快递送回家。'").replace('住宅、商业、工业与高架，全城统一模块道路。','白墙绿屋顶、草坪前院，住宅区焕然一新。').replace('全城新路 · 单人派送 →','V0.11 · 单人派送 →').replace('SKYWAY / 09','SKYWAY / V0.11')
 one("if(style==='works'){h.deliveryMode='industrial';houses.push(h);return h;}","if(style==='works'){h.deliveryMode='industrial';houses.push(h);return h;}if(style==='garden'){h.deliveryMode='native-residential';houses.push(h);return h;}")
 s=s.replace("if(h.style==='works')continue;","if(h.style==='works'||h.style==='garden')continue;")
@@ -35,13 +35,13 @@ for sid in ['v0105Css','v01051Css']:s=re.sub(r'<style id="'+sid+r'">.*?</style>'
 s=s.replace('</head>','<style id="viewport011">\n'+(ROOT/'src/viewport-v011.css').read_text()+'</style>\n</head>',1)
 module=(ROOT/'src/suburban-v011.js').read_text()+'\n'+(ROOT/'src/viewport-v011.js').read_text()+'\n'+(ROOT/'src/qa-v011.js').read_text();anchor='\n})();\n</script>';pos=s.rfind(anchor)
 if pos<0:raise RuntimeError('Main closure missing')
-s=s[:pos]+'\n'+module+s[pos:];s=s.replace("version:'multiplayer-0.7.0'","version:'0.11.0'")
+s=s[:pos]+'\n'+module+s[pos:];s=s.replace("version:'multiplayer-0.7.0'","version:'0.11.1'")
 if shutil.which('node'):
  with tempfile.TemporaryDirectory() as d:
   for i,js in enumerate(re.findall(r'<script[^>]*>(.*?)</script>',s,re.S)):
    p=Path(d)/f'{i}.js';p.write_text(js);subprocess.run(['node','--check',str(p)],check=True)
 a=argparse.ArgumentParser();a.add_argument('--output',type=Path,default=ROOT/'index.html');args=a.parse_args();args.output.write_text(s,encoding='utf8')
-sha=hashlib.sha256(s.encode()).hexdigest();(ROOT/'VERSION.json').write_text(json.dumps({'version':'0.11.0','label':'V0.11 SUBURBAN','protocol':'crash-delivery-mp011-1','html_sha256':sha,'base_sha256':SHA},indent=2));shutil.copy2(ROOT/'VERSION.json',ROOT/'VERSION_V09.json')
+sha=hashlib.sha256(s.encode()).hexdigest();(ROOT/'VERSION.json').write_text(json.dumps({'version':'0.11.0','label':'V0.11 SUBURBAN','protocol':'crash-delivery-mp0111-1','html_sha256':sha,'base_sha256':SHA},indent=2));shutil.copy2(ROOT/'VERSION.json',ROOT/'VERSION_V09.json')
 tmpl=(ROOT/'src/sw-template.js').read_text();paths=[str(p.relative_to(ROOT)).replace('\\','/') for p in sorted((ROOT/'assets').rglob('*')) if p.is_file() and p.suffix in ['.glb','.png','.json']]+['manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/apple-touch-icon.png']
-tmpl=re.sub(r'const STATIC = .*?\.map\(p=>new URL\(p,ROOT\)\.href\);','const STATIC = '+json.dumps(paths)+'.map(p=>new URL(p,ROOT).href);',tmpl,flags=re.S,count=1);tmpl=tmpl.replace('V0.10.5.1','V0.11');(ROOT/'sw.js').write_text(tmpl.replace('__BUILD_HASH__',sha[:16]))
-print('Built V0.11',len(s.encode()),'bytes',sha,'static files',len(paths))
+tmpl=re.sub(r'const STATIC = .*?\.map\(p=>new URL\(p,ROOT\)\.href\);','const STATIC = '+json.dumps(paths)+'.map(p=>new URL(p,ROOT).href);',tmpl,flags=re.S,count=1);tmpl=tmpl.replace('V0.10.5.1','V0.11.1');(ROOT/'sw.js').write_text(tmpl.replace('__BUILD_HASH__',sha[:16]))
+print('Built V0.11.1',len(s.encode()),'bytes',sha,'static files',len(paths))

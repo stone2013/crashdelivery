@@ -1,7 +1,7 @@
 {
-  "version": "0.11.0",
-  "label": "V0.11 SUBURBAN",
-  "protocol": "crash-delivery-mp011-1",
-  "html_sha256": "3edebd0c8fb92ec6d7b66bd623cac505b100c7e93c2454cbc1ed240ef95f313e",
+  "version": "0.11.1",
+  "label": "V0.11.1 PWA FIX",
+  "protocol": "crash-delivery-mp0111-1",
+  "html_sha256": "39a8a7b72636fac09f473e1f0a5fc16dafc2dc3f4c6790ab501b2cc5e5fd5ea9",
   "base_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7"
 }

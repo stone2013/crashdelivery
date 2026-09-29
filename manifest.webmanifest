@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "暴力快递 V0.11 · SUBURBAN",
+  "name": "暴力快递 V0.11.1 · PWA FIX",
   "short_name": "暴力快递",
-  "description": "V0.11 原生住宅门窗投递、工业区与多人合作。",
+  "description": "V0.11.1 修复 iPhone PWA 全屏高度、底部空白、旋转和恢复前台后的视口同步。",
   "lang": "zh-CN",
   "start_url": "./index.html",
   "scope": "./",
@@ -26,5 +26,8 @@
       "type": "image/png",
       "purpose": "any"
     }
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

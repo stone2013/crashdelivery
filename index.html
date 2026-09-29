@@ -4,8 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#162e34"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="暴力快递 V0.11：Kenney 白墙绿顶住宅、原生门窗投递、草坪前院；保留工业区、18 单、多人合作、2v2 与 PWA。">
-<title>暴力快递 · V0.11 SUBURBAN · 原生住宅更新</title>
+<meta name="description" content="暴力快递 V0.11.1：修复 iPhone PWA 底部空白与恢复前台后的视口高度；保留 V0.11 住宅区更新。">
+<title>暴力快递 · V0.11.1 PWA FIX · SUBURBAN</title>
 <script>window.CRASH_TURN_CREDENTIALS_URL='https://api.feelpal.app/turn-credentials';</script>
 <style>:root{--ink:#16343a;--deep:#142b31;--gold:#ffd05b;--cream:#fff4d7;--muted:#abc2c4;--safeB:env(safe-area-inset-bottom,0px);--safeT:env(safe-area-inset-top,0px);--safeL:env(safe-area-inset-left,0px);--safeR:env(safe-area-inset-right,0px)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--deep);color:var(--cream);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;user-select:none;-webkit-user-select:none;overscroll-behavior:none}button{font:inherit;color:inherit;cursor:pointer;border:0;-webkit-tap-highlight-color:transparent;touch-action:none}button:focus-visible,canvas:focus-visible{outline:2px solid var(--gold);outline-offset:3px}button:disabled{opacity:.42;cursor:default}button:active{transform:translateY(1px)}.hidden{display:none!important}#game,#world,#overlay,#hud,#vignette{position:absolute;inset:0;width:100%;height:100%}#world{touch-action:none;display:block;outline:none}#overlay,#hud,#vignette{pointer-events:none}#vignette{background:linear-gradient(#133c4235,transparent 24%,transparent 74%,#142b3140)}#hud button,#hud .joystick{pointer-events:auto}.control{background:#16343ae8;border:1px solid #ffffff36;border-radius:15px;box-shadow:0 2px 0 #0e292849;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}.control.pressed,.control.active{background:var(--gold);color:var(--ink);border-color:#ffe6a6}.statusbar{position:absolute;left:max(16px,var(--safeL));top:calc(10px + var(--safeT));height:44px;display:flex;align-items:center;gap:17px;border-radius:13px;background:#142f37e5;padding-left:13px;font-size:14px;border:1px solid #ffffff25}.viewtag{font-size:11px;letter-spacing:1px;color:var(--gold);padding-right:12px;border-right:1px solid #ffffff2a}.stat small{font-size:10px;color:var(--muted);margin-left:4px}.money{color:var(--gold)}.statusbar b,.time{font-variant-numeric:tabular-nums}.time{font-size:12px;color:#d2e0dc}.pause{border:0;border-left:1px solid #ffffff25;border-radius:0 12px 12px 0;background:transparent;font-size:18px}.route{position:absolute;top:calc(62px + var(--safeT));left:max(16px,var(--safeL));height:35px;max-width:310px;display:flex;align-items:center;gap:11px;background:#16343ad2;border-radius:9px;padding:0 12px;font-size:12px}.route>b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}.route>span:first-child{color:var(--gold);font-size:17px}.route>span:last-child{color:var(--gold);white-space:nowrap}.statuschips{position:absolute;left:max(17px,var(--safeL));top:calc(105px + var(--safeT));display:flex;gap:5px;flex-wrap:wrap;max-width:calc(100% - 120px)}.statuschips>span{background:#17373ac9;border:1px solid #ffffff12;padding:4px 7px;border-radius:5px;font-size:9px;white-space:nowrap}.statuschips>.warn{background:#9f552ce8;color:#fff2cf}.statuschips>.on{color:#ffdb81}.mapPanel{position:absolute;right:max(17px,var(--safeR));top:calc(12px + var(--safeT));width:106px;padding:6px;border-radius:12px;background:#16343adb;border:1px solid #ffffff22}.mapPanel canvas{width:100%;height:auto;display:block;border-radius:7px}.mapPanel small{display:block;font-size:9px;color:#b1c8c5;text-align:center;margin:4px 0 1px}.mapPanel small span{color:var(--gold)}#risk{position:absolute;left:50%;top:calc(20px + var(--safeT));transform:translateX(-50%);background:#934829ec;border:1px solid #ffd68e77;border-radius:8px;padding:8px 12px;font-size:12px;white-space:nowrap}#toast{position:absolute;top:23%;left:50%;transform:translate(-50%,-8px);opacity:0;transition:opacity .15s,transform .15s;background:#16343af2;border:1px solid #ffd05b5b;max-width:min(370px,85%);min-width:230px;padding:15px 22px;border-radius:13px;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}#toast b{display:block;color:var(--gold);font-size:24px}#toast span{display:block;font-size:11px;line-height:1.7;margin-top:5px;color:#dce8df}#hint{position:absolute;bottom:calc(154px + var(--safeB));left:50%;transform:translateX(-50%);background:#17343acf;color:#f7f2d9;border-radius:10px;padding:7px 12px;font-size:11px;line-height:1.55;text-align:center;max-width:min(430px,70%);width:max-content}.telemetry{position:absolute;left:50%;bottom:calc(45px + var(--safeB));transform:translateX(-50%);display:flex;align-items:baseline;gap:4px;text-shadow:0 2px 10px #17373a}.telemetry strong{font-size:42px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-1px}.telemetry small{font-size:9px;color:#d0e0dc}.healthtrack{position:absolute;width:70px;bottom:-12px;left:0;height:3px;background:#1c3439b0;border-radius:3px;overflow:hidden}.healthtrack i{display:block;height:100%;width:100%;background:#afd5b5}.driveLeft{position:absolute;left:max(23px,var(--safeL));bottom:calc(25px + var(--safeB))}.driveRight{position:absolute;right:max(23px,var(--safeR));bottom:calc(25px + var(--safeB));display:flex;flex-direction:column;align-items:flex-end;gap:10px}.steering,.pedals{display:flex;gap:8px}.steering button{width:64px;height:58px;font-size:21px}.pedals button{width:64px;height:58px;font-size:12px}.pedals .gas{background:#eff0dfe8;color:var(--ink);border-color:#faf9dd}.pedals .gas.pressed{background:var(--gold)}.driveTools{margin-bottom:9px;display:flex;gap:7px}.tool{gap:5px;padding:0 13px;font-size:18px}.tool small{font-size:11px}.enter{gap:7px;background:var(--gold);color:var(--ink);padding:0 13px;height:48px;border-color:#ffe7a7}.enter span{font-size:24px}.enter b{font-size:12px}.keyhelp{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:10px;color:#fff5d8bd;white-space:nowrap}kbd{font:inherit;font-size:10px;opacity:.65;border:1px solid currentColor;padding:1px 4px;border-radius:4px;margin-left:3px}.joystick{position:absolute;width:128px;height:128px;left:max(23px,var(--safeL));bottom:calc(26px + var(--safeB));touch-action:none}.stickring{position:absolute;inset:5px;background:#173b3ba9;border:1px solid #ffffff3f;border-radius:50%;pointer-events:none}.stickthumb{position:absolute;left:44px;top:44px;width:40px;height:40px;border-radius:50%;background:#e1e9dabb;border:1px solid #ffffff6a;pointer-events:none}.joystick small{position:absolute;left:0;right:0;bottom:-7px;text-align:center;font-size:8px;color:#fff4d5a0;pointer-events:none}.walk{position:absolute;background:transparent;border:0;width:44px;height:44px;font-size:10px;color:#fff9df8a;border-radius:50%;touch-action:none}.walk.up{left:42px;top:-2px}.walk.down{left:42px;bottom:-2px}.walk.left{left:-2px;top:42px}.walk.right{right:-2px;top:42px}.walk.pressed{background:#ffd05b66;color:#fff4d5}.cargoActions{position:absolute;right:max(23px,var(--safeR));bottom:calc(25px + var(--safeB));display:flex;flex-direction:column;align-items:flex-end;gap:7px}.smallAct{font-size:11px;border-radius:10px;min-width:66px;padding:0 10px;min-height:44px}.interact{background:#f2f1deef;color:var(--ink);gap:6px;padding:0 14px;height:49px;font-size:12px}.interact span{font-size:18px}.throw{background:var(--gold);color:var(--ink);width:82px;height:80px;border-radius:23px;border:2px solid #ffe6a6;flex-direction:column;gap:1px;box-shadow:0 4px 0 #a9833999}.throw span{font-size:30px;line-height:28px}.throw b{font-size:13px}.throw.charging{background:#ffefaa;transform:translateY(2px);box-shadow:none}.powertrack{width:82px;height:4px;background:#102e32ad;border-radius:3px;overflow:hidden}.powertrack i{display:block;width:0;height:100%;background:var(--gold)}.rearControls{position:absolute;left:50%;bottom:calc(91px + var(--safeB));transform:translateX(-50%);text-align:center}.rearControls small{font-size:8px;display:block;color:#ebf1d8;margin-bottom:4px;text-shadow:0 1px 4px #1c3037}.rearControls>div{display:flex;gap:5px}.doorToggle{font-size:11px;min-width:44px;min-height:44px;border-radius:10px}.doorToggle.open{background:#955c30dd;border-color:#e7ad7150}#crosshair{position:absolute;top:50%;left:50%;width:18px;height:18px;transform:translate(-50%,-50%);border:1px solid #fff6d99c;border-radius:50%;box-shadow:0 0 3px #193d41}#crosshair i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff1b2;top:6px;left:6px}#crosshair.locked{border-color:#ffd05b;width:25px;height:25px}#crosshair.locked i{left:10px;top:10px}#focusLabel{position:absolute;top:calc(50% + 22px);left:50%;transform:translateX(-50%);font-size:11px;background:#123339d9;border-radius:6px;padding:5px 8px;white-space:nowrap;max-width:90%;text-overflow:ellipsis;overflow:hidden}#focusLabel:empty{display:none}.screen{position:absolute;inset:0;z-index:10}.menuScreen{padding:36px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#112d34f5,#112d34e7 27%,#112d3480 51%,#112d3400 77%)}.menuCopy{max-width:490px}.eyebrow{color:#a5c2c2;font-size:9px;letter-spacing:2px;display:flex;align-items:center;gap:8px}.eyebrow i{width:6px;height:6px;background:var(--gold);border-radius:50%}.menuCopy h1{font-size:66px;letter-spacing:-3px;line-height:1.05;margin:22px 0 8px;font-weight:900;white-space:nowrap}.menuCopy h1 span{color:var(--gold)}.menuCopy h1 sup{font-size:42px;margin-left:7px}.englishTitle{font-size:12px;color:#c0d2cd;letter-spacing:6px}.edition{font-size:10px;letter-spacing:2px;margin:22px 0 0;color:#ffd972;display:flex;align-items:center;gap:11px}.edition span{padding:5px 9px;border:1px solid #ffd05b4a;border-radius:4px;font-size:10px;letter-spacing:3px}.menuCopy h2{font-size:39px;line-height:1.27;letter-spacing:1px;margin:15px 0 18px}.menuCopy p{font-size:13px;line-height:1.9;color:#c2d5cf;margin:0 0 25px}.menuCopy em{font-style:normal;color:#e9d4a6}.primary{display:block;border-radius:10px;width:100%;max-width:332px;padding:16px 19px;min-height:50px;background:var(--gold);color:var(--ink);font-size:15px;font-weight:800;text-align:left}.secondary{display:block;background:transparent;color:#c8d9d4;font-size:12px;padding:14px 0;min-height:44px;text-align:left}.menuFooter{font-size:9px;display:flex;gap:18px;color:#8cacae;flex-wrap:wrap;margin-top:8px}.menuStamp{position:absolute;right:7%;bottom:12%;padding-left:17px;border-left:3px solid var(--gold);text-shadow:0 2px 10px #15333d}.menuStamp>span{font-size:11px;letter-spacing:4px;color:#f9e6b3}.menuStamp strong{display:block;font-size:32px;line-height:1.4;margin:13px 0}.menuStamp small{font-size:10px}.modalScreen{background:#112830e8;display:flex;align-items:center;justify-content:center;padding:max(15px,var(--safeT)) 17px max(15px,var(--safeB));backdrop-filter:blur(6px)}.modal{background:#1a3940;border:1px solid #ffffff1c;border-radius:20px;padding:28px;max-width:470px;width:100%;max-height:100%;overflow:auto}.modal h2{font-size:25px;line-height:1.3;margin:16px 0}.modal p{font-size:12px;color:#b6cecb;line-height:1.8}.modal .primary{max-width:none}.modal>.primary{margin-top:20px}.settings{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.settings button{background:#ffffff0b;border:1px solid #ffffff22;border-radius:9px;padding:12px 7px;font-size:11px;min-height:46px}.fineprint{font-size:10px!important;color:#90b2b3!important}.resolution{font-size:10px!important;color:#e6d5a2!important;letter-spacing:.4px}.helpRows>div{border-bottom:1px solid #ffffff13;padding:10px 0}.helpRows b{color:var(--gold);font-size:12px}.helpRows p{font-size:11px;margin:5px 0 0}.endMark{color:var(--gold);font-size:54px}.endStats{display:flex;justify-content:space-between;gap:18px;margin:18px 0}.endStats small{color:var(--muted);display:block;font-size:10px}.endStats strong{color:var(--gold);display:block;font-size:24px;margin-top:7px}.noscript{position:absolute;inset:0;background:var(--deep);padding:40px;display:grid;place-items:center;z-index:99}
 @media(hover:hover){button:not(:disabled):hover{filter:brightness(1.1)}}
@@ -161,12 +161,32 @@
 
 
 <style id="viewport011">
-html,body{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;overflow:hidden!important;overscroll-behavior:none!important}
-#game{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
-#world,#overlay,#hud,#vignette{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important}
-#menu{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 24px)!important}
-.modalScreen{box-sizing:border-box!important;position:absolute!important;inset:0!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important;padding-top:max(14px,env(safe-area-inset-top,0px))!important;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))!important}
-.modalScreen>.modal{min-height:0!important;max-height:100%!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+/* V0.11.1 PWA FIX */
+:root{--pwaH:100dvh}
+html,body{
+ position:fixed!important;left:0!important;top:0!important;right:auto!important;bottom:auto!important;
+ width:100%!important;height:var(--pwaH)!important;min-height:var(--pwaH)!important;max-height:var(--pwaH)!important;
+ margin:0!important;padding:0!important;overflow:hidden!important;overscroll-behavior:none!important;background:#142b31!important;
+}
+#game{
+ position:fixed!important;left:0!important;top:0!important;right:auto!important;bottom:auto!important;
+ width:100%!important;height:var(--pwaH)!important;min-height:var(--pwaH)!important;max-height:var(--pwaH)!important;
+ overflow:hidden!important;background:#142b31!important;
+}
+#world,#overlay,#hud,#vignette{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#menu{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:100%!important;max-height:100%!important;
+ overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;
+ padding-bottom:calc(env(safe-area-inset-bottom,0px) + 24px)!important;background-color:#142b31!important;
+}
+.modalScreen{
+ box-sizing:border-box!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ min-height:100%!important;max-height:100%!important;overflow:hidden!important;
+ padding-top:max(14px,env(safe-area-inset-top,0px))!important;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))!important;
+}
+.modalScreen>.modal{min-height:0!important;max-height:100%!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
+@supports(height:100dvh){:root{--pwaH:100dvh}}
+@media(display-mode:standalone){html,body,#game{height:var(--pwaH)!important;min-height:var(--pwaH)!important;max-height:var(--pwaH)!important}}
 #suburbanLoad011{min-height:1.3em}.edition{flex-wrap:wrap!important;letter-spacing:2px!important}.edition span{letter-spacing:2px!important}
 </style>
 </head>
@@ -385,7 +405,7 @@ let inputs={keys:new Set(),left:new Set(),right:new Set(),gas:new Set(),brake:ne
 const houses=[], packages=[], cargo=[], debris=[], traffic=[], lights=[], effects=[];
 // Multiplayer 0.3: one host-authoritative world, up to three independent couriers.
 // Rendering/prediction never owns parcel inventory, doors, scores or vehicle physics.
-const NET_PROTOCOL='crash-delivery-mp011-1';
+const NET_PROTOCOL='crash-delivery-mp0111-1';
 const net={mode:'solo',peer:null,conn:null,room:'',maxPlayers:3,roomDirectoryToken:'',connected:false,executing:false,applying:false,players:[],kickedIds:new Set(),playerId:0,remoteActors:[],remoteSamples:new Map(),roster:[],activeRemote:null,
  remoteActor:null,remoteInput:null,remoteState:null,hostActor:null,lastInput:0,lastRecv:0,lastSend:0,lastActorRender:0,
  actionSeq:0,ack:0,lastAction:0,epoch:0,seenEpoch:-1,snapshot:null,receivedAt:0,watch:false,
@@ -1972,7 +1992,7 @@ function frame(now){const rawdt=clamp((now-last)/1000,.001,.2),dt=Math.min(rawdt
 }
 // QA fixtures are opt-in and call the same physics / interaction functions as play.
 if(new URLSearchParams(location.search).has('test'))window.__deliveryTest={
- snapshot:()=>({version:'0.11.0',state:{...state},car:JSON.parse(JSON.stringify(car)),player:{p:player.p.slice(),yaw:player.yaw,pitch:player.pitch,held:player.held?{id:player.held.id,kind:player.held.kind}:null,focus:player.focus?.type||null},doors:doors.map(d=>({...d})),cargo:cargo.map(c=>({id:c.id,kind:c.kind,p:c.p.slice(),v:c.v.slice(),thrown:c.thrown})),packages:packages.map(p=>({id:p.id,p:p.p.slice(),v:p.v.slice(),delivered:p.delivered,spilled:p.spilled,pending:p.pending?.h.num||null})),traffic:traffic.map(t=>({id:t.id,p:t.p.slice(),hp:t.hp,phase:t.phase,burn:t.burn})),houses:deliverable.map(h=>({num:h.num,x:h.x,z:h.z,yaw:h.yaw,done:h.done,gates:h.gates.map(g=>({index:g.index,type:g.type,broken:g.broken,center:g.center.slice(),screen:renderer.project(g.center)}))})),debris:debris.length,effects:effects.length,staticTriangles,render:{width:world.width,height:world.height,dpr:actualDPR(),cssWidth:width,cssHeight:height,quality},soundOn,stock:physicalStock()}),
+ snapshot:()=>({version:'0.11.1',state:{...state},car:JSON.parse(JSON.stringify(car)),player:{p:player.p.slice(),yaw:player.yaw,pitch:player.pitch,held:player.held?{id:player.held.id,kind:player.held.kind}:null,focus:player.focus?.type||null},doors:doors.map(d=>({...d})),cargo:cargo.map(c=>({id:c.id,kind:c.kind,p:c.p.slice(),v:c.v.slice(),thrown:c.thrown})),packages:packages.map(p=>({id:p.id,p:p.p.slice(),v:p.v.slice(),delivered:p.delivered,spilled:p.spilled,pending:p.pending?.h.num||null})),traffic:traffic.map(t=>({id:t.id,p:t.p.slice(),hp:t.hp,phase:t.phase,burn:t.burn})),houses:deliverable.map(h=>({num:h.num,x:h.x,z:h.z,yaw:h.yaw,done:h.done,gates:h.gates.map(g=>({index:g.index,type:g.type,broken:g.broken,center:g.center.slice(),screen:renderer.project(g.center)}))})),debris:debris.length,effects:effects.length,staticTriangles,render:{width:world.width,height:world.height,dpr:actualDPR(),cssWidth:width,cssHeight:height,quality},soundOn,stock:physicalStock()}),
  reset:()=>resetGame(),menu:()=>resetGame(true),freeze:b=>{freezeSimulation=b;simAccumulator=0;},
  advance:seconds=>{for(let i=0,n=Math.ceil(clamp(seconds,0,100)*120);i<n&&state.mode==='playing';i++)step(1/120);updateCamera(.3);updateHUD();drawMap();draw3D();},
  place:(x,z,yaw=0,speed=0)=>{car.p=[x,.12,z];car.yaw=yaw;car.speed=speed;car.velocity=V.mul(carForward(),speed);car.accel=[0,0,0];car.kick=[0,0,0];car.hp=100;car.steer=0;state.hitCooldown=0;state.brick=false;brickBody.placed=false;clearInputs();syncButtons();},
@@ -3274,7 +3294,7 @@ function road09PaintMap(){
 }
 function road09BuildUI(){
  const start=document.createElement('button');start.id='roadStart09';start.className='primary roadStart09';start.disabled=true;start.innerHTML='<span>SKYWAY / V0.11</span><b>立体路网试跑 ↗</b><small>高架 · 环岛 · 坡道 · 上下层通行</small>';start.onclick=()=>{if(networked()&&!net.connected)stopNetwork(false);road09Warp('trial');};document.getElementById('startBtn').before(start);
- const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.11 ONLINE <span>SUBURBAN</span>';
+ const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.11.1 ONLINE <span>PWA FIX</span>';
  const eyebrow=document.querySelector('.menuCopy h2');if(eyebrow)eyebrow.innerHTML='开进新街区，<br>把快递送回家。';
  const p=document.querySelector('.menuCopy>p');if(p)p.innerHTML='白墙绿屋顶、草坪前院，住宅区焕然一新。<br>18 单派送、多人合作与 2v2 继续保留。';
  const oldStart=document.getElementById('startBtn');if(oldStart){oldStart.textContent='道路准备中…';oldStart.disabled=true;}
@@ -3960,9 +3980,56 @@ if(window.__deliveryTest)window.__deliveryTest.suburban011={
  releaseCheck:()=>({native:V01051N.ready,textureDoorDrawing:V01051.draws,homes:SUB011.homes.length,orders:TOTAL})
 };
 
-/* Single viewport owner; obsolete per-release height writers are disabled by build.py. */
-let vp011Pending=false;function viewport011Sync(){if(vp011Pending)return;vp011Pending=true;requestAnimationFrame(()=>{vp011Pending=false;const r=$('game').getBoundingClientRect();document.documentElement.style.setProperty('--appH51',r.height+'px');document.documentElement.style.setProperty('--appH',r.height+'px');try{resize();}catch(e){console.warn('resize',e.message);}});}
-for(const ev of ['resize','orientationchange','pageshow'])window.addEventListener(ev,viewport011Sync,{passive:true});window.visualViewport?.addEventListener('resize',viewport011Sync,{passive:true});document.addEventListener('visibilitychange',()=>{if(!document.hidden)viewport011Sync();});viewport011Sync();setTimeout(viewport011Sync,350);
+/* V0.11.1 PWA FIX — one authoritative viewport owner. */
+const PWA0111={h:0,w:0,top:0,standalone:false,serial:0};
+function pwa0111Standalone(){
+ return !!navigator.standalone || matchMedia('(display-mode: standalone)').matches;
+}
+function pwa0111Measure(){
+ const vv=window.visualViewport, standalone=pwa0111Standalone();
+ const portrait=matchMedia('(orientation: portrait)').matches;
+ const screenH=window.screen ? (portrait?Math.max(screen.width,screen.height):Math.min(screen.width,screen.height)) : 0;
+ const visualH=vv ? vv.height + Math.max(0,vv.offsetTop||0) : 0;
+ const innerH=window.innerHeight||0, clientH=document.documentElement.clientHeight||0;
+ // iOS standalone can report innerHeight/visualViewport shorter than the actual PWA surface.
+ // screen.height is in CSS px and is stable for the installed app.
+ let h=standalone && screenH ? screenH : Math.max(visualH,innerH,clientH);
+ // Never let transient keyboard/browser UI enlarge a browser tab beyond its visual viewport.
+ if(!standalone && vv?.height)h=Math.max(vv.height,Math.min(h,vv.height+Math.max(0,vv.offsetTop||0)));
+ return Math.max(1,Math.round(h));
+}
+function pwa0111Apply(){
+ const h=pwa0111Measure(), root=document.documentElement, body=document.body, game=document.getElementById('game');
+ PWA0111.h=h;PWA0111.w=window.innerWidth;PWA0111.standalone=pwa0111Standalone();PWA0111.serial++;
+ root.style.setProperty('--pwaH',h+'px');root.style.setProperty('--appH51',h+'px');root.style.setProperty('--appH',h+'px');
+ root.style.setProperty('height',h+'px','important');
+ body?.style.setProperty('height',h+'px','important');
+ if(game){
+   game.style.setProperty('height',h+'px','important');
+   game.style.setProperty('min-height',h+'px','important');
+   game.style.setProperty('max-height',h+'px','important');
+   game.style.setProperty('top','0','important');
+   game.style.setProperty('bottom','auto','important');
+ }
+ try{resize();}catch(e){console.warn('PWA resize',e.message);}
+}
+let pwa0111RAF=0;
+function pwa0111Sync(delay=0){
+ const run=()=>{cancelAnimationFrame(pwa0111RAF);pwa0111RAF=requestAnimationFrame(pwa0111Apply);};
+ delay?setTimeout(run,delay):run();
+}
+for(const ev of ['resize','orientationchange','pageshow'])window.addEventListener(ev,()=>pwa0111Sync(ev==='orientationchange'?100:0),{passive:true});
+window.visualViewport?.addEventListener('resize',()=>pwa0111Sync(),{passive:true});
+window.visualViewport?.addEventListener('scroll',()=>pwa0111Sync(),{passive:true});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){pwa0111Sync();pwa0111Sync(180);}});
+window.addEventListener('focus',()=>pwa0111Sync(40),{passive:true});
+pwa0111Sync();pwa0111Sync(250);pwa0111Sync(900);
+if(window.__deliveryTest)window.__deliveryTest.pwa0111=()=>({
+ height:PWA0111.h,standalone:PWA0111.standalone,serial:PWA0111.serial,
+ innerHeight:window.innerHeight,screenHeight:screen.height,visualHeight:visualViewport?.height||0,
+ game:document.getElementById('game')?.getBoundingClientRect().height||0,
+ bottom:document.getElementById('game')?.getBoundingClientRect().bottom||0
+});
 
 /* Test hooks only; never enabled unless the existing ?test flag is present. */
 if(window.__deliveryTest)Object.assign(window.__deliveryTest.suburban011,{
