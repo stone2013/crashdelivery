@@ -1,0 +1,15 @@
+V0.10.3 changed files
+
+运行时必须覆盖：
+- index.html
+- sw.js
+- manifest.webmanifest
+
+继续开发源码时同时覆盖：
+- build.py
+- VERSION_V09.json
+- src/v0102-baseline.html
+- src/v0103-industrial.js
+- src/sw-template.js
+
+工业 GLB/贴图、玻璃/光影模块未改动，可沿用 V0.10.2。

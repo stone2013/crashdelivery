@@ -1,10 +1,9 @@
 {
-  "version": "0.10.2",
-  "name": "INDUSTRIAL+ / FRONTAGE, DENSITY, GLASS AND LIGHTING",
-  "protocol": "crash-delivery-mp0102-1",
-  "baseline_sha256": "5fc6ed22395276d21e9c29e04603dec6999f8bc351e3dc83bce6b524162c9826",
-  "parent_release": "0.10.1 INDUSTRIAL DELIVERY",
-  "parent_index_sha256": "b09e00bbf39fd33cf16b5f9dca47c1273257ecf395a5afa9df37d7d7b77c222c",
-  "html_sha256": "afe9181d048069ce6932ee5e015fd266c126bbcccd76ac64d703d40215cc4eec",
-  "notes": "Enlarged street-facing factories, 22 collision-audited infill buildings, 6 real parcel-receiving bays, deterministic glass hole textures, warm sun/cool ambient and approximate contact/projection shadows. Existing road layout and gameplay retained; not a new island-map rebuild."
+  "version": "0.10.3",
+  "name": "INDUSTRIAL DELIVERY FIX / INTEGRATED RECEIVING FACADES",
+  "protocol": "crash-delivery-mp0103-1",
+  "parent_release": "0.10.2 INDUSTRIAL+",
+  "parent_index_sha256": "afe9181d048069ce6932ee5e015fd266c126bbcccd76ac64d703d40215cc4eec",
+  "html_sha256": "afdf9fda8e1dbec8763f96c506d61474a0578b71f507cc531737365938fea7dd",
+  "notes": "Factory receiving targets are flush/integrated into enlarged road-facing Kenney buildings; no free-standing black delivery tunnels. Main factories and infill are scale-normalized. 2.4m facade setback supports drive-by throws. V0.10.2 glass decals, lighting, CITY LOOP, fines, multiplayer and PWA retained."
 }
