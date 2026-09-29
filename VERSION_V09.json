@@ -1,9 +1,9 @@
 {
-  "version": "0.10.5",
-  "name": "INDUSTRIAL POLISH / CONCRETE + GANTRY + PWA",
-  "protocol": "crash-delivery-mp0105-1",
-  "parent_release": "0.10.4 INDUSTRIAL PLACEMENT",
-  "parent_index_sha256": "f301bece71299962515ed12afa71c9191d1bd50d85c9a862a8530e2ba4f966b2",
-  "html_sha256": "77db00ca06b463e3d44f8017df6cb40003b3503902c583ff87a7e82e5b2576f0",
-  "notes": "Industrial district uses continuous gray concrete hardstanding; Kenney factory visuals are flipped to match road-facing receiving facades and retain 2.4m loading forecourts. Large directional signs use overhead gantries. Van rectangular fake shadow is replaced by wheel/underbody contact shadows. Explicit iOS/PWA viewport height sync prevents recurring bottom blank strip."
+  "version": "0.10.5.1",
+  "name": "TEXTURE DOORS / PWA FULLSCREEN",
+  "protocol": "crash-delivery-mp01051-1",
+  "parent_release": "0.10.5 INDUSTRIAL POLISH",
+  "parent_index_sha256": "77db00ca06b463e3d44f8017df6cb40003b3503902c583ff87a7e82e5b2576f0",
+  "html_sha256": "819cb8235db907891f4a71353a0a2397123aa4de2104caa55e743a7ef7a46d35",
+  "notes": "Removes extra 3D industrial receiving-bay geometry and draws garage doors, numbers and loading aprons as WebGL canvas-texture decals. Invisible delivery triggers remain authoritative. iOS standalone viewport uses physical screen height fallback so menu/game/pause backgrounds fill the full PWA screen."
 }
