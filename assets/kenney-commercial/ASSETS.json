@@ -1,0 +1,27 @@
+{
+  "pack": "kenney_city-kit-commercial_2.1.zip",
+  "models": [
+    "building-a",
+    "building-b",
+    "building-c",
+    "building-d",
+    "building-e",
+    "building-f",
+    "building-g",
+    "building-h",
+    "building-i",
+    "building-j",
+    "building-k",
+    "building-l",
+    "building-m",
+    "building-n",
+    "building-skyscraper-a",
+    "building-skyscraper-b",
+    "building-skyscraper-c",
+    "building-skyscraper-d",
+    "building-skyscraper-e",
+    "detail-awning",
+    "detail-parasol-a"
+  ],
+  "license": "CC0-1.0"
+}

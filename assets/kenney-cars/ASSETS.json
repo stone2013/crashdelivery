@@ -1,0 +1,24 @@
+{
+  "pack": "kenney_car-kit.zip",
+  "models": [
+    "sedan",
+    "hatchback-sports",
+    "suv",
+    "suv-luxury",
+    "taxi",
+    "van",
+    "delivery",
+    "truck",
+    "truck-flat",
+    "ambulance",
+    "firetruck",
+    "garbage-truck",
+    "tractor-shovel",
+    "tractor",
+    "debris-bumper",
+    "debris-door",
+    "debris-tire",
+    "cone"
+  ],
+  "license": "CC0-1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "pack": "kenney_platformer-kit.zip",
+  "models": [
+    "tree",
+    "tree-pine",
+    "tree-pine-small",
+    "hedge",
+    "plant",
+    "flowers",
+    "grass",
+    "rocks",
+    "stones",
+    "crate",
+    "crate-strong",
+    "barrel",
+    "pipe",
+    "fence-low-straight",
+    "fence-broken"
+  ],
+  "license": "CC0-1.0"
+}
