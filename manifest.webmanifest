@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "暴力快递 Crash Delivery V0.11",
+  "name": "暴力快递 V0.11 · SUBURBAN",
   "short_name": "暴力快递",
-  "description": "V0.11 SUBURBAN UPDATE：Kenney Suburban 住宅区升级，保留工业区、SKYWAY、交通与多人玩法。",
+  "description": "V0.11 原生住宅门窗投递、工业区与多人合作。",
   "lang": "zh-CN",
   "start_url": "./index.html",
   "scope": "./",

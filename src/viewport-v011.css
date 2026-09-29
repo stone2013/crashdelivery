@@ -1,0 +1,7 @@
+html,body{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;overflow:hidden!important;overscroll-behavior:none!important}
+#game{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
+#world,#overlay,#hud,#vignette{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important}
+#menu{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 24px)!important}
+.modalScreen{box-sizing:border-box!important;position:absolute!important;inset:0!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important;padding-top:max(14px,env(safe-area-inset-top,0px))!important;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))!important}
+.modalScreen>.modal{min-height:0!important;max-height:100%!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#suburbanLoad011{min-height:1.3em}.edition{flex-wrap:wrap!important;letter-spacing:2px!important}.edition span{letter-spacing:2px!important}

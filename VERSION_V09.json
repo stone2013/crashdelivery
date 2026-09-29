@@ -1,8 +1,7 @@
 {
-  "version": "0.11",
-  "name": "SUBURBAN UPDATE",
+  "version": "0.11.0",
+  "label": "V0.11 SUBURBAN",
   "protocol": "crash-delivery-mp011-1",
-  "parent_index_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7",
-  "html_sha256": "0ddc3fbfd11d407b7d4bbde1259eb27626932fb20b2316ab75db1eaa1cf029d7",
-  "notes": "Kenney City Kit Suburban integrated into the residential district. V0.10.5.1 Native Doors, industrial, PWA, SKYWAY and multiplayer retained."
+  "html_sha256": "3edebd0c8fb92ec6d7b66bd623cac505b100c7e93c2454cbc1ed240ef95f313e",
+  "base_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7"
 }

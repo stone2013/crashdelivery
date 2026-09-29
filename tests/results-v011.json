@@ -1,0 +1,873 @@
+{
+  "checks": [
+    {
+      "name": "boot without JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "assets initialized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "22 homes / six deliveries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no road or house overlap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "#101 door 0",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#101 window 1",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#101 window 2",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#102 door 0",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#102 window 1",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#102 window 2",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#102 window 3",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#103 garage 0",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#103 door 1",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#103 window 2",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#103 window 3",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#104 door 0",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#104 window 1",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#104 window 2",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#105 garage 0",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#105 garage 1",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#105 door 2",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#105 window 3",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#106 garage 0",
+      "passed": true,
+      "detail": {
+        "score": 282,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#106 door 1",
+      "passed": true,
+      "detail": {
+        "score": 282,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "#106 window 2",
+      "passed": true,
+      "detail": {
+        "score": 232,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 101",
+      "passed": true,
+      "detail": {
+        "score": 182,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 102",
+      "passed": true,
+      "detail": {
+        "score": 389,
+        "delivered": 2,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 103",
+      "passed": true,
+      "detail": {
+        "score": 621,
+        "delivered": 3,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 104",
+      "passed": true,
+      "detail": {
+        "score": 878,
+        "delivered": 4,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 105",
+      "passed": true,
+      "detail": {
+        "score": 1160,
+        "delivered": 5,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 106",
+      "passed": true,
+      "detail": {
+        "score": 1542,
+        "delivered": 6,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 107",
+      "passed": true,
+      "detail": {
+        "score": 1792,
+        "delivered": 7,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 108",
+      "passed": true,
+      "detail": {
+        "score": 2042,
+        "delivered": 8,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 109",
+      "passed": true,
+      "detail": {
+        "score": 2292,
+        "delivered": 9,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 110",
+      "passed": true,
+      "detail": {
+        "score": 2542,
+        "delivered": 10,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 111",
+      "passed": true,
+      "detail": {
+        "score": 2792,
+        "delivered": 11,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 112",
+      "passed": true,
+      "detail": {
+        "score": 3042,
+        "delivered": 12,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 113",
+      "passed": true,
+      "detail": {
+        "score": 3242,
+        "delivered": 13,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 114",
+      "passed": true,
+      "detail": {
+        "score": 3442,
+        "delivered": 14,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 115",
+      "passed": true,
+      "detail": {
+        "score": 3642,
+        "delivered": 15,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 116",
+      "passed": true,
+      "detail": {
+        "score": 3842,
+        "delivered": 16,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 117",
+      "passed": true,
+      "detail": {
+        "score": 4042,
+        "delivered": 17,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "18-order sequence 118",
+      "passed": true,
+      "detail": {
+        "score": 4342,
+        "delivered": 18,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "wrong order not consumed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "blank facade not delivery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "car hull outside 101",
+      "passed": true,
+      "detail": 8.677
+    },
+    {
+      "name": "car hull outside 102",
+      "passed": true,
+      "detail": 8.519
+    },
+    {
+      "name": "car hull outside 103",
+      "passed": true,
+      "detail": 7.957
+    },
+    {
+      "name": "car hull outside 104",
+      "passed": true,
+      "detail": 8.425
+    },
+    {
+      "name": "car hull outside 105",
+      "passed": true,
+      "detail": 9.357
+    },
+    {
+      "name": "car hull outside 106",
+      "passed": true,
+      "detail": 8.519
+    },
+    {
+      "name": "390x844 menu",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ]
+      ]
+    },
+    {
+      "name": "390x844 game",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ]
+      ]
+    },
+    {
+      "name": "390x844 pause",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ],
+        [
+          0,
+          844,
+          390
+        ]
+      ]
+    },
+    {
+      "name": "320x640 menu",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ]
+      ]
+    },
+    {
+      "name": "320x640 game",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ]
+      ]
+    },
+    {
+      "name": "320x640 pause",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ],
+        [
+          0,
+          640,
+          320
+        ]
+      ]
+    },
+    {
+      "name": "844x390 menu",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "name": "844x390 game",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "name": "844x390 pause",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ],
+        [
+          0,
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "name": "1280x820 menu",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ]
+      ]
+    },
+    {
+      "name": "1280x820 game",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ]
+      ]
+    },
+    {
+      "name": "1280x820 pause",
+      "passed": true,
+      "detail": [
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ],
+        [
+          0,
+          820,
+          1280
+        ]
+      ]
+    },
+    {
+      "name": "driver hides jump",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cargo keeps jump",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no later errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "moving cargo native delivery 101",
+      "passed": true,
+      "detail": {
+        "score": 228,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "moving cargo native delivery 102",
+      "passed": true,
+      "detail": {
+        "score": 228,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "moving cargo native delivery 103",
+      "passed": true,
+      "detail": {
+        "score": 228,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "moving cargo native delivery 104",
+      "passed": true,
+      "detail": {
+        "score": 228,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "moving cargo native delivery 105",
+      "passed": true,
+      "detail": {
+        "score": 228,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "moving cargo native delivery 106",
+      "passed": true,
+      "detail": {
+        "score": 328,
+        "delivered": 1,
+        "view": "cargo"
+      }
+    },
+    {
+      "name": "host native glass hole recorded",
+      "passed": true,
+      "detail": {
+        "type": "window",
+        "broken": true,
+        "holes": [
+          {
+            "x": 0,
+            "y": 0.035,
+            "r": 0.56,
+            "seed": 751579
+          }
+        ]
+      }
+    },
+    {
+      "name": "guest receives score/completion",
+      "passed": true,
+      "detail": {
+        "score": 132,
+        "delivered": 1,
+        "view": "drive"
+      }
+    },
+    {
+      "name": "guest glass position/seed matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "new protocol and 18 unique parcel orders",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prediction collision parity 101",
+      "passed": true,
+      "detail": {
+        "host": [
+          1.0626563589942594e-15,
+          0.12,
+          8.677247674465178
+        ],
+        "predicted": [
+          1.0626563589942594e-15,
+          0.12,
+          8.677247674465178
+        ]
+      }
+    },
+    {
+      "name": "prediction collision parity 102",
+      "passed": true,
+      "detail": {
+        "host": [
+          -2.509437077789543e-15,
+          0.12,
+          8.51899994134903
+        ],
+        "predicted": [
+          -2.509437077789543e-15,
+          0.12,
+          8.51899994134903
+        ]
+      }
+    },
+    {
+      "name": "prediction collision parity 103",
+      "passed": true,
+      "detail": {
+        "host": [
+          9.744514566800517e-16,
+          0.12,
+          7.956999988555907
+        ],
+        "predicted": [
+          9.744514566800517e-16,
+          0.12,
+          7.956999988555907
+        ]
+      }
+    },
+    {
+      "name": "prediction collision parity 104",
+      "passed": true,
+      "detail": {
+        "host": [
+          5.158824667686295e-16,
+          0.12,
+          8.425000042915343
+        ],
+        "predicted": [
+          5.158824667686295e-16,
+          0.12,
+          8.425000042915343
+        ]
+      }
+    },
+    {
+      "name": "prediction collision parity 105",
+      "passed": true,
+      "detail": {
+        "host": [
+          -5.729243524783191e-16,
+          0.12,
+          9.3565647315979
+        ],
+        "predicted": [
+          -5.729243524783191e-16,
+          0.12,
+          9.3565647315979
+        ]
+      }
+    },
+    {
+      "name": "prediction collision parity 106",
+      "passed": true,
+      "detail": {
+        "host": [
+          -5.216273086080004e-16,
+          0.12,
+          8.51882043004036
+        ],
+        "predicted": [
+          -5.216273086080004e-16,
+          0.12,
+          8.51882043004036
+        ]
+      }
+    },
+    {
+      "name": "no extra runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "limits": "Offline JS/DOM tests; mocked GPU. No public network or iPhone validation."
+}

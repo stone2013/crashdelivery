@@ -1,31 +1,7 @@
 {
-  "version": "0.7.5",
-  "name": "ONLINE MULTIPLAYER LOBBY",
-  "protocol": "crash-delivery-mp075-1",
-  "html_sha256": "c662d10b801148e97d8fd66a5ec1500199410d6db2ea64f1e751aed2023b67f9",
-  "html_size_bytes": 332697,
-  "baseline": "stone2013/crashdelivery main V0.7.4 ONLINE",
-  "checks_provenance": "V0.7.5 Chromium and Worker room-directory regression, 2026-09-25",
-  "checks": {
-    "multiplayer_lobby": 36,
-    "solo": 31,
-    "ui": 32,
-    "finish": 21,
-    "network": 30,
-    "network_ui": 13,
-    "city": 24,
-    "city_extended": 26,
-    "movement_prediction": 26,
-    "latency_prediction": 32,
-    "ice_ui_runtime": 11,
-    "public_network_config": 24,
-    "worker_room_directory": 1
-  },
-  "room_directory_endpoint": "https://api.feelpal.app/rooms",
-  "room_directory_deployed": true,
-  "room_directory_worker_version": "8c6a6059-93bf-4169-a646-45f3b63962b6",
-  "native_ice_candidates_verified": false,
-  "internet_webrtc_verified": false,
-  "turn_relay_verified": false,
-  "safari_hardware_verified": false
+  "version": "0.11.0",
+  "label": "V0.11 SUBURBAN",
+  "protocol": "crash-delivery-mp011-1",
+  "html_sha256": "3edebd0c8fb92ec6d7b66bd623cac505b100c7e93c2454cbc1ed240ef95f313e",
+  "base_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7"
 }

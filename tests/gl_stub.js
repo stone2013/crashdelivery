@@ -1,0 +1,13 @@
+/* Test-only WebGL call recorder. Does not compile shaders or simulate a GPU. */
+(()=>{let id=1;const cs={},st={program:null,buffer:null,pointers:{},records:[],capture:false},g={_state:st};const C=n=>cs[n]??(cs[n]=id++);
+for(const n of ['MAX_VIEWPORT_DIMS','MAX_TEXTURE_SIZE','MAX_RENDERBUFFER_SIZE','MAX_TEXTURE_IMAGE_UNITS','ARRAY_BUFFER','COMPILE_STATUS','LINK_STATUS','FLOAT','TRIANGLES','CULL_FACE'])C(n);
+g.getParameter=p=>p===C('MAX_VIEWPORT_DIMS')?[16384,16384]:p===C('MAX_TEXTURE_IMAGE_UNITS')?16:p===C('MAX_TEXTURE_SIZE')||p===C('MAX_RENDERBUFFER_SIZE')?8192:0;
+g.createBuffer=()=>({id:id++,data:[]});g.bindBuffer=(t,b)=>st.buffer=b;g.bufferData=(t,d)=>{if(st.buffer)st.buffer.data=Array.from(d||[])};g.bufferSubData=(t,off,d)=>{if(st.buffer)st.buffer.data.splice(off/4,d.length,...d)};
+g.createProgram=()=>({id:id++,uniforms:{},shaders:[],attr:{}});g.createShader=t=>({type:t,source:''});g.shaderSource=(s,c)=>s.source=c;g.attachShader=(p,s)=>p.shaders.push(s);g.getShaderParameter=()=>true;g.getProgramParameter=()=>true;g.getShaderInfoLog=()=>'';g.getProgramInfoLog=()=>'';g.getError=()=>0;
+g.useProgram=p=>st.program=p;g.getUniformLocation=(p,n)=>({p,n});g.getAttribLocation=(p,n)=>p.attr[n]??(p.attr[n]=Object.keys(p.attr).length);
+for(const f of ['uniformMatrix4fv','uniformMatrix3fv','uniform3fv','uniform4fv'])g[f]=(l,...xs)=>{if(l)l.p.uniforms[l.n]=Array.from(xs[xs.length-1])};for(const f of ['uniform1f','uniform1i','uniform2f','uniform3f','uniform4f'])g[f]=(l,...xs)=>{if(l)l.p.uniforms[l.n]=xs.length===1?xs[0]:xs};
+g.vertexAttribPointer=(i,n,t,no,stride,offset)=>st.pointers[i]={n,stride,offset,buffer:st.buffer};g.createTexture=()=>({id:id++});g.bindTexture=(t,o)=>st.texture=o;g.texImage2D=(...a)=>{if(st.texture&&a[a.length-1]?.toDataURL)st.texture.png=a[a.length-1].toDataURL()};
+g.drawArrays=(mode,start,count)=>{if(!st.capture||!st.program)return;const p=st.program,ptr=st.pointers[p.attr.aPosition];if(p.attr.aPosition!==undefined&&ptr?.n===3&&ptr.buffer?.data&&p.uniforms.uModel)st.records.push({count,start,data:ptr.buffer.data,uniforms:JSON.parse(JSON.stringify(p.uniforms))});};
+g.getExtension=()=>null;g.getSupportedExtensions=()=>[];g.isContextLost=()=>false;g.getContextAttributes=()=>({alpha:false});const proxy=new Proxy(g,{get(o,k){if(k in o)return o[k];if(/^[A-Z_0-9]+$/.test(k))return C(k);return()=>{};}});const real=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){if(['webgl','experimental-webgl','webgl2'].includes(type)){g.canvas=this;return proxy;}return real.call(this,type,...args);};window.__mockGL=proxy;
+const raf=window.requestAnimationFrame;window.__qaRAF=true;window.requestAnimationFrame=f=>raf(t=>{if(window.__qaRAF)f(t)});
+})();
