@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#162e34"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="暴力快递 V0.9.4：全城 Kenney 模块道路，住宅、商业、工业三区与高架试验区，18 件订单，单人、多人合作、2v2 和 PWA。">
-<title>暴力快递 · V0.10.5 INDUSTRIAL POLISH · CITY LOOP</title>
+<title>暴力快递 · V0.10.4 INDUSTRIAL PLACEMENT FIX · CITY LOOP</title>
 <script>window.CRASH_TURN_CREDENTIALS_URL='https://api.feelpal.app/turn-credentials';</script>
 <style>:root{--ink:#16343a;--deep:#142b31;--gold:#ffd05b;--cream:#fff4d7;--muted:#abc2c4;--safeB:env(safe-area-inset-bottom,0px);--safeT:env(safe-area-inset-top,0px);--safeL:env(safe-area-inset-left,0px);--safeR:env(safe-area-inset-right,0px)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--deep);color:var(--cream);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;user-select:none;-webkit-user-select:none;overscroll-behavior:none}button{font:inherit;color:inherit;cursor:pointer;border:0;-webkit-tap-highlight-color:transparent;touch-action:none}button:focus-visible,canvas:focus-visible{outline:2px solid var(--gold);outline-offset:3px}button:disabled{opacity:.42;cursor:default}button:active{transform:translateY(1px)}.hidden{display:none!important}#game,#world,#overlay,#hud,#vignette{position:absolute;inset:0;width:100%;height:100%}#world{touch-action:none;display:block;outline:none}#overlay,#hud,#vignette{pointer-events:none}#vignette{background:linear-gradient(#133c4235,transparent 24%,transparent 74%,#142b3140)}#hud button,#hud .joystick{pointer-events:auto}.control{background:#16343ae8;border:1px solid #ffffff36;border-radius:15px;box-shadow:0 2px 0 #0e292849;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}.control.pressed,.control.active{background:var(--gold);color:var(--ink);border-color:#ffe6a6}.statusbar{position:absolute;left:max(16px,var(--safeL));top:calc(10px + var(--safeT));height:44px;display:flex;align-items:center;gap:17px;border-radius:13px;background:#142f37e5;padding-left:13px;font-size:14px;border:1px solid #ffffff25}.viewtag{font-size:11px;letter-spacing:1px;color:var(--gold);padding-right:12px;border-right:1px solid #ffffff2a}.stat small{font-size:10px;color:var(--muted);margin-left:4px}.money{color:var(--gold)}.statusbar b,.time{font-variant-numeric:tabular-nums}.time{font-size:12px;color:#d2e0dc}.pause{border:0;border-left:1px solid #ffffff25;border-radius:0 12px 12px 0;background:transparent;font-size:18px}.route{position:absolute;top:calc(62px + var(--safeT));left:max(16px,var(--safeL));height:35px;max-width:310px;display:flex;align-items:center;gap:11px;background:#16343ad2;border-radius:9px;padding:0 12px;font-size:12px}.route>b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}.route>span:first-child{color:var(--gold);font-size:17px}.route>span:last-child{color:var(--gold);white-space:nowrap}.statuschips{position:absolute;left:max(17px,var(--safeL));top:calc(105px + var(--safeT));display:flex;gap:5px;flex-wrap:wrap;max-width:calc(100% - 120px)}.statuschips>span{background:#17373ac9;border:1px solid #ffffff12;padding:4px 7px;border-radius:5px;font-size:9px;white-space:nowrap}.statuschips>.warn{background:#9f552ce8;color:#fff2cf}.statuschips>.on{color:#ffdb81}.mapPanel{position:absolute;right:max(17px,var(--safeR));top:calc(12px + var(--safeT));width:106px;padding:6px;border-radius:12px;background:#16343adb;border:1px solid #ffffff22}.mapPanel canvas{width:100%;height:auto;display:block;border-radius:7px}.mapPanel small{display:block;font-size:9px;color:#b1c8c5;text-align:center;margin:4px 0 1px}.mapPanel small span{color:var(--gold)}#risk{position:absolute;left:50%;top:calc(20px + var(--safeT));transform:translateX(-50%);background:#934829ec;border:1px solid #ffd68e77;border-radius:8px;padding:8px 12px;font-size:12px;white-space:nowrap}#toast{position:absolute;top:23%;left:50%;transform:translate(-50%,-8px);opacity:0;transition:opacity .15s,transform .15s;background:#16343af2;border:1px solid #ffd05b5b;max-width:min(370px,85%);min-width:230px;padding:15px 22px;border-radius:13px;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}#toast b{display:block;color:var(--gold);font-size:24px}#toast span{display:block;font-size:11px;line-height:1.7;margin-top:5px;color:#dce8df}#hint{position:absolute;bottom:calc(154px + var(--safeB));left:50%;transform:translateX(-50%);background:#17343acf;color:#f7f2d9;border-radius:10px;padding:7px 12px;font-size:11px;line-height:1.55;text-align:center;max-width:min(430px,70%);width:max-content}.telemetry{position:absolute;left:50%;bottom:calc(45px + var(--safeB));transform:translateX(-50%);display:flex;align-items:baseline;gap:4px;text-shadow:0 2px 10px #17373a}.telemetry strong{font-size:42px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-1px}.telemetry small{font-size:9px;color:#d0e0dc}.healthtrack{position:absolute;width:70px;bottom:-12px;left:0;height:3px;background:#1c3439b0;border-radius:3px;overflow:hidden}.healthtrack i{display:block;height:100%;width:100%;background:#afd5b5}.driveLeft{position:absolute;left:max(23px,var(--safeL));bottom:calc(25px + var(--safeB))}.driveRight{position:absolute;right:max(23px,var(--safeR));bottom:calc(25px + var(--safeB));display:flex;flex-direction:column;align-items:flex-end;gap:10px}.steering,.pedals{display:flex;gap:8px}.steering button{width:64px;height:58px;font-size:21px}.pedals button{width:64px;height:58px;font-size:12px}.pedals .gas{background:#eff0dfe8;color:var(--ink);border-color:#faf9dd}.pedals .gas.pressed{background:var(--gold)}.driveTools{margin-bottom:9px;display:flex;gap:7px}.tool{gap:5px;padding:0 13px;font-size:18px}.tool small{font-size:11px}.enter{gap:7px;background:var(--gold);color:var(--ink);padding:0 13px;height:48px;border-color:#ffe7a7}.enter span{font-size:24px}.enter b{font-size:12px}.keyhelp{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:10px;color:#fff5d8bd;white-space:nowrap}kbd{font:inherit;font-size:10px;opacity:.65;border:1px solid currentColor;padding:1px 4px;border-radius:4px;margin-left:3px}.joystick{position:absolute;width:128px;height:128px;left:max(23px,var(--safeL));bottom:calc(26px + var(--safeB));touch-action:none}.stickring{position:absolute;inset:5px;background:#173b3ba9;border:1px solid #ffffff3f;border-radius:50%;pointer-events:none}.stickthumb{position:absolute;left:44px;top:44px;width:40px;height:40px;border-radius:50%;background:#e1e9dabb;border:1px solid #ffffff6a;pointer-events:none}.joystick small{position:absolute;left:0;right:0;bottom:-7px;text-align:center;font-size:8px;color:#fff4d5a0;pointer-events:none}.walk{position:absolute;background:transparent;border:0;width:44px;height:44px;font-size:10px;color:#fff9df8a;border-radius:50%;touch-action:none}.walk.up{left:42px;top:-2px}.walk.down{left:42px;bottom:-2px}.walk.left{left:-2px;top:42px}.walk.right{right:-2px;top:42px}.walk.pressed{background:#ffd05b66;color:#fff4d5}.cargoActions{position:absolute;right:max(23px,var(--safeR));bottom:calc(25px + var(--safeB));display:flex;flex-direction:column;align-items:flex-end;gap:7px}.smallAct{font-size:11px;border-radius:10px;min-width:66px;padding:0 10px;min-height:44px}.interact{background:#f2f1deef;color:var(--ink);gap:6px;padding:0 14px;height:49px;font-size:12px}.interact span{font-size:18px}.throw{background:var(--gold);color:var(--ink);width:82px;height:80px;border-radius:23px;border:2px solid #ffe6a6;flex-direction:column;gap:1px;box-shadow:0 4px 0 #a9833999}.throw span{font-size:30px;line-height:28px}.throw b{font-size:13px}.throw.charging{background:#ffefaa;transform:translateY(2px);box-shadow:none}.powertrack{width:82px;height:4px;background:#102e32ad;border-radius:3px;overflow:hidden}.powertrack i{display:block;width:0;height:100%;background:var(--gold)}.rearControls{position:absolute;left:50%;bottom:calc(91px + var(--safeB));transform:translateX(-50%);text-align:center}.rearControls small{font-size:8px;display:block;color:#ebf1d8;margin-bottom:4px;text-shadow:0 1px 4px #1c3037}.rearControls>div{display:flex;gap:5px}.doorToggle{font-size:11px;min-width:44px;min-height:44px;border-radius:10px}.doorToggle.open{background:#955c30dd;border-color:#e7ad7150}#crosshair{position:absolute;top:50%;left:50%;width:18px;height:18px;transform:translate(-50%,-50%);border:1px solid #fff6d99c;border-radius:50%;box-shadow:0 0 3px #193d41}#crosshair i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff1b2;top:6px;left:6px}#crosshair.locked{border-color:#ffd05b;width:25px;height:25px}#crosshair.locked i{left:10px;top:10px}#focusLabel{position:absolute;top:calc(50% + 22px);left:50%;transform:translateX(-50%);font-size:11px;background:#123339d9;border-radius:6px;padding:5px 8px;white-space:nowrap;max-width:90%;text-overflow:ellipsis;overflow:hidden}#focusLabel:empty{display:none}.screen{position:absolute;inset:0;z-index:10}.menuScreen{padding:36px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#112d34f5,#112d34e7 27%,#112d3480 51%,#112d3400 77%)}.menuCopy{max-width:490px}.eyebrow{color:#a5c2c2;font-size:9px;letter-spacing:2px;display:flex;align-items:center;gap:8px}.eyebrow i{width:6px;height:6px;background:var(--gold);border-radius:50%}.menuCopy h1{font-size:66px;letter-spacing:-3px;line-height:1.05;margin:22px 0 8px;font-weight:900;white-space:nowrap}.menuCopy h1 span{color:var(--gold)}.menuCopy h1 sup{font-size:42px;margin-left:7px}.englishTitle{font-size:12px;color:#c0d2cd;letter-spacing:6px}.edition{font-size:10px;letter-spacing:2px;margin:22px 0 0;color:#ffd972;display:flex;align-items:center;gap:11px}.edition span{padding:5px 9px;border:1px solid #ffd05b4a;border-radius:4px;font-size:10px;letter-spacing:3px}.menuCopy h2{font-size:39px;line-height:1.27;letter-spacing:1px;margin:15px 0 18px}.menuCopy p{font-size:13px;line-height:1.9;color:#c2d5cf;margin:0 0 25px}.menuCopy em{font-style:normal;color:#e9d4a6}.primary{display:block;border-radius:10px;width:100%;max-width:332px;padding:16px 19px;min-height:50px;background:var(--gold);color:var(--ink);font-size:15px;font-weight:800;text-align:left}.secondary{display:block;background:transparent;color:#c8d9d4;font-size:12px;padding:14px 0;min-height:44px;text-align:left}.menuFooter{font-size:9px;display:flex;gap:18px;color:#8cacae;flex-wrap:wrap;margin-top:8px}.menuStamp{position:absolute;right:7%;bottom:12%;padding-left:17px;border-left:3px solid var(--gold);text-shadow:0 2px 10px #15333d}.menuStamp>span{font-size:11px;letter-spacing:4px;color:#f9e6b3}.menuStamp strong{display:block;font-size:32px;line-height:1.4;margin:13px 0}.menuStamp small{font-size:10px}.modalScreen{background:#112830e8;display:flex;align-items:center;justify-content:center;padding:max(15px,var(--safeT)) 17px max(15px,var(--safeB));backdrop-filter:blur(6px)}.modal{background:#1a3940;border:1px solid #ffffff1c;border-radius:20px;padding:28px;max-width:470px;width:100%;max-height:100%;overflow:auto}.modal h2{font-size:25px;line-height:1.3;margin:16px 0}.modal p{font-size:12px;color:#b6cecb;line-height:1.8}.modal .primary{max-width:none}.modal>.primary{margin-top:20px}.settings{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.settings button{background:#ffffff0b;border:1px solid #ffffff22;border-radius:9px;padding:12px 7px;font-size:11px;min-height:46px}.fineprint{font-size:10px!important;color:#90b2b3!important}.resolution{font-size:10px!important;color:#e6d5a2!important;letter-spacing:.4px}.helpRows>div{border-bottom:1px solid #ffffff13;padding:10px 0}.helpRows b{color:var(--gold);font-size:12px}.helpRows p{font-size:11px;margin:5px 0 0}.endMark{color:var(--gold);font-size:54px}.endStats{display:flex;justify-content:space-between;gap:18px;margin:18px 0}.endStats small{color:var(--muted);display:block;font-size:10px}.endStats strong{color:var(--gold);display:block;font-size:24px;margin-top:7px}.noscript{position:absolute;inset:0;background:var(--deep);padding:40px;display:grid;place-items:center;z-index:99}
 @media(hover:hover){button:not(:disabled):hover{filter:brightness(1.1)}}
@@ -158,19 +158,10 @@
 #pauseExit091{grid-column:1/-1;background:#743f39!important;border-color:#d78f7770!important;color:#fff0dc!important;font-weight:700}.statuschips #trafficFine09{background:#8a4a32e8;color:#ffe7bd;border-color:#ffc68b55}
 
 </style>
-<style id="v0105Css">
-:root{--appH:100dvh;--appTop:0px}
-html,body{height:var(--appH)!important;min-height:var(--appH)!important;max-height:var(--appH)!important;overflow:hidden!important;overscroll-behavior:none!important}
-#game{position:fixed!important;left:0!important;right:0!important;top:var(--appTop)!important;bottom:auto!important;height:var(--appH)!important;min-height:var(--appH)!important;max-height:var(--appH)!important;overflow:hidden!important}
-#world,#overlay,#hud,#vignette{height:100%!important;min-height:100%!important;max-height:100%!important}
-#pauseScreen.modalScreen{position:fixed!important;left:0!important;right:0!important;top:0!important;bottom:auto!important;height:var(--appH)!important;min-height:var(--appH)!important;max-height:var(--appH)!important;overflow:hidden!important;padding-bottom:max(8px,var(--safeB))!important}
-#pauseScreen>.modal{max-height:calc(var(--appH) - max(18px,var(--safeT)) - max(18px,var(--safeB)))!important;overflow-y:auto!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch}
-@media(display-mode:standalone){html,body,#game,#pauseScreen.modalScreen{height:var(--appH)!important;min-height:var(--appH)!important;max-height:var(--appH)!important}}
-</style>
 </head>
 <body>
 <main id="game" aria-label="暴力快递 V0.7 ONLINE 游戏">
- <canvas id="world" tabindex="0" aria-label="3D 游戏。驾驶时 WASD 开车；V 进入货箱。货箱内 WASD 走动，空格跳跃，按住 Q 蓄力投掷，拖动画面手动瞄准，E 互动。"></canvas>
+ <canvas id="world" tabindex="0" aria-label="3D 游戏。驾驶时 WASD 开车、空格跳跃；V 进入货箱。货箱内 WASD 走动，空格跳跃，按住 Q 蓄力投掷，拖动画面手动瞄准，E 互动。"></canvas>
  <canvas id="overlay" aria-hidden="true"></canvas><div id="vignette"></div>
  <div id="hud" class="hidden" data-view="drive">
   <header class="statusbar"><span id="viewTag" class="viewtag">驾驶</span><span class="stat"><b id="count">0</b><small>/18</small></span><span class="money">$<b id="score">0</b></span><span class="time" id="clock">00:00</span><button id="pauseBtn" class="pause control" aria-label="暂停游戏" title="暂停 Esc">Ⅱ</button></header>
@@ -383,7 +374,7 @@ let inputs={keys:new Set(),left:new Set(),right:new Set(),gas:new Set(),brake:ne
 const houses=[], packages=[], cargo=[], debris=[], traffic=[], lights=[], effects=[];
 // Multiplayer 0.3: one host-authoritative world, up to three independent couriers.
 // Rendering/prediction never owns parcel inventory, doors, scores or vehicle physics.
-const NET_PROTOCOL='crash-delivery-mp0105-1';
+const NET_PROTOCOL='crash-delivery-mp0104-1';
 const net={mode:'solo',peer:null,conn:null,room:'',maxPlayers:3,roomDirectoryToken:'',connected:false,executing:false,applying:false,players:[],kickedIds:new Set(),playerId:0,remoteActors:[],remoteSamples:new Map(),roster:[],activeRemote:null,
  remoteActor:null,remoteInput:null,remoteState:null,hostActor:null,lastInput:0,lastRecv:0,lastSend:0,lastActorRender:0,
  actionSeq:0,ack:0,lastAction:0,epoch:0,seenEpoch:-1,snapshot:null,receivedAt:0,watch:false,
@@ -807,10 +798,7 @@ buildWorld();
 const cityWorld=bakeCityWorld(worldBuilder),staticTriangles=cityWorld.total;worldBuilder=null;
 const vanMesh=makeVan(), rearDoorMeshes=[makeRearDoor(-1),makeRearDoor(1)], packageMeshes=PACKAGE_TYPES.map((_,i)=>makePackage(i));
 const wheelBuilder=new MeshBuilder();wheelBuilder.cylinder(.50,.31,12,'#233d46',[0,0,0],[0,0,Math.PI/2]);wheelBuilder.cylinder(.25,.32,8,'#b1c4bd',[0,0,0],[0,0,Math.PI/2]);const wheelMesh=makeMesh(wheelBuilder);
-const vanShadowBuilder=new MeshBuilder();
-for(const x of [-1.58,1.58])for(const z of [-2.60,2.38])vanShadowBuilder.cylinder(.62,.010,14,'#3e5655',[x,.095,z]);
-vanShadowBuilder.box(1.55,.007,4.55,'#49605f',[0,.094,-.08]);
-const vanShadow=makeMesh(vanShadowBuilder);
+const vanShadow=makeMesh(new MeshBuilder().box(3.8,.007,8,'#557875',[0,.095,0]));
 const glassBuilder=new MeshBuilder();glassBuilder.box(2.36,2.10,.09,'#76c5d4');glassBuilder.box(.18,1.5,.025,'#b8e2e2',[-.56,.1,.06],[0,0,-.32]);glassBuilder.box(.08,1.0,.029,'#c6ebdf',[-.25,.27,.061],[0,0,-.32]);const glassMesh=makeMesh(glassBuilder);
 const doorBuilder=new MeshBuilder();doorBuilder.box(2,3.1,.15,'#b66952');for(const x of [-.46,.46])for(const y of [-.77,.62])doorBuilder.box(.7,1.04,.025,'#a15b4a',[x,y,.09]);doorBuilder.poly(.07,'#f4d48d',[.73,-.08,.16]);const doorMesh=makeMesh(doorBuilder);
 const shardMesh=makeMesh(new MeshBuilder().poly(.20,'#b6e4e5',[0,0,0],[1,.4,.7]));
@@ -1889,7 +1877,7 @@ window.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(
 const cityStepPlayer=stepPlayer,cityStepCar=stepCar;
 stepPlayer=function(dt){if(!net.executing&&!$('cityScreen').classList.contains('hidden'))return;cityStepPlayer(dt);};
 stepCar=function(dt,predictionOnly=false){if(!predictionOnly&&!net.executing&&!$('cityScreen').classList.contains('hidden')){const old=inputs;inputs=blankInput();try{cityStepCar(dt,predictionOnly);}finally{inputs=old;}}else cityStepCar(dt,predictionOnly);};
-resetGame=function(toMenu=false){v07.resetGame(toMenu);routeCache=null;routeClock=-1;cityMapClock=-1;citySelected=null;closeCityMap();if(!toMenu)showHint('V0.10.5：水泥工业区 / 库门朝路 / 门架指路牌 / 真实接触阴影 / PWA 全屏。点右上地图看路线；红灯越线和撞车会罚款，砖头仍不会转向。',8);};
+resetGame=function(toMenu=false){v07.resetGame(toMenu);routeCache=null;routeClock=-1;cityMapClock=-1;citySelected=null;closeCityMap();if(!toMenu)showHint('V0.10.4：地面临街厂房 / 避开立交与匝道 / 车上投递 / 玻璃破洞 / 柔和光影。点右上地图看路线；红灯越线和撞车会罚款，砖头仍不会转向。',8);};
 stopNetwork=function(toMenu=true){v07.stopNetwork(toMenu);closeCityMap();};
 openOrders=function(){closeCityMap();v07.openOrders();};
 service=function(){v07.service();if(net.mode==='guest')return;const q=closestCityRoad(car.p),e=q.edge,A=cityNodes[e.a],B=cityNodes[e.b];let from=e.a,to=e.b;if(B.z>A.z){from=e.b;to=e.a;}const d=edgeDirection(from,to),p=[q.q[0]-d[2]*CITY.lane,.12,q.q[2]+d[0]*CITY.lane];car.p=p;car.yaw=Math.atan2(-d[0],-d[2]);routeCache=null;};
@@ -3137,7 +3125,7 @@ function road09Layout(){
  for(const x of [192,224,240])road092Roadside('light-curved',x,8,8,-Math.PI/2,-1,8.0,10.8);
  // Signals use corner pads; heads face the approaching lane, not the road tangent.
  for(const p of [[258,42,0],[286,70,Math.PI],[258,70,-Math.PI/2],[286,42,Math.PI/2]])road092FurnitureAt('traffic-light',p[0],p[1],0,p[2],8.4,1);
- /* V0.10.5: side highway boards replaced by overhead gantry signs. */
+ road095PairedSigns('sign-highway',194,8,8,-Math.PI/2,8.7,13.8);road095PairedSigns('sign-highway',250,56,0,-Math.PI/2,8.7,13.8);
  road095PairedSigns('road-sign-stop',254,56,0,Math.PI/2,8.2,10.4);road095PairedSigns('road-sign-stop',224,32,0,0,8.2,10.4);
  road095PairedSigns('road-sign-warning',144,24,0,0,8.2,10.8);road095PairedSigns('road-sign-warning',304,24,0,Math.PI,8.2,12.5);
  for(let i=0;i<6;i++)add('construction-cone',282+i*2,-35,0,0,8,false);
@@ -3272,7 +3260,7 @@ function road09PaintMap(){
 }
 function road09BuildUI(){
  const start=document.createElement('button');start.id='roadStart09';start.className='primary roadStart09';start.disabled=true;start.innerHTML='<span>SKYWAY / 09</span><b>立体路网试跑 ↗</b><small>高架 · 环岛 · 坡道 · 上下层通行</small>';start.onclick=()=>{if(networked()&&!net.connected)stopNetwork(false);road09Warp('trial');};document.getElementById('startBtn').before(start);
- const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.10.5 ONLINE <span>INDUSTRIAL POLISH</span>';
+ const edition=document.querySelector('.edition');if(edition)edition.innerHTML='V0.10.4 ONLINE <span>INDUSTRIAL PLACEMENT</span>';
  const eyebrow=document.querySelector('.menuCopy h2');if(eyebrow)eyebrow.innerHTML='整座城，<br>换上新路。';
  const p=document.querySelector('.menuCopy>p');if(p)p.innerHTML='住宅、商业、工业与高架，全城统一模块道路。<br>18 单派送、多人合作与 2v2 继续保留。';
  const oldStart=document.getElementById('startBtn');if(oldStart){oldStart.textContent='道路准备中…';oldStart.disabled=true;}
@@ -3381,7 +3369,7 @@ function ind012LotClear(o,pad=1.6){if(!ind012StreetClear(o)||!ind014ElevatedClea
 function ind012Instance(name,x,z,yaw,scale,role='building',h=null){
  const asset=industrial012.assets.get(name),bb=asset.bounds,hw=bb.size[0]*scale*.5,hd=bb.size[2]*scale*.5;
  const o={name,x,z,yaw,hw,hd,height:bb.size[1]*scale,scale,role,h,baseY:.12};
- const base=M.model([x,.12,z],[0,yaw,0]);const modelYaw=Math.PI; // V0.10.5: visual Kenney facade flipped so the factory front follows the road-facing receiving side
+ const base=M.model([x,.12,z],[0,yaw,0]);const modelYaw=0; // V0.10.4: Kenney factory facade follows the same +Z frontage as the receiving bay
  o.m=M.multiply(M.multiply(scaled(base,scale),M.model([0,0,0],[0,modelYaw,0])),M.model(V.mul(bb.center,-1)));
  industrial012.placements.push(o);return o;
 }
@@ -3664,94 +3652,6 @@ if(window.__deliveryTest)window.__deliveryTest.v0102={
  render:()=>{updateCamera(.2);updateHUD();drawMap();draw3D();return renderer.gl.getError();}
 };
 
-
-/* V0.10.5 — industrial frontage / concrete / gantry / contact-shadow / iOS PWA hotfix. */
-const V0105={ready:false,concrete:null,facade:null,gantry:null,viewport:{height:0,top:0,standalone:false},gantries:[],industrialBounds:null};
-
-function v0105BuildConcreteAndFacades(){
- if(!industrial012.ready||V0105.concrete)return;
- const placements=industrial012.placements.filter(o=>o.role==='main'||o.role==='infill'||o.role==='prop');
- if(!placements.length)return;
- let minX=Infinity,maxX=-Infinity,minZ=Infinity,maxZ=-Infinity;
- for(const o of placements){minX=Math.min(minX,o.x-o.hw);maxX=Math.max(maxX,o.x+o.hw);minZ=Math.min(minZ,o.z-o.hd);maxZ=Math.max(maxZ,o.z+o.hd);}
- // Extend to the industrial block boundary so factories no longer sit on isolated grass patches.
- minX=Math.min(minX-8,66);maxX=Math.max(maxX+8,204);minZ=Math.min(minZ-8,-112);maxZ=Math.max(maxZ+8,112);
- V0105.industrialBounds={minX,maxX,minZ,maxZ};
- const ground=new MeshBuilder(),cx=(minX+maxX)/2,cz=(minZ+maxZ)/2,w=maxX-minX,d=maxZ-minZ;
- ground.box(w,.045,d,'#8d9698',[cx,.050,cz]);
- // Subtle concrete expansion joints; road decks remain above this layer at ~0.08m.
- for(let x=Math.ceil(minX/16)*16;x<maxX;x+=16)ground.box(.045,.008,d,'#747f82',[x,.076,cz]);
- for(let z=Math.ceil(minZ/16)*16;z<maxZ;z+=16)ground.box(w,.008,.045,'#747f82',[cx,.076,z]);
- V0105.concrete=renderer.mesh(ground);
-
- const facade=new MeshBuilder();
- for(const o of industrial012.placements.filter(o=>o.role==='main'&&o.h)){
-  const h=o.h,t=industrial012.targets.find(t=>t.h===h);if(!t)continue;
-  const m=h.model,doorW=Math.min(o.hw*1.55,Math.max(8.2,t.w+2.2)),doorH=Math.max(4.9,t.maxY-t.minY+.9),frontZ=o.hd+.12;
-  // A real road-facing facade masks whichever side of the Kenney model was originally the back.
-  facade.box(doorW+1.2,doorH+1.25,.30,'#737e84',[0,(doorH+1.25)/2+.12,frontZ],[0,0,0],m);
-  facade.box(doorW,doorH,.11,'#26383f',[0,doorH/2+.28,frontZ+.18],[0,0,0],m);
-  for(let y=.65;y<doorH-.1;y+=.42)facade.box(doorW-.22,.035,.07,'#7e8c90',[0,y,frontZ+.245],[0,0,0],m);
-  facade.box(doorW+1.25,.68,.14,'#24454a',[0,doorH+.76,frontZ+.20],[0,0,0],m);
-  cityText(facade,String(h.num),[0,doorH+.78,frontZ+.29],.105,'#ffdc73',m);
-  // Small but explicit 2–4m loading forecourt between garage and curb.
-  const apron=clamp(h.setback012||2.4,2.0,4.0);
-  facade.box(doorW+2.1,.042,apron,'#a1a8a9',[0,.105,o.hd+apron*.5],[0,0,0],m);
-  facade.box(doorW+1.2,.018,.11,'#f1cc57',[0,.135,o.hd+apron-.08],[0,0,0],m);
-  for(const side of [-1,1])facade.box(.11,.018,apron,'#f1cc57',[side*(doorW/2+.5),.135,o.hd+apron*.5],[0,0,0],m);
- }
- V0105.facade=renderer.mesh(facade);
-}
-
-function v0105AddGantry(builder,cx,cz,baseY,travelYaw,leftText,rightText){
- const m=M.model([cx,baseY,cz],[0,travelYaw,0]),B=(w,h,d,c,p)=>builder.box(w,h,d,c,p,[0,0,0],m);
- const pole=10.45,clear=5.45,panelY=7.05;
- B(.34,clear+.25,.34,'#73848b',[-pole,(clear+.25)/2,0]);B(.34,clear+.25,.34,'#73848b',[pole,(clear+.25)/2,0]);
- B(pole*2+.35,.26,.32,'#73848b',[0,clear,0]);
- for(const [x,text] of [[-5.05,leftText],[5.05,rightText]]){B(9.25,2.20,.22,'#2d704f',[x,panelY,.08]);B(9.55,.14,.28,'#d9e5d9',[x,panelY+1.15,.08]);cityText(builder,text,[x,panelY+.07,.22],.090,'#f2f7ed',m);}
- V0105.gantries.push({x:cx,z:cz,y:baseY,yaw:travelYaw,left:leftText,right:rightText});
-}
-function v0105BuildGantries(){
- if(V0105.gantry||!road09.ready)return;
- const b=new MeshBuilder();
- // Ground-city approaches and one actual elevated SKYWAY span.
- v0105AddGantry(b,28,56,.08,-Math.PI/2,'CITY','INDUSTRY');
- v0105AddGantry(b,84,0,.08,-Math.PI/2,'INDUSTRY','SKYWAY');
- v0105AddGantry(b,224,8,8.08,-Math.PI/2,'SKYWAY','CITY');
- V0105.gantry=renderer.mesh(b);
-}
-
-const v0105IndustrialDraw=industrial012Draw;
-industrial012Draw=function(){
- if(V0105.concrete)renderer.draw(V0105.concrete);
- if(V0105.gantry)renderer.draw(V0105.gantry);
- v0105IndustrialDraw();
- if(V0105.facade)renderer.draw(V0105.facade);
-};
-
-function v0105SyncViewport(){
- const doc=document.documentElement,body=document.body,game=document.getElementById('game'),vv=window.visualViewport;
- const standalone=!!navigator.standalone||matchMedia('(display-mode: standalone)').matches;
- const inner=Math.round(window.innerHeight||doc.clientHeight||1),visual=vv?Math.round(vv.height+(vv.offsetTop||0)):0;
- const h=Math.max(1,inner,visual),top=0;
- V0105.viewport={height:h,top,standalone};
- doc.classList.toggle('pwaStandalone0105',standalone);
- doc.style.setProperty('--appH',h+'px');doc.style.setProperty('--appTop',top+'px');
- doc.style.setProperty('height',h+'px','important');body.style.setProperty('height',h+'px','important');
- game?.style.setProperty('height',h+'px','important');game?.style.setProperty('min-height',h+'px','important');game?.style.setProperty('max-height',h+'px','important');game?.style.setProperty('top','0px','important');game?.style.setProperty('bottom','auto','important');
- requestAnimationFrame(()=>{try{resize();}catch(e){}});
-}
-for(const ev of ['pageshow','orientationchange'])window.addEventListener(ev,()=>setTimeout(v0105SyncViewport,60));
-window.addEventListener('resize',v0105SyncViewport,{passive:true});window.visualViewport?.addEventListener('resize',v0105SyncViewport,{passive:true});window.visualViewport?.addEventListener('scroll',v0105SyncViewport,{passive:true});document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(v0105SyncViewport,60);});
-setTimeout(v0105SyncViewport,0);setTimeout(v0105SyncViewport,320);setTimeout(v0105SyncViewport,900);
-
-function v0105FinishInit(){
- if(V0105.ready)return;if(!road09.ready||!industrial012.ready){if(!industrial012.error)setTimeout(v0105FinishInit,60);return;}
- v0105BuildConcreteAndFacades();v0105BuildGantries();V0105.ready=true;lighting012BuildShadows();
-}
-setTimeout(v0105FinishInit,40);
-
-if(window.__deliveryTest)window.__deliveryTest.v0105=()=>({ready:V0105.ready,viewport:{...V0105.viewport},industrialBounds:V0105.industrialBounds,gantries:V0105.gantries,frontages:industrial012.audit.map(x=>({num:x.num,frontDot:x.frontDot,setback:x.frontSetback,kerb:x.apertureFromKerb,ground:x.groundFrontage,elevated:x.elevatedClear})),shadow:'wheel-contact+underbody'});
 
 })();
 </script>

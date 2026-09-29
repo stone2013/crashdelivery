@@ -1,0 +1,16 @@
+Crash Delivery V0.10.5 changed-files patch
+
+覆盖到完整 V0.10.4 工程：
+- index.html
+- sw.js
+- manifest.webmanifest
+- build.py
+- VERSION_V09.json
+- src/v0104-baseline.html
+- src/v0105-hotfix.js
+- src/sw-template.js
+- tests/test_v0105.py
+- CHANGELOG_V0105.md
+- TEST_REPORT_V0105.md
+
+工业 GLB、道路 GLB、图标和许可证未改动，不需要重复覆盖。

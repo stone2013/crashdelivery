@@ -1,9 +1,9 @@
 {
-  "version": "0.10.4",
-  "name": "INDUSTRIAL PLACEMENT FIX / GROUND FRONTAGE ONLY",
-  "protocol": "crash-delivery-mp0104-1",
-  "parent_release": "0.10.3 INDUSTRIAL FIX",
-  "parent_index_sha256": "afdf9fda8e1dbec8763f96c506d61474a0578b71f507cc531737365938fea7dd",
-  "html_sha256": "f301bece71299962515ed12afa71c9191d1bd50d85c9a862a8530e2ba4f966b2",
-  "notes": "Industrial factories now select ground-level city frontage only, reject lots beneath/adjacent to SKYWAY ramps and overpasses, align Kenney facades with receiving bays, and keep 2.4m drive-by delivery setback. V0.10.3 scale normalization, integrated bays, glass decals, lighting, CITY LOOP, fines, multiplayer and PWA retained."
+  "version": "0.10.5",
+  "name": "INDUSTRIAL POLISH / CONCRETE + GANTRY + PWA",
+  "protocol": "crash-delivery-mp0105-1",
+  "parent_release": "0.10.4 INDUSTRIAL PLACEMENT",
+  "parent_index_sha256": "f301bece71299962515ed12afa71c9191d1bd50d85c9a862a8530e2ba4f966b2",
+  "html_sha256": "77db00ca06b463e3d44f8017df6cb40003b3503902c583ff87a7e82e5b2576f0",
+  "notes": "Industrial district uses continuous gray concrete hardstanding; Kenney factory visuals are flipped to match road-facing receiving facades and retain 2.4m loading forecourts. Large directional signs use overhead gantries. Van rectangular fake shadow is replaced by wheel/underbody contact shadows. Explicit iOS/PWA viewport height sync prevents recurring bottom blank strip."
 }
