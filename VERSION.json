@@ -1,7 +1,8 @@
 {
-  "version": "0.11.1",
-  "label": "V0.11.1 PWA FIX",
-  "protocol": "crash-delivery-mp0111-1",
-  "html_sha256": "39a8a7b72636fac09f473e1f0a5fc16dafc2dc3f4c6790ab501b2cc5e5fd5ea9",
-  "base_sha256": "cfff10f0c34896b93c7499d52a36da55d4d42379562436de1d9e42a16e6c3fa7"
+  "version": "0.12.0",
+  "label": "V0.12 CITY EXPANSION",
+  "protocol": "crash-delivery-mp0120-1",
+  "html_sha256": "6c191db652c3589002ab882a34cf5302cde28cbdcd9edd324948ef7d66217498",
+  "base_sha256": "37b2be0ecae7d542eaee0d9f9b5baa64e108073d4a03d3c2694baf6ab9fd66c9",
+  "offline_resources": 134
 }

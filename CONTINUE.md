@@ -1,3 +1,17 @@
+# Current release: V0.12.0 City Expansion
+
+Current playable output: `index.html`. Authoritative build inputs: `src/v012/base-v0112.html` plus `src/v012/city-v012.js`, patched by root `build.py`.
+
+- Do NOT build from `src/native-base.html`, old `source/`, or the older V0.7 snapshot: those would lose the V0.11.2 physics hotfix and V0.12 changes.
+- Verify a candidate first: `python build.py --output candidate.html`. A non-root output does not mutate the service worker or release metadata.
+- `python build.py` emits the reviewed root page, updates `VERSION.json`, and regenerates `sw.js` with all local assets. Node.js, when installed, validates every executable inline script before output.
+- See `CHANGELOG_V012.md`, `TEST_REPORT_V012.md` and `UPLOAD_V012.md` for scope, test limitations and changed-file deployment.
+- Preserved: physical cargo / 18 orders / rejection and recovery / original SKYWAY / co-op / 2v2 / mobile controls / Cloudflare connection settings. No credentials or worker settings were changed.
+- Release QA includes CPU/DOM tests and offline software GL geometry review. Native browser GPU, iPhone/Android performance, and public multi-device multiplayer still require real-device acceptance.
+
+---
+## Historical continuation notes (unchanged below)
+
 # Crash Delivery — Continuation Notes
 
 Updated: 2026-09-25

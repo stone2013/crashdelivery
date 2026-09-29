@@ -1,0 +1,16 @@
+/* TEST ONLY: CPU/DOM regression adapter. This is NOT a WebGL rendering test. */
+window.__cpuOnlyGLTest=true;window.__fakeGLBuffers=[];window.__fakeGLDraws=[];window.__captureDraws=false;
+const realCanvasContext=HTMLCanvasElement.prototype.getContext;
+const store=new Map();window.localStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,String(v)),removeItem:k=>store.delete(k)};
+Object.defineProperty(window,'localStorage',{value:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,String(v)),removeItem:k=>store.delete(k)}});
+window.requestAnimationFrame=()=>1;window.cancelAnimationFrame=()=>{};
+let fakeSerial=1;
+HTMLCanvasElement.prototype.getContext=function(type,opts){if(!String(type).includes('webgl'))return realCanvasContext.call(this,type,opts);if(this.__fake)return this.__fake;const state={buffer:null,program:null,uniforms:{},attrs:{},vp:null,viewport:[0,0,1280,720]};let nextConst=5000;const gl=new Proxy({canvas:this,MAX_VIEWPORT_DIMS:3386,ARRAY_BUFFER:34962,STATIC_DRAW:35044,FLOAT:5126,TRIANGLES:4,NO_ERROR:0,
+ getParameter:p=>p===3386?[8192,8192]:16,getExtension:()=>null,getSupportedExtensions:()=>[],getShaderParameter:()=>true,getProgramParameter:()=>true,getShaderInfoLog:()=>'',getProgramInfoLog:()=>'',getError:()=>0,getContextAttributes:()=>({alpha:false}),isContextLost:()=>false,
+ createBuffer:()=>{let b={id:fakeSerial++};window.__fakeGLBuffers.push(b);return b;},bindBuffer:(t,b)=>{state.buffer=b;},bufferData:(t,data)=>{if(state.buffer)state.buffer.data=Array.from(data);},deleteBuffer:b=>{if(b)b.deleted=true;},
+ createShader:()=>({id:fakeSerial++}),shaderSource:(s,src)=>{s.src=src;},createProgram:()=>({id:fakeSerial++,shaders:[]}),attachShader:(p,s)=>p.shaders.push(s),useProgram:p=>{state.program=p;},getAttribLocation:(p,n)=>{if(!p.attrs)p.attrs={};if(p.attrs[n]===undefined)p.attrs[n]=Object.keys(p.attrs).length;return p.attrs[n];},getUniformLocation:(p,n)=>({p,n}),
+ uniformMatrix4fv:(loc,tr,v)=>{if(loc)state.uniforms[loc.p.id+':'+loc.n]=Array.from(v);},uniform3fv:(loc,v)=>{if(loc)state.uniforms[loc.p.id+':'+loc.n]=Array.from(v);},uniform1f:(loc,v)=>{if(loc)state.uniforms[loc.p.id+':'+loc.n]=v;},uniform2f:(loc,a,b)=>{if(loc)state.uniforms[loc.p.id+':'+loc.n]=[a,b];},viewport:(...v)=>state.viewport=v,
+ drawArrays:(mode,start,count)=>{if(!window.__captureDraws)return;const p=state.program,u={};for(const[k,v]of Object.entries(state.uniforms))if(k.startsWith(p.id+':'))u[k.split(':')[1]]=v;window.__fakeGLDraws.push({buffer:state.buffer.id,count,start,u,program:p.id,viewport:state.viewport});},
+ createTexture:()=>({id:fakeSerial++}),createFramebuffer:()=>({id:fakeSerial++}),createRenderbuffer:()=>({id:fakeSerial++}),checkFramebufferStatus:()=>36053,
+ },{get:(t,k)=>{if(k in t)return t[k];if(typeof k==='string'&&k===k.toUpperCase()){t[k]=nextConst++;return t[k];}return ()=>{};}});this.__fake=gl;return gl;};
+const nativeImageSrc=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');Object.defineProperty(HTMLImageElement.prototype,'src',{get:nativeImageSrc.get,set(value){const name=String(value).replace(/^\.\//,'');if(window.__testAssets?.[name])value='data:image/png;base64,'+window.__testAssets[name];nativeImageSrc.set.call(this,value);}});
