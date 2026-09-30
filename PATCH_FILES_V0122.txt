@@ -1,0 +1,24 @@
+Crash Delivery V0.12.2 Native Roads — delta against V0.12.0
+
+7 modified files / 11 new files / no deleted files / no changed model assets
+
+M AGENTS.md
+A CHANGELOG_V0122.md
+M CONTINUE.md
+A PATCH_FILES_V0122.txt
+A TEST_REPORT_V0122.md
+A UPLOAD_V0122.md
+M VERSION.json
+M build.py
+M index.html
+A src/v012/roads-v0122.js
+M src/v012/sw-template.js
+M sw.js
+A tests/v0122/build-verification.json
+A tests/v0122/regression.py
+A tests/v0122/release-results.json
+A tests/v0122/road-assets.sha256.json
+A tests/v0122/road-audit.js
+A tests/v0122/verify-static.mjs
+
+Merge these paths into the existing repository root. Keep all other files and assets.

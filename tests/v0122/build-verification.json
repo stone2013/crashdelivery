@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "reproducible": true,
+  "candidate_build_does_not_mutate_root": true,
+  "javascript_syntax_pass": true,
+  "native_assets_unchanged": 23,
+  "offline_files": 135,
+  "root_hashes": {
+    "index.html": "6929d142c531b961c232f0009690ef89613c7aa4f97a4a6468012b87341e25aa",
+    "sw.js": "f5387d3f86dfc660b59148fcc8fbddb56b10e5db1fdcd08b2ded4199c71b0351",
+    "VERSION.json": "bb83271aef923685becd21f434191d72622a1b1dccdb255f4e0bc6590e08ab09"
+  },
+  "static_output": "{\n  \"passed\": true,\n  \"version\": \"0.12.2\",\n  \"html_sha256\": \"6929d142c531b961c232f0009690ef89613c7aa4f97a4a6468012b87341e25aa\",\n  \"new_models\": 54,\n  \"offline_files\": 135,\n  \"api_not_cached\": true\n}\n{\"unchanged_native_road_files\":23,\"retired_embedded_models\":true,\"native_planner_present\":true}\n"
+}

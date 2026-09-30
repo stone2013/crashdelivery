@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible V0.12 builder. No downloads, npm or CDN dependencies."""
+"""Reproducible V0.12.2 builder. No downloads, npm or CDN dependencies."""
 from pathlib import Path
 import re,json,hashlib,subprocess,tempfile,shutil,argparse
 ROOT=Path(__file__).resolve().parent
@@ -8,7 +8,7 @@ BASE_SHA='37b2be0ecae7d542eaee0d9f9b5baa64e108073d4a03d3c2694baf6ab9fd66c9'
 data=BASE.read_bytes()
 if hashlib.sha256(data).hexdigest()!=BASE_SHA:raise RuntimeError('V0.11.2 baseline integrity mismatch; do not rebuild from an older snapshot.')
 s=data.decode('utf-8')
-parser=argparse.ArgumentParser(description='Build V0.12 from the preserved V0.11.2 snapshot and additive city extension.')
+parser=argparse.ArgumentParser(description='Build V0.12.2 from the immutable snapshot, city extension and native-only road planner.')
 parser.add_argument('--output',type=Path,default=ROOT/'index.html',help='Use a candidate path for verification; only the root output updates sw.js and VERSION.json.')
 args=parser.parse_args()
 
@@ -80,15 +80,50 @@ s=s.replace("version:'0.11.1'", "version:'0.12.0'")
 s=s.replace('V0.11.1','V0.12.0').replace('V0.11 SUBURBAN','V0.12 CITY EXPANSION')
 s=s.replace('V0.11 · SUBURBAN','V0.12 · CITY EXPANSION')
 s=re.sub(r'<title>.*?</title>', '<title>暴力快递 · V0.12.0 CITY EXPANSION</title>', s, count=1)
-s=re.sub(r'<meta name="description" content="[^"]*">','<meta name="description" content="暴力快递 V0.12：城市扩建、密集住宅与商业中心、H1/H2/H3 高速网络、Kenney 车流和可撞环境道具。支持电脑和手机浏览器。">',s,count=1)
+s=re.sub(r'<meta name="description" content="[^"]*">','<meta name="description" content="暴力快递 V0.12.2：全原生 Kenney 道路、城市外环、东西快速路、南北高架与七条外围匝道。保留配送、车流和手机操作。">',s,count=1)
 s=s.replace("edition.innerHTML='V0.12.0 ONLINE <span>PWA FIX</span>'", "edition.innerHTML='V0.12.0 ONLINE <span>CITY EXPANSION</span>'")
 s=s.replace("'开进新街区，<br>把快递送回家。'", "'穿过整座城，<br>快递飞进门。'")
 s=s.replace('白墙绿屋顶、草坪前院，住宅区焕然一新。','密集街区、城市天际线与三条高速。下一单，开向更远的地方。')
 s=s.replace('V0.11 · 单人派送 →','V0.12 · 开始派送 →').replace('SKYWAY / V0.11','SKYWAY / V0.12')
+# V0.12.2 native-only roads; keep the immutable V0.11.2 baseline.
+patch("if(n.x===112&&n.z===56)ports.push([1,0]);", "road122GroundPorts(n,ports);")
+# Read roads from the user's existing assets, not embedded replacement models.
+patch("image.src=ROAD09_ATLAS;", "image.src='./assets/kenney-roads/Textures/colormap.png';")
+patch("for(const [name,bytes]of Object.entries(ROAD09_GLB_PACK))road09.assets.set(name,loader.load(name,bytes));", "for(const name of Object.keys(ROAD09_GLB_PACK)){const r=await fetch('./assets/kenney-roads/'+name+'.glb');if(!r.ok)throw Error('Road asset '+name+' HTTP '+r.status);const bytes=new Uint8Array(await r.arrayBuffer());let text='';for(let i=0;i<bytes.length;i+=32768)text+=String.fromCharCode(...bytes.subarray(i,i+32768));road09.assets.set(name,loader.load(name,btoa(text)));}")
+# Remove embedded duplicates now that the canonical assets are the only source.
+pack=re.search(r'const ROAD09_GLB_PACK=(\{.*?\});',s)
+if not pack:raise ValueError('Embedded road manifest missing')
+names=list(json.loads(pack.group(1)))
+s=s[:pack.start()]+'const ROAD09_ASSET_NAMES122='+json.dumps(names)+';'+s[pack.end():]
+s=s.replace('Object.keys(ROAD09_GLB_PACK)','ROAD09_ASSET_NAMES122')
+s=re.sub(r'const ROAD09_ATLAS=.*?;\n','',s,count=1)
+# Discard the historical handmade fallback rather than shipping unreachable road meshes.
+a=s.index('function road09Bake(){');b=s.index('function road09Layout(){',a)
+s=s[:a]+"function road09Bake(){throw Error('Native road initialization pending');}\n"+s[b:]
+# Background hills must sit outside the enlarged square ring, not across its corners.
+patch('dist=440+rnd()*28','dist=620+rnd()*28')
+patch('V0.10.5：水泥工业区 / 库门朝路 / 门架指路牌 / 真实接触阴影 / PWA 全屏。点右上地图看路线；红灯越线和撞车会罚款，砖头仍不会转向。','V0.12.2：全原生道路 · 外环 / 东西快速路 / 南北高架。七处外围入口已接通，路口减速转弯；点右上地图看路线。')
+# Native overhead signs also replace the legacy handmade gantry meshes.
+start=s.index('function v0105AddGantry(');end=s.index('function v0105BuildGantries()',start)
+s=s[:start]+"""function v0105AddGantry(builder,cx,cz,baseY,travelYaw,leftText,rightText){const asset=road09.assets.get('sign-highway');if(!asset)return;const m=scaled(M.model([cx,baseY-.08,cz],[0,travelYaw,0]),16);city012Transform(asset.b.a,m,builder);V0105.gantries.push({x:cx,z:cz,y:baseY,yaw:travelYaw,left:leftText,right:rightText});}
+"""+s[end:]
 module=(ROOT/'src/v012/city-v012.js').read_text()
+# Drop the retired handmade highway implementation from the shipped code entirely.
+a=module.index('function city012BuildHighways(){');b=module.index('// Building placement broad phase:',a)
+module=module[:a]+module[b:]
+# Native underside handling replaces the retired custom-ribbon thickness check.
+a=module.index('// New deck undersides block');b=module.index('const city012StepBase=',a)
+module=module[:a]+module[b:]
+module=module.replace('city012Init();',(ROOT/'src/v012/roads-v0122.js').read_text()+'\ncity012Init();')
+module=module.replace("document.title='Crash Delivery · V0.12 City Expansion'","document.title='Crash Delivery · V0.12.2 Native Roads'")
+module=module.replace('V0.12 ', 'V0.12.2 ').replace("SKYWAY / V0.12\'", "SKYWAY / V0.12.2\'")
+module=module.replace('// --- Continuous ribbons. Every visible deck triangle also enters the native support grid. ---', '// --- Navigation centerlines only. Rendering uses roads-v0122.js native GLB instances. ---')
+module=module.replace("['H1',-293,0],['H2',218,-179],['H3',-185,184]","['H1',-374,0],['H2',250,-179],['H3',-185,184]")
+s=s.replace('crash-delivery-mp0120','crash-delivery-mp0122').replace('V0.12.0','V0.12.2').replace('V0.12 ·','V0.12.2 ·').replace('CITY EXPANSION','NATIVE ROADS')
 pos=s.rfind('\n})();\n</script>')
 if pos<0:raise ValueError('Main closure not found')
 s=s[:pos]+'\n'+module+'\n'+s[pos:]
+s=re.sub(r'V0\.12(?![\d.])','V0.12.2',s)
 # Parse all executable inline scripts before publishing a candidate.
 if shutil.which('node'):
  with tempfile.TemporaryDirectory() as tmp:
@@ -110,5 +145,5 @@ if args.output.resolve()==(ROOT/'index.html').resolve():
  template=(ROOT/'src/v012/sw-template.js').read_text(encoding='utf-8')
  template=re.sub(r'const STATIC = .*?\.map\(p=>new URL\(p,ROOT\)\.href\);','const STATIC = '+json.dumps(paths)+'.map(p=>new URL(p,ROOT).href);',template,flags=re.S,count=1)
  (ROOT/'sw.js').write_text(template.replace('__BUILD_HASH__',sha[:16]),encoding='utf-8')
- (ROOT/'VERSION.json').write_text(json.dumps({'version':'0.12.0','label':'V0.12 CITY EXPANSION','protocol':'crash-delivery-mp0120-1','html_sha256':sha,'base_sha256':BASE_SHA,'offline_resources':len(paths)},indent=2)+'\n',encoding='utf-8')
-print('Built V0.12.0',len(s.encode('utf-8')),'bytes',sha)
+ (ROOT/'VERSION.json').write_text(json.dumps({'version':'0.12.2','label':'V0.12.2 NATIVE ROADS','protocol':'crash-delivery-mp0122-1','html_sha256':sha,'base_sha256':BASE_SHA,'offline_resources':len(paths)},indent=2)+'\n',encoding='utf-8')
+print('Built V0.12.2',len(s.encode('utf-8')),'bytes',sha)

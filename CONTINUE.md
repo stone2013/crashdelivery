@@ -1,3 +1,14 @@
+# Current continuation — V0.12.2 Native Roads
+
+The latest release inputs are `src/v012/base-v0112.html` (immutable), `src/v012/city-v012.js`, `src/v012/roads-v0122.js` and root `build.py`. Do not rebuild from legacy source snapshots or restore the V0.12 procedural ribbons.
+
+Read `CHANGELOG_V0122.md`, `TEST_REPORT_V0122.md` and `UPLOAD_V0122.md` for the road plan, exact regression scope and deployment instructions. Only an incremental patch is delivered; GitHub is not pushed automatically. New runtime dependencies are existing local road GLBs, with unchanged bytes.
+
+Next real-device acceptance: deploy this candidate, confirm V0.12.2, drive all seven entrances on iPhone/Android, install/reopen/offline the PWA, and check same-version public multiplayer. These are not established by local-byte tests or software WebGL.
+
+---
+## Historical notes retained below
+
 # Current release: V0.12.0 City Expansion
 
 Current playable output: `index.html`. Authoritative build inputs: `src/v012/base-v0112.html` plus `src/v012/city-v012.js`, patched by root `build.py`.
