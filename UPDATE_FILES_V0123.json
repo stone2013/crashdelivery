@@ -1,0 +1,308 @@
+{
+  "version": "0.12.3",
+  "base": "0.12.2",
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
+  "modified": [
+    "AGENTS.md",
+    "CONTINUE.md",
+    "VERSION.json",
+    "build.py",
+    "index.html",
+    "src/v012/sw-template.js",
+    "sw.js"
+  ],
+  "added": [
+    "CHANGELOG_V0123.md",
+    "TEST_REPORT_V0123.md",
+    "UPLOAD_V0123.md",
+    "assets/kenney-terrain/License.txt",
+    "assets/kenney-terrain/Textures/colormap.png",
+    "assets/kenney-terrain/block-grass-curve-low.glb",
+    "assets/kenney-terrain/block-grass-large-slope-narrow.glb",
+    "assets/kenney-terrain/block-grass-large-slope-steep.glb",
+    "assets/kenney-terrain/block-grass-large-slope.glb",
+    "assets/kenney-terrain/block-grass-large-tall.glb",
+    "assets/kenney-terrain/block-grass-large.glb",
+    "assets/kenney-terrain/block-grass-low-hexagon.glb",
+    "assets/kenney-terrain/block-grass-low-large.glb",
+    "assets/kenney-terrain/manifest.json",
+    "assets/kenney-trains/License.txt",
+    "assets/kenney-trains/Textures/colormap.png",
+    "assets/kenney-trains/manifest.json",
+    "assets/kenney-trains/railroad-corner-large.glb",
+    "assets/kenney-trains/railroad-rail-straight.glb",
+    "assets/kenney-trains/railroad-straight.glb",
+    "assets/kenney-trains/train-carriage-coal.glb",
+    "assets/kenney-trains/train-carriage-container-red.glb",
+    "assets/kenney-trains/train-carriage-lumber.glb",
+    "assets/kenney-trains/train-diesel-a.glb",
+    "assets/kenney-trains/train-electric-city-a.glb",
+    "assets/kenney-trains/train-electric-city-b.glb",
+    "assets/kenney-trains/train-electric-city-c.glb",
+    "src/v0123/boot-v0123.js",
+    "src/v0123/models.json",
+    "src/v0123/patch.py",
+    "src/v0123/ui-v0123.css",
+    "src/v0123/world-v0123.js",
+    "tests/v0123/build-results.json",
+    "tests/v0123/live-results.json",
+    "tests/v0123/live-smoke.py",
+    "tests/v0123/regression.py",
+    "tests/v0123/results/release-results.json",
+    "tests/v0123/road-audit.js",
+    "tests/v0123/roads-regression.py",
+    "tests/v0123/roads-results/release-results.json",
+    "tests/v0123/static-results.json",
+    "tests/v0123/verify-static.mjs",
+    "UPDATE_FILES_V0123.json"
+  ],
+  "delete": [],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 4941,
+      "sha256": "25026a0d2a3b682d59dbdcafc822e7ff9c22c8541c23186bd726773f5a4506c9"
+    },
+    {
+      "path": "CHANGELOG_V0123.md",
+      "bytes": 4879,
+      "sha256": "96e192c91d9e579c8b96b9b60fec8d987db5460a754238665ba0bbb273cce1ae"
+    },
+    {
+      "path": "CONTINUE.md",
+      "bytes": 12654,
+      "sha256": "c1d53b390871c23cf7dd116381ee2bf88e933bbad3741c2d46a34f56a5535181"
+    },
+    {
+      "path": "TEST_REPORT_V0123.md",
+      "bytes": 6613,
+      "sha256": "a641075b9ac1f6267052cd0e358e95210fe25f3f9246c442f68489873f7cd3f1"
+    },
+    {
+      "path": "UPLOAD_V0123.md",
+      "bytes": 1268,
+      "sha256": "5c70c54dbbcbe77ce00a2347b2094e721780f6f3c51b90c4a398a89b482676bc"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 303,
+      "sha256": "3ae6017815b922882c8cfd850203fb8d4f7709829743554fef1a8ae1f5c786cf"
+    },
+    {
+      "path": "assets/kenney-terrain/License.txt",
+      "bytes": 703,
+      "sha256": "e1185354d8f0f055c325c7204602326c8cf0c47ee5ae1db7ed16f0465b91bb9a"
+    },
+    {
+      "path": "assets/kenney-terrain/Textures/colormap.png",
+      "bytes": 11140,
+      "sha256": "439dfcac935cfd75dc16f28333a4c8284fffcc4b24f857c61cfb4c8a964a15bd"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-curve-low.glb",
+      "bytes": 14036,
+      "sha256": "9a6074f6a26f3fda8f19e07cf556318b1bb3e4d5db6835e91d7a5a10a2ff3373"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-large-slope-narrow.glb",
+      "bytes": 10884,
+      "sha256": "5d94f1be04f31fee9d73c8424d7f4fe5df95eed1b2df2d63b08e4a526f5b008d"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-large-slope-steep.glb",
+      "bytes": 10880,
+      "sha256": "8bd7ac8d7c4862a155677d11ed64e8f579dab8e7ce06a1e57a3bb0e9153496b6"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-large-slope.glb",
+      "bytes": 10864,
+      "sha256": "87f36ed8616e4a37f94334f4afe79d9e88e36da78e546eafcab27c4eab89f095"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-large-tall.glb",
+      "bytes": 10224,
+      "sha256": "61c9aaaf8c8ea071731dc27b0def1711c482d67768a2f456fc03a746ae29a80a"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-large.glb",
+      "bytes": 10188,
+      "sha256": "606f077c30f6943ef4caa45e440578992cb99f0b7fb8762850303a422ed9cafa"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-low-hexagon.glb",
+      "bytes": 5952,
+      "sha256": "c52c1b2d57e9e962821b8e5933e3e865f0bedaa576f9af88874840f8c20ed093"
+    },
+    {
+      "path": "assets/kenney-terrain/block-grass-low-large.glb",
+      "bytes": 10200,
+      "sha256": "4203a59a4c62879c8cffc9470601fde480ebafa77ee51fc4fc10fb73591849d7"
+    },
+    {
+      "path": "assets/kenney-terrain/manifest.json",
+      "bytes": 1759,
+      "sha256": "34b421f4b9c49be911c6fba358d74ce5729a4dc4cd92e8023cc4fd0c9096eb9c"
+    },
+    {
+      "path": "assets/kenney-trains/License.txt",
+      "bytes": 762,
+      "sha256": "8ad3a0453dc1416d54e9af692dafe875a24069d577fe64edb193d3c8d868881a"
+    },
+    {
+      "path": "assets/kenney-trains/Textures/colormap.png",
+      "bytes": 12684,
+      "sha256": "e264660f3fc9ecbd642bdb7fb7b7dc10755a061560a66651baf48274c729af09"
+    },
+    {
+      "path": "assets/kenney-trains/manifest.json",
+      "bytes": 2112,
+      "sha256": "334003b677fe10cd841929ceb25c9b5d0a5d45f99f66803008ed00261ebd5be0"
+    },
+    {
+      "path": "assets/kenney-trains/railroad-corner-large.glb",
+      "bytes": 51344,
+      "sha256": "be0ed13b14aa6753f707a50b6986f09f38a0a42eac5d87fd0f56176d3cbf70a5"
+    },
+    {
+      "path": "assets/kenney-trains/railroad-rail-straight.glb",
+      "bytes": 15072,
+      "sha256": "1942036b3f5ecdc0a2be7e245a3ce81df0e953cd0929ac345b4c0e008d65a146"
+    },
+    {
+      "path": "assets/kenney-trains/railroad-straight.glb",
+      "bytes": 34736,
+      "sha256": "bcbd501f74b754b61f2ddb5cba2d45d5d694bfd25c497fa72af65202a53930d9"
+    },
+    {
+      "path": "assets/kenney-trains/train-carriage-coal.glb",
+      "bytes": 110244,
+      "sha256": "95c6282a6b13317640ac48bd75d7aeec10faa9bfc035ba21977bb0296df7199a"
+    },
+    {
+      "path": "assets/kenney-trains/train-carriage-container-red.glb",
+      "bytes": 116192,
+      "sha256": "c210aff0fc5d4ee92446b1fdc24ad502df4eabda639c29cc88dd6e64b5abe111"
+    },
+    {
+      "path": "assets/kenney-trains/train-carriage-lumber.glb",
+      "bytes": 110308,
+      "sha256": "c205eff406b60d1c3df668c688ec5841a476568aaccc970a195287aa863b9bf6"
+    },
+    {
+      "path": "assets/kenney-trains/train-diesel-a.glb",
+      "bytes": 156432,
+      "sha256": "20c6c7c23c005e8cda1c1e922473c0fc9c93fc7c1d1bc5a637d640424f811cc3"
+    },
+    {
+      "path": "assets/kenney-trains/train-electric-city-a.glb",
+      "bytes": 104168,
+      "sha256": "9f63a93e65e530982bf5ac3ad15b3c9f3b2608561b3773164d970c67bd2272bd"
+    },
+    {
+      "path": "assets/kenney-trains/train-electric-city-b.glb",
+      "bytes": 135720,
+      "sha256": "b22ab193904eb78868ffdf1cca12a938ec63f30c1c573f22f030537bc4615361"
+    },
+    {
+      "path": "assets/kenney-trains/train-electric-city-c.glb",
+      "bytes": 121344,
+      "sha256": "16b3d6817e5e3fed42aa780b59f336322252d4b88b06a3003082b7f338320a76"
+    },
+    {
+      "path": "build.py",
+      "bytes": 16464,
+      "sha256": "32e294e7ebd05c955756a089f61b37b921baadd0914f789669e304a0e31e694e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 629785,
+      "sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd"
+    },
+    {
+      "path": "src/v012/sw-template.js",
+      "bytes": 4186,
+      "sha256": "4f9265a67e433f2bed3691f478fecd94fa55f1a92ee6964eed0b717c9bc5fd94"
+    },
+    {
+      "path": "src/v0123/boot-v0123.js",
+      "bytes": 2366,
+      "sha256": "edb37a704b8eba821533447e7994f3df57524b5342c7c452277d946c072fe1bc"
+    },
+    {
+      "path": "src/v0123/models.json",
+      "bytes": 574,
+      "sha256": "15707d9737d65095d42c496793c4e4b861b69efa97b05ddbd8a9f854fd8047ba"
+    },
+    {
+      "path": "src/v0123/patch.py",
+      "bytes": 10003,
+      "sha256": "4d1a23ce756839f0e456f73b03d01bf3ff0e90c6fe55c70fcaf5fc95e708282a"
+    },
+    {
+      "path": "src/v0123/ui-v0123.css",
+      "bytes": 2879,
+      "sha256": "d73beeb1e09375de78f18b3017c05eb5216235625b00abaefbee6665c8878821"
+    },
+    {
+      "path": "src/v0123/world-v0123.js",
+      "bytes": 23798,
+      "sha256": "2b94a2cd5c436f1ce4ffa7e5be322c4e9ff72b11d2e1b2f6214dab77c823c9c3"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 8893,
+      "sha256": "83f941af2606df90c534c094ba659af6044dd8232f57fdb906a496c8daa899dc"
+    },
+    {
+      "path": "tests/v0123/build-results.json",
+      "bytes": 337,
+      "sha256": "bc106229596077a7af5971d2596d98f1ed930ff1ea48aae097102cab852fbb94"
+    },
+    {
+      "path": "tests/v0123/live-results.json",
+      "bytes": 1226,
+      "sha256": "32295a4f611e50be0f7092a86960cb69a03f4b88cc0b957054e46c04d96a1645"
+    },
+    {
+      "path": "tests/v0123/live-smoke.py",
+      "bytes": 3659,
+      "sha256": "b1102c9aaa60c7ed591e14779182774adcce573fee339f1571f88f3cb4b43a50"
+    },
+    {
+      "path": "tests/v0123/regression.py",
+      "bytes": 14463,
+      "sha256": "949aef5d1e36572b25cbdeb60707734cd1084269ef87323394dabd350361bebe"
+    },
+    {
+      "path": "tests/v0123/results/release-results.json",
+      "bytes": 28742,
+      "sha256": "06c41bf7a6d9a93b21db78428dc4b5d26b0c082a71675890c374cd35bb08bcf0"
+    },
+    {
+      "path": "tests/v0123/road-audit.js",
+      "bytes": 11900,
+      "sha256": "cdcab7f18efe11aca3e5e8b96b5d5f2233d711f23be38ee7588dcc184295f1a5"
+    },
+    {
+      "path": "tests/v0123/roads-regression.py",
+      "bytes": 12282,
+      "sha256": "63e083e95fd2dc7bb7f5d6edb01e86ebaa88f79a23f96f91186394c60b43e8b0"
+    },
+    {
+      "path": "tests/v0123/roads-results/release-results.json",
+      "bytes": 305834,
+      "sha256": "937eb567911b2556091b7ca59b435ed11e0a1681f94e6331cf75dfe86eacfac6"
+    },
+    {
+      "path": "tests/v0123/static-results.json",
+      "bytes": 573,
+      "sha256": "7fe55c5889f7dbea86ee6ca5f3fbbfd282e009c1778cb2fd9c19366fc3127b77"
+    },
+    {
+      "path": "tests/v0123/verify-static.mjs",
+      "bytes": 7387,
+      "sha256": "d797a3ee0959c055a6e9e1fbd6aee6fa9849f5526d68f0789db374f15b5a17b1"
+    }
+  ],
+  "note": "Manifest lists payload hashes, excluding its own hash. Original files not listed are unchanged; retain them."
+}

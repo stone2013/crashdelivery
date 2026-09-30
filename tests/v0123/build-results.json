@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
+  "reproducible_candidate": true,
+  "candidate_does_not_mutate_root": true,
+  "all_previous_asset_files_byte_identical": 136,
+  "new_glbs_byte_equal_to_user_zip": 18,
+  "no_deletion_required": true,
+  "tests_same_html_hash": true
+}

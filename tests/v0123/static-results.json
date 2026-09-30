@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "version": "0.12.3",
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
+  "selected_extension_models": 72,
+  "new_models": 18,
+  "offline_files": 157,
+  "unchanged_road_files": 23,
+  "model_hashes": true,
+  "scope_safe_cache_cleanup": true,
+  "explicit_update_activation": true,
+  "network_first_html": true,
+  "offline_html_and_static_fallback": true,
+  "live_api_excluded": true,
+  "limitations": [
+    "In-memory Cache API fixture, not browser lifecycle",
+    "No real PWA install or iPhone standalone test"
+  ]
+}

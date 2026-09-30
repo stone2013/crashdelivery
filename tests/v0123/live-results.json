@@ -1,0 +1,57 @@
+{
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
+  "rows": [
+    {
+      "mode": "playing",
+      "frames": 62,
+      "clock": 1.224999999999998,
+      "train": 36.75052106528187,
+      "cityHidden": true,
+      "trialHidden": true,
+      "errorHidden": true,
+      "overflow": false,
+      "webgl": 0,
+      "viewport": [
+        960,
+        640
+      ],
+      "before": {
+        "frames": 36,
+        "clock": 0,
+        "train": 24.5005210652763
+      },
+      "wall_seconds": 8.06,
+      "pageerrors": [],
+      "pass": true
+    },
+    {
+      "mode": "playing",
+      "frames": 73,
+      "clock": 1.716666666666663,
+      "train": 41.667187731950776,
+      "cityHidden": true,
+      "trialHidden": true,
+      "errorHidden": true,
+      "overflow": false,
+      "webgl": 0,
+      "viewport": [
+        390,
+        844
+      ],
+      "before": {
+        "frames": 39,
+        "clock": 0.03333333333333333,
+        "train": 24.833854398609787
+      },
+      "wall_seconds": 8.43,
+      "pageerrors": [],
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "Software WebGL only",
+    "No frame-rate target",
+    "Local byte fixture; no HTTP or SW lifecycle"
+  ],
+  "passed": true
+}

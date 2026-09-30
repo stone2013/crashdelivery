@@ -1,0 +1,24 @@
+{
+  "trains": [
+    "railroad-straight",
+    "railroad-corner-large",
+    "railroad-rail-straight",
+    "train-diesel-a",
+    "train-carriage-container-red",
+    "train-carriage-lumber",
+    "train-carriage-coal",
+    "train-electric-city-a",
+    "train-electric-city-b",
+    "train-electric-city-c"
+  ],
+  "terrain": [
+    "block-grass-large-slope",
+    "block-grass-large-slope-steep",
+    "block-grass-large",
+    "block-grass-large-tall",
+    "block-grass-low-large",
+    "block-grass-low-hexagon",
+    "block-grass-curve-low",
+    "block-grass-large-slope-narrow"
+  ]
+}

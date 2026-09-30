@@ -1,3 +1,18 @@
+# Current release: V0.12.3 World & Railway
+
+This is the browser **PocketGL** game, not Unity or Three.js. Use the shipped `index.html` as the behavior reference. The latest additive world source is `src/v0123/`; see `AGENTS.md`, `CHANGELOG_V0123.md`, and `TEST_REPORT_V0123.md` for the exact current scope and verification limits.
+
+The release reconstructs from the immutable V0.11.2 snapshot through the V0.12 city and V0.12.2 native-road inputs, then applies V0.12.3. `python build.py --output candidate.html` is the safe verification command; a candidate must match the release before root deployment. The root build also updates `sw.js` and `VERSION.json`.
+
+Implemented: perpendicular native road gantries and clearance, full-city default map/minimap, real item-based load meter with failure blocking, Kenney Platformer terrain and edge infill, world-aligned sky/fog and distance rendering, two trains on a native industrial loop with two grade crossings, same-height swept train/truck collision, instant wreck/scatter and delayed rescue, host snapshots. No new task destinations; existing 18 orders retained. Trains are disabled in 2v2.
+
+Pending real-device acceptance: iPhone/Android GPU performance and touch, standalone PWA installation/offline/update lifecycle, GitHub Pages deployment, public WebRTC/TURN and co-op/2v2 sessions, long-duration open-world driving. These have not been claimed as passed by container tests.
+
+Delivery is a delta over V0.12.2; retain prior assets and source inputs. Do not upload only index.html: new train/terrain folders and updated sw.js are required. No automatic GitHub push or remote deployment has been performed.
+
+---
+## Earlier continuation notes (historical, not the current build baseline)
+
 # Current continuation — V0.12.2 Native Roads
 
 The latest release inputs are `src/v012/base-v0112.html` (immutable), `src/v012/city-v012.js`, `src/v012/roads-v0122.js` and root `build.py`. Do not rebuild from legacy source snapshots or restore the V0.12 procedural ribbons.

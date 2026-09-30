@@ -1,8 +1,8 @@
 {
-  "version": "0.12.2",
-  "label": "V0.12.2 NATIVE ROADS",
-  "protocol": "crash-delivery-mp0122-1",
-  "html_sha256": "6929d142c531b961c232f0009690ef89613c7aa4f97a4a6468012b87341e25aa",
+  "version": "0.12.3",
+  "label": "V0.12.3 WORLD & RAILWAY",
+  "protocol": "crash-delivery-mp0123-1",
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
   "base_sha256": "37b2be0ecae7d542eaee0d9f9b5baa64e108073d4a03d3c2694baf6ab9fd66c9",
-  "offline_resources": 134
+  "offline_resources": 156
 }

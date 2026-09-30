@@ -1,0 +1,46 @@
+{
+  "source_archive": "kenney_platformer-kit.zip",
+  "original_bytes_unmodified": true,
+  "models": [
+    {
+      "file": "block-grass-large-slope.glb",
+      "source": "Models/GLB format/block-grass-large-slope.glb",
+      "sha256": "87f36ed8616e4a37f94334f4afe79d9e88e36da78e546eafcab27c4eab89f095"
+    },
+    {
+      "file": "block-grass-large-slope-steep.glb",
+      "source": "Models/GLB format/block-grass-large-slope-steep.glb",
+      "sha256": "8bd7ac8d7c4862a155677d11ed64e8f579dab8e7ce06a1e57a3bb0e9153496b6"
+    },
+    {
+      "file": "block-grass-large.glb",
+      "source": "Models/GLB format/block-grass-large.glb",
+      "sha256": "606f077c30f6943ef4caa45e440578992cb99f0b7fb8762850303a422ed9cafa"
+    },
+    {
+      "file": "block-grass-large-tall.glb",
+      "source": "Models/GLB format/block-grass-large-tall.glb",
+      "sha256": "61c9aaaf8c8ea071731dc27b0def1711c482d67768a2f456fc03a746ae29a80a"
+    },
+    {
+      "file": "block-grass-low-large.glb",
+      "source": "Models/GLB format/block-grass-low-large.glb",
+      "sha256": "4203a59a4c62879c8cffc9470601fde480ebafa77ee51fc4fc10fb73591849d7"
+    },
+    {
+      "file": "block-grass-low-hexagon.glb",
+      "source": "Models/GLB format/block-grass-low-hexagon.glb",
+      "sha256": "c52c1b2d57e9e962821b8e5933e3e865f0bedaa576f9af88874840f8c20ed093"
+    },
+    {
+      "file": "block-grass-curve-low.glb",
+      "source": "Models/GLB format/block-grass-curve-low.glb",
+      "sha256": "9a6074f6a26f3fda8f19e07cf556318b1bb3e4d5db6835e91d7a5a10a2ff3373"
+    },
+    {
+      "file": "block-grass-large-slope-narrow.glb",
+      "source": "Models/GLB format/block-grass-large-slope-narrow.glb",
+      "sha256": "5d94f1be04f31fee9d73c8424d7f4fe5df95eed1b2df2d63b08e4a526f5b008d"
+    }
+  ]
+}

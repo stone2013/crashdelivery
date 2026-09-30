@@ -1,0 +1,1309 @@
+{
+  "html_sha256": "7da48825841ed09dd627236b6c7f4780f0b061b6034ac6484500926a39d70acd",
+  "checks": {
+    "real_resource_boot": true,
+    "model_progress_monotonic": true,
+    "18_models_parse": true,
+    "rail_loop_two_trains_two_crossings": true,
+    "native_gantry_axes_and_clearance": true,
+    "gantry_six_input_only_drives": true,
+    "four_open_crossing_drives": true,
+    "terrain_outside_road_support_exists": true,
+    "map_button_five_regions_opens_city": true,
+    "minimap_vehicle_and_onfoot_heading": true,
+    "crossing_warning_tail_and_reopen": true,
+    "train_immediate_wreck_and_scatter": true,
+    "rescue_preserves_inventory_and_progress": true,
+    "height_separation_no_train_ghost_hit": true,
+    "high_speed_relative_sweep_hits_train": true,
+    "host_snapshot_has_trains_and_wreck": true,
+    "responsive_three_sizes": true,
+    "real_webgl_no_errors": true,
+    "no_page_errors": true,
+    "missing_asset_blocks_start_and_exposes_retry": true
+  },
+  "data": {
+    "native_gantry_axes_and_clearance": [
+      {
+        "x": 28,
+        "z": 56,
+        "dot": -6.123233995736766e-17,
+        "faceDot": -1,
+        "minLeg": 8.999997973442078,
+        "minBoard": 5.611499903798103,
+        "blocked": 0
+      },
+      {
+        "x": 84,
+        "z": -56,
+        "dot": -6.123233995736766e-17,
+        "faceDot": -1,
+        "minLeg": 8.999997973442078,
+        "minBoard": 5.611499903798103,
+        "blocked": 0
+      },
+      {
+        "x": 224,
+        "z": 8,
+        "dot": -6.123233995736766e-17,
+        "faceDot": -1,
+        "minLeg": 8.999997973442078,
+        "minBoard": 5.611499829292297,
+        "blocked": 0
+      }
+    ],
+    "gantry_six_input_only_drives": [
+      {
+        "p": [
+          46.12726388888897,
+          0.11999999821186066,
+          58.7
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          10,
+          0.12,
+          58.7
+        ],
+        "advance": 36.12726388888897,
+        "x": 28,
+        "z": 56
+      },
+      {
+        "p": [
+          9.872736111111106,
+          0.11999999821186066,
+          53.3
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          46,
+          0.12,
+          53.3
+        ],
+        "advance": 36.12726388888889,
+        "x": 28,
+        "z": 56
+      },
+      {
+        "p": [
+          102.12726388888896,
+          0.11999999821186066,
+          -53.3
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          66,
+          0.12,
+          -53.3
+        ],
+        "advance": 36.12726388888896,
+        "x": 84,
+        "z": -56
+      },
+      {
+        "p": [
+          65.87273611111104,
+          0.11999999821186066,
+          -58.7
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          102,
+          0.12,
+          -58.7
+        ],
+        "advance": 36.12726388888896,
+        "x": 84,
+        "z": -56
+      },
+      {
+        "p": [
+          242.05908333333332,
+          8.120000072717666,
+          10.700000000000001
+        ],
+        "speed": 24.868333333333226,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          206,
+          8.12,
+          10.700000000000001
+        ],
+        "advance": 36.05908333333332,
+        "x": 224,
+        "z": 8
+      },
+      {
+        "p": [
+          205.94091666666668,
+          8.120000072717666,
+          5.300000000000001
+        ],
+        "speed": 24.868333333333226,
+        "hp": 100,
+        "wreck": false,
+        "from": [
+          242,
+          8.12,
+          5.300000000000001
+        ],
+        "advance": 36.05908333333332,
+        "x": 224,
+        "z": 8
+      }
+    ],
+    "four_open_crossing_drives": [
+      {
+        "p": [
+          206.05226388888505,
+          0.11999999821186066,
+          170.7
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "crossed": true,
+        "x": 152,
+        "reverse": false
+      },
+      {
+        "p": [
+          97.94773611111245,
+          0.11999999821186066,
+          165.3
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "crossed": true,
+        "x": 152,
+        "reverse": true
+      },
+      {
+        "p": [
+          270.0522638888874,
+          1.5807058272770187,
+          170.7
+        ],
+        "speed": 20.497783686099194,
+        "hp": 100,
+        "wreck": false,
+        "crossed": true,
+        "x": 216,
+        "reverse": false
+      },
+      {
+        "p": [
+          161.89525502270538,
+          0.11999999821186066,
+          165.3
+        ],
+        "speed": 20.5,
+        "hp": 100,
+        "wreck": false,
+        "crossed": true,
+        "x": 216,
+        "reverse": true
+      }
+    ],
+    "terrain_outside_road_support_exists": {
+      "onRoad": 0,
+      "missing": 0,
+      "maxTop": 0.41000002622604426,
+      "count": 109
+    },
+    "map_button_five_regions_opens_city": [
+      {
+        "p": [
+          0,
+          0.12,
+          56
+        ],
+        "city": true,
+        "trial": false
+      },
+      {
+        "p": [
+          -196,
+          0.12,
+          -196
+        ],
+        "city": true,
+        "trial": false
+      },
+      {
+        "p": [
+          224,
+          8.12,
+          8
+        ],
+        "city": true,
+        "trial": false
+      },
+      {
+        "p": [
+          216,
+          0.12,
+          168
+        ],
+        "city": true,
+        "trial": false
+      },
+      {
+        "p": [
+          360,
+          8.12,
+          200
+        ],
+        "city": true,
+        "trial": false
+      }
+    ],
+    "minimap_vehicle_and_onfoot_heading": {
+      "seen": [
+        -0.0,
+        -1.5707963267948966,
+        -3.141592653589793,
+        1.5707963267948966,
+        -0.7
+      ],
+      "center": {
+        "w": 220,
+        "h": 220,
+        "pad": 13,
+        "scale": 0.78,
+        "cx": 300,
+        "cz": 220,
+        "x": null,
+        "z": null
+      },
+      "player": [
+        300,
+        2.5,
+        220
+      ]
+    },
+    "crossing_warning_tail_and_reopen": {
+      "before": {
+        "warning": true,
+        "closed": false
+      },
+      "tail": {
+        "warning": true,
+        "closed": true
+      },
+      "after": {
+        "warning": false,
+        "closed": false
+      }
+    },
+    "train_immediate_wreck_and_scatter": {
+      "hit": true,
+      "hp": 0,
+      "remaining": 4.399999999999995,
+      "inventoryBefore": {
+        "cargo": 18,
+        "ground": 0,
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      "inventoryAfter": {
+        "cargo": 0,
+        "ground": 18,
+        "ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      "trainAdvanced": 12.333333333335702
+    },
+    "rescue_preserves_inventory_and_progress": {
+      "wreck": false,
+      "hp": 100,
+      "p": [
+        3.2,
+        0.11999999821186066,
+        72
+      ],
+      "idsBefore": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "idsAfter": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "score": -120
+    },
+    "height_separation_no_train_ghost_hit": {
+      "wreck": false,
+      "hp": 100
+    },
+    "high_speed_relative_sweep_hits_train": {
+      "wreck": true,
+      "hp": 0
+    },
+    "host_snapshot_has_trains_and_wreck": {
+      "data": {
+        "clock": 0.016,
+        "progress": [
+          31.3599999999999,
+          276.36521065276304
+        ],
+        "blast": 2,
+        "wreck": {
+          "p": [
+            236,
+            0.12,
+            168
+          ],
+          "yaw": -1.5707963267948966,
+          "remaining": 4.5
+        }
+      },
+      "models": 32,
+      "protocol": "Crash Delivery · V0.12.3 World & Railway"
+    },
+    "responsive_three_sizes": [
+      {
+        "width": 1280,
+        "height": 800,
+        "doc": 1280,
+        "body": 1280
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "doc": 390,
+        "body": 390
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "doc": 844,
+        "body": 844
+      }
+    ],
+    "real_webgl_no_errors": {
+      "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+      "error": 0
+    },
+    "no_page_errors": [],
+    "missing_asset_blocks_start_and_exposes_retry": {
+      "error": "train-diesel-a: ./assets/kenney-trains/train-diesel-a.glb HTTP 404",
+      "ready": false,
+      "pct": 90,
+      "disabled": true,
+      "retry": true
+    }
+  },
+  "limitations": [
+    "SwiftShader, not physical-phone GPU",
+    "Local-byte fixture, not HTTP/SW lifecycle",
+    "Snapshot structure, not public networking"
+  ],
+  "browser": "144.0.7559.96",
+  "info": {
+    "ready": true,
+    "models": 18,
+    "railLength": 490.01042130552594,
+    "railTiles": 36,
+    "trains": 2,
+    "units": 7,
+    "crossings": [
+      {
+        "x": 152,
+        "z": 168,
+        "s": 380.20521803257384,
+        "closed": false,
+        "warning": false,
+        "eta": 11.069948631453451
+      },
+      {
+        "x": 216,
+        "z": 168,
+        "s": 31.19999999999999,
+        "closed": true,
+        "warning": true,
+        "eta": 0.6699478934723686
+      }
+    ],
+    "infill": 62,
+    "terrain": 109,
+    "trees": 362,
+    "static": 524,
+    "batches": 179,
+    "draws": 0,
+    "signs": [
+      {
+        "x": 28,
+        "z": 56,
+        "y": 0.08,
+        "yaw": 0,
+        "travelYaw": -1.5707963267948966,
+        "m": [
+          12,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          28,
+          0.07999999821186066,
+          56,
+          1
+        ],
+        "left": "CITY",
+        "right": "INDUSTRY"
+      },
+      {
+        "x": 84,
+        "z": -56,
+        "y": 0.08,
+        "yaw": 0,
+        "travelYaw": -1.5707963267948966,
+        "m": [
+          12,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          84,
+          0.07999999821186066,
+          -56,
+          1
+        ],
+        "left": "INDUSTRY",
+        "right": "SKYWAY"
+      },
+      {
+        "x": 224,
+        "z": 8,
+        "y": 8.08,
+        "yaw": 0,
+        "travelYaw": -1.5707963267948966,
+        "m": [
+          12,
+          0,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          224,
+          8.079999923706055,
+          8,
+          1
+        ],
+        "left": "SKYWAY",
+        "right": "CITY"
+      }
+    ],
+    "boot": {
+      "done": 140,
+      "total": 140,
+      "ready": true,
+      "error": "",
+      "history": [
+        {
+          "n": 1,
+          "label": "解析模型 · road-straight",
+          "t": 2155.2000000001863
+        },
+        {
+          "n": 2,
+          "label": "解析模型 · building-a",
+          "t": 2176
+        },
+        {
+          "n": 3,
+          "label": "解析模型 · building-type-a",
+          "t": 2242.100000000093
+        },
+        {
+          "n": 4,
+          "label": "解析模型 · building-a",
+          "t": 2300.7000000001863
+        },
+        {
+          "n": 5,
+          "label": "解析模型 · building-b",
+          "t": 2326.7000000001863
+        },
+        {
+          "n": 6,
+          "label": "解析模型 · building-c",
+          "t": 2369.600000000093
+        },
+        {
+          "n": 7,
+          "label": "解析模型 · road-straight-barrier",
+          "t": 2407
+        },
+        {
+          "n": 8,
+          "label": "解析模型 · building-f",
+          "t": 2426.3000000000466
+        },
+        {
+          "n": 9,
+          "label": "解析模型 · building-type-b",
+          "t": 2456
+        },
+        {
+          "n": 10,
+          "label": "解析模型 · building-d",
+          "t": 2472.3000000000466
+        },
+        {
+          "n": 11,
+          "label": "解析模型 · building-e",
+          "t": 2508.3000000000466
+        },
+        {
+          "n": 12,
+          "label": "解析模型 · building-f",
+          "t": 2544.3000000000466
+        },
+        {
+          "n": 13,
+          "label": "解析模型 · road-bend",
+          "t": 2569.7000000001863
+        },
+        {
+          "n": 14,
+          "label": "解析模型 · building-l",
+          "t": 2610.9000000001397
+        },
+        {
+          "n": 15,
+          "label": "解析模型 · building-type-c",
+          "t": 2650.5
+        },
+        {
+          "n": 16,
+          "label": "解析模型 · building-g",
+          "t": 2721.9000000001397
+        },
+        {
+          "n": 17,
+          "label": "解析模型 · building-h",
+          "t": 2783.9000000001397
+        },
+        {
+          "n": 18,
+          "label": "解析模型 · building-i",
+          "t": 2842.2000000001863
+        },
+        {
+          "n": 19,
+          "label": "解析模型 · road-curve",
+          "t": 2863.9000000001397
+        },
+        {
+          "n": 20,
+          "label": "解析模型 · building-q",
+          "t": 2878.100000000093
+        },
+        {
+          "n": 21,
+          "label": "解析模型 · building-type-d",
+          "t": 2903.4000000001397
+        },
+        {
+          "n": 22,
+          "label": "解析模型 · building-j",
+          "t": 2953.2000000001863
+        },
+        {
+          "n": 23,
+          "label": "解析模型 · building-k",
+          "t": 3008
+        },
+        {
+          "n": 24,
+          "label": "解析模型 · building-l",
+          "t": 3072.3000000000466
+        },
+        {
+          "n": 25,
+          "label": "解析模型 · road-crossroad",
+          "t": 3086
+        },
+        {
+          "n": 26,
+          "label": "解析模型 · building-r",
+          "t": 3105.5
+        },
+        {
+          "n": 27,
+          "label": "解析模型 · building-type-e",
+          "t": 3127
+        },
+        {
+          "n": 28,
+          "label": "解析模型 · building-m",
+          "t": 3159.5
+        },
+        {
+          "n": 29,
+          "label": "解析模型 · building-n",
+          "t": 3202.4000000001397
+        },
+        {
+          "n": 30,
+          "label": "解析模型 · building-skyscraper-a",
+          "t": 3219.5
+        },
+        {
+          "n": 31,
+          "label": "解析模型 · road-intersection",
+          "t": 3231.100000000093
+        },
+        {
+          "n": 32,
+          "label": "解析模型 · building-t",
+          "t": 3243.4000000001397
+        },
+        {
+          "n": 33,
+          "label": "解析模型 · building-type-f",
+          "t": 3256
+        },
+        {
+          "n": 34,
+          "label": "解析模型 · building-skyscraper-b",
+          "t": 3275
+        },
+        {
+          "n": 35,
+          "label": "解析模型 · building-skyscraper-c",
+          "t": 3302
+        },
+        {
+          "n": 36,
+          "label": "解析模型 · building-skyscraper-d",
+          "t": 3324.9000000001397
+        },
+        {
+          "n": 37,
+          "label": "解析模型 · road-crossing",
+          "t": 3326.5
+        },
+        {
+          "n": 38,
+          "label": "解析模型 · water-tower",
+          "t": 3338.5
+        },
+        {
+          "n": 39,
+          "label": "解析模型 · building-type-g",
+          "t": 3350.7000000001863
+        },
+        {
+          "n": 40,
+          "label": "解析模型 · building-skyscraper-e",
+          "t": 3360.100000000093
+        },
+        {
+          "n": 41,
+          "label": "解析模型 · detail-awning",
+          "t": 3362
+        },
+        {
+          "n": 42,
+          "label": "解析模型 · detail-parasol-a",
+          "t": 3362.9000000001397
+        },
+        {
+          "n": 43,
+          "label": "解析模型 · road-roundabout",
+          "t": 3391.600000000093
+        },
+        {
+          "n": 44,
+          "label": "解析模型 · detail-tank-large",
+          "t": 3399.4000000001397
+        },
+        {
+          "n": 45,
+          "label": "解析模型 · building-type-h",
+          "t": 3404.100000000093
+        },
+        {
+          "n": 46,
+          "label": "解析模型 · road-slant-curve",
+          "t": 3464.7000000001863
+        },
+        {
+          "n": 47,
+          "label": "解析模型 · chimney-large",
+          "t": 3468.5
+        },
+        {
+          "n": 48,
+          "label": "解析模型 · building-type-i",
+          "t": 3475.7000000001863
+        },
+        {
+          "n": 49,
+          "label": "解析模型 · sedan",
+          "t": 3491.5
+        },
+        {
+          "n": 50,
+          "label": "解析模型 · hatchback-sports",
+          "t": 3515.5
+        },
+        {
+          "n": 51,
+          "label": "解析模型 · suv",
+          "t": 3540
+        },
+        {
+          "n": 52,
+          "label": "解析模型 · road-slant-curve-barrier",
+          "t": 3553
+        },
+        {
+          "n": 53,
+          "label": "解析模型 · shipping-container-a",
+          "t": 3556.5
+        },
+        {
+          "n": 54,
+          "label": "解析模型 · building-type-j",
+          "t": 3566.5
+        },
+        {
+          "n": 55,
+          "label": "解析模型 · suv-luxury",
+          "t": 3580.4000000001397
+        },
+        {
+          "n": 56,
+          "label": "解析模型 · taxi",
+          "t": 3609.5
+        },
+        {
+          "n": 57,
+          "label": "解析模型 · van",
+          "t": 3633.2000000001863
+        },
+        {
+          "n": 58,
+          "label": "解析模型 · road-bridge",
+          "t": 3647.600000000093
+        },
+        {
+          "n": 59,
+          "label": "解析模型 · shipping-container-b",
+          "t": 3650
+        },
+        {
+          "n": 60,
+          "label": "解析模型 · building-type-k",
+          "t": 3656.8000000000466
+        },
+        {
+          "n": 61,
+          "label": "解析模型 · delivery",
+          "t": 3678.2000000001863
+        },
+        {
+          "n": 62,
+          "label": "解析模型 · truck",
+          "t": 3703.2000000001863
+        },
+        {
+          "n": 63,
+          "label": "解析模型 · truck-flat",
+          "t": 3729.9000000001397
+        },
+        {
+          "n": 64,
+          "label": "解析模型 · bridge-pillar",
+          "t": 3753.100000000093
+        },
+        {
+          "n": 65,
+          "label": "解析模型 · shipping-container-c",
+          "t": 3755.5
+        },
+        {
+          "n": 66,
+          "label": "解析模型 · building-type-l",
+          "t": 3766
+        },
+        {
+          "n": 67,
+          "label": "解析模型 · ambulance",
+          "t": 3785.8000000000466
+        },
+        {
+          "n": 68,
+          "label": "解析模型 · firetruck",
+          "t": 3824.9000000001397
+        },
+        {
+          "n": 69,
+          "label": "解析模型 · garbage-truck",
+          "t": 3870.8000000000466
+        },
+        {
+          "n": 70,
+          "label": "解析模型 · light-curved",
+          "t": 3873.9000000001397
+        },
+        {
+          "n": 71,
+          "label": "解析模型 · solar-panel-landscape-group",
+          "t": 3883.5
+        },
+        {
+          "n": 72,
+          "label": "解析模型 · building-type-m",
+          "t": 3888.600000000093
+        },
+        {
+          "n": 73,
+          "label": "解析模型 · tractor-shovel",
+          "t": 3909.600000000093
+        },
+        {
+          "n": 74,
+          "label": "解析模型 · tractor",
+          "t": 3920.9000000001397
+        },
+        {
+          "n": 75,
+          "label": "解析模型 · debris-bumper",
+          "t": 3925.3000000000466
+        },
+        {
+          "n": 76,
+          "label": "解析模型 · traffic-light",
+          "t": 3927.8000000000466
+        },
+        {
+          "n": 77,
+          "label": "解析模型 · building-type-n",
+          "t": 3936.3000000000466
+        },
+        {
+          "n": 78,
+          "label": "解析模型 · debris-door",
+          "t": 3944.5
+        },
+        {
+          "n": 79,
+          "label": "解析模型 · debris-tire",
+          "t": 3950.100000000093
+        },
+        {
+          "n": 80,
+          "label": "解析模型 · cone",
+          "t": 3952.600000000093
+        },
+        {
+          "n": 81,
+          "label": "解析模型 · sign-highway",
+          "t": 3954.3000000000466
+        },
+        {
+          "n": 82,
+          "label": "解析模型 · building-type-o",
+          "t": 3961
+        },
+        {
+          "n": 83,
+          "label": "解析模型 · road-sign-stop",
+          "t": 3978.2000000001863
+        },
+        {
+          "n": 84,
+          "label": "解析模型 · building-type-p",
+          "t": 3989
+        },
+        {
+          "n": 85,
+          "label": "解析模型 · tree",
+          "t": 3998
+        },
+        {
+          "n": 86,
+          "label": "解析模型 · tree-pine",
+          "t": 4000
+        },
+        {
+          "n": 87,
+          "label": "解析模型 · tree-pine-small",
+          "t": 4002.4000000001397
+        },
+        {
+          "n": 88,
+          "label": "解析模型 · road-sign-warning",
+          "t": 4005.3000000000466
+        },
+        {
+          "n": 89,
+          "label": "解析模型 · building-type-q",
+          "t": 4013.5
+        },
+        {
+          "n": 90,
+          "label": "解析模型 · hedge",
+          "t": 4022.9000000001397
+        },
+        {
+          "n": 91,
+          "label": "解析模型 · plant",
+          "t": 4032
+        },
+        {
+          "n": 92,
+          "label": "解析模型 · flowers",
+          "t": 4035.9000000001397
+        },
+        {
+          "n": 93,
+          "label": "解析模型 · construction-cone",
+          "t": 4038.4000000001397
+        },
+        {
+          "n": 94,
+          "label": "解析模型 · building-type-r",
+          "t": 4048.5
+        },
+        {
+          "n": 95,
+          "label": "解析模型 · grass",
+          "t": 4060.600000000093
+        },
+        {
+          "n": 96,
+          "label": "解析模型 · rocks",
+          "t": 4063.4000000001397
+        },
+        {
+          "n": 97,
+          "label": "解析模型 · stones",
+          "t": 4069.3000000000466
+        },
+        {
+          "n": 98,
+          "label": "解析模型 · construction-barrier",
+          "t": 4071.8000000000466
+        },
+        {
+          "n": 99,
+          "label": "解析模型 · building-type-s",
+          "t": 4086.3000000000466
+        },
+        {
+          "n": 100,
+          "label": "解析模型 · crate",
+          "t": 4113.5
+        },
+        {
+          "n": 101,
+          "label": "解析模型 · crate-strong",
+          "t": 4120.40000000014
+        },
+        {
+          "n": 102,
+          "label": "解析模型 · barrel",
+          "t": 4122.90000000014
+        },
+        {
+          "n": 103,
+          "label": "解析模型 · road-end-round",
+          "t": 4126.5
+        },
+        {
+          "n": 104,
+          "label": "解析模型 · building-type-t",
+          "t": 4150
+        },
+        {
+          "n": 105,
+          "label": "解析模型 · pipe",
+          "t": 4163.90000000014
+        },
+        {
+          "n": 106,
+          "label": "解析模型 · fence-low-straight",
+          "t": 4164.800000000047
+        },
+        {
+          "n": 107,
+          "label": "解析模型 · fence-broken",
+          "t": 4166.200000000186
+        },
+        {
+          "n": 108,
+          "label": "解析模型 · road-crossroad-path",
+          "t": 4168.40000000014
+        },
+        {
+          "n": 109,
+          "label": "解析模型 · building-type-u",
+          "t": 4178.800000000047
+        },
+        {
+          "n": 110,
+          "label": "解析模型 · road-intersection-path",
+          "t": 4181.100000000093
+        },
+        {
+          "n": 111,
+          "label": "解析模型 · driveway-short",
+          "t": 5357.800000000047
+        },
+        {
+          "n": 112,
+          "label": "解析模型 · path-short",
+          "t": 5735.700000000186
+        },
+        {
+          "n": 113,
+          "label": "解析模型 · path-stones-short",
+          "t": 5752.40000000014
+        },
+        {
+          "n": 114,
+          "label": "解析模型 · fence-low",
+          "t": 5756.5
+        },
+        {
+          "n": 115,
+          "label": "解析模型 · tree-small",
+          "t": 5757.5
+        },
+        {
+          "n": 116,
+          "label": "解析模型 · tree-large",
+          "t": 5758.40000000014
+        },
+        {
+          "n": 117,
+          "label": "解析模型 · planter",
+          "t": 5761
+        },
+        {
+          "n": 118,
+          "label": "解析模型 · railroad-straight",
+          "t": 8852.40000000014
+        },
+        {
+          "n": 119,
+          "label": "解析模型 · railroad-corner-large",
+          "t": 8884.200000000186
+        },
+        {
+          "n": 120,
+          "label": "解析模型 · railroad-rail-straight",
+          "t": 8898.600000000093
+        },
+        {
+          "n": 121,
+          "label": "解析模型 · train-diesel-a",
+          "t": 8924.700000000186
+        },
+        {
+          "n": 122,
+          "label": "解析模型 · train-carriage-container-red",
+          "t": 8950.5
+        },
+        {
+          "n": 123,
+          "label": "解析模型 · train-carriage-lumber",
+          "t": 8962.40000000014
+        },
+        {
+          "n": 124,
+          "label": "解析模型 · train-carriage-coal",
+          "t": 8976.200000000186
+        },
+        {
+          "n": 125,
+          "label": "解析模型 · train-electric-city-a",
+          "t": 8994.200000000186
+        },
+        {
+          "n": 126,
+          "label": "解析模型 · train-electric-city-b",
+          "t": 9001.200000000186
+        },
+        {
+          "n": 127,
+          "label": "解析模型 · train-electric-city-c",
+          "t": 9007.600000000093
+        },
+        {
+          "n": 128,
+          "label": "解析模型 · block-grass-large-slope",
+          "t": 9020.300000000047
+        },
+        {
+          "n": 129,
+          "label": "解析模型 · block-grass-large-slope-steep",
+          "t": 9023.200000000186
+        },
+        {
+          "n": 130,
+          "label": "解析模型 · block-grass-large",
+          "t": 9024.40000000014
+        },
+        {
+          "n": 131,
+          "label": "解析模型 · block-grass-large-tall",
+          "t": 9027.800000000047
+        },
+        {
+          "n": 132,
+          "label": "解析模型 · block-grass-low-large",
+          "t": 9032.300000000047
+        },
+        {
+          "n": 133,
+          "label": "解析模型 · block-grass-low-hexagon",
+          "t": 9033.40000000014
+        },
+        {
+          "n": 134,
+          "label": "解析模型 · block-grass-curve-low",
+          "t": 9034.200000000186
+        },
+        {
+          "n": 135,
+          "label": "解析模型 · block-grass-large-slope-narrow",
+          "t": 9039.800000000047
+        },
+        {
+          "n": 136,
+          "label": "铺设原生铁路与道口",
+          "t": 9072.800000000047
+        },
+        {
+          "n": 137,
+          "label": "补齐城市边缘街区",
+          "t": 9125.90000000014
+        },
+        {
+          "n": 138,
+          "label": "构建地形支撑与远景",
+          "t": 9404.800000000047
+        },
+        {
+          "n": 139,
+          "label": "连接全城地图与导航",
+          "t": 9405.100000000093
+        },
+        {
+          "n": 140,
+          "label": "城市已就绪",
+          "t": 9405.200000000186
+        }
+      ]
+    }
+  },
+  "summary": {
+    "passed": 20,
+    "groups": 20
+  }
+}

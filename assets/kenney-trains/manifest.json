@@ -1,0 +1,56 @@
+{
+  "source_archive": "kenney_train-kit.zip",
+  "original_bytes_unmodified": true,
+  "models": [
+    {
+      "file": "railroad-straight.glb",
+      "source": "Models/GLB format/railroad-straight.glb",
+      "sha256": "bcbd501f74b754b61f2ddb5cba2d45d5d694bfd25c497fa72af65202a53930d9"
+    },
+    {
+      "file": "railroad-corner-large.glb",
+      "source": "Models/GLB format/railroad-corner-large.glb",
+      "sha256": "be0ed13b14aa6753f707a50b6986f09f38a0a42eac5d87fd0f56176d3cbf70a5"
+    },
+    {
+      "file": "railroad-rail-straight.glb",
+      "source": "Models/GLB format/railroad-rail-straight.glb",
+      "sha256": "1942036b3f5ecdc0a2be7e245a3ce81df0e953cd0929ac345b4c0e008d65a146"
+    },
+    {
+      "file": "train-diesel-a.glb",
+      "source": "Models/GLB format/train-diesel-a.glb",
+      "sha256": "20c6c7c23c005e8cda1c1e922473c0fc9c93fc7c1d1bc5a637d640424f811cc3"
+    },
+    {
+      "file": "train-carriage-container-red.glb",
+      "source": "Models/GLB format/train-carriage-container-red.glb",
+      "sha256": "c210aff0fc5d4ee92446b1fdc24ad502df4eabda639c29cc88dd6e64b5abe111"
+    },
+    {
+      "file": "train-carriage-lumber.glb",
+      "source": "Models/GLB format/train-carriage-lumber.glb",
+      "sha256": "c205eff406b60d1c3df668c688ec5841a476568aaccc970a195287aa863b9bf6"
+    },
+    {
+      "file": "train-carriage-coal.glb",
+      "source": "Models/GLB format/train-carriage-coal.glb",
+      "sha256": "95c6282a6b13317640ac48bd75d7aeec10faa9bfc035ba21977bb0296df7199a"
+    },
+    {
+      "file": "train-electric-city-a.glb",
+      "source": "Models/GLB format/train-electric-city-a.glb",
+      "sha256": "9f63a93e65e530982bf5ac3ad15b3c9f3b2608561b3773164d970c67bd2272bd"
+    },
+    {
+      "file": "train-electric-city-b.glb",
+      "source": "Models/GLB format/train-electric-city-b.glb",
+      "sha256": "b22ab193904eb78868ffdf1cca12a938ec63f30c1c573f22f030537bc4615361"
+    },
+    {
+      "file": "train-electric-city-c.glb",
+      "source": "Models/GLB format/train-electric-city-c.glb",
+      "sha256": "16b3d6817e5e3fed42aa780b59f336322252d4b88b06a3003082b7f338320a76"
+    }
+  ]
+}

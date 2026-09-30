@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducible V0.12.2 builder. No downloads, npm or CDN dependencies."""
+"""Reproducible V0.12.3 builder. No downloads, npm or CDN dependencies."""
 from pathlib import Path
 import re,json,hashlib,subprocess,tempfile,shutil,argparse
 ROOT=Path(__file__).resolve().parent
@@ -8,7 +8,7 @@ BASE_SHA='37b2be0ecae7d542eaee0d9f9b5baa64e108073d4a03d3c2694baf6ab9fd66c9'
 data=BASE.read_bytes()
 if hashlib.sha256(data).hexdigest()!=BASE_SHA:raise RuntimeError('V0.11.2 baseline integrity mismatch; do not rebuild from an older snapshot.')
 s=data.decode('utf-8')
-parser=argparse.ArgumentParser(description='Build V0.12.2 from the immutable snapshot, city extension and native-only road planner.')
+parser=argparse.ArgumentParser(description='Build V0.12.3 from the immutable snapshot, city/native-road inputs and additive world/railway patch.')
 parser.add_argument('--output',type=Path,default=ROOT/'index.html',help='Use a candidate path for verification; only the root output updates sw.js and VERSION.json.')
 args=parser.parse_args()
 
@@ -124,6 +124,11 @@ pos=s.rfind('\n})();\n</script>')
 if pos<0:raise ValueError('Main closure not found')
 s=s[:pos]+'\n'+module+'\n'+s[pos:]
 s=re.sub(r'V0\.12(?![\d.])','V0.12.2',s)
+# Apply the additive world/railway update before validating or publishing.
+import importlib.util
+_spec=importlib.util.spec_from_file_location('world123_patch',ROOT/'src/v0123/patch.py')
+_world123=importlib.util.module_from_spec(_spec);_spec.loader.exec_module(_world123)
+s=_world123.apply(s,ROOT)
 # Parse all executable inline scripts before publishing a candidate.
 if shutil.which('node'):
  with tempfile.TemporaryDirectory() as tmp:
@@ -145,5 +150,5 @@ if args.output.resolve()==(ROOT/'index.html').resolve():
  template=(ROOT/'src/v012/sw-template.js').read_text(encoding='utf-8')
  template=re.sub(r'const STATIC = .*?\.map\(p=>new URL\(p,ROOT\)\.href\);','const STATIC = '+json.dumps(paths)+'.map(p=>new URL(p,ROOT).href);',template,flags=re.S,count=1)
  (ROOT/'sw.js').write_text(template.replace('__BUILD_HASH__',sha[:16]),encoding='utf-8')
- (ROOT/'VERSION.json').write_text(json.dumps({'version':'0.12.2','label':'V0.12.2 NATIVE ROADS','protocol':'crash-delivery-mp0122-1','html_sha256':sha,'base_sha256':BASE_SHA,'offline_resources':len(paths)},indent=2)+'\n',encoding='utf-8')
-print('Built V0.12.2',len(s.encode('utf-8')),'bytes',sha)
+ (ROOT/'VERSION.json').write_text(json.dumps({'version':'0.12.3','label':'V0.12.3 WORLD & RAILWAY','protocol':'crash-delivery-mp0123-1','html_sha256':sha,'base_sha256':BASE_SHA,'offline_resources':len(paths)},indent=2)+'\n',encoding='utf-8')
+print('Built V0.12.3',len(s.encode('utf-8')),'bytes',sha)
